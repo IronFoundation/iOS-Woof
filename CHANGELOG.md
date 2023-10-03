@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed 
 
-- Display different currency type in `SitterListView` and in `SitterProfileView` - [ ](https://github.com/IronFoundation/iOS-Woof/pull/)
+- Display different currency type in `SitterListView` and in `SitterProfileView` - [45](https://github.com/IronFoundation/iOS-Woof/pull/45)
 
 ## [0.4.0] - 27.09.2023
 
