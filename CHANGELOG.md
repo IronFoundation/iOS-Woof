@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed 
+
+- Display different currency type in `SitterListView` and in `SitterProfileView` - [ ](https://github.com/IronFoundation/iOS-Woof/pull/)
+
 ## [0.4.0] - 27.09.2023
 
 ### Added 

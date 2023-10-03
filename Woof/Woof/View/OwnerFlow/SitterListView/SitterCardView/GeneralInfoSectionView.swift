@@ -20,7 +20,7 @@ struct GeneralInfoSectionView: View {
             }
             Spacer()
             VStack {
-                Text(price, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                Text(price, format: .currency(code: "USD"))
                 Text("per hour")
                     .font(Font.system(size: AppStyle.FontStyle.footnote.size))
             }
