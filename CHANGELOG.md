@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added 
+
+- Add new templates for `epic` issue and `feature request` - [4](https://github.com/IronFoundation/iOS-Woof/pull/4)
+
+
 ## [0.4.0] - 27.09.2023
 
 ### Added 
