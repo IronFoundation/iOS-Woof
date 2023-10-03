@@ -17,7 +17,8 @@ extension Sitter {
             Emily is a great choice for pet owners who want to ensure that their furry companions are in good hands.
             """,
             rating: 4.8,
-            pricePerHour: 40.25
+            pricePerHour: 40.25,
+            city: "Minsk"
         )
 
         /// The instance of dummy sitter list to use in previews.
@@ -29,7 +30,8 @@ extension Sitter {
                 avatarUrl: Bundle.main.url(forResource: "JaneSmithAvatar", withExtension: "jpg"),
                 bio: "Certified dog trainer. Enjoys playing fetch and teaching new tricks.",
                 rating: 2.8,
-                pricePerHour: 20.0
+                pricePerHour: 20.0,
+                city: "Minsk"
             ),
             Sitter(
                 name: "John",
@@ -38,7 +40,8 @@ extension Sitter {
                 avatarUrl: Bundle.main.url(forResource: "JohnAlisonAvatar", withExtension: "jpg"),
                 bio: "Experienced dog lover. Loves taking dogs for long walks in the park.",
                 rating: 4.5,
-                pricePerHour: 15.0
+                pricePerHour: 15.0,
+                city: "Minsk"
             ),
             Sitter(
                 name: "Emily",
@@ -47,7 +50,8 @@ extension Sitter {
                 avatarUrl: Bundle.main.url(forResource: "EmilyDoeAvatar", withExtension: "jpg"),
                 bio: "Passionate about caring for dogs. Enjoys spending time outdoors with furry friends.",
                 rating: 1.9,
-                pricePerHour: 25.0
+                pricePerHour: 25.0,
+                city: "Minsk"
             ),
             Sitter(
                 name: "Michael",
@@ -56,7 +60,8 @@ extension Sitter {
                 avatarUrl: Bundle.main.url(forResource: "MichaelBrownAvatar", withExtension: "jpg"),
                 bio: "Experienced pet sitter. Provides a safe and comfortable environment for dogs.",
                 rating: 4.7,
-                pricePerHour: 18.0
+                pricePerHour: 18.0,
+                city: "Moscow"
             ),
             Sitter(
                 name: "Olivia",
@@ -65,7 +70,8 @@ extension Sitter {
                 avatarUrl: Bundle.main.url(forResource: "OliviaDavisAvatar", withExtension: "jpg"),
                 bio: "Loves dogs of all sizes and breeds. Enjoys exploring new walking trails.",
                 rating: 4.6,
-                pricePerHour: 17.0
+                pricePerHour: 17.0,
+                city: "Dubai"
             ),
             Sitter(
                 name: "William",
@@ -76,7 +82,8 @@ extension Sitter {
                 Dog enthusiast with a background in pet care. Provides personalized attention to every furry client.
                 """,
                 rating: 0.0,
-                pricePerHour: 19.0
+                pricePerHour: 19.0,
+                city: "Berlin"
             ),
             Sitter(
                 name: "Sophia",
@@ -84,7 +91,8 @@ extension Sitter {
                 phone: "9012345678",
                 avatarUrl: Bundle.main.url(forResource: "SophiaTaylorAvatar", withExtension: "jpg"),
                 bio: "Experienced in handling energetic dogs. Creates fun and engaging activities for furry pals.",
-                rating: 3.8, pricePerHour: 22.0
+                rating: 3.8, pricePerHour: 22.0,
+                city: "Berlin"
             ),
             Sitter(
                 name: "James",
@@ -96,7 +104,8 @@ extension Sitter {
                 Customizes exercise routines based on individual needs.
                 """,
                 rating: 4.7,
-                pricePerHour: 21.0
+                pricePerHour: 21.0,
+                city: "Berlin"
             ),
             Sitter(
                 name: "Ava",
@@ -105,7 +114,8 @@ extension Sitter {
                 avatarUrl: Bundle.main.url(forResource: "AvaMooreAvatar", withExtension: "jpg"),
                 bio: "Compassionate dog lover. Provides a loving and caring environment for furry companions.",
                 rating: 4.3,
-                pricePerHour: 16.0
+                pricePerHour: 16.0,
+                city: "Boston"
             ),
         ]
     }

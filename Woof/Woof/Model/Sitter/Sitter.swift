@@ -30,6 +30,9 @@ struct Sitter: Codable, Identifiable, Equatable {
     /// The price per hour charged by the sitter.
     var pricePerHour: Double
 
+    /// The city or area where the sitter can work.
+    var city: String
+
     /**
      Creates a pet sitter instance with the specified parameters with the unique identifier.
      Each instance of the new pet sitter has a unique id.
@@ -43,6 +46,7 @@ struct Sitter: Codable, Identifiable, Equatable {
       - bio: The additional information about the pet sitter.
       - rating: The rating of the pet sitter.
       - pricePerHour: The price per hour charged by the pet sitter.
+      - city: The city or area where the sitter can work.
      */
     init(
         id: UUID = UUID(),
@@ -52,7 +56,8 @@ struct Sitter: Codable, Identifiable, Equatable {
         avatarUrl: URL?,
         bio: String,
         rating: Double,
-        pricePerHour: Double
+        pricePerHour: Double,
+        city: String
     ) {
         self.id = id
         self.name = name
@@ -62,6 +67,7 @@ struct Sitter: Codable, Identifiable, Equatable {
         self.bio = bio
         self.rating = rating
         self.pricePerHour = pricePerHour
+        self.city = city
     }
 
     /**
@@ -83,7 +89,8 @@ struct Sitter: Codable, Identifiable, Equatable {
             avatarUrl: nil,
             bio: "",
             rating: 0,
-            pricePerHour: 0
+            pricePerHour: 0,
+            city: ""
         )
     }
 }
