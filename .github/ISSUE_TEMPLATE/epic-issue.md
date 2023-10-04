@@ -7,8 +7,8 @@ assignees: ''
 
 ---
 
-<!-- This reference to the epic issue makes the navigation process more easily -->
-## This task is a part of the issue:
+<!-- This reference to the issues should be done to close the current issue -->
+## The scope of the current task:
  - #_issue
 
 <!-- This references to the issues that block the current issue-->
