@@ -5,4 +5,6 @@ enum WoofAppEndpoint {
     case getAllSitters
     /// Adding a new pet sitter.
     case addNewSitter(BodyParameters?)
+    /// Updating the information for the existing pet sitter.
+    case updateSitter(BodyParameters?)
 }
