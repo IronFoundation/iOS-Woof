@@ -8,6 +8,8 @@ final class WoofAppEndpointTests: XCTestCase {
 
     func testAllCasesForWoofAppEndpointExists() {
         let _ = WoofAppEndpoint.addNewSitter(nil)
+        let _ = WoofAppEndpoint.updateSitter(nil)
+        let _ = WoofAppEndpoint.getAllSitters
     }
 
     func testAddNewSitterEndpointIsConfiguredCorrectly() {
@@ -49,6 +51,29 @@ final class WoofAppEndpointTests: XCTestCase {
 
         switch endpoint.task {
         case .request: break
+        default: XCTFail("Unexpected scenario.")
+        }
+    }
+
+    func testUpdateSitterEndpointIsConfiguredCorrectly() {
+        // Given
+        let parameters = Sitter().asDictionary()
+
+        // When
+        let endpoint = WoofAppEndpoint.updateSitter(parameters)
+
+        // Then
+        XCTAssertEqual(endpoint.baseURL, baseProdURL)
+        XCTAssertEqual(endpoint.path, WoofAppEndpoint.Path.updateSitter)
+        XCTAssertTrue(endpoint.headers.keys.contains(authHeader))
+
+        switch endpoint.method {
+        case .put: break
+        default: XCTFail("Unexpected scenario.")
+        }
+
+        switch endpoint.task {
+        case .requestWithBodyParameters: break
         default: XCTFail("Unexpected scenario.")
         }
     }
