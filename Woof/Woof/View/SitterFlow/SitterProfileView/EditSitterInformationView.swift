@@ -8,7 +8,7 @@ struct EditSitterInformationView: View {
     private let bioInformationPlaceholderText = "Enter information about yourself"
     private let namePlaceholderText = "Enter your name *"
     private let surnamePlaceholderText = "Enter your surname"
-    private let pricePlaceholderText = "Enter your price per hour for walking"
+    private let pricePlaceholderText = "Enter your rate per hour in USD ($)"
     private let phonePlaceholderText = "Enter your phone *"
 
     // MARK: - Internal interface
