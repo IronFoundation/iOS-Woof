@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Update`WoofAppEndpoint`: add new case to update sitter - [#48](https://github.com/IronFoundation/iOS-Woof/pull/48)
 
+### Fixed 
+
+- Display different currency type in `SitterListView` and in `SitterProfileView` - [45](https://github.com/IronFoundation/iOS-Woof/pull/45)
+
 ## [0.4.0] - 27.09.2023
 
 ### Added 
