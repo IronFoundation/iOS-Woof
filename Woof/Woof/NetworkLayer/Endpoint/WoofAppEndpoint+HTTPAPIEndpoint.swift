@@ -17,6 +17,7 @@ extension WoofAppEndpoint: HTTPAPIEndpoint {
         switch self {
         case .getAllSitters: return Path.getAllSitters
         case .addNewSitter: return Path.addNewSitter
+        case .updateSitter: return Path.updateSitter
         }
     }
 
@@ -25,6 +26,8 @@ extension WoofAppEndpoint: HTTPAPIEndpoint {
         case .getAllSitters: return .request
         case let .addNewSitter(parameters):
             return .requestWithBodyParameters(bodyParameters: parameters)
+        case let .updateSitter(parameters):
+            return .requestWithBodyParameters(bodyParameters: parameters)
         }
     }
 
@@ -32,6 +35,7 @@ extension WoofAppEndpoint: HTTPAPIEndpoint {
         switch self {
         case .getAllSitters: return .get
         case .addNewSitter: return .post
+        case .updateSitter: return .put
         }
     }
 
