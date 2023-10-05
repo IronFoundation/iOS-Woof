@@ -22,7 +22,7 @@ struct GeneralInfoSectionView: View {
                 Text(city)
                     .font(Font.system(size: AppStyle.FontStyle.footnote.size))
                     .bold()
-                .foregroundColor(.App.purpleDark)
+                    .foregroundColor(.App.purpleDark)
             }
             Spacer()
             VStack {
