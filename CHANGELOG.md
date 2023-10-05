@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Add new templates for `epic` issue and `feature request` - [4](https://github.com/IronFoundation/iOS-Woof/pull/4)
 
+### Changed
+
+- Update `Sitter` model: add a new property `city` - [#46](https://github.com/IronFoundation/iOS-Woof/pull/46)
+- Update`WoofAppEndpoint`: add new case to update sitter - [#48](https://github.com/IronFoundation/iOS-Woof/pull/48)
+
 ### Fixed 
 
 - Display different currency type in `SitterListView` and in `SitterProfileView` - [45](https://github.com/IronFoundation/iOS-Woof/pull/45)
