@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added 
+
+- Add new templates for `epic` issue and `feature request` - [4](https://github.com/IronFoundation/iOS-Woof/pull/4)
+
 ### Changed
 
 - Update `Sitter` model: add a new property `city` - [#46](https://github.com/IronFoundation/iOS-Woof/pull/46)
