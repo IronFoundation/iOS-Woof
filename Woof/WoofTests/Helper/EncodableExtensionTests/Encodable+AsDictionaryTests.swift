@@ -57,7 +57,8 @@ final class EncodableAsDictionaryTests: XCTestCase {
             avatarUrl: Bundle.main.bundleURL,
             bio: "Bio",
             rating: 4.5,
-            pricePerHour: 24.5
+            pricePerHour: 24.5,
+            city: "Minsk"
         )
 
         // When
@@ -71,8 +72,9 @@ final class EncodableAsDictionaryTests: XCTestCase {
         XCTAssertEqual(dictionary["bio"] as? String, "Bio")
         XCTAssertEqual(dictionary["rating"] as? Double, 4.5)
         XCTAssertEqual(dictionary["rate_per_hour"] as? Double, 24.5)
+        XCTAssertEqual(dictionary["city"] as? String, "Minsk")
 
-        XCTAssertEqual(dictionary.count, 8)
+        XCTAssertEqual(dictionary.count, 9)
     }
 
     func testOwnerModelSuccessfullyTransformedToDictionary() throws {

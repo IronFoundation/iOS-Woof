@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+ - Update `Sitter` model: add a new property `city` - [#46](https://github.com/IronFoundation/iOS-Woof/pull/46)
+
 ### Fixed 
 
 - Display different currency type in `SitterListView` and in `SitterProfileView` - [45](https://github.com/IronFoundation/iOS-Woof/pull/45)

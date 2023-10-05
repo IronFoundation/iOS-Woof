@@ -8,5 +8,6 @@ extension Sitter {
         case bio
         case rating
         case pricePerHour = "ratePerHour"
+        case city
     }
 }

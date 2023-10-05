@@ -59,7 +59,8 @@ final class CopyToClipboardTextTests: XCTestCase {
             avatarUrl: nil,
             bio: "",
             rating: 0,
-            pricePerHour: 0
+            pricePerHour: 0,
+            city: "Minsk"
         )
     )
     private var textSavedInClipboard: String? {
