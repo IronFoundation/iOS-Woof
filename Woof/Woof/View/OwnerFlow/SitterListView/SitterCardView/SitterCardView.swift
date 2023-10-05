@@ -13,7 +13,8 @@ struct SitterCardView: View {
                 GeneralInfoSectionView(
                     fullName: viewModel.fullName,
                     rating: viewModel.rating,
-                    price: viewModel.price
+                    price: viewModel.price,
+                    city: viewModel.city
                 )
                 BioSectionView(bio: viewModel.bio)
             }
