@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Update `SitterInfoCardView` to display `city` field - [#49](https://github.com/IronFoundation/iOS-Woof/pull/49)
 - Update `Sitter` model: add a new property `city` - [#46](https://github.com/IronFoundation/iOS-Woof/pull/46)
 - Update`WoofAppEndpoint`: add new case to update sitter - [#48](https://github.com/IronFoundation/iOS-Woof/pull/48)
 

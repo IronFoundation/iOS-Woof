@@ -19,6 +19,9 @@ struct SitterInfoCardView: View {
     /// The price charged by the pet sitter per hour for walking.
     let ratePerHour: String
 
+    /// The city or area where the sitter can work.
+    let city: String
+
     var body: some View {
         VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
             HStack(alignment: .center) {
@@ -38,6 +41,8 @@ struct SitterInfoCardView: View {
 
                     Label(phone, systemImage: .IconName.phone)
                         .lineLimit(linelimitForPhoneNumber)
+                    Label(city, systemImage: .IconName.house)
+                        .lineLimit(linelimitForAddress)
                 }
 
                 Spacer()
@@ -73,6 +78,7 @@ struct SitterInfoCardView: View {
     private let lineLimitForName = 1
     private let lineLimitForSurname = 1
     private let linelimitForPhoneNumber = 1
+    private let linelimitForAddress = 1
     private let linelimitForBio = 10
     private let defaultCurrency = "$"
 }
@@ -86,7 +92,8 @@ struct SitterInfoCardView_Previews: PreviewProvider {
             surname: viewModel.surname,
             phone: viewModel.phone,
             bio: viewModel.bio,
-            ratePerHour: viewModel.pricePerHour
+            ratePerHour: viewModel.pricePerHour,
+            city: viewModel.city
         )
         .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
         .previewDisplayName("iPhone 14 Pro")
