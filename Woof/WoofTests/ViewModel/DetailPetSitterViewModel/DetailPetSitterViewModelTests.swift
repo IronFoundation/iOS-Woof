@@ -9,7 +9,8 @@ final class DetailPetSitterViewModelTests: XCTestCase {
             avatarUrl: nil,
             bio: "Some random text",
             rating: 4.7,
-            pricePerHour: 14
+            pricePerHour: 14,
+            city: "Minsk"
         )
 
         _ = DetailSitterViewModel(sitter: sitter)
@@ -23,7 +24,8 @@ final class DetailPetSitterViewModelTests: XCTestCase {
             avatarUrl: nil,
             bio: "Some random text",
             rating: 4.0,
-            pricePerHour: 14
+            pricePerHour: 14,
+            city: "Minsk"
         )
 
         let viewModel = DetailSitterViewModel(sitter: sitter)

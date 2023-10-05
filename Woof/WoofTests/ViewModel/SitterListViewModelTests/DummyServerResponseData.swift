@@ -13,7 +13,8 @@ enum DummyServerResponseData {
             avatarUrl: nil,
             bio: "",
             rating: 0,
-            pricePerHour: 0
+            pricePerHour: 0,
+            city: ""
         ),
         Sitter(
             id: UUID(uuidString: "ce41d154-d1e3-4d14-9e6a-e30f7220f389")!,
@@ -23,7 +24,8 @@ enum DummyServerResponseData {
             avatarUrl: nil,
             bio: "c",
             rating: 0,
-            pricePerHour: 0
+            pricePerHour: 0,
+            city: ""
         ),
         Sitter(
             id: UUID(uuidString: "731a77bd-b141-4f14-8d42-ca99e736c98d")!,
@@ -33,7 +35,8 @@ enum DummyServerResponseData {
             avatarUrl: nil,
             bio: "Hello",
             rating: 5,
-            pricePerHour: 10.5
+            pricePerHour: 10.5,
+            city: ""
         ),
     ])
 }

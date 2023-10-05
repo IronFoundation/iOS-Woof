@@ -11,7 +11,8 @@ extension Sitter {
             avatarUrl: Bundle.main.url(forResource: "JohnAlisonAvatar", withExtension: "jpg"),
             bio: "Experienced dog lover. Loves taking dogs for long walks in the park.",
             rating: 4.0,
-            pricePerHour: 5.2
+            pricePerHour: 5.2,
+            city: "Dubai"
         )
     }
 }
