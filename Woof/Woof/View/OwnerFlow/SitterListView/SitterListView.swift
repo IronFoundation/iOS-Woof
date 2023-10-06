@@ -8,16 +8,21 @@ struct SitterListView: View {
         Group {
             if viewModel.errorMessage.isEmpty {
                 ScrollView {
-                    if viewModel.sitters.isEmpty {
+                    if viewModel.filteredSitters.isEmpty {
                         Text(noAvailableSittersMessage)
                     }
-                    ForEach(viewModel.sitters) { sitter in
+                    ForEach(viewModel.filteredSitters) { sitter in
                         NavigationLink {
                             DetailPetSitterView(viewModel: DetailSitterViewModel(sitter: sitter))
                         } label: {
                             SitterCardView(viewModel: SitterCardViewModel(sitter: sitter))
                         }
                     }
+                    .searchable(
+                        text: $viewModel.searchText,
+                        placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: searchPlaceholder
+                    )
                 }
                 .padding(AppStyle.UIElementConstant.minPadding)
             } else {
@@ -46,6 +51,7 @@ struct SitterListView: View {
 
     private let tryAgainButtonText = "Try again"
     private let noAvailableSittersMessage = "There are no available sitters right now."
+    private let searchPlaceholder = "City"
 }
 
 struct SitterListView_Previews: PreviewProvider {
