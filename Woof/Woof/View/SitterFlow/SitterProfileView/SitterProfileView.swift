@@ -52,12 +52,6 @@ struct SitterProfileView: View {
                         ratePerHour: viewModel.pricePerHour,
                         city: viewModel.city
                     )
-
-                    if !viewModel.sitterIsSet {
-                        Button(editButtonLabelText) {
-                            viewModel.isEditingMode.toggle()
-                        }
-                    }
                 }
                 .buttonStyle(CapsuleWithWhiteText())
                 .padding()

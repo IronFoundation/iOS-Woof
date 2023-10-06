@@ -73,8 +73,13 @@ final class SitterProfileViewModel: ObservableObject {
         newSitter.pricePerHour = Double(pricePerHour) ?? 0
 
         do {
-            try await upload(newSitter)
-            try await saveLocally(newSitter)
+            if sitterIsSet {
+                try await update(newSitter)
+                try await saveLocally(newSitter)
+            } else {
+                try await upload(newSitter)
+                try await saveLocally(newSitter)
+            }
             currentSitter = newSitter
             isEditingMode = false
         } catch {
@@ -100,6 +105,16 @@ final class SitterProfileViewModel: ObservableObject {
 
     private func upload(_ sitter: Sitter) async throws {
         let endpoint = WoofAppEndpoint.addNewSitter(sitter.asDictionary())
+
+        do {
+            _ = try await NetworkService<WoofAppEndpoint>().request(endpoint)
+        } catch {
+            throw AppError.uploadFailed
+        }
+    }
+
+    private func update(_ sitter: Sitter) async throws {
+        let endpoint = WoofAppEndpoint.updateSitter(sitter.asDictionary())
 
         do {
             _ = try await NetworkService<WoofAppEndpoint>().request(endpoint)
