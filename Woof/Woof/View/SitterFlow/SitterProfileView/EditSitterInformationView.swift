@@ -10,6 +10,7 @@ struct EditSitterInformationView: View {
     private let surnamePlaceholderText = "Enter your surname"
     private let pricePlaceholderText = "Enter your rate per hour in USD ($)"
     private let phonePlaceholderText = "Enter your phone *"
+    private let cityPlaceholderText = "Enter your city or area *"
 
     // MARK: - Internal interface
 
@@ -21,6 +22,9 @@ struct EditSitterInformationView: View {
 
     /// The phone of the sitter.
     @Binding var phone: String
+
+    /// The city or area where the sitter can work.
+    @Binding var city: String
 
     /// The additional information about the sitter, like his experience with dogs, favourite places for walks,
     /// special skills, certificates, etc.
@@ -36,6 +40,7 @@ struct EditSitterInformationView: View {
             TextField(surnamePlaceholderText, text: $surname)
             TextField(phonePlaceholderText, text: $phone)
                 .keyboardType(.phonePad)
+            TextField(cityPlaceholderText, text: $city)
             TextField(pricePlaceholderText, text: $pricePerHour)
                 .keyboardType(.decimalPad)
             TextEditorWithPlaceholder(text: $bio, placeholderText: bioInformationPlaceholderText)
@@ -54,6 +59,7 @@ struct EditSitterInformationView_Previews: PreviewProvider {
         name: .constant("Chuck"),
         surname: .constant("Norris"),
         phone: .constant("527637624567"),
+        city: .constant("New York"),
         bio: .constant("I have three dogs.I live in NY."),
         pricePerHour: .constant("3.2")
     )
@@ -62,6 +68,7 @@ struct EditSitterInformationView_Previews: PreviewProvider {
         name: .constant(""),
         surname: .constant(""),
         phone: .constant(""),
+        city: .constant(""),
         bio: .constant(""),
         pricePerHour: .constant("")
     )
