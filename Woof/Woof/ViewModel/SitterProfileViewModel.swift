@@ -65,7 +65,7 @@ final class SitterProfileViewModel: ObservableObject {
     @MainActor func save() async {
         isSavingData = true
 
-        var newSitter = Sitter()
+        var newSitter = currentSitter ?? Sitter()
         newSitter.name = name
         newSitter.surname = surname
         newSitter.phone = phone
@@ -76,11 +76,10 @@ final class SitterProfileViewModel: ObservableObject {
         do {
             if sitterIsSet {
                 try await update(newSitter)
-                try await saveLocally(newSitter)
             } else {
                 try await upload(newSitter)
-                try await saveLocally(newSitter)
             }
+            try await saveLocally(newSitter)
             currentSitter = newSitter
             isEditingMode = false
         } catch {
