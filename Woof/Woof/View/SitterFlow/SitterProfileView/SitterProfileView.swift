@@ -49,7 +49,8 @@ struct SitterProfileView: View {
                         surname: viewModel.surname,
                         phone: viewModel.phone,
                         bio: viewModel.bio,
-                        ratePerHour: viewModel.pricePerHour
+                        ratePerHour: viewModel.pricePerHour,
+                        city: viewModel.city
                     )
 
                     if !viewModel.sitterIsSet {

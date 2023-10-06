@@ -22,6 +22,9 @@ final class SitterProfileViewModel: ObservableObject {
     /// The price per hour for walking charged by the pet sitter.
     @Published var pricePerHour: String = ""
 
+    /// The city or area where the sitter can work.
+    @Published var city: String = ""
+
     /// Indicating whether an error has occurred during the network operation.
     @Published var isErrorOccurred = false
 
