@@ -36,7 +36,7 @@ final class SitterProfileViewModel: ObservableObject {
 
     /// Indicates if the mandatory fields are empty.
     var mandatoryFieldsAreEmpty: Bool {
-        name.isEmpty || phone.isEmpty
+        name.isEmpty || phone.isEmpty || city.isEmpty
     }
 
     /// Detailed error information for the user.
@@ -69,6 +69,7 @@ final class SitterProfileViewModel: ObservableObject {
         newSitter.name = name
         newSitter.surname = surname
         newSitter.phone = phone
+        newSitter.city = city
         newSitter.bio = bio
         newSitter.pricePerHour = Double(pricePerHour) ?? 0
 
@@ -151,6 +152,7 @@ final class SitterProfileViewModel: ObservableObject {
         name = currentSitter?.name ?? ""
         surname = currentSitter?.surname ?? ""
         phone = currentSitter?.phone ?? ""
+        city = currentSitter?.city ?? ""
         bio = currentSitter?.bio ?? ""
         if let currentSitter {
             pricePerHour = String(currentSitter.pricePerHour)

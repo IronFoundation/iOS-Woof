@@ -12,6 +12,7 @@ struct SitterProfileView: View {
                         name: $viewModel.name,
                         surname: $viewModel.surname,
                         phone: $viewModel.phone,
+                        city: $viewModel.city,
                         bio: $viewModel.bio,
                         pricePerHour: $viewModel.pricePerHour
                     )
