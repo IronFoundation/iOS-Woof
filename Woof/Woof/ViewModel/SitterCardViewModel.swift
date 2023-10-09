@@ -17,6 +17,9 @@ final class SitterCardViewModel: ObservableObject {
     /// The URL of the sitter's avatar image.
     @Published var imageURL: URL?
 
+    /// The city or area where sitter works.
+    @Published var city: String
+
     /// Initializes a new instance of the sitter card view model with the provided sitter.
     ///
     /// - Parameter sitter: The sitter for which the view model is created.
@@ -27,6 +30,7 @@ final class SitterCardViewModel: ObservableObject {
         price = sitter.pricePerHour
         imageURL = sitter.avatarUrl
         bio = sitter.bio
+        city = sitter.city
     }
 
     private var sitter: Sitter

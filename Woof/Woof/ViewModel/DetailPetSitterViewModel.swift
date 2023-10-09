@@ -18,6 +18,9 @@ final class DetailSitterViewModel: ObservableObject {
     /// The URL of the sitter's avatar image.
     @Published var imageURL: URL?
 
+    /// The city or area where sitter works.
+    @Published var city: String
+
     /// Initializes a new instance of the detailed sitter card view model with the provided sitter.
     ///
     /// - Parameter sitter: The sitter for which the detailed view model is created.
@@ -28,6 +31,7 @@ final class DetailSitterViewModel: ObservableObject {
         phoneNumber = sitter.phone
         imageURL = sitter.avatarUrl
         bio = sitter.bio
+        city = sitter.city
     }
 
     /// Copies the text to the clipboard. The copied text is available in the
