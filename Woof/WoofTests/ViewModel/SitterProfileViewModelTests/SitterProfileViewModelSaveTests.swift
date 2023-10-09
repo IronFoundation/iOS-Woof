@@ -6,11 +6,13 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        KeyValueStorage.clearStoredSitterData()
         URLProtocol.registerClass(MockURLProtocol.self)
         viewModel = SitterProfileViewModel()
     }
 
     override func tearDown() {
+        KeyValueStorage.clearStoredSitterData()
         URLProtocol.unregisterClass(MockURLProtocol.self)
         viewModel = nil
         super.tearDown()
@@ -126,5 +128,53 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
 
         // Then
         XCTAssertEqual(requestCount, 1)
+    }
+
+    func testFirstSaveChangesSitterIsSet() async {
+        // Given
+        MockURLProtocol.requestHandler = { request in
+            let response = try XCTUnwrap(
+                HTTPURLResponse(
+                    url: XCTUnwrap(request.url),
+                    statusCode: 200,
+                    httpVersion: nil,
+                    headerFields: nil
+                )
+            )
+            return (response, nil)
+        }
+
+        // When
+        let sitterIsSetBeforeSave = viewModel.sitterIsSet
+        await viewModel.save()
+        let sitterIsSetAfterSave = viewModel.sitterIsSet
+
+        // Then
+        XCTAssertFalse(sitterIsSetBeforeSave)
+        XCTAssertTrue(sitterIsSetAfterSave)
+    }
+
+    func testSecondSaveDoesntChangeSitterIsSet() async {
+        // Given
+        MockURLProtocol.requestHandler = { request in
+            let response = try XCTUnwrap(
+                HTTPURLResponse(
+                    url: XCTUnwrap(request.url),
+                    statusCode: 200,
+                    httpVersion: nil,
+                    headerFields: nil
+                )
+            )
+            return (response, nil)
+        }
+
+        // When
+        await viewModel.save()
+        let sitterIsSetBeforeSecondSave = viewModel.sitterIsSet
+        await viewModel.save()
+        let sitterIsSetAfterSecondSave = viewModel.sitterIsSet
+
+        // Then
+        XCTAssertEqual(sitterIsSetBeforeSecondSave, sitterIsSetAfterSecondSave)
     }
 }

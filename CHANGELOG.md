@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added 
 
 - Add new templates for `epic` issue and `feature request` - [4](https://github.com/IronFoundation/iOS-Woof/pull/4)
-- Add the possibility to redact `Sitter` info about themselves - [52](https://github.com/IronFoundation/iOS-Woof/pull/52)
+- Add the possibility for sitters to update info about themselves - [52](https://github.com/IronFoundation/iOS-Woof/pull/52)
 
 ### Changed
 
