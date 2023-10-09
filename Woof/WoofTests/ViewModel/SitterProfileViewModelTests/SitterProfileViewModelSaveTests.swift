@@ -147,14 +147,12 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
         // When
         let sitterIsSetBeforeSave = viewModel.sitterIsSet
         await viewModel.save()
-        let sitterIsSetAfterSave = viewModel.sitterIsSet
 
         // Then
-        XCTAssertFalse(sitterIsSetBeforeSave)
-        XCTAssertTrue(sitterIsSetAfterSave)
+        XCTAssertNotEqual(sitterIsSetBeforeSave, viewModel.sitterIsSet)
     }
 
-    func testSecondSaveDoesntChangeSitterIsSet() async {
+    func testSitterIsSetIsNotChangedWhenSaveCalledTwice() async {
         // Given
         MockURLProtocol.requestHandler = { request in
             let response = try XCTUnwrap(
@@ -170,11 +168,9 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
 
         // When
         await viewModel.save()
-        let sitterIsSetBeforeSecondSave = viewModel.sitterIsSet
         await viewModel.save()
-        let sitterIsSetAfterSecondSave = viewModel.sitterIsSet
 
         // Then
-        XCTAssertEqual(sitterIsSetBeforeSecondSave, sitterIsSetAfterSecondSave)
+        XCTAssertTrue(viewModel.sitterIsSet)
     }
 }

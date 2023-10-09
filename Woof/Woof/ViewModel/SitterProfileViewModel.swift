@@ -103,11 +103,13 @@ final class SitterProfileViewModel: ObservableObject {
         }
     }
 
+    private let networkService = NetworkService<WoofAppEndpoint>()
+
     private func upload(_ sitter: Sitter) async throws {
         let endpoint = WoofAppEndpoint.addNewSitter(sitter.asDictionary())
 
         do {
-            _ = try await NetworkService<WoofAppEndpoint>().request(endpoint)
+            _ = try await networkService.request(endpoint)
         } catch {
             throw AppError.uploadFailed
         }
@@ -117,7 +119,7 @@ final class SitterProfileViewModel: ObservableObject {
         let endpoint = WoofAppEndpoint.updateSitter(sitter.asDictionary())
 
         do {
-            _ = try await NetworkService<WoofAppEndpoint>().request(endpoint)
+            _ = try await networkService.request(endpoint)
         } catch {
             throw AppError.uploadFailed
         }
