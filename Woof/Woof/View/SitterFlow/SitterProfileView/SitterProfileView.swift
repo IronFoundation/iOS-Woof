@@ -54,10 +54,37 @@ struct SitterProfileView: View {
                         city: viewModel.city
                     )
 
-                    if !viewModel.sitterIsSet {
+                    HStack {
+                        Spacer()
                         Button(editButtonLabelText) {
                             viewModel.isEditingMode.toggle()
                         }
+                        Spacer()
+                        Button(logoutButtonLabelText) {
+                            viewModel.isAlertShown.toggle()
+                        }
+
+                        .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
+                            Button(continueButtonLabelText) {
+                                viewModel.isLogoutConfirmed.toggle()
+                                userRoleViewModel.resetCurrentRole()
+                                dismiss()
+                            }
+                            Button(
+                                cancelButtonLabelText,
+                                role: .cancel
+                            ) { viewModel.isAlertShown.toggle() }
+                        }
+                        .background(
+                            NavigationLink(
+                                "",
+                                destination: LoginView().navigationBarBackButtonHidden(true),
+                                isActive: $viewModel.isLogoutConfirmed
+                            )
+                            .opacity(0)
+                        )
+
+                        Spacer()
                     }
                 }
                 .buttonStyle(CapsuleWithWhiteText())
@@ -101,12 +128,19 @@ struct SitterProfileView: View {
 
     /// View model responsible to manage data from model layer.
     @StateObject private var viewModel = SitterProfileViewModel()
+
+    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
+    @Environment(\.dismiss) private var dismiss
+
     private let cancelButtonLabelText = "Cancel"
     private let saveButtonLabelText = "Save"
     private let editButtonLabelText = "Edit"
     private let tryAgainButtonLabelText = "Try Again"
     private let alertTitle = "Error"
     private let mandatoryPlaceholderText = "Fields with * are mandatory"
+    private let logoutButtonLabelText = "Logout"
+    private let continueButtonLabelText = "Continue"
+    private let alertLogOutTitle = "Do you really want to log out?"
 }
 
 struct SitterProfileView_Previews: PreviewProvider {
