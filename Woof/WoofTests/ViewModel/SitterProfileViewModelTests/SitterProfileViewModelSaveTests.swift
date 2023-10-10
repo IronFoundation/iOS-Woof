@@ -6,7 +6,6 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        KeyValueStorage.clearStoredSitterData()
         URLProtocol.registerClass(MockURLProtocol.self)
         viewModel = SitterProfileViewModel()
     }
@@ -130,7 +129,7 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
         XCTAssertEqual(requestCount, 1)
     }
 
-    func testFirstSaveChangesSitterIsSet() async {
+    func testFirstSavedSitterChangesSitterIsSetPropertyOnTrue() async {
         // Given
         MockURLProtocol.requestHandler = { request in
             let response = try XCTUnwrap(
@@ -152,7 +151,7 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
         XCTAssertNotEqual(sitterIsSetBeforeSave, viewModel.sitterIsSet)
     }
 
-    func testSitterIsSetIsNotChangedWhenSaveCalledTwice() async {
+    func testSitterIsSetIsTrueWhenSaveIsCalledRepeatedly() async {
         // Given
         MockURLProtocol.requestHandler = { request in
             let response = try XCTUnwrap(
