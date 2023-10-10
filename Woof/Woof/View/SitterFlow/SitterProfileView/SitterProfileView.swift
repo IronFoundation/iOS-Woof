@@ -54,10 +54,8 @@ struct SitterProfileView: View {
                         city: viewModel.city
                     )
 
-                    if !viewModel.sitterIsSet {
-                        Button(editButtonLabelText) {
-                            viewModel.isEditingMode.toggle()
-                        }
+                    Button(editButtonLabelText) {
+                        viewModel.isEditingMode.toggle()
                     }
                 }
                 .buttonStyle(CapsuleWithWhiteText())
