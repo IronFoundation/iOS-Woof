@@ -129,7 +129,7 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
         XCTAssertEqual(requestCount, 1)
     }
 
-    func testFirstSavedSitterChangesSitterIsSetPropertyOnTrue() async {
+    func testFirstSavedSitterChangesSitterIsSetPropertyToTrue() async {
         // Given
         MockURLProtocol.requestHandler = { request in
             let response = try XCTUnwrap(
