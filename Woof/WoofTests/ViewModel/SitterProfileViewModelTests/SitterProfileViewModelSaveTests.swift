@@ -142,13 +142,13 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
             )
             return (response, nil)
         }
+        XCTAssertFalse(viewModel.sitterIsSet)
 
         // When
-        let sitterIsSetBeforeSave = viewModel.sitterIsSet
         await viewModel.save()
 
         // Then
-        XCTAssertNotEqual(sitterIsSetBeforeSave, viewModel.sitterIsSet)
+        XCTAssertTrue(viewModel.sitterIsSet)
     }
 
     func testSitterIsSetIsTrueWhenSaveIsCalledRepeatedly() async {
