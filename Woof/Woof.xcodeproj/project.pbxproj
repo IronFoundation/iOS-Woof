@@ -14,6 +14,7 @@
 		1934CC332AB9B79E001D5CB4 /* SitterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1934CC322AB9B79E001D5CB4 /* SitterListViewModelTests.swift */; };
 		1934CC362AB9BC1E001D5CB4 /* DummyServerResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1934CC352AB9BC1E001D5CB4 /* DummyServerResponseData.swift */; };
 		195041602AC0902E00575F45 /* AllSittersResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950415F2AC0902E00575F45 /* AllSittersResponseTests.swift */; };
+		196037B32AD6BB09000B259B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196037B22AD6BB09000B259B /* ContentView.swift */; };
 		199BC09E2A8B73B900824CC6 /* ObfuscatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199BC09D2A8B73B900824CC6 /* ObfuscatorTests.swift */; };
 		199BC0A12A8B748F00824CC6 /* Obfuscator+bytesByObfuscating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199BC0A02A8B748F00824CC6 /* Obfuscator+bytesByObfuscating.swift */; };
 		199BC0A22A8B793400824CC6 /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD790632A45732D007C1265 /* Obfuscator.swift */; };
@@ -192,6 +193,7 @@
 		1934CC322AB9B79E001D5CB4 /* SitterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterListViewModelTests.swift; sourceTree = "<group>"; };
 		1934CC352AB9BC1E001D5CB4 /* DummyServerResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyServerResponseData.swift; sourceTree = "<group>"; };
 		1950415F2AC0902E00575F45 /* AllSittersResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSittersResponseTests.swift; sourceTree = "<group>"; };
+		196037B22AD6BB09000B259B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		199BC09D2A8B73B900824CC6 /* ObfuscatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObfuscatorTests.swift; sourceTree = "<group>"; };
 		199BC0A02A8B748F00824CC6 /* Obfuscator+bytesByObfuscating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Obfuscator+bytesByObfuscating.swift"; sourceTree = "<group>"; };
 		199BC0A92A8CC3E400824CC6 /* ObfuscatorErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObfuscatorErrorTests.swift; sourceTree = "<group>"; };
@@ -881,6 +883,7 @@
 			isa = PBXGroup;
 			children = (
 				FDE0CEA82A00F8370023F784 /* WoofApp.swift */,
+				196037B22AD6BB09000B259B /* ContentView.swift */,
 				FDD538562A41D66800331977 /* NetworkLayer */,
 				FDE0CEBB2A0269280023F784 /* Model */,
 				FDE0CEBA2A02691D0023F784 /* View */,
@@ -1312,6 +1315,7 @@
 			files = (
 				EF5A7F332A14563800585616 /* DetailedPetSitterView.swift in Sources */,
 				9308D6132A31EFE40086193D /* CapsuleWithWhiteText.swift in Sources */,
+				196037B32AD6BB09000B259B /* ContentView.swift in Sources */,
 				368BF0EC2A152FA500F3F750 /* KeyValueStorage.swift in Sources */,
 				FDD143E22A05233B000BBA77 /* String+IconName.swift in Sources */,
 				FDEE43E02A386291007DE0A9 /* UserRoleViewModel.swift in Sources */,

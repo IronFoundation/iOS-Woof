@@ -9,7 +9,7 @@ final class LoginViewModel: ObservableObject {
     /// Returns `true` if the owner role is selected, otherwise `false`.
     ///
     /// The property publishes updates when the value is changed.
-    @Published var isOwnerRoleSelected = false {
+    var isOwnerRoleSelected = false {
         didSet {
             if !isCurrentOwnerExists {
                 saveNewOwner()
@@ -22,7 +22,7 @@ final class LoginViewModel: ObservableObject {
     /// Returns `true` if the sitter role is selected, otherwise `false`.
     ///
     /// The property publishes updates when the value is changed.
-    @Published var isSitterRoleSelected = false
+    var isSitterRoleSelected = false
 
     // MARK: - Private interface
 

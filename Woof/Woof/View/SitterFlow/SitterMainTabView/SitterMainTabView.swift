@@ -34,17 +34,6 @@ struct SitterMainTabView: View {
             .tint(Color.App.purpleDark)
             .navigationTitle(selection.header)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                NavigationLink(
-                    destination: LoginView()
-                        .navigationBarBackButtonHidden(true),
-                    isActive: $viewModel.isLogoutConfirmed
-                ) {
-                    Button(logoutButtonLabelText) {
-                        viewModel.isAlertShown.toggle()
-                    }
-                }
-            }
             .foregroundColor(.App.purpleDark)
 
             .alert(alertTitle, isPresented: $viewModel.isAlertShown) {

@@ -4,6 +4,8 @@ import SwiftUI
 struct SitterProfileView: View {
     // MARK: - Internal interface
 
+    @EnvironmentObject private var userRole: UserRoleViewModel
+
     var body: some View {
         VStack {
             if viewModel.isEditingMode {
@@ -59,7 +61,9 @@ struct SitterProfileView: View {
                         Button(editButtonLabelText) {
                             viewModel.isEditingMode.toggle()
                         }
+
                         Spacer()
+
                         Button(logoutButtonLabelText) {
                             viewModel.isAlertShown.toggle()
                         }
@@ -68,22 +72,12 @@ struct SitterProfileView: View {
                             Button(continueButtonLabelText) {
                                 viewModel.isLogoutConfirmed.toggle()
                                 userRoleViewModel.resetCurrentRole()
-                                dismiss()
                             }
                             Button(
                                 cancelButtonLabelText,
                                 role: .cancel
                             ) { viewModel.isAlertShown.toggle() }
                         }
-                        .background(
-                            NavigationLink(
-                                "",
-                                destination: LoginView().navigationBarBackButtonHidden(true),
-                                isActive: $viewModel.isLogoutConfirmed
-                            )
-                            .opacity(0)
-                        )
-
                         Spacer()
                     }
                 }
