@@ -35,18 +35,6 @@ struct SitterMainTabView: View {
             .navigationTitle(selection.header)
             .navigationBarTitleDisplayMode(.inline)
             .foregroundColor(.App.purpleDark)
-
-            .alert(alertTitle, isPresented: $viewModel.isAlertShown) {
-                Button(continueButtonLabelText) {
-                    viewModel.isLogoutConfirmed.toggle()
-                    userRoleViewModel.resetCurrentRole()
-                    dismiss()
-                }
-                Button(
-                    cancelButtonLabelText,
-                    role: .cancel
-                ) { viewModel.isAlertShown.toggle() }
-            }
         }
     }
 
@@ -54,14 +42,6 @@ struct SitterMainTabView: View {
 
     @StateObject private var viewModel = SitterMainTabViewModel()
     @State private var selection: Tab = .schedule
-
-    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
-    @Environment(\.dismiss) private var dismiss
-
-    private let logoutButtonLabelText = "Logout"
-    private let continueButtonLabelText = "Continue"
-    private let cancelButtonLabelText = "Cancel"
-    private let alertTitle = "Do you really want to log out?"
 
     private func customizeTabBar() {
         let tabBarAppearance = UITabBar.appearance()

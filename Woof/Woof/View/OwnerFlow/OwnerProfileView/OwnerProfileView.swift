@@ -11,37 +11,81 @@ struct OwnerProfileView: View {
     var body: some View {
         VStack {
             if isEditingMode {
-                EditOwnerInformationView(
-                    name: $viewModel.name,
-                    surname: $viewModel.surname,
-                    phone: $viewModel.phone,
-                    address: $viewModel.address
-                )
+                VStack {
+                    EditOwnerInformationView(
+                        name: $viewModel.name,
+                        surname: $viewModel.surname,
+                        phone: $viewModel.phone,
+                        address: $viewModel.address
+                    )
+
+                    HStack {
+                        Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
+                            if isEditingMode {
+                                viewModel.save()
+                            }
+                            isEditingMode.toggle()
+                        }
+                    }
+                }
+                .padding()
+                .buttonStyle(CapsuleWithWhiteText())
+                .background(Color.App.purpleLight)
+                .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+
             } else {
-                OwnerCardView(
-                    name: viewModel.name,
-                    surname: viewModel.surname,
-                    phone: viewModel.phone,
-                    address: viewModel.address,
-                    avatarUrl: viewModel.avatarURL
-                )
+                VStack {
+                    OwnerCardView(
+                        name: viewModel.name,
+                        surname: viewModel.surname,
+                        phone: viewModel.phone,
+                        address: viewModel.address,
+                        avatarUrl: viewModel.avatarURL
+                    )
+
+                    HStack {
+                        Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
+                            if isEditingMode {
+                                viewModel.save()
+                            }
+                            isEditingMode.toggle()
+                        }
+
+                        Button(logoutButtonLabelText) {
+                            viewModel.isAlertShown.toggle()
+                        }
+
+                        .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
+                            Button(continueButtonLabelText) {
+                                viewModel.isLogoutConfirmed.toggle()
+                                userRoleViewModel.resetCurrentRole()
+                            }
+                            Button(
+                                cancelButtonLabelText,
+                                role: .cancel
+                            ) { viewModel.isAlertShown.toggle() }
+                        }
+                    }
+                }
+                .padding()
+                .buttonStyle(CapsuleWithWhiteText())
+                .background(Color.App.purpleLight)
+                .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
             }
+
             Spacer()
         }
         .padding(.horizontal)
-        .overlay(alignment: .topTrailing) {
-            Button(isEditingMode ? "Save" : "Edit") {
-                if isEditingMode {
-                    viewModel.save()
-                }
-                isEditingMode.toggle()
-            }
-            .buttonStyle(CapsuleWithWhiteText())
-            .padding()
-            .padding(.horizontal)
-            .disabled(isEditingMode && viewModel.name.isEmpty)
-        }
     }
+
+    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
+
+    private let alertLogOutTitle = "Do you really want to log out?"
+    private let cancelButtonLabelText = "Cancel"
+    private let continueButtonLabelText = "Continue"
+    private let saveButtonLabelText = "Save"
+    private let editButtonLabelText = "Edit"
+    private let logoutButtonLabelText = "Logout"
 }
 
 struct OwnerProfileView_Previews: PreviewProvider {

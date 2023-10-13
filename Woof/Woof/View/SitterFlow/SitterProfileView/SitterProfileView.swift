@@ -58,6 +58,7 @@ struct SitterProfileView: View {
 
                     HStack {
                         Spacer()
+
                         Button(editButtonLabelText) {
                             viewModel.isEditingMode.toggle()
                         }
@@ -78,6 +79,7 @@ struct SitterProfileView: View {
                                 role: .cancel
                             ) { viewModel.isAlertShown.toggle() }
                         }
+
                         Spacer()
                     }
                 }
