@@ -7,6 +7,7 @@ enum APIEnvironment: CaseIterable {
     /// The staging environment for testing and development purposes.
     case staging
 
+    /// The base URL used for specified environment.
     var baseURL: URL {
         switch self {
         case .production:

@@ -6,13 +6,12 @@ extension WoofAppEndpoint: HTTPAPIEndpoint {
     // MARK: - Internal interface
 
     typealias Environment = APIEnvironment
-    
+
     #if DEBUG
         static var networkEnvironment = Environment.staging
     #else
         static var networkEnvironment = Environment.production
     #endif
-
 
     var baseURL: URL {
         Self.networkEnvironment.baseURL

@@ -34,9 +34,9 @@ final class SitterListViewModelTests: XCTestCase {
 
         // When
         await viewModel.fetchSitters()
-
+        let sitters = Set(viewModel.sitters)
         // Then
-        XCTAssertEqual(Set(viewModel.sitters), DummyServerResponseData.sitters)
+        XCTAssertEqual(sitters, DummyServerResponseData.sitters)
     }
 
     func testViewModelStoresInitialValueWhenResponseFromServerHasNoSittersData() async throws {
