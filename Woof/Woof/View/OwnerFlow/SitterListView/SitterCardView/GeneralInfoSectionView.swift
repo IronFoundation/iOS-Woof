@@ -10,13 +10,19 @@ struct GeneralInfoSectionView: View {
     /// The price associated with the person.
     let price: Double
 
+    /// The city or area where the person works.
+    let city: String
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 Text(fullName)
                     .bold()
                     .lineLimit(1)
-                FiveStarRatingView(stars: rating)
+                Text(city)
+                    .font(Font.system(size: AppStyle.FontStyle.footnote.size))
+                    .bold()
+                    .foregroundColor(.App.purpleDark)
             }
             Spacer()
             VStack {
@@ -36,7 +42,8 @@ struct GeneralInfoView_Previews: PreviewProvider {
         GeneralInfoSectionView(
             fullName: "Kate Anderson",
             rating: .unavailable,
-            price: 18.78
+            price: 18.78,
+            city: "Minsk"
         )
     }
 }

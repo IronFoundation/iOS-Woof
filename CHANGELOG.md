@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added 
 
 - Add new templates for `epic` issue and `feature request` - [4](https://github.com/IronFoundation/iOS-Woof/pull/4)
+- Add the possibility for sitters to update info about themselves - [52](https://github.com/IronFoundation/iOS-Woof/pull/52)
 
 ### Changed
 
@@ -16,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Update `SitterInfoCardView` to display `city` field - [#49](https://github.com/IronFoundation/iOS-Woof/pull/49)
 - Update `Sitter` model: add a new property `city` - [#46](https://github.com/IronFoundation/iOS-Woof/pull/46)
 - Update`WoofAppEndpoint`: add new case to update sitter - [#48](https://github.com/IronFoundation/iOS-Woof/pull/48)
+- Update `GeneralInfoSectionView` and `DetailPetSitterView` to display city info for owner flow - [#51](https://github.com/IronFoundation/iOS-Woof/pull/51)
 
 ### Fixed 
 

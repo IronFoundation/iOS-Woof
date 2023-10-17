@@ -33,6 +33,11 @@ struct DetailPetSitterView: View {
                 }
             }
 
+            TextWithIconLabelView(
+                iconName: .IconName.house,
+                text: viewModel.city
+            )
+
             Text(viewModel.bio)
             Spacer()
         }
