@@ -9,39 +9,33 @@ struct SitterMainTabView: View {
     }
 
     var body: some View {
-        NavigationView {
-            TabView(selection: $selection) {
-                Group {
-                    Text("My schedule")
-                        .tabItem {
-                            Label("Schedule", systemImage: .IconName.scheduleTab)
-                        }
-                        .tag(Tab.schedule)
-
-                    Text("Walkings")
-                        .tabItem {
-                            Label("Walkings", systemImage: .IconName.walkingsTab)
-                        }
-                        .tag(Tab.walkings)
-
-                    SitterProfileView()
-                        .tabItem {
-                            Label("Profile", systemImage: .IconName.profileTab)
-                        }
-                        .tag(Tab.profile)
+        TabView {
+            ScheduleView()
+                .tabItem {
+                    Label(scheduleLabel, systemImage: .IconName.scheduleTab)
                 }
-            }
-            .tint(Color.App.purpleDark)
-            .navigationTitle(selection.header)
-            .navigationBarTitleDisplayMode(.inline)
-            .foregroundColor(.App.purpleDark)
+
+            SitterWalkingsView()
+                .tabItem {
+                    Label(walkingsLabel, systemImage: .IconName.walkingsTab)
+                }
+
+            SitterProfileView()
+                .tabItem {
+                    Label(profileLabel, systemImage: .IconName.profileTab)
+                }
         }
+        .tint(Color.App.purpleDark)
+        .foregroundColor(.App.purpleDark)
     }
 
     // MARK: - Private interface
 
     @StateObject private var viewModel = SitterMainTabViewModel()
-    @State private var selection: Tab = .schedule
+
+    private let scheduleLabel = "Schedule"
+    private let walkingsLabel = "Walkings"
+    private let profileLabel = "Profile"
 
     private func customizeTabBar() {
         let tabBarAppearance = UITabBar.appearance()

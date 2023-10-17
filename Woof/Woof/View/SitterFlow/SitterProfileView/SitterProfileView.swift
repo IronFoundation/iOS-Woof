@@ -56,31 +56,8 @@ struct SitterProfileView: View {
                         city: viewModel.city
                     )
 
-                    HStack {
-                        Spacer()
-
-                        Button(editButtonLabelText) {
-                            viewModel.isEditingMode.toggle()
-                        }
-
-                        Spacer()
-
-                        Button(logoutButtonLabelText) {
-                            viewModel.isAlertShown.toggle()
-                        }
-
-                        .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
-                            Button(continueButtonLabelText) {
-                                viewModel.isLogoutConfirmed.toggle()
-                                userRoleViewModel.resetCurrentRole()
-                            }
-                            Button(
-                                cancelButtonLabelText,
-                                role: .cancel
-                            ) { viewModel.isAlertShown.toggle() }
-                        }
-
-                        Spacer()
+                    Button(editButtonLabelText) {
+                        viewModel.isEditingMode.toggle()
                     }
                 }
                 .buttonStyle(CapsuleWithWhiteText())
@@ -118,6 +95,23 @@ struct SitterProfileView: View {
                 Text(viewModel.errorMessage)
             }
         )
+        .navigationTitle("My profile")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Button(logoutButtonLabelText) {
+                viewModel.isAlertShown.toggle()
+            }
+            .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
+                Button(continueButtonLabelText) {
+                    viewModel.isLogoutConfirmed.toggle()
+                    userRoleViewModel.resetCurrentRole()
+                }
+                Button(
+                    cancelButtonLabelText,
+                    role: .cancel
+                ) { viewModel.isAlertShown.toggle() }
+            }
+        }
     }
 
     // MARK: - Private interface
