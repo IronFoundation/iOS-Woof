@@ -81,7 +81,7 @@ struct OwnerProfileView: View {
 
     private let alertLogOutTitle = "Do you really want to log out?"
     private let navigationTitle = "My profile"
-    
+
     private let cancelButtonLabelText = "Cancel"
     private let continueButtonLabelText = "Continue"
     private let saveButtonLabelText = "Save"

@@ -4,8 +4,6 @@ import SwiftUI
 struct SitterProfileView: View {
     // MARK: - Internal interface
 
-    @EnvironmentObject private var userRole: UserRoleViewModel
-
     var body: some View {
         NavigationView {
             VStack {
