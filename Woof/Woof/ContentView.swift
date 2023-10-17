@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// A root view for the app .
 struct ContentView: View {
     @StateObject var userRoleVM = UserRoleViewModel()
 

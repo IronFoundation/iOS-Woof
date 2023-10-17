@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// A view displaying information about the pet walkings.
 struct SitterWalkingsView: View {
     var body: some View {
         NavigationView {

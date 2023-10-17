@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// A view displaying information about the sitter's schedule.
 struct ScheduleView: View {
     var body: some View {
         NavigationView {
