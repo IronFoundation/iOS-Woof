@@ -9,73 +9,82 @@ struct OwnerProfileView: View {
     @State private var isEditingMode = false
 
     var body: some View {
-        VStack {
-            if isEditingMode {
-                VStack {
-                    EditOwnerInformationView(
-                        name: $viewModel.name,
-                        surname: $viewModel.surname,
-                        phone: $viewModel.phone,
-                        address: $viewModel.address
-                    )
+        NavigationView {
+            VStack {
+                if isEditingMode {
+                    VStack {
+                        EditOwnerInformationView(
+                            name: $viewModel.name,
+                            surname: $viewModel.surname,
+                            phone: $viewModel.phone,
+                            address: $viewModel.address
+                        )
 
-                    HStack {
-                        Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
-                            if isEditingMode {
-                                viewModel.save()
+                        HStack {
+                            Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
+                                if isEditingMode {
+                                    viewModel.save()
+                                }
+                                isEditingMode.toggle()
                             }
-                            isEditingMode.toggle()
                         }
                     }
-                }
-                .padding()
-                .buttonStyle(CapsuleWithWhiteText())
-                .background(Color.App.purpleLight)
-                .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+                    .padding()
+                    .buttonStyle(CapsuleWithWhiteText())
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
 
-            } else {
-                VStack {
-                    OwnerCardView(
-                        name: viewModel.name,
-                        surname: viewModel.surname,
-                        phone: viewModel.phone,
-                        address: viewModel.address,
-                        avatarUrl: viewModel.avatarURL
-                    )
+                } else {
+                    VStack {
+                        OwnerCardView(
+                            name: viewModel.name,
+                            surname: viewModel.surname,
+                            phone: viewModel.phone,
+                            address: viewModel.address,
+                            avatarUrl: viewModel.avatarURL
+                        )
 
-                    HStack {
-                        Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
-                            if isEditingMode {
-                                viewModel.save()
+                        HStack {
+                            Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
+                                if isEditingMode {
+                                    viewModel.save()
+                                }
+                                isEditingMode.toggle()
                             }
-                            isEditingMode.toggle()
-                        }
 
-                        Button(logoutButtonLabelText) {
-                            viewModel.isAlertShown.toggle()
-                        }
-
-                        .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
-                            Button(continueButtonLabelText) {
-                                viewModel.isLogoutConfirmed.toggle()
-                                userRoleViewModel.resetCurrentRole()
+                            //                            Button(logoutButtonLabelText) {
+                            //                                viewModel.isAlertShown.toggle()
+                            //                            }
+                            //
+                            .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
+                                Button(continueButtonLabelText) {
+                                    viewModel.isLogoutConfirmed.toggle()
+                                    userRoleViewModel.resetCurrentRole()
+                                }
+                                Button(
+                                    cancelButtonLabelText,
+                                    role: .cancel
+                                ) { viewModel.isAlertShown.toggle() }
                             }
-                            Button(
-                                cancelButtonLabelText,
-                                role: .cancel
-                            ) { viewModel.isAlertShown.toggle() }
                         }
                     }
+                    .padding()
+                    .buttonStyle(CapsuleWithWhiteText())
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
                 }
-                .padding()
-                .buttonStyle(CapsuleWithWhiteText())
-                .background(Color.App.purpleLight)
-                .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+
+                Spacer()
             }
-
-            Spacer()
+            .padding(.horizontal)
+            .navigationTitle("My profile")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button(logoutButtonLabelText) {
+                    viewModel.isAlertShown.toggle()
+                }
+            }
         }
-        .padding(.horizontal)
     }
 
     @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
