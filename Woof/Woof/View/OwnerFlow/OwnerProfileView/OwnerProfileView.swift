@@ -20,20 +20,17 @@ struct OwnerProfileView: View {
                             address: $viewModel.address
                         )
 
-                        HStack {
-                            Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
-                                if isEditingMode {
-                                    viewModel.save()
-                                }
-                                isEditingMode.toggle()
+                        Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
+                            if isEditingMode {
+                                viewModel.save()
                             }
+                            isEditingMode.toggle()
                         }
                     }
                     .padding()
                     .buttonStyle(CapsuleWithWhiteText())
                     .background(Color.App.purpleLight)
                     .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
-
                 } else {
                     VStack {
                         OwnerCardView(
@@ -44,28 +41,11 @@ struct OwnerProfileView: View {
                             avatarUrl: viewModel.avatarURL
                         )
 
-                        HStack {
-                            Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
-                                if isEditingMode {
-                                    viewModel.save()
-                                }
-                                isEditingMode.toggle()
+                        Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
+                            if isEditingMode {
+                                viewModel.save()
                             }
-
-                            //                            Button(logoutButtonLabelText) {
-                            //                                viewModel.isAlertShown.toggle()
-                            //                            }
-                            //
-                            .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
-                                Button(continueButtonLabelText) {
-                                    viewModel.isLogoutConfirmed.toggle()
-                                    userRoleViewModel.resetCurrentRole()
-                                }
-                                Button(
-                                    cancelButtonLabelText,
-                                    role: .cancel
-                                ) { viewModel.isAlertShown.toggle() }
-                            }
+                            isEditingMode.toggle()
                         }
                     }
                     .padding()
@@ -77,12 +57,22 @@ struct OwnerProfileView: View {
                 Spacer()
             }
             .padding(.horizontal)
-            .navigationTitle("My profile")
+            .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button(logoutButtonLabelText) {
                     viewModel.isAlertShown.toggle()
                 }
+            }
+            .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
+                Button(continueButtonLabelText) {
+                    viewModel.isLogoutConfirmed.toggle()
+                    userRoleViewModel.resetCurrentRole()
+                }
+                Button(
+                    cancelButtonLabelText,
+                    role: .cancel
+                ) { viewModel.isAlertShown.toggle() }
             }
         }
     }
@@ -90,6 +80,8 @@ struct OwnerProfileView: View {
     @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
 
     private let alertLogOutTitle = "Do you really want to log out?"
+    private let navigationTitle = "My profile"
+    
     private let cancelButtonLabelText = "Cancel"
     private let continueButtonLabelText = "Continue"
     private let saveButtonLabelText = "Save"
