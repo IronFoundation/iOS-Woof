@@ -7,109 +7,109 @@ struct SitterProfileView: View {
     @EnvironmentObject private var userRole: UserRoleViewModel
 
     var body: some View {
-        VStack {
-            if viewModel.isEditingMode {
-                VStack {
-                    EditSitterInformationView(
-                        name: $viewModel.name,
-                        surname: $viewModel.surname,
-                        phone: $viewModel.phone,
-                        city: $viewModel.city,
-                        bio: $viewModel.bio,
-                        pricePerHour: $viewModel.pricePerHour
-                    )
+        NavigationView {
+            VStack {
+                if viewModel.isEditingMode {
+                    VStack {
+                        EditSitterInformationView(
+                            name: $viewModel.name,
+                            surname: $viewModel.surname,
+                            phone: $viewModel.phone,
+                            city: $viewModel.city,
+                            bio: $viewModel.bio,
+                            pricePerHour: $viewModel.pricePerHour
+                        )
 
-                    if viewModel.mandatoryFieldsAreEmpty {
-                        Text(mandatoryPlaceholderText)
-                            .padding(.vertical)
-                            .font(.system(.footnote))
-                    }
-
-                    HStack {
-                        Button(cancelButtonLabelText) {
-                            viewModel.cancelEditing()
+                        if viewModel.mandatoryFieldsAreEmpty {
+                            Text(mandatoryPlaceholderText)
+                                .padding(.vertical)
+                                .font(.system(.footnote))
                         }
 
-                        Spacer()
-
-                        Button(saveButtonLabelText) {
-                            Task {
-                                await viewModel.save()
+                        HStack {
+                            Button(cancelButtonLabelText) {
+                                viewModel.cancelEditing()
                             }
+
+                            Spacer()
+
+                            Button(saveButtonLabelText) {
+                                Task {
+                                    await viewModel.save()
+                                }
+                            }
+                            .disabled(viewModel.mandatoryFieldsAreEmpty)
                         }
-                        .disabled(viewModel.mandatoryFieldsAreEmpty)
+                    }
+                    .padding()
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+                } else {
+                    VStack {
+                        SitterInfoCardView(
+                            name: viewModel.name,
+                            surname: viewModel.surname,
+                            phone: viewModel.phone,
+                            bio: viewModel.bio,
+                            ratePerHour: viewModel.pricePerHour,
+                            city: viewModel.city
+                        )
+
+                        Button(editButtonLabelText) {
+                            viewModel.isEditingMode.toggle()
+                        }
+                    }
+                    .padding()
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+                }
+
+                Spacer()
+            }
+            .padding(.horizontal)
+            .buttonStyle(CapsuleWithWhiteText())
+            .overlay(
+                Group {
+                    if viewModel.isSavingData {
+                        Color.white.opacity(AppStyle.UIElementConstant.opacityLevelForProgressViewBackground)
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
                     }
                 }
-                .padding()
-                .buttonStyle(CapsuleWithWhiteText())
-                .background(Color.App.purpleLight)
-                .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
-
-            } else {
-                VStack {
-                    SitterInfoCardView(
-                        name: viewModel.name,
-                        surname: viewModel.surname,
-                        phone: viewModel.phone,
-                        bio: viewModel.bio,
-                        ratePerHour: viewModel.pricePerHour,
-                        city: viewModel.city
-                    )
-
-                    Button(editButtonLabelText) {
-                        viewModel.isEditingMode.toggle()
+            )
+            .alert(
+                alertTitle,
+                isPresented: $viewModel.isErrorOccurred,
+                actions: {
+                    Button(cancelButtonLabelText) {
+                        viewModel.cancelEditing()
                     }
-                }
-                .buttonStyle(CapsuleWithWhiteText())
-                .padding()
-                .background(Color.App.purpleLight)
-                .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
-            }
-
-            Spacer()
-        }
-        .padding(.horizontal)
-        .overlay(
-            Group {
-                if viewModel.isSavingData {
-                    Color.white.opacity(AppStyle.UIElementConstant.opacityLevelForProgressViewBackground)
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                }
-            }
-        )
-        .alert(
-            alertTitle,
-            isPresented: $viewModel.isErrorOccurred,
-            actions: {
-                Button(cancelButtonLabelText) {
-                    viewModel.cancelEditing()
-                }
-                Button(tryAgainButtonLabelText) {
-                    Task {
-                        await viewModel.save()
+                    Button(tryAgainButtonLabelText) {
+                        Task {
+                            await viewModel.save()
+                        }
                     }
+                },
+                message: {
+                    Text(viewModel.errorMessage)
                 }
-            },
-            message: {
-                Text(viewModel.errorMessage)
-            }
-        )
-        .navigationTitle("My profile")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            Button(logoutButtonLabelText) {
-                viewModel.isAlertShown.toggle()
-            }
-            .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
-                Button(continueButtonLabelText) {
-                    viewModel.isLogoutConfirmed.toggle()
-                    userRoleViewModel.resetCurrentRole()
+            )
+            .navigationTitle(navigationTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button(logoutButtonLabelText) {
+                    viewModel.isAlertShown.toggle()
                 }
-                Button(
-                    cancelButtonLabelText,
-                    role: .cancel
-                ) { viewModel.isAlertShown.toggle() }
+                .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
+                    Button(continueButtonLabelText) {
+                        viewModel.isLogoutConfirmed.toggle()
+                        userRoleViewModel.resetCurrentRole()
+                    }
+                    Button(
+                        cancelButtonLabelText,
+                        role: .cancel
+                    ) { viewModel.isAlertShown.toggle() }
+                }
             }
         }
     }
@@ -126,11 +126,14 @@ struct SitterProfileView: View {
     private let saveButtonLabelText = "Save"
     private let editButtonLabelText = "Edit"
     private let tryAgainButtonLabelText = "Try Again"
-    private let alertTitle = "Error"
-    private let mandatoryPlaceholderText = "Fields with * are mandatory"
     private let logoutButtonLabelText = "Logout"
     private let continueButtonLabelText = "Continue"
+
+    private let alertTitle = "Error"
     private let alertLogOutTitle = "Do you really want to log out?"
+    private let navigationTitle = "My profile"
+
+    private let mandatoryPlaceholderText = "Fields with * are mandatory"
 }
 
 struct SitterProfileView_Previews: PreviewProvider {
