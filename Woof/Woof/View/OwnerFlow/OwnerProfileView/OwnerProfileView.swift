@@ -20,10 +20,8 @@ struct OwnerProfileView: View {
                             address: $viewModel.address
                         )
 
-                        Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
-                            if isEditingMode {
-                                viewModel.save()
-                            }
+                        Button(saveButtonLabelText) {
+                            viewModel.save()
                             isEditingMode.toggle()
                         }
                     }
@@ -41,10 +39,7 @@ struct OwnerProfileView: View {
                             avatarUrl: viewModel.avatarURL
                         )
 
-                        Button(isEditingMode ? saveButtonLabelText : editButtonLabelText) {
-                            if isEditingMode {
-                                viewModel.save()
-                            }
+                        Button(editButtonLabelText) {
                             isEditingMode.toggle()
                         }
                     }
@@ -57,6 +52,7 @@ struct OwnerProfileView: View {
                 Spacer()
             }
             .padding(.horizontal)
+            .disabled(isEditingMode && viewModel.name.isEmpty)
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
