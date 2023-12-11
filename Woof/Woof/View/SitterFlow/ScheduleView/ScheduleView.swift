@@ -9,7 +9,7 @@ struct ScheduleView: View {
                 .navigationBarTitleDisplayMode(.inline)
         }
     }
-    
+
     // MARK: - Private interface
 
     private let navigationTitle = "My Schedule"
