@@ -1,8 +1,8 @@
 import SwiftUI
 
-/// A root view for the app .
+/// A root view for the app.
 struct ContentView: View {
-    @StateObject var userRoleVM = UserRoleViewModel()
+    @StateObject private var userRoleVM = UserRoleViewModel()
 
     var body: some View {
         switch userRoleVM.userRole {

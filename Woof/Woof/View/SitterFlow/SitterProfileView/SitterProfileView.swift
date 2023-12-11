@@ -118,7 +118,6 @@ struct SitterProfileView: View {
     @StateObject private var viewModel = SitterProfileViewModel()
 
     @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
-    @Environment(\.dismiss) private var dismiss
 
     private let cancelButtonLabelText = "Cancel"
     private let saveButtonLabelText = "Save"

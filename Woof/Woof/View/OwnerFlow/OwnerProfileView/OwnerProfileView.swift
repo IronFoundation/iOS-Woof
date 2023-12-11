@@ -24,6 +24,7 @@ struct OwnerProfileView: View {
                             viewModel.save()
                             isEditingMode.toggle()
                         }
+                        .disabled(isEditingMode && viewModel.name.isEmpty)
                     }
                     .padding()
                     .buttonStyle(CapsuleWithWhiteText())
@@ -52,7 +53,6 @@ struct OwnerProfileView: View {
                 Spacer()
             }
             .padding(.horizontal)
-            .disabled(isEditingMode && viewModel.name.isEmpty)
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -72,6 +72,8 @@ struct OwnerProfileView: View {
             }
         }
     }
+
+    // MARK: - Private interface
 
     @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
 

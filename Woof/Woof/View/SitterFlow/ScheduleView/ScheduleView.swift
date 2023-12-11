@@ -4,11 +4,15 @@ import SwiftUI
 struct ScheduleView: View {
     var body: some View {
         NavigationView {
-            Text("My schedule")
-                .navigationTitle("My Schedule")
+            Text(navigationTitle)
+                .navigationTitle(navigationTitle)
                 .navigationBarTitleDisplayMode(.inline)
         }
     }
+    
+    // MARK: - Private interface
+
+    private let navigationTitle = "My Schedule"
 }
 
 struct ScheduleView_Previews: PreviewProvider {

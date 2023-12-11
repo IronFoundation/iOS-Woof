@@ -4,11 +4,16 @@ import SwiftUI
 struct OwnerWalkingsView: View {
     var body: some View {
         NavigationView {
-            Text("Walkings stub")
-                .navigationTitle("Walkings")
+            Text(walkingsStubTitle)
+                .navigationTitle(navigationTitle)
                 .navigationBarTitleDisplayMode(.inline)
         }
     }
+
+    // MARK: - Private interface
+
+    private let walkingsStubTitle = "Walkings stub"
+    private let navigationTitle = "Walkings"
 }
 
 struct OwnerWalkingsView_Previews: PreviewProvider {

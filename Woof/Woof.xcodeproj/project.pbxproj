@@ -137,7 +137,6 @@
 		FD577CC72ADE60B20045705A /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC62ADE60B20045705A /* ScheduleView.swift */; };
 		FD577CCA2ADE610E0045705A /* SitterWalkingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */; };
 		FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */; };
-		FD6A2E5F2A2EF6C200934C3E /* SitterMainTabView+Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E5E2A2EF6C200934C3E /* SitterMainTabView+Tab.swift */; };
 		FD6A2E612A2F067E00934C3E /* KeyValueStorage+KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */; };
 		FD6A2E632A2F072F00934C3E /* KeyValueStorage+NameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */; };
 		FD7F989D2A0E04650058DBEB /* SitterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F989C2A0E04650058DBEB /* SitterCardView.swift */; };
@@ -153,7 +152,6 @@
 		FDCF49142A1CDB1600CD3BBB /* DetailPetSitterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A7F2E2A14504F00585616 /* DetailPetSitterViewModel.swift */; };
 		FDD143C72A03BD48000BBA77 /* OwnerMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143C62A03BD48000BBA77 /* OwnerMainTabView.swift */; };
 		FDD143CB2A03C629000BBA77 /* Color+AppScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143CA2A03C629000BBA77 /* Color+AppScheme.swift */; };
-		FDD143E02A051F96000BBA77 /* OwnerMainTabView+Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143DF2A051F96000BBA77 /* OwnerMainTabView+Tab.swift */; };
 		FDD143E22A05233B000BBA77 /* String+IconName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143E12A05233B000BBA77 /* String+IconName.swift */; };
 		FDD143F72A052A11000BBA77 /* Color+AppSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143F62A052A11000BBA77 /* Color+AppSchemeTests.swift */; };
 		FDD143FE2A052D5A000BBA77 /* Color+AppScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143CA2A03C629000BBA77 /* Color+AppScheme.swift */; };
@@ -287,7 +285,6 @@
 		FD577CC62ADE60B20045705A /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingsView.swift; sourceTree = "<group>"; };
 		FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterMainTabView.swift; sourceTree = "<group>"; };
-		FD6A2E5E2A2EF6C200934C3E /* SitterMainTabView+Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SitterMainTabView+Tab.swift"; sourceTree = "<group>"; };
 		FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+KeyTests.swift"; sourceTree = "<group>"; };
 		FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+NameTests.swift"; sourceTree = "<group>"; };
 		FD7F989C2A0E04650058DBEB /* SitterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterCardView.swift; sourceTree = "<group>"; };
@@ -303,7 +300,6 @@
 		FDD143C62A03BD48000BBA77 /* OwnerMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMainTabView.swift; sourceTree = "<group>"; };
 		FDD143CA2A03C629000BBA77 /* Color+AppScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppScheme.swift"; sourceTree = "<group>"; };
 		FDD143CC2A03E575000BBA77 /* Sitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sitter.swift; sourceTree = "<group>"; };
-		FDD143DF2A051F96000BBA77 /* OwnerMainTabView+Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OwnerMainTabView+Tab.swift"; sourceTree = "<group>"; };
 		FDD143E12A05233B000BBA77 /* String+IconName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IconName.swift"; sourceTree = "<group>"; };
 		FDD143F42A052A11000BBA77 /* WoofTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoofTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD143F62A052A11000BBA77 /* Color+AppSchemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppSchemeTests.swift"; sourceTree = "<group>"; };
@@ -785,7 +781,6 @@
 			isa = PBXGroup;
 			children = (
 				FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */,
-				FD6A2E5E2A2EF6C200934C3E /* SitterMainTabView+Tab.swift */,
 			);
 			path = SitterMainTabView;
 			sourceTree = "<group>";
@@ -794,7 +789,6 @@
 			isa = PBXGroup;
 			children = (
 				FDD143C62A03BD48000BBA77 /* OwnerMainTabView.swift */,
-				FDD143DF2A051F96000BBA77 /* OwnerMainTabView+Tab.swift */,
 			);
 			path = OwnerMainTabView;
 			sourceTree = "<group>";
@@ -1396,7 +1390,6 @@
 				BAE74E922A42E1DD0083C68E /* SitterProfileView.swift in Sources */,
 				BA4561812A334A8A00C6E595 /* Stars.swift in Sources */,
 				FD3303582AA9BDA40091A4BA /* WoofAppEndpoint+Path.swift in Sources */,
-				FDD143E02A051F96000BBA77 /* OwnerMainTabView+Tab.swift in Sources */,
 				FD1FA3C32A0A682E000A3A91 /* SitterCardViewModel.swift in Sources */,
 				FD577CCA2ADE610E0045705A /* SitterWalkingsView.swift in Sources */,
 				36C06F5A2A2F5AA600B8EBDF /* PreferencesHandler.swift in Sources */,
@@ -1407,7 +1400,6 @@
 				3673D6372A04F7FD009D699D /* Owner.swift in Sources */,
 				1912607B2AC08C9300F43D94 /* AllSittersResponse.swift in Sources */,
 				FD7F98A32A0E10510058DBEB /* AppStyle+UIElementConstant.swift in Sources */,
-				FD6A2E5F2A2EF6C200934C3E /* SitterMainTabView+Tab.swift in Sources */,
 				FDDDA6882A25C3FE00839091 /* EditOwnerInformationView.swift in Sources */,
 				EF16BB1E2A24D5FA007922C6 /* OwnerCardView.swift in Sources */,
 				36FA84AF2ABAE3A600D85A6D /* AppError.swift in Sources */,

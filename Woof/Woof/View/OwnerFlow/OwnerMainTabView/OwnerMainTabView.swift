@@ -40,7 +40,7 @@ struct OwnerMainTabView: View {
     private let profileLabel = "Profile"
 
     /**
-     Customizes the appearance of the tab bar.
+     Customises the appearance of the tab bar.
      */
     private func customizeTabBar() {
         let tabBarAppearance = UITabBar.appearance()
