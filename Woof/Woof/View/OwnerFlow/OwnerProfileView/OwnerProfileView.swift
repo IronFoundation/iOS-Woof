@@ -20,7 +20,7 @@ struct OwnerProfileView: View {
                             address: $viewModel.address
                         )
 
-                        Button(AppButton.save.description) {
+                        Button(saveButtonLabelText) {
                             viewModel.save()
                             isEditingMode.toggle()
                         }
@@ -40,7 +40,7 @@ struct OwnerProfileView: View {
                             avatarUrl: viewModel.avatarURL
                         )
 
-                        Button(AppButton.edit.description) {
+                        Button(editButtonLabelText) {
                             isEditingMode.toggle()
                         }
                     }
@@ -56,17 +56,17 @@ struct OwnerProfileView: View {
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button(AppButton.logout.description) {
+                Button(logoutButtonLabelText) {
                     viewModel.isAlertShown.toggle()
                 }
             }
-            .alert(AppAlert.logOut.description, isPresented: $viewModel.isAlertShown) {
-                Button(AppButton.continue.description) {
+            .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
+                Button(continueButtonLabelText) {
                     viewModel.isLogoutConfirmed.toggle()
                     userRoleViewModel.resetCurrentRole()
                 }
                 Button(
-                    AppButton.cancel.description,
+                    cancelButtonLabelText,
                     role: .cancel
                 ) { viewModel.isAlertShown.toggle() }
             }
@@ -77,7 +77,14 @@ struct OwnerProfileView: View {
 
     @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
 
+    private let alertLogOutTitle = "Do you really want to log out?"
     private let navigationTitle = "My profile"
+
+    private let cancelButtonLabelText = "Cancel"
+    private let continueButtonLabelText = "Continue"
+    private let saveButtonLabelText = "Save"
+    private let editButtonLabelText = "Edit"
+    private let logoutButtonLabelText = "Logout"
 }
 
 struct OwnerProfileView_Previews: PreviewProvider {
