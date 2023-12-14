@@ -1,7 +1,7 @@
 import Foundation
 
 /// Represents alerts which uses in application.
-enum AppAlert: String, CustomStringConvertible {
+enum AppAlert: String, CustomStringConvertible, CaseIterable {
     /// Alert shown as confirmation of log out
     case logOut = "Do you really want to log out?"
 
