@@ -9,39 +9,82 @@ struct OwnerProfileView: View {
     @State private var isEditingMode = false
 
     var body: some View {
-        VStack {
-            if isEditingMode {
-                EditOwnerInformationView(
-                    name: $viewModel.name,
-                    surname: $viewModel.surname,
-                    phone: $viewModel.phone,
-                    address: $viewModel.address
-                )
-            } else {
-                OwnerCardView(
-                    name: viewModel.name,
-                    surname: viewModel.surname,
-                    phone: viewModel.phone,
-                    address: viewModel.address,
-                    avatarUrl: viewModel.avatarURL
-                )
-            }
-            Spacer()
-        }
-        .padding(.horizontal)
-        .overlay(alignment: .topTrailing) {
-            Button(isEditingMode ? "Save" : "Edit") {
+        NavigationView {
+            VStack {
                 if isEditingMode {
-                    viewModel.save()
+                    VStack {
+                        EditOwnerInformationView(
+                            name: $viewModel.name,
+                            surname: $viewModel.surname,
+                            phone: $viewModel.phone,
+                            address: $viewModel.address
+                        )
+
+                        Button(saveButtonLabelText) {
+                            viewModel.save()
+                            isEditingMode.toggle()
+                        }
+                        .disabled(isEditingMode && viewModel.name.isEmpty)
+                    }
+                    .padding()
+                    .buttonStyle(CapsuleWithWhiteText())
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+                } else {
+                    VStack {
+                        OwnerCardView(
+                            name: viewModel.name,
+                            surname: viewModel.surname,
+                            phone: viewModel.phone,
+                            address: viewModel.address,
+                            avatarUrl: viewModel.avatarURL
+                        )
+
+                        Button(editButtonLabelText) {
+                            isEditingMode.toggle()
+                        }
+                    }
+                    .padding()
+                    .buttonStyle(CapsuleWithWhiteText())
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
                 }
-                isEditingMode.toggle()
+
+                Spacer()
             }
-            .buttonStyle(CapsuleWithWhiteText())
-            .padding()
             .padding(.horizontal)
-            .disabled(isEditingMode && viewModel.name.isEmpty)
+            .navigationTitle(navigationTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button(logoutButtonLabelText) {
+                    viewModel.isAlertShown.toggle()
+                }
+            }
+            .alert(alertLogOutTitle, isPresented: $viewModel.isAlertShown) {
+                Button(continueButtonLabelText) {
+                    viewModel.isLogoutConfirmed.toggle()
+                    userRoleViewModel.resetCurrentRole()
+                }
+                Button(
+                    cancelButtonLabelText,
+                    role: .cancel
+                ) { viewModel.isAlertShown.toggle() }
+            }
         }
     }
+
+    // MARK: - Private interface
+
+    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
+
+    private let alertLogOutTitle = "Do you really want to log out?"
+    private let navigationTitle = "My profile"
+
+    private let cancelButtonLabelText = "Cancel"
+    private let continueButtonLabelText = "Continue"
+    private let saveButtonLabelText = "Save"
+    private let editButtonLabelText = "Edit"
+    private let logoutButtonLabelText = "Logout"
 }
 
 struct OwnerProfileView_Previews: PreviewProvider {

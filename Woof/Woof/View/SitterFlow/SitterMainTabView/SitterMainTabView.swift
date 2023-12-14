@@ -9,70 +9,33 @@ struct SitterMainTabView: View {
     }
 
     var body: some View {
-        NavigationView {
-            TabView(selection: $selection) {
-                Group {
-                    Text("My schedule")
-                        .tabItem {
-                            Label("Schedule", systemImage: .IconName.scheduleTab)
-                        }
-                        .tag(Tab.schedule)
-
-                    Text("Walkings")
-                        .tabItem {
-                            Label("Walkings", systemImage: .IconName.walkingsTab)
-                        }
-                        .tag(Tab.walkings)
-
-                    SitterProfileView()
-                        .tabItem {
-                            Label("Profile", systemImage: .IconName.profileTab)
-                        }
-                        .tag(Tab.profile)
+        TabView {
+            ScheduleView()
+                .tabItem {
+                    Label(scheduleLabel, systemImage: .IconName.scheduleTab)
                 }
-            }
-            .tint(Color.App.purpleDark)
-            .navigationTitle(selection.header)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                NavigationLink(
-                    destination: LoginView()
-                        .navigationBarBackButtonHidden(true),
-                    isActive: $viewModel.isLogoutConfirmed
-                ) {
-                    Button(logoutButtonLabelText) {
-                        viewModel.isAlertShown.toggle()
-                    }
-                }
-            }
-            .foregroundColor(.App.purpleDark)
 
-            .alert(alertTitle, isPresented: $viewModel.isAlertShown) {
-                Button(continueButtonLabelText) {
-                    viewModel.isLogoutConfirmed.toggle()
-                    userRoleViewModel.resetCurrentRole()
-                    dismiss()
+            SitterWalkingsView()
+                .tabItem {
+                    Label(walkingsLabel, systemImage: .IconName.walkingsTab)
                 }
-                Button(
-                    cancelButtonLabelText,
-                    role: .cancel
-                ) { viewModel.isAlertShown.toggle() }
-            }
+
+            SitterProfileView()
+                .tabItem {
+                    Label(profileLabel, systemImage: .IconName.profileTab)
+                }
         }
+        .tint(Color.App.purpleDark)
+        .foregroundColor(.App.purpleDark)
     }
 
     // MARK: - Private interface
 
     @StateObject private var viewModel = SitterMainTabViewModel()
-    @State private var selection: Tab = .schedule
 
-    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
-    @Environment(\.dismiss) private var dismiss
-
-    private let logoutButtonLabelText = "Logout"
-    private let continueButtonLabelText = "Continue"
-    private let cancelButtonLabelText = "Cancel"
-    private let alertTitle = "Do you really want to log out?"
+    private let scheduleLabel = "Schedule"
+    private let walkingsLabel = "Walkings"
+    private let profileLabel = "Profile"
 
     private func customizeTabBar() {
         let tabBarAppearance = UITabBar.appearance()
