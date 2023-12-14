@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+- Add enums `AppButton` and `AppAlert` which contains repeating strings and text in buttons - [#55](https://github.com/IronFoundation/iOS-Woof/pull/55)
+
 ### Added 
 
 - Add new templates for `epic` issue and `feature request` - [4](https://github.com/IronFoundation/iOS-Woof/pull/4)
