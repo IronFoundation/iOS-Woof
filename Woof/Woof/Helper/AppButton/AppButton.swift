@@ -1,7 +1,7 @@
 import Foundation
 
 /// Represents name of buttons which uses in application.
-enum AppButton: String, CustomStringConvertible {
+enum AppButton: String, CustomStringConvertible, CaseIterable {
     /// Represents the "Cancel" button.
     case cancel = "Cancel"
 
