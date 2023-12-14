@@ -11,11 +11,11 @@ final class AppButtonDescriptionTests: XCTestCase {
         let `continue` = "Continue"
 
         // When // Then
-        XCTAssertEqual(AppButton.cancel.description, cancel)
-        XCTAssertEqual(AppButton.save.description, save)
-        XCTAssertEqual(AppButton.edit.description, edit)
-        XCTAssertEqual(AppButton.tryAgain.description, tryAgain)
-        XCTAssertEqual(AppButton.logout.description, logout)
-        XCTAssertEqual(AppButton.continue.description, `continue`)
+        XCTAssertEqual(AppButton.cancel.rawValue, cancel)
+        XCTAssertEqual(AppButton.save.rawValue, save)
+        XCTAssertEqual(AppButton.edit.rawValue, edit)
+        XCTAssertEqual(AppButton.tryAgain.rawValue, tryAgain)
+        XCTAssertEqual(AppButton.logout.rawValue, logout)
+        XCTAssertEqual(AppButton.continue.rawValue, `continue`)
     }
 }

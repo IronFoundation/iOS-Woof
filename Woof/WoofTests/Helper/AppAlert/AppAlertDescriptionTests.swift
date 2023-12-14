@@ -7,7 +7,7 @@ final class AppAlertDescriptionTests: XCTestCase {
         let error = "Error"
 
         // When // Then
-        XCTAssertEqual(AppAlert.logOut.description, logOut)
-        XCTAssertEqual(AppAlert.error.description, error)
+        XCTAssertEqual(AppAlert.logOut.rawValue, logOut)
+        XCTAssertEqual(AppAlert.error.rawValue, error)
     }
 }

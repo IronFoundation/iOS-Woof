@@ -25,13 +25,13 @@ struct SitterProfileView: View {
                         }
 
                         HStack {
-                            Button(AppButton.cancel.description) {
+                            Button(AppButton.cancel.rawValue) {
                                 viewModel.cancelEditing()
                             }
 
                             Spacer()
 
-                            Button(AppButton.save.description) {
+                            Button(AppButton.save.rawValue) {
                                 Task {
                                     await viewModel.save()
                                 }
@@ -53,7 +53,7 @@ struct SitterProfileView: View {
                             city: viewModel.city
                         )
 
-                        Button(AppButton.edit.description) {
+                        Button(AppButton.edit.rawValue) {
                             viewModel.isEditingMode.toggle()
                         }
                     }
@@ -76,13 +76,13 @@ struct SitterProfileView: View {
                 }
             )
             .alert(
-                AppAlert.error.description,
+                AppAlert.error.rawValue,
                 isPresented: $viewModel.isErrorOccurred,
                 actions: {
-                    Button(AppButton.cancel.description) {
+                    Button(AppButton.cancel.rawValue) {
                         viewModel.cancelEditing()
                     }
-                    Button(AppButton.tryAgain.description) {
+                    Button(AppButton.tryAgain.rawValue) {
                         Task {
                             await viewModel.save()
                         }
@@ -95,16 +95,16 @@ struct SitterProfileView: View {
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button(AppButton.logout.description) {
+                Button(AppButton.logout.rawValue) {
                     viewModel.isAlertShown.toggle()
                 }
-                .alert(AppAlert.logOut.description, isPresented: $viewModel.isAlertShown) {
-                    Button(AppButton.continue.description) {
+                .alert(AppAlert.logOut.rawValue, isPresented: $viewModel.isAlertShown) {
+                    Button(AppButton.continue.rawValue) {
                         viewModel.isLogoutConfirmed.toggle()
                         userRoleViewModel.resetCurrentRole()
                     }
                     Button(
-                        AppButton.cancel.description,
+                        AppButton.cancel.rawValue,
                         role: .cancel
                     ) { viewModel.isAlertShown.toggle() }
                 }
