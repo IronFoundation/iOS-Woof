@@ -20,7 +20,7 @@ struct OwnerProfileView: View {
                             address: $viewModel.address
                         )
 
-                        Button(AppButton.save.rawValue) {
+                        Button(AppButtonTitle.save) {
                             viewModel.save()
                             isEditingMode.toggle()
                         }
@@ -40,7 +40,7 @@ struct OwnerProfileView: View {
                             avatarUrl: viewModel.avatarURL
                         )
 
-                        Button(AppButton.edit.rawValue) {
+                        Button(AppButtonTitle.edit) {
                             isEditingMode.toggle()
                         }
                     }
@@ -56,17 +56,17 @@ struct OwnerProfileView: View {
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button(AppButton.logout.rawValue) {
+                Button(AppButtonTitle.logout) {
                     viewModel.isAlertShown.toggle()
                 }
             }
-            .alert(AppAlert.logOut.rawValue, isPresented: $viewModel.isAlertShown) {
-                Button(AppButton.continue.rawValue) {
+            .alert(AppAlert.logOut, isPresented: $viewModel.isAlertShown) {
+                Button(AppButtonTitle.continue) {
                     viewModel.isLogoutConfirmed.toggle()
                     userRoleViewModel.resetCurrentRole()
                 }
                 Button(
-                    AppButton.cancel.rawValue,
+                    AppButtonTitle.cancel,
                     role: .cancel
                 ) { viewModel.isAlertShown.toggle() }
             }
