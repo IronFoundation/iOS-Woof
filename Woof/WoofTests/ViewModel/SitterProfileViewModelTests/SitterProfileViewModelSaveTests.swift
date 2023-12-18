@@ -11,6 +11,7 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
     }
 
     override func tearDown() {
+        KeyValueStorage.clearStoredSitterData()
         URLProtocol.unregisterClass(MockURLProtocol.self)
         viewModel = nil
         super.tearDown()
@@ -126,5 +127,49 @@ final class SitterProfileViewModelSaveTests: XCTestCase {
 
         // Then
         XCTAssertEqual(requestCount, 1)
+    }
+
+    func testFirstSavedSitterChangesSitterIsSetPropertyToTrue() async {
+        // Given
+        MockURLProtocol.requestHandler = { request in
+            let response = try XCTUnwrap(
+                HTTPURLResponse(
+                    url: XCTUnwrap(request.url),
+                    statusCode: 200,
+                    httpVersion: nil,
+                    headerFields: nil
+                )
+            )
+            return (response, nil)
+        }
+        XCTAssertFalse(viewModel.sitterIsSet)
+
+        // When
+        await viewModel.save()
+
+        // Then
+        XCTAssertTrue(viewModel.sitterIsSet)
+    }
+
+    func testSitterIsSetIsTrueWhenSaveIsCalledRepeatedly() async {
+        // Given
+        MockURLProtocol.requestHandler = { request in
+            let response = try XCTUnwrap(
+                HTTPURLResponse(
+                    url: XCTUnwrap(request.url),
+                    statusCode: 200,
+                    httpVersion: nil,
+                    headerFields: nil
+                )
+            )
+            return (response, nil)
+        }
+
+        // When
+        await viewModel.save()
+        await viewModel.save()
+
+        // Then
+        XCTAssertTrue(viewModel.sitterIsSet)
     }
 }

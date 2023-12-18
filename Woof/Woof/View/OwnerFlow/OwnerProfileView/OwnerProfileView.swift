@@ -9,39 +9,75 @@ struct OwnerProfileView: View {
     @State private var isEditingMode = false
 
     var body: some View {
-        VStack {
-            if isEditingMode {
-                EditOwnerInformationView(
-                    name: $viewModel.name,
-                    surname: $viewModel.surname,
-                    phone: $viewModel.phone,
-                    address: $viewModel.address
-                )
-            } else {
-                OwnerCardView(
-                    name: viewModel.name,
-                    surname: viewModel.surname,
-                    phone: viewModel.phone,
-                    address: viewModel.address,
-                    avatarUrl: viewModel.avatarURL
-                )
-            }
-            Spacer()
-        }
-        .padding(.horizontal)
-        .overlay(alignment: .topTrailing) {
-            Button(isEditingMode ? "Save" : "Edit") {
+        NavigationView {
+            VStack {
                 if isEditingMode {
-                    viewModel.save()
+                    VStack {
+                        EditOwnerInformationView(
+                            name: $viewModel.name,
+                            surname: $viewModel.surname,
+                            phone: $viewModel.phone,
+                            address: $viewModel.address
+                        )
+
+                        Button(AppButtonTitle.save) {
+                            viewModel.save()
+                            isEditingMode.toggle()
+                        }
+                        .disabled(isEditingMode && viewModel.name.isEmpty)
+                    }
+                    .padding()
+                    .buttonStyle(CapsuleWithWhiteText())
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+                } else {
+                    VStack {
+                        OwnerCardView(
+                            name: viewModel.name,
+                            surname: viewModel.surname,
+                            phone: viewModel.phone,
+                            address: viewModel.address,
+                            avatarUrl: viewModel.avatarURL
+                        )
+
+                        Button(AppButtonTitle.edit) {
+                            isEditingMode.toggle()
+                        }
+                    }
+                    .padding()
+                    .buttonStyle(CapsuleWithWhiteText())
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
                 }
-                isEditingMode.toggle()
+
+                Spacer()
             }
-            .buttonStyle(CapsuleWithWhiteText())
-            .padding()
             .padding(.horizontal)
-            .disabled(isEditingMode && viewModel.name.isEmpty)
+            .navigationTitle(navigationTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button(AppButtonTitle.logout) {
+                    viewModel.isAlertShown.toggle()
+                }
+            }
+            .alert(AppAlert.logOut, isPresented: $viewModel.isAlertShown) {
+                Button(AppButtonTitle.continue) {
+                    viewModel.isLogoutConfirmed.toggle()
+                    userRoleViewModel.resetCurrentRole()
+                }
+                Button(
+                    AppButtonTitle.cancel,
+                    role: .cancel
+                ) { viewModel.isAlertShown.toggle() }
+            }
         }
     }
+
+    // MARK: - Private interface
+
+    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
+
+    private let navigationTitle = "My profile"
 }
 
 struct OwnerProfileView_Previews: PreviewProvider {

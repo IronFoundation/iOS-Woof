@@ -34,6 +34,12 @@ final class SitterProfileViewModel: ObservableObject {
     /// Indicating to change the view display mode.
     @Published var isEditingMode = false
 
+    /// Indicates whether the alert should be shown.
+    @Published var isAlertShown = false
+
+    /// Indicates whether the logout confirmation was obtained.
+    @Published var isLogoutConfirmed = false
+
     /// Indicates if the mandatory fields are empty.
     var mandatoryFieldsAreEmpty: Bool {
         name.isEmpty || phone.isEmpty || city.isEmpty
@@ -65,7 +71,7 @@ final class SitterProfileViewModel: ObservableObject {
     @MainActor func save() async {
         isSavingData = true
 
-        var newSitter = Sitter()
+        var newSitter = currentSitter ?? Sitter()
         newSitter.name = name
         newSitter.surname = surname
         newSitter.phone = phone
@@ -74,7 +80,11 @@ final class SitterProfileViewModel: ObservableObject {
         newSitter.pricePerHour = Double(pricePerHour) ?? 0
 
         do {
-            try await upload(newSitter)
+            if sitterIsSet {
+                try await update(newSitter)
+            } else {
+                try await upload(newSitter)
+            }
             try await saveLocally(newSitter)
             currentSitter = newSitter
             isEditingMode = false
@@ -99,11 +109,23 @@ final class SitterProfileViewModel: ObservableObject {
         }
     }
 
+    private let networkService = NetworkService<WoofAppEndpoint>()
+
     private func upload(_ sitter: Sitter) async throws {
         let endpoint = WoofAppEndpoint.addNewSitter(sitter.asDictionary())
 
         do {
-            _ = try await NetworkService<WoofAppEndpoint>().request(endpoint)
+            _ = try await networkService.request(endpoint)
+        } catch {
+            throw AppError.uploadFailed
+        }
+    }
+
+    private func update(_ sitter: Sitter) async throws {
+        let endpoint = WoofAppEndpoint.updateSitter(sitter.asDictionary())
+
+        do {
+            _ = try await networkService.request(endpoint)
         } catch {
             throw AppError.uploadFailed
         }

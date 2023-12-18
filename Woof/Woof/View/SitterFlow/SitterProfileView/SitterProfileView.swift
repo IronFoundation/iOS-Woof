@@ -5,107 +5,121 @@ struct SitterProfileView: View {
     // MARK: - Internal interface
 
     var body: some View {
-        VStack {
-            if viewModel.isEditingMode {
-                VStack {
-                    EditSitterInformationView(
-                        name: $viewModel.name,
-                        surname: $viewModel.surname,
-                        phone: $viewModel.phone,
-                        city: $viewModel.city,
-                        bio: $viewModel.bio,
-                        pricePerHour: $viewModel.pricePerHour
-                    )
+        NavigationView {
+            VStack {
+                if viewModel.isEditingMode {
+                    VStack {
+                        EditSitterInformationView(
+                            name: $viewModel.name,
+                            surname: $viewModel.surname,
+                            phone: $viewModel.phone,
+                            city: $viewModel.city,
+                            bio: $viewModel.bio,
+                            pricePerHour: $viewModel.pricePerHour
+                        )
 
-                    if viewModel.mandatoryFieldsAreEmpty {
-                        Text(mandatoryPlaceholderText)
-                            .padding(.vertical)
-                            .font(.system(.footnote))
-                    }
-
-                    HStack {
-                        Button(cancelButtonLabelText) {
-                            viewModel.cancelEditing()
+                        if viewModel.mandatoryFieldsAreEmpty {
+                            Text(mandatoryPlaceholderText)
+                                .padding(.vertical)
+                                .font(.system(.footnote))
                         }
 
-                        Spacer()
-
-                        Button(saveButtonLabelText) {
-                            Task {
-                                await viewModel.save()
+                        HStack {
+                            Button(AppButtonTitle.cancel) {
+                                viewModel.cancelEditing()
                             }
+
+                            Spacer()
+
+                            Button(AppButtonTitle.save) {
+                                Task {
+                                    await viewModel.save()
+                                }
+                            }
+                            .disabled(viewModel.mandatoryFieldsAreEmpty)
                         }
-                        .disabled(viewModel.mandatoryFieldsAreEmpty)
                     }
-                }
-                .padding()
-                .buttonStyle(CapsuleWithWhiteText())
-                .background(Color.App.purpleLight)
-                .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+                    .padding()
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+                } else {
+                    VStack {
+                        SitterInfoCardView(
+                            name: viewModel.name,
+                            surname: viewModel.surname,
+                            phone: viewModel.phone,
+                            bio: viewModel.bio,
+                            ratePerHour: viewModel.pricePerHour,
+                            city: viewModel.city
+                        )
 
-            } else {
-                VStack {
-                    SitterInfoCardView(
-                        name: viewModel.name,
-                        surname: viewModel.surname,
-                        phone: viewModel.phone,
-                        bio: viewModel.bio,
-                        ratePerHour: viewModel.pricePerHour,
-                        city: viewModel.city
-                    )
-
-                    if !viewModel.sitterIsSet {
-                        Button(editButtonLabelText) {
+                        Button(AppButtonTitle.edit) {
                             viewModel.isEditingMode.toggle()
                         }
                     }
+                    .padding()
+                    .background(Color.App.purpleLight)
+                    .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
                 }
-                .buttonStyle(CapsuleWithWhiteText())
-                .padding()
-                .background(Color.App.purpleLight)
-                .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
-            }
 
-            Spacer()
-        }
-        .padding(.horizontal)
-        .overlay(
-            Group {
-                if viewModel.isSavingData {
-                    Color.white.opacity(AppStyle.UIElementConstant.opacityLevelForProgressViewBackground)
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                }
+                Spacer()
             }
-        )
-        .alert(
-            alertTitle,
-            isPresented: $viewModel.isErrorOccurred,
-            actions: {
-                Button(cancelButtonLabelText) {
-                    viewModel.cancelEditing()
-                }
-                Button(tryAgainButtonLabelText) {
-                    Task {
-                        await viewModel.save()
+            .padding(.horizontal)
+            .buttonStyle(CapsuleWithWhiteText())
+            .overlay(
+                Group {
+                    if viewModel.isSavingData {
+                        Color.white.opacity(AppStyle.UIElementConstant.opacityLevelForProgressViewBackground)
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
                     }
                 }
-            },
-            message: {
-                Text(viewModel.errorMessage)
+            )
+            .alert(
+                AppAlert.error,
+                isPresented: $viewModel.isErrorOccurred,
+                actions: {
+                    Button(AppButtonTitle.cancel) {
+                        viewModel.cancelEditing()
+                    }
+                    Button(AppButtonTitle.tryAgain) {
+                        Task {
+                            await viewModel.save()
+                        }
+                    }
+                },
+                message: {
+                    Text(viewModel.errorMessage)
+                }
+            )
+            .navigationTitle(navigationTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button(AppButtonTitle.logout) {
+                    viewModel.isAlertShown.toggle()
+                }
+                .alert(AppAlert.logOut, isPresented: $viewModel.isAlertShown) {
+                    Button(AppButtonTitle.continue) {
+                        viewModel.isLogoutConfirmed.toggle()
+                        userRoleViewModel.resetCurrentRole()
+                    }
+                    Button(
+                        AppButtonTitle.cancel,
+                        role: .cancel
+                    ) { viewModel.isAlertShown.toggle() }
+                }
             }
-        )
+        }
     }
 
     // MARK: - Private interface
 
     /// View model responsible to manage data from model layer.
     @StateObject private var viewModel = SitterProfileViewModel()
-    private let cancelButtonLabelText = "Cancel"
-    private let saveButtonLabelText = "Save"
-    private let editButtonLabelText = "Edit"
-    private let tryAgainButtonLabelText = "Try Again"
-    private let alertTitle = "Error"
+
+    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
+
+    private let navigationTitle = "My profile"
     private let mandatoryPlaceholderText = "Fields with * are mandatory"
 }
 

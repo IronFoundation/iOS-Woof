@@ -1,9 +1,9 @@
-import Foundation
+import SwiftUI
 
 /// Responsible for managing and actual state of the current user role in the application.
 final class UserRoleViewModel: ObservableObject {
     /// The current user role that defines the app flow.
-    var userRole: Role {
+    @Published var userRole: Role {
         didSet {
             PreferencesHandler.set(userRole: userRole)
         }
