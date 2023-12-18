@@ -36,13 +36,13 @@ final class SitterListViewModelTests: XCTestCase {
         await viewModel.fetchSitters()
 
         // Then
-        XCTAssertEqual(Set(viewModel.sitters), DummyServerResponseData.sitters)
+        XCTAssertEqual(Set(viewModel.filteredSitters), DummyServerResponseData.sitters)
     }
 
     func testViewModelStoresInitialValueWhenResponseFromServerHasNoSittersData() async throws {
         // Given
         let listOfSitters = Array(DummyServerResponseData.sitters)
-        viewModel.sitters = listOfSitters
+        viewModel.filteredSitters = listOfSitters
 
         MockURLProtocol.requestHandler = { request in
             let url = try XCTUnwrap(request.url)
@@ -61,13 +61,13 @@ final class SitterListViewModelTests: XCTestCase {
         await viewModel.fetchSitters()
 
         // Then
-        XCTAssertEqual(viewModel.sitters, listOfSitters)
+        XCTAssertEqual(viewModel.filteredSitters, listOfSitters)
     }
 
     func testViewModelStoresInitialValueWhenResponseFromServerContainsNotConvertableIntoSittersData() async throws {
         // Given
         let listOfSitters = Array(DummyServerResponseData.sitters)
-        viewModel.sitters = listOfSitters
+        viewModel.filteredSitters = listOfSitters
 
         MockURLProtocol.requestHandler = { request in
             let url = try XCTUnwrap(request.url)
@@ -86,13 +86,13 @@ final class SitterListViewModelTests: XCTestCase {
         await viewModel.fetchSitters()
 
         // Then
-        XCTAssertEqual(viewModel.sitters, listOfSitters)
+        XCTAssertEqual(viewModel.filteredSitters, listOfSitters)
     }
 
     func testViewModelStoresInitialValueWhenResponseFromServerIsNotSuccessful() async throws {
         // Given
         let listOfSitters = Array(DummyServerResponseData.sitters)
-        viewModel.sitters = listOfSitters
+        viewModel.filteredSitters = listOfSitters
 
         MockURLProtocol.requestHandler = { request in
             let url = try XCTUnwrap(request.url)
@@ -111,7 +111,7 @@ final class SitterListViewModelTests: XCTestCase {
         await viewModel.fetchSitters()
 
         // Then
-        XCTAssertEqual(viewModel.sitters, listOfSitters)
+        XCTAssertEqual(viewModel.filteredSitters, listOfSitters)
     }
 
     func testViewModelChangesToExpectedStateWhenDataFetchedSuccessfully() async throws {

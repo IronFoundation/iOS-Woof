@@ -9,16 +9,19 @@ struct SitterListView: View {
             Group {
                 if viewModel.errorMessage.isEmpty {
                     ScrollView {
-                        if viewModel.sitters.isEmpty {
+                        if viewModel.filteredSitters.isEmpty {
                             Text(noAvailableSittersMessage)
                         }
-                        ForEach(viewModel.sitters) { sitter in
+                        ForEach(viewModel.filteredSitters) { sitter in
                             NavigationLink {
                                 DetailPetSitterView(viewModel: DetailSitterViewModel(sitter: sitter))
                             } label: {
                                 SitterCardView(viewModel: SitterCardViewModel(sitter: sitter))
                             }
-                        }
+                        }.searchable(
+                            text: $viewModel.searchText,
+                            prompt: searchPlaceholder
+                        )
                     }
                     .padding(AppStyle.UIElementConstant.minPadding)
                 } else {
