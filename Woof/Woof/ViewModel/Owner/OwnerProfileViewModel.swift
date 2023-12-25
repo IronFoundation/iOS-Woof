@@ -17,6 +17,12 @@ final class OwnerProfileViewModel: ObservableObject {
     /// The URL of the owner's avatar image.
     @Published var avatarURL: URL?
 
+    /// Indicates whether the alert should be shown.
+    @Published var isAlertShown = false
+
+    /// Indicates whether the logout confirmation was obtained.
+    @Published var isLogoutConfirmed = false
+
     /**
      Initializes an instance of the `OwnerProfileViewModel` class.
      */

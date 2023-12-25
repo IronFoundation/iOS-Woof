@@ -12,73 +12,35 @@ struct OwnerMainTabView: View {
     }
 
     var body: some View {
-        NavigationView {
-            TabView(selection: $selection) {
-                Group {
-                    SitterListView()
-                        .tabItem {
-                            Label("Sitters", systemImage: .IconName.findSitterTab)
-                        }
-                        .tag(Tab.sitters)
-
-                    Text("Walkings stub")
-                        .tabItem {
-                            Label("Walkings", systemImage: .IconName.walkingsTab)
-                        }
-                        .tag(Tab.walkings)
-
-                    OwnerProfileView()
-                        .tabItem {
-                            Label("Profile", systemImage: .IconName.profileTab)
-                        }
-                        .tag(Tab.profile)
+        TabView {
+            SitterListView()
+                .tabItem {
+                    Label(sittersLabel, systemImage: .IconName.findSitterTab)
                 }
-            }
-            .tint(Color.App.purpleDark)
-            .navigationTitle(selection.header)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                NavigationLink(
-                    destination: LoginView()
-                        .navigationBarBackButtonHidden(true),
-                    isActive: $viewModel.isLogoutConfirmed
-                ) {
-                    Button(logoutButtonLabelText) {
-                        viewModel.isAlertShown.toggle()
-                    }
-                }
-            }
-            .foregroundColor(.App.purpleDark)
 
-            .alert(alertTitle, isPresented: $viewModel.isAlertShown) {
-                Button(continueButtonLabelText) {
-                    viewModel.isLogoutConfirmed.toggle()
-                    userRoleViewModel.resetCurrentRole()
-                    dismiss()
+            OwnerWalkingsView()
+                .tabItem {
+                    Label(walkingsLabel, systemImage: .IconName.walkingsTab)
                 }
-                Button(
-                    cancelButtonLabelText,
-                    role: .cancel
-                ) { viewModel.isAlertShown.toggle() }
-            }
+
+            OwnerProfileView()
+                .tabItem {
+                    Label(profileLabel, systemImage: .IconName.profileTab)
+                }
         }
+        .tint(Color.App.purpleDark)
     }
 
     // MARK: - Private interface
 
     @StateObject private var viewModel = OwnerMainTabViewModel()
-    @State private var selection: Tab = .sitters
 
-    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
-    @Environment(\.dismiss) private var dismiss
-
-    private let logoutButtonLabelText = "Logout"
-    private let continueButtonLabelText = "Continue"
-    private let cancelButtonLabelText = "Cancel"
-    private let alertTitle = "Do you really want to log out?"
+    private let sittersLabel = "Sitters"
+    private let walkingsLabel = "Walkings"
+    private let profileLabel = "Profile"
 
     /**
-     Customizes the appearance of the tab bar.
+     Customises the appearance of the tab bar.
      */
     private func customizeTabBar() {
         let tabBarAppearance = UITabBar.appearance()

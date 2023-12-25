@@ -5,37 +5,44 @@ struct SitterListView: View {
     // MARK: - Internal interface
 
     var body: some View {
-        Group {
-            if viewModel.errorMessage.isEmpty {
-                ScrollView {
-                    if viewModel.sitters.isEmpty {
-                        Text(noAvailableSittersMessage)
-                    }
-                    ForEach(viewModel.sitters) { sitter in
-                        NavigationLink {
-                            DetailPetSitterView(viewModel: DetailSitterViewModel(sitter: sitter))
-                        } label: {
-                            SitterCardView(viewModel: SitterCardViewModel(sitter: sitter))
+        NavigationView {
+            Group {
+                if viewModel.errorMessage.isEmpty {
+                    ScrollView {
+                        if viewModel.filteredSitters.isEmpty {
+                            Text(noAvailableSittersMessage)
                         }
+                        ForEach(viewModel.filteredSitters) { sitter in
+                            NavigationLink {
+                                DetailPetSitterView(viewModel: DetailSitterViewModel(sitter: sitter))
+                            } label: {
+                                SitterCardView(viewModel: SitterCardViewModel(sitter: sitter))
+                            }
+                        }.searchable(
+                            text: $viewModel.searchText,
+                            prompt: searchPlaceholder
+                        )
+                    }
+                    .padding(AppStyle.UIElementConstant.minPadding)
+                } else {
+                    VStack(spacing: AppStyle.UIElementConstant.wideSpacingSize) {
+                        Text(viewModel.errorMessage)
+                        Button(tryAgainButtonText) {
+                            Task {
+                                await viewModel.fetchSitters()
+                            }
+                        }.buttonStyle(CapsuleWithWhiteText())
                     }
                 }
-                .padding(AppStyle.UIElementConstant.minPadding)
-            } else {
-                VStack(spacing: AppStyle.UIElementConstant.wideSpacingSize) {
-                    Text(viewModel.errorMessage)
-                    Button(tryAgainButtonText) {
-                        Task {
-                            await viewModel.fetchSitters()
-                        }
-                    }.buttonStyle(CapsuleWithWhiteText())
+            }
+            .overlay {
+                if viewModel.isLoading {
+                    ProgressView()
+                        .foregroundColor(.App.purpleDark)
                 }
             }
-        }
-        .overlay {
-            if viewModel.isLoading {
-                ProgressView()
-                    .foregroundColor(.App.purpleDark)
-            }
+            .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 
@@ -46,6 +53,8 @@ struct SitterListView: View {
 
     private let tryAgainButtonText = "Try again"
     private let noAvailableSittersMessage = "There are no available sitters right now."
+    private let title = "Find sitter"
+    private let searchPlaceholder = "City"
 }
 
 struct SitterListView_Previews: PreviewProvider {

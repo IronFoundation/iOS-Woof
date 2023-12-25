@@ -34,6 +34,12 @@ final class SitterProfileViewModel: ObservableObject {
     /// Indicating to change the view display mode.
     @Published var isEditingMode = false
 
+    /// Indicates whether the alert should be shown.
+    @Published var isAlertShown = false
+
+    /// Indicates whether the logout confirmation was obtained.
+    @Published var isLogoutConfirmed = false
+
     /// Indicates if the mandatory fields are empty.
     var mandatoryFieldsAreEmpty: Bool {
         name.isEmpty || phone.isEmpty || city.isEmpty

@@ -7,25 +7,12 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(
-                    destination: OwnerMainTabView()
-                        .navigationBarBackButtonHidden(true),
-                    isActive: $viewModel.isOwnerRoleSelected
-                ) {
-                    Button(ownerButtonText) {
-                        userRoleViewModel.setOwnerRole()
-                        viewModel.isOwnerRoleSelected = true
-                    }
+                Button(ownerButtonText) {
+                    userRoleViewModel.setOwnerRole()
                 }
-                NavigationLink(
-                    destination: SitterMainTabView()
-                        .navigationBarBackButtonHidden(true),
-                    isActive: $viewModel.isSitterRoleSelected
-                ) {
-                    Button(sitterButtonText) {
-                        userRoleViewModel.setSitterRole()
-                        viewModel.isSitterRoleSelected = true
-                    }
+
+                Button(sitterButtonText) {
+                    userRoleViewModel.setSitterRole()
                 }
             }
             .buttonStyle(PurpleCapsuleOfInfinityWidth())
