@@ -6,7 +6,7 @@ final class SitterListViewModel: ObservableObject {
     // MARK: - Internal interface
 
     /// The list of sitters to show.
-    @Published var sitters: [Sitter] = []
+    @Published var filteredSitters: [Sitter] = []
 
     /// Indicates if loading data is in progress.
     @Published var isLoading = false {
@@ -17,6 +17,15 @@ final class SitterListViewModel: ObservableObject {
 
     /// Detailed error information for the user.
     @Published var errorMessage: String = ""
+
+    /// The text for query search
+    @Published var searchText = "" {
+        didSet {
+            filteredSitters = searchText.isEmpty
+                ? fetchedSitters
+                : fetchedSitters.filter { $0.city.contains(searchText) }
+        }
+    }
 
     init() {
         Task {
@@ -36,7 +45,8 @@ final class SitterListViewModel: ObservableObject {
 
             if let sitters = allSittersResponse.petSitters {
                 await MainActor.run {
-                    self.sitters = sitters
+                    self.fetchedSitters = sitters
+                    self.filteredSitters = sitters
                 }
             }
         } catch {
@@ -51,6 +61,9 @@ final class SitterListViewModel: ObservableObject {
     }
 
     // MARK: - Private interface
+
+    /// The list of fetched sitters.
+    private var fetchedSitters: [Sitter] = []
 
     @MainActor private func handleError(_ error: Error) {
         guard let appError = error as? AppError else {
