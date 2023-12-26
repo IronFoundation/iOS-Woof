@@ -20,7 +20,7 @@ final class WoofAppEndpointTests: XCTestCase {
         let endpoint = WoofAppEndpoint.addNewSitter(parameters)
 
         // Then
-        XCTAssertEqual(endpoint.baseURL, baseProdURL)
+        XCTAssertEqual(endpoint.baseURL, baseURL)
         XCTAssertEqual(endpoint.path, WoofAppEndpoint.Path.addNewSitter)
         XCTAssertTrue(endpoint.headers.keys.contains(authHeader))
 
@@ -40,7 +40,7 @@ final class WoofAppEndpointTests: XCTestCase {
         let endpoint = WoofAppEndpoint.getAllSitters
 
         // Then
-        XCTAssertEqual(endpoint.baseURL, baseProdURL)
+        XCTAssertEqual(endpoint.baseURL, baseURL)
         XCTAssertEqual(endpoint.path, WoofAppEndpoint.Path.getAllSitters)
         XCTAssertTrue(endpoint.headers.keys.contains(authHeader))
 
@@ -63,7 +63,7 @@ final class WoofAppEndpointTests: XCTestCase {
         let endpoint = WoofAppEndpoint.updateSitter(parameters)
 
         // Then
-        XCTAssertEqual(endpoint.baseURL, baseProdURL)
+        XCTAssertEqual(endpoint.baseURL, baseURL)
         XCTAssertEqual(endpoint.path, WoofAppEndpoint.Path.updateSitter)
         XCTAssertTrue(endpoint.headers.keys.contains(authHeader))
 
@@ -80,6 +80,6 @@ final class WoofAppEndpointTests: XCTestCase {
 
     // MARK: - Private interface
 
-    private let baseProdURL = URL(string: "https://woof-app.hasura.app/api/rest/") ?? Bundle.main.bundleURL
+    private let baseURL = URL(string: "https://woof-app-test.hasura.app/api/rest/") ?? Bundle.main.bundleURL
     private let authHeader = "x-hasura-admin-secret"
 }

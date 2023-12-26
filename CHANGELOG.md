@@ -6,13 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-- Add enums `AppButton` and `AppAlert` which contains repeating strings and text in buttons - [#55](https://github.com/IronFoundation/iOS-Woof/pull/55)
-
 ### Added 
 
 - Add new templates for `epic` issue and `feature request` - [#4](https://github.com/IronFoundation/iOS-Woof/pull/4)
 - Add the possibility for sitters to update info about themselves - [#52](https://github.com/IronFoundation/iOS-Woof/pull/52)
-- Add the possibility for owners to filter sitters by city [#56](https://github.com/IronFoundation/iOS-Woof/pull/56)
+- Add enums `AppButton` and `AppAlert` which contains repeating strings and text in buttons - [#55](https://github.com/IronFoundation/iOS-Woof/pull/55)
+- Add the possibility for owners to filter sitters by city - [#56](https://github.com/IronFoundation/iOS-Woof/pull/56)
+- Add the development server for test goals - [#57](https://github.com/IronFoundation/iOS-Woof/pull/57)
 
 ### Changed
 

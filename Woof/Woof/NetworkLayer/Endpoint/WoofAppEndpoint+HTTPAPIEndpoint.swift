@@ -7,10 +7,14 @@ extension WoofAppEndpoint: HTTPAPIEndpoint {
 
     typealias Environment = APIEnvironment
 
-    static var networkEnvironment = Environment.production
+    #if DEBUG
+        static var networkEnvironment = Environment.staging
+    #else
+        static var networkEnvironment = Environment.production
+    #endif
 
     var baseURL: URL {
-        Self.baseProdURL
+        Self.networkEnvironment.baseURL
     }
 
     var path: String {
@@ -40,17 +44,11 @@ extension WoofAppEndpoint: HTTPAPIEndpoint {
     }
 
     var headers: HTTPHeaders {
-        switch Self.networkEnvironment {
-        case .production:
-            return [Self.authHeader: Self.revealedKey]
-        case .staging:
-            return [:]
-        }
+        [Self.authHeader: Self.revealedKey]
     }
 
     // MARK: - Private interface
 
-    private static let baseProdURL = URL(string: "https://woof-app.hasura.app/api/rest/") ?? Bundle.main.bundleURL
     private static let authHeader = "x-hasura-admin-secret"
     private static let obfuscatedKey = ""
     private static let salt = ""
