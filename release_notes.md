@@ -6,6 +6,14 @@ The file describes all the changes, that are affected the usage of the applicati
 
 The format is based on [Release_notes format](https://github.com/ios-course/ironfoudation-team-project/wiki/Release_notes-format).
 
+## 0.5.0
+
+### New features
+
+`City field`: Fill in the city field so that you can be found more quickly.
+
+`Sitter city filter`: Try filtering sitters based on your preferred location!
+
 ## 0.4.0
 
 ### New features
