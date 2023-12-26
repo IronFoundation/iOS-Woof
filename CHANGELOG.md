@@ -6,13 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.0] - 26.12.2023
+
 ### Added 
 
-- Add new templates for `epic` issue and `feature request` - [#4](https://github.com/IronFoundation/iOS-Woof/pull/4)
-- Add the possibility for sitters to update info about themselves - [#52](https://github.com/IronFoundation/iOS-Woof/pull/52)
-- Add enums `AppButton` and `AppAlert` which contains repeating strings and text in buttons - [#55](https://github.com/IronFoundation/iOS-Woof/pull/55)
-- Add the possibility for owners to filter sitters by city - [#56](https://github.com/IronFoundation/iOS-Woof/pull/56)
-- Add the development server for test goals - [#57](https://github.com/IronFoundation/iOS-Woof/pull/57)
+- Add new templates for `epic` issue and `feature request` - [4](https://github.com/IronFoundation/iOS-Woof/pull/4)
+- Add the possibility for sitters to update info about themselves - [52](https://github.com/IronFoundation/iOS-Woof/pull/52)
+- Add enums `AppButton` and `AppAlert` which contain repeating strings and text in buttons - [#55](https://github.com/IronFoundation/iOS-Woof/pull/55)
 
 ### Changed
 
@@ -24,7 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed 
 
-- Display different currency type in `SitterListView` and in `SitterProfileView` - [#45](https://github.com/IronFoundation/iOS-Woof/pull/45)
+- Display different currency type in `SitterListView` and in `SitterProfileView` - [45](https://github.com/IronFoundation/iOS-Woof/pull/45)
 
 ## [0.4.0] - 27.09.2023
 
