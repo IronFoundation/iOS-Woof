@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Update tests to support debug and release versions [#60](https://github.com/IronFoundation/iOS-Woof/pull/60)
 - Update `EditSitterInformationView` to add info about the `city` field - [#50](https://github.com/IronFoundation/iOS-Woof/pull/50)
 - Update `SitterInfoCardView` to display `city` field - [#49](https://github.com/IronFoundation/iOS-Woof/pull/49)
 - Update `Sitter` model: add a new property `city` - [#46](https://github.com/IronFoundation/iOS-Woof/pull/46)
