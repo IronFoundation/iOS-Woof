@@ -80,6 +80,11 @@ final class WoofAppEndpointTests: XCTestCase {
 
     // MARK: - Private interface
 
-    private let baseURL = URL(string: "https://woof-app-test.hasura.app/api/rest/") ?? Bundle.main.bundleURL
+    #if DEBUG
+        private let baseURL = URL(string: "https://woof-app-test.hasura.app/api/rest/") ?? Bundle.main.bundleURL
+    #else
+        private let baseURL = URL(string: "https://woof-app.hasura.app/api/rest/") ?? Bundle.main.bundleURL
+    #endif
+
     private let authHeader = "x-hasura-admin-secret"
 }

@@ -18,7 +18,7 @@ final class SitterListViewModelTests: XCTestCase {
 
     func testViewModelStoresSittersWhichSentFromServer() async throws {
         // Given
-        let data = try getData(fromJSON: "MockSittersData")
+        let data = try getData()
         MockURLProtocol.requestHandler = { request in
             let url = try XCTUnwrap(request.url)
             let response = try XCTUnwrap(
@@ -116,7 +116,7 @@ final class SitterListViewModelTests: XCTestCase {
 
     func testViewModelChangesToExpectedStateWhenDataFetchedSuccessfully() async throws {
         // Given
-        let data = try getData(fromJSON: "MockSittersData")
+        let data = try getData()
         MockURLProtocol.requestHandler = { request in
             let url = try XCTUnwrap(request.url)
             let response = try XCTUnwrap(
@@ -167,12 +167,20 @@ final class SitterListViewModelTests: XCTestCase {
     private var viewModel: SitterListViewModel!
     private let endpoint = WoofAppEndpoint.getAllSitters
 
-    private func getData(fromJSON fileName: String) throws -> Data? {
+    private func getData() throws -> Data? {
         let bundle = Bundle(for: type(of: self))
+
+        #if DEBUG
+            let fileName = "TestMockSittersData"
+        #else
+            let fileName = "ProductionMockSittersData"
+        #endif
+
         guard let url = bundle.url(forResource: fileName, withExtension: "json") else {
             XCTFail("Missing File: \(fileName).json")
             return nil
         }
+
         return try? Data(contentsOf: url)
     }
 }
