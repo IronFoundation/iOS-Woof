@@ -10,12 +10,12 @@ struct DetailWalkingView: View {
                 .foregroundColor(.App.grayLight)
                 .fontWeight(.bold)
                 .padding(AppStyle.UIElementConstant.minPadding)
-                .background(Color.App.purpleLight)
+                .background(Color.App.purpleDark)
                 .clipShape(Capsule())
 
             ZStack {
                 MapView()
-                    .frame(height: 200)
+                    .frame(height: 250)
 
                 VStack {
                     Text("Wasraw, ul. Poli Gojawiczyńskiej 13")
@@ -30,13 +30,13 @@ struct DetailWalkingView: View {
                         )
                         .padding()
                         .background(Color.clear)
-                        .offset(y: 60)
+                        .offset(y: 80)
                 }
             }
 
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Walking with Bobik")
+                    Text("Walking with pet")
                         .font(Font.system(size: AppStyle.FontStyle.heading.size))
                         .bold()
                         .foregroundColor(.App.purpleDark)
@@ -59,6 +59,7 @@ struct DetailWalkingView: View {
 
             VStack(alignment: .leading) {
                 Text("Notes:")
+
                 Text("Thank you for taking care of my dog, Bobik. Here are some specific things to know about her: Enjoys playing fetch in the backyard.")
             }
             .padding()
@@ -80,20 +81,35 @@ struct DetailWalkingView: View {
     }
 }
 
-struct MapView: UIViewRepresentable {
-    func makeUIView(context _: Context) -> MKMapView {
-        MKMapView()
+struct MapView: View {
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122),
+        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+    )
+
+    var body: some View {
+        Map(coordinateRegion: $region,
+            showsUserLocation: false,
+            userTrackingMode: nil,
+            annotationItems: [
+                CustomPin(coordinate: CLLocationCoordinate2D(latitude: 52.2297,
+                                                             longitude: 21.0122)),
+            ]) { pin in
+                MapPin(coordinate: pin.coordinate, tint: .red)
+            }
     }
+}
 
-    func updateUIView(_ uiView: MKMapView, context _: Context) {
-        let coordinate = CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        uiView.addAnnotation(annotation)
+class CustomPin: NSObject, Identifiable, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    var id: String { UUID().uuidString }
 
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        uiView.setRegion(region, animated: true)
+    init(coordinate: CLLocationCoordinate2D, title: String? = nil, subtitle: String? = nil) {
+        self.coordinate = coordinate
+        self.title = title
+        self.subtitle = subtitle
     }
 }
 
