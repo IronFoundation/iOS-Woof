@@ -4,9 +4,21 @@ import SwiftUI
 struct ScheduleView: View {
     var body: some View {
         NavigationView {
-            Text(scheduleTitle)
-                .navigationTitle(navigationTitle)
-                .navigationBarTitleDisplayMode(.inline)
+//            Text(scheduleTitle)
+//                .navigationTitle(navigationTitle)
+//                .navigationBarTitleDisplayMode(.inline)
+
+            ScrollView {
+                LazyVStack(spacing: 16) {
+                    ForEach(0..<10) { _ in
+                        NavigationLink(destination: DetailWalkingView(walkingStatus: "Pending")) {
+                            SitterWalkingCardView()
+                                .padding(.horizontal)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Walking Cards")
         }
     }
 
