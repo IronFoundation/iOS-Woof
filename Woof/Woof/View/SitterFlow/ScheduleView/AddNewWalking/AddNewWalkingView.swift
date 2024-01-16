@@ -40,13 +40,28 @@ struct AddNewWalkingView: View {
                 .padding()
 
             Button(action: {
-                let endTime = Calendar.current.date(byAdding: .minute, value: durationInMinutes, to: startTime) ?? Date()
+                var walkingObjects: [Walking] = []
 
-                let walking = Walking(start: startTime, end: endTime)
+                for date in selectedDates {
+                    let calendar = Calendar.current
+                    let startTimeComponents = calendar.dateComponents([.hour, .minute], from: startTime)
+                    let startDate = calendar.date(bySettingHour: startTimeComponents.hour ?? 0, minute: startTimeComponents.minute ?? 0, second: 0, of: date) ?? date
+
+                    let endTime = calendar.date(byAdding: .minute, value: durationInMinutes, to: startDate) ?? startDate
+                    let walking = Walking(start: startDate, end: endTime)
+                    walkingObjects.append(walking)
+                }
+
+                for (index, walking) in walkingObjects.enumerated() {
+                    print("Walking \(index + 1):")
+                    print("Start Time: \(walking.start)")
+                    print("End Time: \(walking.end)")
+                    print("Cost: \(costInput)")
+                    print("-----")
+                }
 
                 isCreateButtonTapped.toggle()
                 selectedDates.removeAll()
-                print("creation button pressed and result is start: \(walking.start)end: \(walking.end)")
             }) {
                 Text("Create walking")
             }
