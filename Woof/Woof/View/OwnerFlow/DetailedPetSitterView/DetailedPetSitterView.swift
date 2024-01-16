@@ -39,17 +39,29 @@ struct DetailPetSitterView: View {
             )
 
             Text(viewModel.bio)
+
             Spacer()
+
+            Button("Book walk") {}
+                .buttonStyle(PurpleCapsuleOfInfinityWidth())
+
+            Spacer()
+
+//            ScrollView {
+//                VStack {
+//                    ForEach(0..<10) { _ in
+//                        OwnerWalkingCardView()
+//                    }
+//                }
+//                .padding()
+//            }
         }
+
         .padding()
         .background(Color.App.grayLight)
     }
+}
 
-    struct DetailPetSitterView_Previews: PreviewProvider {
-        static var previews: some View {
-            DetailPetSitterView(
-                viewModel: DetailSitterViewModel(sitter: Sitter.Dummy.emilyDoe)
-            )
-        }
-    }
+#Preview {
+    DetailPetSitterView(viewModel: DetailSitterViewModel(sitter: Sitter.Dummy.emilyDoe))
 }
