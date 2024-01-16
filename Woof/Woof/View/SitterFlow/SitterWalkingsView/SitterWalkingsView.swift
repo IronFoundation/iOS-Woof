@@ -4,9 +4,7 @@ import SwiftUI
 struct SitterWalkingsView: View {
     var body: some View {
         NavigationView {
-            Text("Walkings stub")
-                .navigationTitle("Walkings")
-                .navigationBarTitleDisplayMode(.inline)
+            AddNewWalkingView()
         }
     }
 }

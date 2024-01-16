@@ -3,10 +3,12 @@ import SwiftUI
 
 struct DetailWalkingView: View {
     let walkingStatus: String
+    let day: String
+    let month: String
 
     var body: some View {
         VStack {
-            Text(walkingStatus)
+            Text("Pending")
                 .foregroundColor(.App.grayLight)
                 .fontWeight(.bold)
                 .padding(AppStyle.UIElementConstant.minPadding)
@@ -114,5 +116,5 @@ class CustomPin: NSObject, Identifiable, MKAnnotation {
 }
 
 #Preview {
-    DetailWalkingView(walkingStatus: "Pending")
+    DetailWalkingView(walkingStatus: "Pending", day: "12", month: "September")
 }

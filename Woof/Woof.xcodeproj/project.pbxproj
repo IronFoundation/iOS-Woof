@@ -30,6 +30,7 @@
 		3619FD3C2ABC699200E9D56D /* AppErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619FD3B2ABC699200E9D56D /* AppErrorTests.swift */; };
 		3619FD3E2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619FD3D2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift */; };
 		362732A22A1B800B0062E4B5 /* KeyValueStorageDeleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362732A12A1B800A0062E4B5 /* KeyValueStorageDeleteTests.swift */; };
+		362A4A142B55AC170078CDD5 /* AddNewWalkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362A4A132B55AC170078CDD5 /* AddNewWalkingView.swift */; };
 		362F63062A28A8B6002A659B /* OwnerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362F63052A28A8B6002A659B /* OwnerProfileView.swift */; };
 		363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363528D52AB9ADF6009A21CF /* Sitter+CodingKeys.swift */; };
 		3638A46C2AD42FB8005A20F0 /* KeyValueStorageClearStoredSitterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638A46B2AD42FB8005A20F0 /* KeyValueStorageClearStoredSitterData.swift */; };
@@ -218,6 +219,7 @@
 		3619FD3B2ABC699200E9D56D /* AppErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorTests.swift; sourceTree = "<group>"; };
 		3619FD3D2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorDescriptionTests.swift; sourceTree = "<group>"; };
 		362732A12A1B800A0062E4B5 /* KeyValueStorageDeleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageDeleteTests.swift; sourceTree = "<group>"; };
+		362A4A132B55AC170078CDD5 /* AddNewWalkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewWalkingView.swift; sourceTree = "<group>"; };
 		362F63052A28A8B6002A659B /* OwnerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileView.swift; sourceTree = "<group>"; };
 		363528D52AB9ADF6009A21CF /* Sitter+CodingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sitter+CodingKeys.swift"; sourceTree = "<group>"; };
 		3638A46B2AD42FB8005A20F0 /* KeyValueStorageClearStoredSitterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageClearStoredSitterData.swift; sourceTree = "<group>"; };
@@ -435,6 +437,14 @@
 				3619FD3D2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift */,
 			);
 			path = AppError;
+			sourceTree = "<group>";
+		};
+		362A4A122B55ABF90078CDD5 /* AddNewWalking */ = {
+			isa = PBXGroup;
+			children = (
+				362A4A132B55AC170078CDD5 /* AddNewWalkingView.swift */,
+			);
+			path = AddNewWalking;
 			sourceTree = "<group>";
 		};
 		3638A46A2AD42F55005A20F0 /* Helper */ = {
@@ -807,6 +817,7 @@
 		FD577CC52ADE608F0045705A /* ScheduleView */ = {
 			isa = PBXGroup;
 			children = (
+				362A4A122B55ABF90078CDD5 /* AddNewWalking */,
 				36E733392B55588100AE694A /* SitterWalkingCardView */,
 				FD577CC62ADE60B20045705A /* ScheduleView.swift */,
 			);
@@ -1488,6 +1499,7 @@
 				362F63062A28A8B6002A659B /* OwnerProfileView.swift in Sources */,
 				93DDB06C2A3B30B100D7D97A /* PurpleCapsuleOfInfinityWidth.swift in Sources */,
 				FD577CC32ADE5D880045705A /* OwnerWalkingsView.swift in Sources */,
+				362A4A142B55AC170078CDD5 /* AddNewWalkingView.swift in Sources */,
 				FDD538582A41D6C900331977 /* WoofAppEndpoint.swift in Sources */,
 				FD2FA22B2A129CA1002B618B /* SitterListViewModel.swift in Sources */,
 				36CBB9ED2B273435005EC39A /* AppAlert.swift in Sources */,
