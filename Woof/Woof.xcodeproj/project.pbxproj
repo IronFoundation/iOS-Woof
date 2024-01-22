@@ -842,6 +842,14 @@
 			path = SitterWalkingsView;
 			sourceTree = "<group>";
 		};
+		FD57B8472B5937A500DA70F1 /* Walking */ = {
+			isa = PBXGroup;
+			children = (
+				FD57B8452B59379A00DA70F1 /* Walking.swift */,
+			);
+			path = Walking;
+			sourceTree = "<group>";
+		};
 		FD6A2E592A2EF62800934C3E /* OwnerFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1071,6 +1079,7 @@
 				FD14A2AA2A28685000362461 /* Owner */,
 				36C54AFA2A1631CC00748023 /* KeyValueStorage */,
 				FD1FA3CA2A0A77FE000A3A91 /* Sitter */,
+				FD57B8472B5937A500DA70F1 /* Walking */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1523,6 +1532,7 @@
 				FD7F98A52A0E12290058DBEB /* AvatarView.swift in Sources */,
 				FD1FA3CC2A0A781E000A3A91 /* Sitter+Dummy.swift in Sources */,
 				192210F92ABDA1B800B9026D /* Sitter+Decoder.swift in Sources */,
+				FD57B8462B59379A00DA70F1 /* Walking.swift in Sources */,
 				FD577CC72ADE60B20045705A /* ScheduleView.swift in Sources */,
 				36E7333B2B5558A200AE694A /* SitterWalkingCardView.swift in Sources */,
 				FD33035A2AA9D5DD0091A4BA /* Encodable+asDictionary.swift in Sources */,
