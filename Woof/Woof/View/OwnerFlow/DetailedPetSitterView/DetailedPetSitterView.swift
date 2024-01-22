@@ -59,22 +59,31 @@ struct DetailPetSitterView: View {
                 .bold()
                 .foregroundColor(.App.purpleDark)
 
-            ForEach(Walking.Dummy.bulkDummyWalkings) { walking in
-                NavigationLink {
-                    BookingWalkingView(walking: walking)
-                } label: {
-//                    WalkingSlotCardView(
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))]) {
+                ForEach(Walking.Dummy.bulkDummyWalkings) { walking in
+                    NavigationLink {
+                        BookingWalkingView(walking: walking)
+                    } label: {
+                        WalkingSlotGridView(
+                            price: walking.price,
+                            startDate: walking.start,
+                            endDate: walking.end
+                        )
+                    }
+                }
+            }
+
+//            ForEach(Walking.Dummy.bulkDummyWalkings) { walking in
+//                NavigationLink {
+//                    BookingWalkingView(walking: walking)
+//                } label: {
+//                    WalkingSlotOneLineView(
 //                        price: walking.price,
 //                        startDate: walking.start,
 //                        endDate: walking.end
 //                    )
-                    WalkingSlotOneLineView(
-                        price: walking.price,
-                        startDate: walking.start,
-                        endDate: walking.end
-                    )
-                }
-            }.listStyle(.plain)
+//                }
+//            }.listStyle(.plain)
         }.navigationTitle(viewModel.fullName)
             .navigationBarTitleDisplayMode(.inline)
 

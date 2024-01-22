@@ -1,26 +1,29 @@
 import SwiftUI
 
-struct WalkingSlotOneLineView: View {
+struct WalkingSlotGridView: View {
     let price: Double
     let startDate: Date
     let endDate: Date
 
     var body: some View {
-        HStack {
-            Text(date)
-                .bold()
-            Spacer()
-            Text(time)
-            Spacer()
+        ZStack {
+            RoundedRectangle(cornerRadius: 5)
+                .fill(Color(white: 0.9))
 
-            Text(price, format: .currency(code: "USD"))
-                .bold()
-                .font(Font.system(size: AppStyle.FontStyle.heading.size))
-                .foregroundColor(Color.App.purpleDark)
+            VStack {
+                Text(time)
+                Text(date)
+                    .bold()
+                Divider()
+                Text(price, format: .currency(code: "USD"))
+                    .bold()
+                    .font(Font.system(size: AppStyle.FontStyle.heading.size))
+                    .foregroundColor(Color.App.purpleDark)
+            }
+            .padding()
+            .background(Color.App.white)
+            .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
         }
-        .padding()
-        .background(Color.App.white)
-        .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
     }
 
     private var date: String {
@@ -39,5 +42,5 @@ struct WalkingSlotOneLineView: View {
 }
 
 #Preview {
-    WalkingSlotOneLineView(price: 17.5, startDate: .now, endDate: .now + 3600)
+    WalkingSlotGridView(price: 12.75, startDate: .now, endDate: .now + 1200)
 }
