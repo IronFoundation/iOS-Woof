@@ -8,54 +8,45 @@ struct DetailWalkingView: View {
 
     var body: some View {
         VStack {
-            Text("Pending")
-                .foregroundColor(.App.grayLight)
-                .fontWeight(.bold)
-                .padding(AppStyle.UIElementConstant.minPadding)
-                .background(Color.App.purpleDark)
-                .clipShape(Capsule())
-
-            ZStack {
-                MapView()
-                    .frame(height: 250)
-
-                VStack {
-                    Text("Wasraw, ul. Poli Gojawiczyńskiej 13")
-                        .foregroundColor(.App.purpleDark)
-                        .fontWeight(.medium)
-                        .padding(AppStyle.UIElementConstant.minPadding)
-                        .background(Color.App.grayLight)
-                        .clipShape(Capsule())
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.App.purpleDark, lineWidth: 1)
-                        )
-                        .padding()
-                        .background(Color.clear)
-                        .offset(y: 80)
+            MapView()
+                .frame(height: 250)
+                .overlay {
+                    MapPinLabel(text: "Wasraw, ul. Poli Gojawiczyńskiej 13")
+                        .offset(y: 50)
                 }
-            }
 
             HStack {
-                VStack(alignment: .leading) {
-                    Text("Walking with pet")
+                VStack(alignment: .leading, spacing: 8) {
+                    Label("Anna", systemImage: "person.fill")
+
+                        .font(Font.system(size: AppStyle.FontStyle.body.size).bold())
+                    Label("+9787865765", systemImage: "phone.fill")
+                        .font(Font.system(size: AppStyle.FontStyle.body.size).italic())
+                    Text("Price: 25$")
                         .font(Font.system(size: AppStyle.FontStyle.heading.size))
                         .bold()
                         .foregroundColor(.App.purpleDark)
-
-                    Text("Owner: Anna")
                 }
 
                 Spacer()
-
                 VStack {
-                    Text("25$")
-                        .font(Font.system(size: AppStyle.FontStyle.heading.size))
-                        .bold()
-                        .foregroundColor(.App.purpleDark)
+                    WalkingDataView(month: "October", data: "12", time: "12.00-14.00")
 
-                    Text("12:00 - 13:00")
+                    Text("Pending")
+                        .foregroundColor(.App.grayLight)
+                        .fontWeight(.bold)
+                        .padding(AppStyle.UIElementConstant.minPadding)
+                        .background(Color.App.grayDark)
+                        .clipShape(Capsule())
                 }
+//                VStack {
+//                    Text("25$")
+//                        .font(Font.system(size: AppStyle.FontStyle.heading.size))
+//                        .bold()
+//                        .foregroundColor(.App.purpleDark)
+//
+//                    Text("12:00 - 13:00")
+//                }
             }
             .padding()
 

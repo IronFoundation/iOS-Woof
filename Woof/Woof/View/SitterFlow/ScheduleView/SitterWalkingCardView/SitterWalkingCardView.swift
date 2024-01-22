@@ -1,10 +1,13 @@
 import SwiftUI
 
 struct SitterWalkingCardView: View {
+    let status: WalkingStatus
+    let start: Date
+    let end: Date
     var body: some View {
         HStack {
             WalkingSectionView(
-                walkingStatus: "Pending",
+                walkingStatus: status.description,
                 petOwner: "Anna",
                 price: "25$"
             )
@@ -26,5 +29,5 @@ struct SitterWalkingCardView: View {
 }
 
 #Preview {
-    SitterWalkingCardView()
+    SitterWalkingCardView(status: .booked, start: .now, end: .now + 1200)
 }

@@ -9,6 +9,16 @@ struct ScheduleView: View {
         NavigationView {
             ScrollView {
                 LazyVStack(spacing: 16) {
+                    NavigationLink(
+                        destination: DetailWalkingView(
+                            walkingStatus: "Available",
+                            day: "12",
+                            month: "September"
+                        )
+                    ) {
+                        SitterWalkingCardView(status: .available, start: .now, end: .now + 1200)
+                            .padding(.horizontal)
+                    }
                     ForEach(0..<4) { _ in
                         NavigationLink(
                             destination: DetailWalkingView(
@@ -21,10 +31,15 @@ struct ScheduleView: View {
                                 selectedMonth = "September"
                             }
                         ) {
-                            SitterWalkingCardView()
+                            SitterWalkingCardView(status: .pending, start: .now, end: .now + 1200)
                                 .padding(.horizontal)
                         }
                     }
+                }
+            }
+            .toolbar {
+                NavigationLink("Add") {
+                    AddNewWalkingView()
                 }
             }
             .navigationTitle(selectedTitle)

@@ -6,62 +6,82 @@ struct DetailPetSitterView: View {
     @ObservedObject var viewModel: DetailSitterViewModel
 
     var body: some View {
-        VStack {
-            AvatarView(url: viewModel.imageURL)
-            FiveStarRatingView(stars: viewModel.rating)
-            TextWithIconLabelView(
-                iconName: .IconName.filledPerson,
-                text: viewModel.fullName
-            )
-            .contextMenu {
-                Button {
-                    viewModel.copyToClipboardText(viewModel.fullName)
-                } label: {
-                    CopyToClipboardLabel()
+        ScrollView {
+            // extract to separate view
+            HStack {
+                VStack {
+                    AvatarView(url: viewModel.imageURL)
+                    FiveStarRatingView(stars: viewModel.rating)
+                }
+                VStack {
+                    TextWithIconLabelView(
+                        iconName: .IconName.filledPerson,
+                        text: viewModel.fullName
+                    )
+                    .contextMenu {
+                        Button {
+                            viewModel.copyToClipboardText(viewModel.fullName)
+                        } label: {
+                            CopyToClipboardLabel()
+                        }
+                    }
+
+                    TextWithIconLabelView(
+                        iconName: .IconName.phone,
+                        text: viewModel.phoneNumber
+                    )
+                    .contextMenu {
+                        Button {
+                            viewModel.copyToClipboardText(viewModel.phoneNumber)
+                        } label: {
+                            CopyToClipboardLabel()
+                        }
+                    }
+
+                    TextWithIconLabelView(
+                        iconName: .IconName.house,
+                        text: viewModel.city
+                    )
+                }
+            }
+            .padding()
+            VStack {
+                Text(viewModel.bio)
+                    .lineLimit(showMore ? nil : 2)
+                Button(showMore ? "Hide" : "Show more") {
+                    showMore.toggle()
                 }
             }
 
-            TextWithIconLabelView(
-                iconName: .IconName.phone,
-                text: viewModel.phoneNumber
-            )
-            .contextMenu {
-                Button {
-                    viewModel.copyToClipboardText(viewModel.phoneNumber)
+            Spacer()
+            Text("Available slots:")
+                .font(Font.system(size: AppStyle.FontStyle.heading.size))
+                .bold()
+                .foregroundColor(.App.purpleDark)
+
+            ForEach(Walking.Dummy.bulkDummyWalkings) { walking in
+                NavigationLink {
+                    BookingWalkingView(walking: walking)
                 } label: {
-                    CopyToClipboardLabel()
+                    WalkingSlotCardView(
+                        price: walking.price,
+                        startDate: walking.start,
+                        endDate: walking.end
+                    )
                 }
-            }
+            }.listStyle(.plain)
+        }.navigationTitle(viewModel.fullName)
+            .navigationBarTitleDisplayMode(.inline)
 
-            TextWithIconLabelView(
-                iconName: .IconName.house,
-                text: viewModel.city
-            )
-
-            Text(viewModel.bio)
-
-            Spacer()
-
-            Button("Book walk") {}
-                .buttonStyle(PurpleCapsuleOfInfinityWidth())
-
-            Spacer()
-
-//            ScrollView {
-//                VStack {
-//                    ForEach(0..<10) { _ in
-//                        OwnerWalkingCardView()
-//                    }
-//                }
-//                .padding()
-//            }
-        }
-
-        .padding()
-        .background(Color.App.grayLight)
+            .padding()
+            .background(Color.App.grayLight)
     }
+
+    @State var showMore = false
 }
 
 #Preview {
-    DetailPetSitterView(viewModel: DetailSitterViewModel(sitter: Sitter.Dummy.emilyDoe))
+    NavigationView {
+        DetailPetSitterView(viewModel: DetailSitterViewModel(sitter: Sitter.Dummy.emilyDoe))
+    }
 }
