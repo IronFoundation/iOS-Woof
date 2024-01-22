@@ -154,6 +154,7 @@
 		FD57B8462B59379A00DA70F1 /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD57B8452B59379A00DA70F1 /* Walking.swift */; };
 		FD5F34112B594FA0006EFADB /* BookingWalkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34102B594FA0006EFADB /* BookingWalkingView.swift */; };
 		FD5F34172B5EBB43006EFADB /* WalkingStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34162B5EBB43006EFADB /* WalkingStatusLabel.swift */; };
+		FD5F34192B5EC2C4006EFADB /* WalkingSlotOneLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34182B5EC2C4006EFADB /* WalkingSlotOneLineView.swift */; };
 		FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */; };
 		FD6A2E612A2F067E00934C3E /* KeyValueStorage+KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */; };
 		FD6A2E632A2F072F00934C3E /* KeyValueStorage+NameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */; };
@@ -318,6 +319,7 @@
 		FD57B8452B59379A00DA70F1 /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		FD5F34102B594FA0006EFADB /* BookingWalkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingWalkingView.swift; sourceTree = "<group>"; };
 		FD5F34162B5EBB43006EFADB /* WalkingStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatusLabel.swift; sourceTree = "<group>"; };
+		FD5F34182B5EC2C4006EFADB /* WalkingSlotOneLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotOneLineView.swift; sourceTree = "<group>"; };
 		FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterMainTabView.swift; sourceTree = "<group>"; };
 		FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+KeyTests.swift"; sourceTree = "<group>"; };
 		FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+NameTests.swift"; sourceTree = "<group>"; };
@@ -664,6 +666,7 @@
 			children = (
 				EF5A7F322A14563800585616 /* DetailedPetSitterView.swift */,
 				3622D4D62B56B3140062F971 /* WalkingSlotCardView.swift */,
+				FD5F34182B5EC2C4006EFADB /* WalkingSlotOneLineView.swift */,
 				FD5F34102B594FA0006EFADB /* BookingWalkingView.swift */,
 			);
 			path = DetailedPetSitterView;
@@ -1529,6 +1532,7 @@
 				3622D4D72B56B3140062F971 /* WalkingSlotCardView.swift in Sources */,
 				93DDB06C2A3B30B100D7D97A /* PurpleCapsuleOfInfinityWidth.swift in Sources */,
 				FD577CC32ADE5D880045705A /* OwnerWalkingsView.swift in Sources */,
+				FD5F34192B5EC2C4006EFADB /* WalkingSlotOneLineView.swift in Sources */,
 				362A4A142B55AC170078CDD5 /* AddNewWalkingView.swift in Sources */,
 				FDD538582A41D6C900331977 /* WoofAppEndpoint.swift in Sources */,
 				FD2FA22B2A129CA1002B618B /* SitterListViewModel.swift in Sources */,

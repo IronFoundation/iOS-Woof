@@ -63,7 +63,12 @@ struct DetailPetSitterView: View {
                 NavigationLink {
                     BookingWalkingView(walking: walking)
                 } label: {
-                    WalkingSlotCardView(
+//                    WalkingSlotCardView(
+//                        price: walking.price,
+//                        startDate: walking.start,
+//                        endDate: walking.end
+//                    )
+                    WalkingSlotOneLineView(
                         price: walking.price,
                         startDate: walking.start,
                         endDate: walking.end
