@@ -153,6 +153,7 @@
 		FD57B8442B58254700DA70F1 /* DateRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD57B8432B58254700DA70F1 /* DateRangeView.swift */; };
 		FD57B8462B59379A00DA70F1 /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD57B8452B59379A00DA70F1 /* Walking.swift */; };
 		FD5F34112B594FA0006EFADB /* BookingWalkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34102B594FA0006EFADB /* BookingWalkingView.swift */; };
+		FD5F34172B5EBB43006EFADB /* WalkingStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34162B5EBB43006EFADB /* WalkingStatusLabel.swift */; };
 		FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */; };
 		FD6A2E612A2F067E00934C3E /* KeyValueStorage+KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */; };
 		FD6A2E632A2F072F00934C3E /* KeyValueStorage+NameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */; };
@@ -316,6 +317,7 @@
 		FD57B8432B58254700DA70F1 /* DateRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeView.swift; sourceTree = "<group>"; };
 		FD57B8452B59379A00DA70F1 /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		FD5F34102B594FA0006EFADB /* BookingWalkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingWalkingView.swift; sourceTree = "<group>"; };
+		FD5F34162B5EBB43006EFADB /* WalkingStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatusLabel.swift; sourceTree = "<group>"; };
 		FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterMainTabView.swift; sourceTree = "<group>"; };
 		FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+KeyTests.swift"; sourceTree = "<group>"; };
 		FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+NameTests.swift"; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 		EF303EBF2A17AFA20086065B /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				FD5F34162B5EBB43006EFADB /* WalkingStatusLabel.swift */,
 				FD57B8412B581D8700DA70F1 /* MapPinLabel.swift */,
 				FD57B8432B58254700DA70F1 /* DateRangeView.swift */,
 				93B21C2D2A31EA1200610D82 /* ButtonStyle */,
@@ -1532,6 +1535,7 @@
 				36CBB9ED2B273435005EC39A /* AppAlert.swift in Sources */,
 				93DDB06E2A3B31E800D7D97A /* LoginView.swift in Sources */,
 				FDE0CEA92A00F8370023F784 /* WoofApp.swift in Sources */,
+				FD5F34172B5EBB43006EFADB /* WalkingStatusLabel.swift in Sources */,
 				36E7333D2B555B0100AE694A /* WalkingDataView.swift in Sources */,
 				EF95A04A2A385FA600E84ACD /* OwnerMainTabViewModel.swift in Sources */,
 				BA4561872A3996BF00C6E595 /* SitterInfoCardView.swift in Sources */,

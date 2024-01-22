@@ -7,7 +7,7 @@ struct SitterWalkingCardView: View {
     var body: some View {
         HStack {
             WalkingSectionView(
-                walkingStatus: status.description,
+                walkingStatus: status,
                 petOwner: "Anna",
                 price: "25$"
             )

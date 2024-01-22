@@ -41,13 +41,16 @@ struct SitterWalkingsView: View {
                             .padding(.horizontal)
                     }
                 }
-            }
+            }.navigationTitle(scheduleTitle)
+                .navigationBarTitleDisplayMode(.inline)
 
 //            AddNewWalkingView()
         }
-        .navigationTitle("Walkings")
-        .navigationBarTitleDisplayMode(.inline)
     }
+
+    // MARK: - Private interface
+
+    private let scheduleTitle = "My Walking"
 }
 
 struct SitterWalkingsView_Previews: PreviewProvider {

@@ -19,21 +19,35 @@ struct ScheduleView: View {
                         SitterWalkingCardView(status: .available, start: .now, end: .now + 1200)
                             .padding(.horizontal)
                     }
-                    ForEach(0..<4) { _ in
-                        NavigationLink(
-                            destination: DetailWalkingView(
-                                walkingStatus: "Pending",
-                                day: "12",
-                                month: "September"
-                            )
-                            .onAppear {
-                                selectedDay = "12"
-                                selectedMonth = "September"
-                            }
-                        ) {
-                            SitterWalkingCardView(status: .pending, start: .now, end: .now + 1200)
-                                .padding(.horizontal)
-                        }
+                    NavigationLink(
+                        destination: DetailWalkingView(
+                            walkingStatus: "Available",
+                            day: "12",
+                            month: "September"
+                        )
+                    ) {
+                        SitterWalkingCardView(status: .pending, start: .now, end: .now + 1200)
+                            .padding(.horizontal)
+                    }
+                    NavigationLink(
+                        destination: DetailWalkingView(
+                            walkingStatus: "Available",
+                            day: "12",
+                            month: "September"
+                        )
+                    ) {
+                        SitterWalkingCardView(status: .canceledBySitter, start: .now, end: .now + 1200)
+                            .padding(.horizontal)
+                    }
+                    NavigationLink(
+                        destination: DetailWalkingView(
+                            walkingStatus: "Available",
+                            day: "12",
+                            month: "September"
+                        )
+                    ) {
+                        SitterWalkingCardView(status: .expired, start: .now, end: .now + 1200)
+                            .padding(.horizontal)
                     }
                 }
             }
