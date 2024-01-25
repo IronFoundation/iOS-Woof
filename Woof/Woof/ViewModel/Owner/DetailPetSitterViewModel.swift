@@ -21,6 +21,8 @@ final class DetailSitterViewModel: ObservableObject {
     /// The city or area where sitter works.
     @Published var city: String
 
+    @Published var walkings: [Walking] = []
+
     /// Initializes a new instance of the detailed sitter card view model with the provided sitter.
     ///
     /// - Parameter sitter: The sitter for which the detailed view model is created.
@@ -40,6 +42,10 @@ final class DetailSitterViewModel: ObservableObject {
     /// - Parameter text: The text to be copied to the clipboard.
     func copyToClipboardText(_ text: String) {
         UIPasteboard.general.string = text
+    }
+
+    @MainActor func fetchWalkings() async {
+        walkings = Walking.Dummy.bulkDummyWalkings
     }
 
     private var sitter: Sitter

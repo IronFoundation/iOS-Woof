@@ -45,7 +45,12 @@ struct AddNewWalkingView: View {
                 for date in selectedDates {
                     let calendar = Calendar.current
                     let startTimeComponents = calendar.dateComponents([.hour, .minute], from: startTime)
-                    let startDate = calendar.date(bySettingHour: startTimeComponents.hour ?? 0, minute: startTimeComponents.minute ?? 0, second: 0, of: date) ?? date
+                    let startDate = calendar.date(
+                        bySettingHour: startTimeComponents.hour ?? 0,
+                        minute: startTimeComponents.minute ?? 0,
+                        second: 0,
+                        of: date
+                    ) ?? date
 
                     let endTime = calendar.date(byAdding: .minute, value: durationInMinutes, to: startDate) ?? startDate
                     let walking = Walking(start: startDate, end: endTime)

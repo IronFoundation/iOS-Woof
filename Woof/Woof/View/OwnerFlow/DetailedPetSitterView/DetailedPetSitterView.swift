@@ -7,91 +7,46 @@ struct DetailPetSitterView: View {
 
     var body: some View {
         ScrollView {
-            // extract to separate view
-            HStack {
-                VStack {
-                    AvatarView(url: viewModel.imageURL)
-                    FiveStarRatingView(stars: viewModel.rating)
-                }
-                VStack {
-                    TextWithIconLabelView(
-                        iconName: .IconName.filledPerson,
-                        text: viewModel.fullName
-                    )
-                    .contextMenu {
-                        Button {
-                            viewModel.copyToClipboardText(viewModel.fullName)
-                        } label: {
-                            CopyToClipboardLabel()
-                        }
-                    }
-
-                    TextWithIconLabelView(
-                        iconName: .IconName.phone,
-                        text: viewModel.phoneNumber
-                    )
-                    .contextMenu {
-                        Button {
-                            viewModel.copyToClipboardText(viewModel.phoneNumber)
-                        } label: {
-                            CopyToClipboardLabel()
-                        }
-                    }
-
-                    TextWithIconLabelView(
-                        iconName: .IconName.house,
-                        text: viewModel.city
-                    )
-                }
+            SitterBioSectionView(
+                avatarURL: viewModel.imageURL,
+                rating: viewModel.rating,
+                fullName: viewModel.fullName,
+                phoneNumber: viewModel.phoneNumber,
+                city: viewModel.city,
+                bio: viewModel.bio,
+                showMore: $showMore
+            ) { text in
+                viewModel.copyToClipboardText(text)
             }
-            .padding()
-            VStack {
-                Text(viewModel.bio)
-                    .lineLimit(showMore ? nil : 2)
-                Button(showMore ? "Hide" : "Show more") {
-                    showMore.toggle()
-                }
+            Divider()
+            VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
+                ExtendableText(
+                    lineLimit: 2,
+                    text: viewModel.bio,
+                    showMore: $showMore
+                )
+                .font(.system(size: AppStyle.FontStyle.footnote.size))
+                .padding(.horizontal)
+                .padding(.top)
             }
 
-            Spacer()
-            Text("Available slots:")
-                .font(Font.system(size: AppStyle.FontStyle.heading.size))
-                .bold()
-                .foregroundColor(.App.purpleDark)
-
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))]) {
-                ForEach(Walking.Dummy.bulkDummyWalkings) { walking in
-                    NavigationLink {
-                        BookingWalkingView(walking: walking)
-                    } label: {
-                        WalkingSlotGridView(
-                            price: walking.price,
-                            startDate: walking.start,
-                            endDate: walking.end
-                        )
+            Divider()
+            WalkingSlotsSection(walkings: viewModel.walkings)
+                // find a solution to send request when needed instead of on appear
+//                .onReceive(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=Publisher@*/NotificationCenter.default.publisher(for: .NSCalendarDayChanged)/*@END_MENU_TOKEN@*/, perform: { _ in
+//                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=code@*/ /*@END_MENU_TOKEN@*/
+//                })
+                .onAppear(perform: {
+                    Task {
+                        await viewModel.fetchWalkings()
                     }
-                }
-            }
-
-//            ForEach(Walking.Dummy.bulkDummyWalkings) { walking in
-//                NavigationLink {
-//                    BookingWalkingView(walking: walking)
-//                } label: {
-//                    WalkingSlotOneLineView(
-//                        price: walking.price,
-//                        startDate: walking.start,
-//                        endDate: walking.end
-//                    )
-//                }
-//            }.listStyle(.plain)
-        }.navigationTitle(viewModel.fullName)
-            .navigationBarTitleDisplayMode(.inline)
-
-            .padding()
-            .background(Color.App.grayLight)
+                })
+        }
+        .padding(.horizontal)
+        .background(Color.App.grayLight)
     }
 
-    @State var showMore = false
+    @State private var showMore = false
 }
 
 #Preview {

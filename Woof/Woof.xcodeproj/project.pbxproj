@@ -156,6 +156,9 @@
 		FD5F34172B5EBB43006EFADB /* WalkingStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34162B5EBB43006EFADB /* WalkingStatusLabel.swift */; };
 		FD5F34192B5EC2C4006EFADB /* WalkingSlotOneLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34182B5EC2C4006EFADB /* WalkingSlotOneLineView.swift */; };
 		FD5F341B2B5ECBA4006EFADB /* WalkingSlotGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F341A2B5ECBA4006EFADB /* WalkingSlotGridView.swift */; };
+		FD5F341D2B5F6999006EFADB /* WalkingSlotsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F341C2B5F6999006EFADB /* WalkingSlotsSection.swift */; };
+		FD5F341F2B5F6CAC006EFADB /* ExtendableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F341E2B5F6CAC006EFADB /* ExtendableText.swift */; };
+		FD5F34212B5F6ECE006EFADB /* SitterBioSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34202B5F6ECE006EFADB /* SitterBioSectionView.swift */; };
 		FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */; };
 		FD6A2E612A2F067E00934C3E /* KeyValueStorage+KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */; };
 		FD6A2E632A2F072F00934C3E /* KeyValueStorage+NameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */; };
@@ -322,6 +325,9 @@
 		FD5F34162B5EBB43006EFADB /* WalkingStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatusLabel.swift; sourceTree = "<group>"; };
 		FD5F34182B5EC2C4006EFADB /* WalkingSlotOneLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotOneLineView.swift; sourceTree = "<group>"; };
 		FD5F341A2B5ECBA4006EFADB /* WalkingSlotGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotGridView.swift; sourceTree = "<group>"; };
+		FD5F341C2B5F6999006EFADB /* WalkingSlotsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotsSection.swift; sourceTree = "<group>"; };
+		FD5F341E2B5F6CAC006EFADB /* ExtendableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendableText.swift; sourceTree = "<group>"; };
+		FD5F34202B5F6ECE006EFADB /* SitterBioSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterBioSectionView.swift; sourceTree = "<group>"; };
 		FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterMainTabView.swift; sourceTree = "<group>"; };
 		FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+KeyTests.swift"; sourceTree = "<group>"; };
 		FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+NameTests.swift"; sourceTree = "<group>"; };
@@ -640,6 +646,7 @@
 			children = (
 				FD5F34162B5EBB43006EFADB /* WalkingStatusLabel.swift */,
 				FD57B8412B581D8700DA70F1 /* MapPinLabel.swift */,
+				FD5F341E2B5F6CAC006EFADB /* ExtendableText.swift */,
 				FD57B8432B58254700DA70F1 /* DateRangeView.swift */,
 				93B21C2D2A31EA1200610D82 /* ButtonStyle */,
 				EF7B7EFF2A147D8300F00B4E /* TextWithIconLabelView.swift */,
@@ -667,9 +674,11 @@
 			isa = PBXGroup;
 			children = (
 				EF5A7F322A14563800585616 /* DetailedPetSitterView.swift */,
+				FD5F34202B5F6ECE006EFADB /* SitterBioSectionView.swift */,
 				3622D4D62B56B3140062F971 /* WalkingSlotCardView.swift */,
 				FD5F34182B5EC2C4006EFADB /* WalkingSlotOneLineView.swift */,
 				FD5F341A2B5ECBA4006EFADB /* WalkingSlotGridView.swift */,
+				FD5F341C2B5F6999006EFADB /* WalkingSlotsSection.swift */,
 				FD5F34102B594FA0006EFADB /* BookingWalkingView.swift */,
 			);
 			path = DetailedPetSitterView;
@@ -1495,6 +1504,7 @@
 				FDD7906A2A4587B7007C1265 /* ObfuscatorError.swift in Sources */,
 				FDD143C72A03BD48000BBA77 /* OwnerMainTabView.swift in Sources */,
 				FDEE43C92A2F45B8007DE0A9 /* Preferences.swift in Sources */,
+				FD5F34212B5F6ECE006EFADB /* SitterBioSectionView.swift in Sources */,
 				EF16BB262A24E101007922C6 /* Owner+Dummy.swift in Sources */,
 				FD57B8422B581D8700DA70F1 /* MapPinLabel.swift in Sources */,
 				FD7F989F2A0E0D2C0058DBEB /* AppStyle.swift in Sources */,
@@ -1530,6 +1540,8 @@
 				9B480A5F2A330F29001A5A71 /* CopyToClipboardLabel.swift in Sources */,
 				FD57B8442B58254700DA70F1 /* DateRangeView.swift in Sources */,
 				FD7F989D2A0E04650058DBEB /* SitterCardView.swift in Sources */,
+				FD5F341D2B5F6999006EFADB /* WalkingSlotsSection.swift in Sources */,
+				FD5F341F2B5F6CAC006EFADB /* ExtendableText.swift in Sources */,
 				BAD0FC632A31D20800F59544 /* StarRating.swift in Sources */,
 				EF95A04D2A385FCF00E84ACD /* SitterMainTabViewModel.swift in Sources */,
 				362F63062A28A8B6002A659B /* OwnerProfileView.swift in Sources */,
