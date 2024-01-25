@@ -6,24 +6,20 @@ struct WalkingSlotGridView: View {
     let endDate: Date
 
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 5)
-                .fill(Color(white: 0.9))
-
-            VStack {
-                Text(time)
-                Text(date)
-                    .bold()
-                Divider()
-                Text(price, format: .currency(code: "USD"))
-                    .bold()
-                    .font(Font.system(size: AppStyle.FontStyle.heading.size))
-                    .foregroundColor(Color.App.purpleDark)
-            }
-            .padding()
-            .background(Color.App.white)
-            .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
+        VStack {
+            Text(time)
+            Divider()
+            Text(date)
+                .bold()
+            Divider()
+            Text(price, format: .currency(code: "USD"))
+                .bold()
+                .font(Font.system(size: AppStyle.FontStyle.heading.size))
         }
+        .padding()
+        .foregroundColor(Color.App.white)
+        .background(Color.App.purpleLight)
+        .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
     }
 
     private var date: String {

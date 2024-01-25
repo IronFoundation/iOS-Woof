@@ -7,6 +7,8 @@ import SwiftUI
 ///
 /// To configure the current button style for a view hierarchy, use the `buttonStyle(_:)` modifier.
 struct PurpleCapsuleOfInfinityWidth: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(
@@ -18,7 +20,7 @@ struct PurpleCapsuleOfInfinityWidth: ButtonStyle {
             .padding()
             .frame(maxWidth: .infinity)
             .foregroundColor(Color.App.white)
-            .background(Color.App.purpleDark)
+            .background(isEnabled ? Color.App.purpleDark : Color.App.grayDark)
             .clipShape(Capsule())
     }
 }

@@ -7,14 +7,16 @@ struct DetailPetSitterView: View {
 
     var body: some View {
         ScrollView {
-            SitterInfoSectionView(
-                avatarURL: viewModel.imageURL,
-                rating: viewModel.rating,
-                fullName: viewModel.fullName,
-                phoneNumber: viewModel.phoneNumber,
-                city: viewModel.city
-            ) { text in
-                viewModel.copyToClipboardText(text)
+            HStack(alignment: .top) {
+                AvatarView(url: viewModel.imageURL)
+                SitterInfoSectionView(
+                    rating: viewModel.rating,
+                    fullName: viewModel.fullName,
+                    phoneNumber: viewModel.phoneNumber,
+                    city: viewModel.city
+                ) { text in
+                    viewModel.copyToClipboardText(text)
+                }
             }
             Divider()
             VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
