@@ -27,8 +27,8 @@ struct DetailPetSitterView: View {
                     showMore: $showMore
                 )
                 .font(.system(size: AppStyle.FontStyle.footnote.size))
-                .padding(.horizontal)
-                .padding(.top)
+//                .padding(.horizontal)
+//                .padding(.top)
             }
 
             Divider()
