@@ -1,6 +1,7 @@
 import Foundation
 
 extension Walking {
+    /// Provides dummy data for `Walking` model.
     enum Dummy {
         static let dummyWalking = Walking(
             id: UUID(),
