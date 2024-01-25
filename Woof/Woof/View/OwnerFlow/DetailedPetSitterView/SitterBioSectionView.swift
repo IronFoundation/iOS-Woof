@@ -28,13 +28,19 @@ struct SitterBioSectionView: View {
                         }
                     }
                 FiveStarRatingView(stars: rating)
-                
-                Text(city)
-                    .italic()
+                Label(phoneNumber, systemImage: .IconName.phone)
+                    .contextMenu {
+                        Button {
+                            onTapAction(city)
+                        } label: {
+                            CopyToClipboardLabel()
+                        }
+                    }
+                Label(city, systemImage: "map.circle")
             }
             .font(
                 .system(
-                    size: AppStyle.FontStyle.body.size
+                    size: AppStyle.FontStyle.footnote.size
                 )
             )
             Spacer()

@@ -13,7 +13,7 @@ extension AppStyle {
         static let minPadding = 4.0
 
         /// The default side size of an avatar image.
-        static let avatarSideSize = 80.0
+        static let avatarSideSize = 60.0
 
         /// The default spacing that can be used between elements in View.
         static let spacingBetweenElements = 8.0
