@@ -7,17 +7,17 @@ struct Walking: Codable, Identifiable {
     let status: WalkingStatus
     let start: Date
     let end: Date
-    let location: Location?
+    var location: Location?
     let reviews: Reviews?
     let rating: Ratings?
-    let notes: String?
+    var notes: String?
     let price: Double
 }
 
 struct Location: Codable {
-    let longitude: Double?
-    let latitude: Double?
-    let address: String?
+    var longitude: Double?
+    var latitude: Double?
+    var address: String?
 }
 
 struct Reviews: Codable {

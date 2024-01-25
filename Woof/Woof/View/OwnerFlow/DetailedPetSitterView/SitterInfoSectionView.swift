@@ -36,7 +36,6 @@ struct SitterInfoSectionView: View {
                 size: AppStyle.FontStyle.footnote.size
             )
         )
-        Spacer()
     }
 }
 

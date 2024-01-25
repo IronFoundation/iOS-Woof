@@ -17,6 +17,7 @@ struct DetailPetSitterView: View {
                 ) { text in
                     viewModel.copyToClipboardText(text)
                 }
+                Spacer()
             }
             Divider()
             VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.spacingBetweenElements) {

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct WalkingSlotGridView: View {
+struct SitterSlotWalkingInfoView: View {
     let price: Double
     let startDate: Date
     let endDate: Date
@@ -8,18 +8,17 @@ struct WalkingSlotGridView: View {
     var body: some View {
         VStack {
             Text(time)
+                .bold()
             Divider()
             Text(date)
-                .bold()
+                .font(Font.system(size: AppStyle.FontStyle.footnote.size))
+                .italic()
             Divider()
             Text(price, format: .currency(code: "USD"))
                 .bold()
-                .font(Font.system(size: AppStyle.FontStyle.heading.size))
         }
         .padding()
-        .foregroundColor(Color.App.white)
-        .background(Color.App.purpleLight)
-        .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
+        .font(Font.system(size: AppStyle.FontStyle.body.size))
     }
 
     private var date: String {
@@ -38,5 +37,5 @@ struct WalkingSlotGridView: View {
 }
 
 #Preview {
-    WalkingSlotGridView(price: 12.75, startDate: .now, endDate: .now + 1200)
+    SitterSlotWalkingInfoView(price: 12.75, startDate: .now, endDate: .now + 1200)
 }

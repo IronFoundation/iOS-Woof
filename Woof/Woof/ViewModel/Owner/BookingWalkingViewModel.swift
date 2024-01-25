@@ -38,14 +38,20 @@ final class BookingWalkingViewModel: ObservableObject {
     }
 
     func setOwnerInfo() {
-        let owner = loadOwnerFromStorage() ?? Owner()
-        address = owner.address
-        walking.owner = owner
+        address = currentOwner.address
+    }
+
+    func bookWalking() async {
+        prepareOwnerInfo()
+        // send request
+        // if success, notify to dismiss view, otherwise trigger to show error alert
     }
 
     // MARK: - Private interface
 
+    private var walking: Walking
     private lazy var currentOwner: Owner = loadOwnerFromStorage() ?? Owner()
+    private var location: Location?
 
     private func loadOwnerFromStorage() -> Owner? {
         guard let data = KeyValueStorage(KeyValueStorage.Name.currentOwner)
@@ -59,5 +65,9 @@ final class BookingWalkingViewModel: ObservableObject {
         return owner
     }
 
-    private var walking: Walking
+    private func prepareOwnerInfo() {
+        walking.owner = currentOwner
+        walking.location = location
+        walking.notes = notes
+    }
 }

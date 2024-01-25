@@ -7,12 +7,6 @@ struct BookingWalkingView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.wideSpacingSize) {
             HStack(spacing: AppStyle.UIElementConstant.wideSpacingSize) {
-                WalkingSlotGridView(
-                    price: viewModel.price,
-                    startDate: viewModel.start,
-                    endDate: viewModel.end
-                )
-                .frame(maxWidth: 160)
                 SitterInfoSectionView(
                     rating: viewModel.rating,
                     fullName: viewModel.fullName,
@@ -21,7 +15,18 @@ struct BookingWalkingView: View {
                 ) { text in
                     viewModel.copyToClipboardText(text)
                 }
-            }
+                Spacer()
+                Divider()
+                SitterSlotWalkingInfoView(
+                    price: viewModel.price,
+                    startDate: viewModel.start,
+                    endDate: viewModel.end
+                ).frame(maxWidth: 140)
+            }.frame(height: 120)
+                .padding()
+                .background(Color.App.grayLight)
+                .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
+
             Text("Please fill out the information below:")
                 .italic()
                 .foregroundColor(.App.grayDark)
@@ -41,6 +46,8 @@ struct BookingWalkingView: View {
 
             Spacer()
         }.padding(.horizontal)
+            .navigationTitle("Book walking")
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
