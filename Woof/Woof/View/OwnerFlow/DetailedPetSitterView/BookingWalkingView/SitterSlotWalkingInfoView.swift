@@ -29,10 +29,22 @@ struct SitterSlotWalkingInfoView: View {
 
     private var time: String {
         let startMinute = startDate.formatted(Date.FormatStyle().minute(.twoDigits))
-        let startHours = startDate.formatted(Date.FormatStyle().hour(.defaultDigits(amPM: .omitted)))
+        let startHours = startDate.formatted(Date.FormatStyle().hour(.twoDigits(amPM: .omitted)))
+        let start24Hours = startDate.formatted(Date.VerbatimFormatStyle(
+            format: "\(hour: .twoDigits(clock: .twentyFourHour, hourCycle: .oneBased))",
+            timeZone: .current,
+            calendar: .current
+        )
+        )
         let endMinute = endDate.formatted(Date.FormatStyle().minute(.twoDigits))
         let endHours = endDate.formatted(Date.FormatStyle().hour(.defaultDigits(amPM: .omitted)))
-        return "\(startHours):\(startMinute) - \(endHours):\(endMinute)"
+        let end24Hours = endDate.formatted(Date.VerbatimFormatStyle(
+            format: "\(hour: .twoDigits(clock: .twentyFourHour, hourCycle: .oneBased))",
+            timeZone: .current,
+            calendar: .current
+        )
+        )
+        return "\(start24Hours):\(startMinute) - \(end24Hours):\(endMinute)"
     }
 }
 
