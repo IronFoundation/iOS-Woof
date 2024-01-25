@@ -2,7 +2,7 @@ import Foundation
 
 struct Walking: Codable, Identifiable {
     let id: UUID
-    let owner: Owner?
+    var owner: Owner?
     let sitter: Sitter
     let status: WalkingStatus
     let start: Date

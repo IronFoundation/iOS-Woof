@@ -28,7 +28,7 @@ struct SitterBioSectionView: View {
                         }
                     }
                 FiveStarRatingView(stars: rating)
-                
+
                 Text(city)
                     .italic()
             }

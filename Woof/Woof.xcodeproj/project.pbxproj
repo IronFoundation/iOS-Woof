@@ -146,6 +146,8 @@
 		FD37A9952A0B6EA90001BABB /* DataTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37A98F2A0B65120001BABB /* DataTransformer.swift */; };
 		FD37A9982A0B77A90001BABB /* FiveStarRatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37A9972A0B77A90001BABB /* FiveStarRatingTests.swift */; };
 		FD44E9712AB183AE0031BBB3 /* EncodableAsDictionaryTests+TestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD44E9702AB183AE0031BBB3 /* EncodableAsDictionaryTests+TestModels.swift */; };
+		FD45D9832B6205EE0022A937 /* BookingWalkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD45D9822B6205EE0022A937 /* BookingWalkingViewModel.swift */; };
+		FD45D9852B621E5E0022A937 /* OwnerBookingWalkingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD45D9842B621E5E0022A937 /* OwnerBookingWalkingInfoView.swift */; };
 		FD577CC32ADE5D880045705A /* OwnerWalkingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC22ADE5D880045705A /* OwnerWalkingsView.swift */; };
 		FD577CC72ADE60B20045705A /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC62ADE60B20045705A /* ScheduleView.swift */; };
 		FD577CCA2ADE610E0045705A /* SitterWalkingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */; };
@@ -315,6 +317,8 @@
 		FD37A9932A0B6E960001BABB /* FullNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameTests.swift; sourceTree = "<group>"; };
 		FD37A9972A0B77A90001BABB /* FiveStarRatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarRatingTests.swift; sourceTree = "<group>"; };
 		FD44E9702AB183AE0031BBB3 /* EncodableAsDictionaryTests+TestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EncodableAsDictionaryTests+TestModels.swift"; sourceTree = "<group>"; };
+		FD45D9822B6205EE0022A937 /* BookingWalkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingWalkingViewModel.swift; sourceTree = "<group>"; };
+		FD45D9842B621E5E0022A937 /* OwnerBookingWalkingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerBookingWalkingInfoView.swift; sourceTree = "<group>"; };
 		FD577CC22ADE5D880045705A /* OwnerWalkingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingsView.swift; sourceTree = "<group>"; };
 		FD577CC62ADE60B20045705A /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingsView.swift; sourceTree = "<group>"; };
@@ -550,6 +554,7 @@
 		36CF61F22AE2953A00BAACF0 /* Owner */ = {
 			isa = PBXGroup;
 			children = (
+				FD45D9822B6205EE0022A937 /* BookingWalkingViewModel.swift */,
 				EF95A0492A385FA600E84ACD /* OwnerMainTabViewModel.swift */,
 				FD14A2A42A277FA400362461 /* OwnerProfileViewModel.swift */,
 				EF5A7F2E2A14504F00585616 /* DetailPetSitterViewModel.swift */,
@@ -679,7 +684,7 @@
 				FD5F34182B5EC2C4006EFADB /* WalkingSlotOneLineView.swift */,
 				FD5F341A2B5ECBA4006EFADB /* WalkingSlotGridView.swift */,
 				FD5F341C2B5F6999006EFADB /* WalkingSlotsSection.swift */,
-				FD5F34102B594FA0006EFADB /* BookingWalkingView.swift */,
+				FD45D9862B621E770022A937 /* BookingWalkingView */,
 			);
 			path = DetailedPetSitterView;
 			sourceTree = "<group>";
@@ -836,6 +841,15 @@
 				FD37A9972A0B77A90001BABB /* FiveStarRatingTests.swift */,
 			);
 			path = DataTransformerTests;
+			sourceTree = "<group>";
+		};
+		FD45D9862B621E770022A937 /* BookingWalkingView */ = {
+			isa = PBXGroup;
+			children = (
+				FD45D9842B621E5E0022A937 /* OwnerBookingWalkingInfoView.swift */,
+				FD5F34102B594FA0006EFADB /* BookingWalkingView.swift */,
+			);
+			path = BookingWalkingView;
 			sourceTree = "<group>";
 		};
 		FD577CC42ADE5D980045705A /* OwnerWallkingsView */ = {
@@ -1527,6 +1541,7 @@
 				FD7F98A12A0E0E280058DBEB /* AppStyle+FontStyle.swift in Sources */,
 				FD2FA2292A129C53002B618B /* SitterListView.swift in Sources */,
 				3673D6372A04F7FD009D699D /* Owner.swift in Sources */,
+				FD45D9852B621E5E0022A937 /* OwnerBookingWalkingInfoView.swift in Sources */,
 				1912607B2AC08C9300F43D94 /* AllSittersResponse.swift in Sources */,
 				FD5F34112B594FA0006EFADB /* BookingWalkingView.swift in Sources */,
 				FD7F98A32A0E10510058DBEB /* AppStyle+UIElementConstant.swift in Sources */,
@@ -1576,6 +1591,7 @@
 				FD14A2A72A27803600362461 /* KeyValueStorage+Name.swift in Sources */,
 				EF5A7F2F2A14504F00585616 /* DetailPetSitterViewModel.swift in Sources */,
 				FD0291752A0E273500F88377 /* BioSectionView.swift in Sources */,
+				FD45D9832B6205EE0022A937 /* BookingWalkingViewModel.swift in Sources */,
 				FDD790642A45732D007C1265 /* Obfuscator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
