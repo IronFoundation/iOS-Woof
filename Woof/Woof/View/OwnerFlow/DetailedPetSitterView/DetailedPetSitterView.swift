@@ -7,14 +7,12 @@ struct DetailPetSitterView: View {
 
     var body: some View {
         ScrollView {
-            SitterBioSectionView(
+            SitterInfoSectionView(
                 avatarURL: viewModel.imageURL,
                 rating: viewModel.rating,
                 fullName: viewModel.fullName,
                 phoneNumber: viewModel.phoneNumber,
-                city: viewModel.city,
-                bio: viewModel.bio,
-                showMore: $showMore
+                city: viewModel.city
             ) { text in
                 viewModel.copyToClipboardText(text)
             }

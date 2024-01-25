@@ -1,14 +1,11 @@
 import SwiftUI
 
-struct SitterBioSectionView: View {
+struct SitterInfoSectionView: View {
     let avatarURL: URL?
     let rating: StarRating
     let fullName: String
     let phoneNumber: String
     let city: String
-    let bio: String
-
-    @Binding var showMore: Bool
 
     var onTapAction: (String) -> Void
 
@@ -28,13 +25,19 @@ struct SitterBioSectionView: View {
                         }
                     }
                 FiveStarRatingView(stars: rating)
-                
-                Text(city)
-                    .italic()
+                Label(phoneNumber, systemImage: .IconName.phone)
+                    .contextMenu {
+                        Button {
+                            onTapAction(city)
+                        } label: {
+                            CopyToClipboardLabel()
+                        }
+                    }
+                Label(city, systemImage: "map")
             }
             .font(
                 .system(
-                    size: AppStyle.FontStyle.body.size
+                    size: AppStyle.FontStyle.footnote.size
                 )
             )
             Spacer()
@@ -43,14 +46,12 @@ struct SitterBioSectionView: View {
 }
 
 #Preview {
-    SitterBioSectionView(
+    SitterInfoSectionView(
         avatarURL: Sitter.Dummy.emilyDoe.avatarUrl,
         rating: .rated(.fiveStars),
         fullName: Sitter.Dummy.emilyDoe.name + " " + Sitter.Dummy.emilyDoe.surname,
         phoneNumber: Sitter.Dummy.emilyDoe.phone,
         city: Sitter.Dummy.emilyDoe.city,
-        bio: Sitter.Dummy.emilyDoe.bio,
-        showMore: .constant(true),
         onTapAction: { _ in
             print("Tapped")
         }
