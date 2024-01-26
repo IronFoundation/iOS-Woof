@@ -159,7 +159,7 @@
 		FD5F34192B5EC2C4006EFADB /* WalkingSlotOneLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34182B5EC2C4006EFADB /* WalkingSlotOneLineView.swift */; };
 		FD5F341B2B5ECBA4006EFADB /* SitterSlotWalkingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F341A2B5ECBA4006EFADB /* SitterSlotWalkingInfoView.swift */; };
 		FD5F341D2B5F6999006EFADB /* WalkingSlotsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F341C2B5F6999006EFADB /* WalkingSlotsSection.swift */; };
-		FD5F341F2B5F6CAC006EFADB /* ExtendableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F341E2B5F6CAC006EFADB /* ExtendableText.swift */; };
+		FD5F341F2B5F6CAC006EFADB /* ExpandableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F341E2B5F6CAC006EFADB /* ExpandableText.swift */; };
 		FD5F34212B5F6ECE006EFADB /* SitterInfoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5F34202B5F6ECE006EFADB /* SitterInfoSectionView.swift */; };
 		FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */; };
 		FD6A2E612A2F067E00934C3E /* KeyValueStorage+KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */; };
@@ -330,7 +330,7 @@
 		FD5F34182B5EC2C4006EFADB /* WalkingSlotOneLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotOneLineView.swift; sourceTree = "<group>"; };
 		FD5F341A2B5ECBA4006EFADB /* SitterSlotWalkingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterSlotWalkingInfoView.swift; sourceTree = "<group>"; };
 		FD5F341C2B5F6999006EFADB /* WalkingSlotsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotsSection.swift; sourceTree = "<group>"; };
-		FD5F341E2B5F6CAC006EFADB /* ExtendableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendableText.swift; sourceTree = "<group>"; };
+		FD5F341E2B5F6CAC006EFADB /* ExpandableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableText.swift; sourceTree = "<group>"; };
 		FD5F34202B5F6ECE006EFADB /* SitterInfoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterInfoSectionView.swift; sourceTree = "<group>"; };
 		FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterMainTabView.swift; sourceTree = "<group>"; };
 		FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+KeyTests.swift"; sourceTree = "<group>"; };
@@ -651,7 +651,7 @@
 			children = (
 				FD5F34162B5EBB43006EFADB /* WalkingStatusLabel.swift */,
 				FD57B8412B581D8700DA70F1 /* MapPinLabel.swift */,
-				FD5F341E2B5F6CAC006EFADB /* ExtendableText.swift */,
+				FD5F341E2B5F6CAC006EFADB /* ExpandableText.swift */,
 				FD57B8432B58254700DA70F1 /* DateRangeView.swift */,
 				93B21C2D2A31EA1200610D82 /* ButtonStyle */,
 				EF7B7EFF2A147D8300F00B4E /* TextWithIconLabelView.swift */,
@@ -1556,7 +1556,7 @@
 				FD57B8442B58254700DA70F1 /* DateRangeView.swift in Sources */,
 				FD7F989D2A0E04650058DBEB /* SitterCardView.swift in Sources */,
 				FD5F341D2B5F6999006EFADB /* WalkingSlotsSection.swift in Sources */,
-				FD5F341F2B5F6CAC006EFADB /* ExtendableText.swift in Sources */,
+				FD5F341F2B5F6CAC006EFADB /* ExpandableText.swift in Sources */,
 				BAD0FC632A31D20800F59544 /* StarRating.swift in Sources */,
 				EF95A04D2A385FCF00E84ACD /* SitterMainTabViewModel.swift in Sources */,
 				362F63062A28A8B6002A659B /* OwnerProfileView.swift in Sources */,
