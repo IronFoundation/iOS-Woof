@@ -10,4 +10,19 @@ final class WalkingStatusTests: XCTestCase {
         XCTAssertEqual(WalkingStatus.canceledBySitter.rawValue, "Cancelled")
         XCTAssertEqual(WalkingStatus.expired.rawValue, "Expired")
     }
+
+    func testWalkingStatusCasesExistInApi() {
+        // Given // When
+        let expectedCases: [WalkingStatus] = [
+            .available,
+            .pending,
+            .booked,
+            .finished,
+            .canceledBySitter,
+            .expired,
+        ]
+
+        // Then
+        XCTAssertEqual(Set(expectedCases), Set(WalkingStatus.allCases))
+    }
 }

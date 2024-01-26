@@ -1,7 +1,7 @@
 /**
  The possible walking status values for a `Walking`.
  */
-enum WalkingStatus: String, Codable {
+enum WalkingStatus: String, Codable, CaseIterable {
     /// The walking is available for booking.
     case available = "Available"
 
