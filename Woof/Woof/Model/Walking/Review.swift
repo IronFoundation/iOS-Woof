@@ -1,10 +1,7 @@
-import Foundation
-
 /**
- The owner and sitter reviews for the walking service.
- Conforms to the `Codable` protocol.
+ The review for the walking service.
  */
-struct Reviews: Codable {
+struct Review: Codable {
     /// The review given by the pet owner.
     let ownerReview: String
 

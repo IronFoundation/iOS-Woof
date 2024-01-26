@@ -3,6 +3,7 @@ import Foundation
 extension Walking {
     /// Provides dummy data for `Walking` model.
     enum Dummy {
+        /// One instance of walking with the dummy data.
         static let dummyWalking = Walking(
             id: UUID(),
             owner: Owner.Dummy.laraCroft,
@@ -11,64 +12,65 @@ extension Walking {
             start: Date(),
             end: Date() + 2400,
             location: Location(longitude: 0.0, latitude: 0.0, address: "Sample Address"),
-            reviews: Reviews(ownerReview: "", sitterReview: ""),
-            rating: Ratings(ownerRating: 0, sitterRating: 0),
+            reviews: Review(ownerReview: "", sitterReview: ""),
+            rating: Rating(ownerRating: 0, sitterRating: 0),
             notes: "Sample notes",
-            price: 28.0 // You can set the price as needed
+            price: 28.0
         )
 
+        /// The array of walking instances with the dummy data.
         static let bulkDummyWalkings = [
             Walking(
                 id: UUID(),
                 owner: nil,
-                sitter: Sitter(), // You may want to create a Sitter instance here
-                status: .finished, // You can change the status as needed
+                sitter: Sitter(),
+                status: .finished,
                 start: Date() + 1200,
                 end: Date() + 2800,
                 location: Location(longitude: 0.0, latitude: 0.0, address: "Sample Address"),
-                reviews: Reviews(ownerReview: "", sitterReview: ""),
-                rating: Ratings(ownerRating: 0, sitterRating: 0),
+                reviews: Review(ownerReview: "", sitterReview: ""),
+                rating: Rating(ownerRating: 0, sitterRating: 0),
                 notes: "Sample notes",
-                price: 20.0 // You can set the price as needed
+                price: 20.0
             ),
             Walking(
                 id: UUID(),
                 owner: Owner.Dummy.laraCroft,
-                sitter: Sitter.Dummy.emilyDoe, // You may want to create a Sitter instance here
-                status: .available, // You can change the status as needed
+                sitter: Sitter.Dummy.emilyDoe,
+                status: .available,
                 start: Date(),
                 end: Date() + 2400,
                 location: Location(longitude: 0.0, latitude: 0.0, address: "Sample Address"),
-                reviews: Reviews(ownerReview: "", sitterReview: ""),
-                rating: Ratings(ownerRating: 0, sitterRating: 0),
+                reviews: Review(ownerReview: "", sitterReview: ""),
+                rating: Rating(ownerRating: 0, sitterRating: 0),
                 notes: "Sample notes",
-                price: 28.0 // You can set the price as needed
+                price: 28.0
             ),
             Walking(
                 id: UUID(),
                 owner: Owner.Dummy.laraCroft,
-                sitter: Sitter.Dummy.emilyDoe, // You may want to create a Sitter instance here
-                status: .pending, // You can change the status as needed
+                sitter: Sitter.Dummy.emilyDoe,
+                status: .pending,
                 start: Date() + 5200,
                 end: Date() + 6400,
                 location: Location(longitude: 0.0, latitude: 0.0, address: "Sample Address"),
-                reviews: Reviews(ownerReview: "", sitterReview: ""),
-                rating: Ratings(ownerRating: 0, sitterRating: 0),
+                reviews: Review(ownerReview: "", sitterReview: ""),
+                rating: Rating(ownerRating: 0, sitterRating: 0),
                 notes: "Sample notes",
-                price: 18.0 // You can set the price as needed
+                price: 18.0
             ),
             Walking(
                 id: UUID(),
                 owner: Owner.Dummy.laraCroft,
-                sitter: Sitter.Dummy.emilyDoe, // You may want to create a Sitter instance here
-                status: .available, // You can change the status as needed
+                sitter: Sitter.Dummy.emilyDoe,
+                status: .available,
                 start: Date() + 12400,
                 end: Date() + 14800,
                 location: Location(longitude: 0.0, latitude: 0.0, address: "Sample Address"),
-                reviews: Reviews(ownerReview: "", sitterReview: ""),
-                rating: Ratings(ownerRating: 0, sitterRating: 0),
+                reviews: Review(ownerReview: "", sitterReview: ""),
+                rating: Rating(ownerRating: 0, sitterRating: 0),
                 notes: "Sample notes",
-                price: 25.0 // You can set the price as needed
+                price: 25.0
             ),
         ]
     }

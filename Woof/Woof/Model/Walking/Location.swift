@@ -1,8 +1,5 @@
-import Foundation
-
 /**
  The geographical location of the walking service.
- Conforms to the `Codable` protocols.
  */
 struct Location: Codable {
     /// The longitude coordinate of the location of the walking.

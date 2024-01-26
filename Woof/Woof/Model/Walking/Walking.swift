@@ -2,7 +2,6 @@ import Foundation
 
 /**
  Pet walking service provided by a pet sitter for pet owners.
- Conforms to the `Codable` and `Identifiable` protocols.
  */
 struct Walking: Codable, Identifiable {
     /// The unique identifier for the walking instance.
@@ -27,10 +26,10 @@ struct Walking: Codable, Identifiable {
     var location: Location?
 
     /// The owner and sitter reviews for the walking service.
-    let reviews: Reviews?
+    let reviews: Review?
 
     /// The ratings given by both the pet owner and the pet sitter
-    let rating: Ratings?
+    let rating: Rating?
 
     /// The owner additional notes to the sitter about any details of the walking service.
     var notes: String?
