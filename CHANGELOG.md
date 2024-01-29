@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added 
+
+- Add `Walking` entity - [#88](https://github.com/IronFoundation/iOS-Woof/pull/88)
+
 ## [0.5.0] - 27.12.2023
 
 ### Added 
