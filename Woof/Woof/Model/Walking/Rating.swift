@@ -3,8 +3,8 @@
  */
 struct Rating: Codable {
     /// The rating is given to walking by the pet owner.
-    let ownerRating: Double
+    let ownerRating: Int
 
     /// The rating is given to walking by the pet sitter.
-    let sitterRating: Double
+    let sitterRating: Int
 }

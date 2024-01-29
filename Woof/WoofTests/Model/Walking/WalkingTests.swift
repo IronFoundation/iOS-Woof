@@ -1,7 +1,7 @@
 import XCTest
 
 final class WalkingTests: XCTestCase {
-    func testWalInitialization() {
+    func testInitialization() {
         // Given // When
         let dummyWalking = Walking.Dummy.dummyWalking
 
