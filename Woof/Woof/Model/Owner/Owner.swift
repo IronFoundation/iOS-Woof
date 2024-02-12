@@ -3,7 +3,7 @@ import Foundation
 /**
  A person who owns a pet (or several pets) and might be interested in finding a pet sitter for them.
  */
-struct Owner: Identifiable, Codable {
+struct Owner: Identifiable, Codable, Equatable {
     /// Uniquely identifies the pet owner.
     let id: UUID
 
