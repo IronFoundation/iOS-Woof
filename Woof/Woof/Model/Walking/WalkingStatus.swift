@@ -16,7 +16,4 @@ enum WalkingStatus: String, Codable, CaseIterable {
 
     /// The walking has been canceled by the sitter.
     case canceledBySitter = "Cancelled"
-
-    /// The walking has expired due to the elapsed duration since it was initially declared.
-    case expired = "Expired"
 }
