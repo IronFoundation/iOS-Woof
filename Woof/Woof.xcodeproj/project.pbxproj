@@ -44,6 +44,8 @@
 		361737252B63E0E6003D9847 /* WalkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737242B63E0E6003D9847 /* WalkingTests.swift */; };
 		361737262B63E107003D9847 /* Walking+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737142B628102003D9847 /* Walking+Dummy.swift */; };
 		361737272B63E190003D9847 /* Owner+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF16BB252A24E101007922C6 /* Owner+Dummy.swift */; };
+		3617374F2B7A6B1E003D9847 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617374E2B7A6B1E003D9847 /* OnBoardingView.swift */; };
+		361737512B7A6B3B003D9847 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737502B7A6B3B003D9847 /* OnBoardingViewModel.swift */; };
 		36199B0F2A1FB1C900725FC8 /* KeyValueStorage+TestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36199B0E2A1FB1C900725FC8 /* KeyValueStorage+TestKey.swift */; };
 		3619FD3C2ABC699200E9D56D /* AppErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619FD3B2ABC699200E9D56D /* AppErrorTests.swift */; };
 		3619FD3E2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619FD3D2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift */; };
@@ -257,6 +259,8 @@
 		361737202B63DFCF003D9847 /* WalkingLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingLocationTests.swift; sourceTree = "<group>"; };
 		361737222B63E043003D9847 /* WalkingRatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingRatingTests.swift; sourceTree = "<group>"; };
 		361737242B63E0E6003D9847 /* WalkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingTests.swift; sourceTree = "<group>"; };
+		3617374E2B7A6B1E003D9847 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		361737502B7A6B3B003D9847 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
 		36199B0E2A1FB1C900725FC8 /* KeyValueStorage+TestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+TestKey.swift"; sourceTree = "<group>"; };
 		3619FD3B2ABC699200E9D56D /* AppErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorTests.swift; sourceTree = "<group>"; };
 		3619FD3D2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorDescriptionTests.swift; sourceTree = "<group>"; };
@@ -1154,6 +1158,7 @@
 			isa = PBXGroup;
 			children = (
 				93DDB06D2A3B31E800D7D97A /* LoginView.swift */,
+				3617374E2B7A6B1E003D9847 /* OnBoardingView.swift */,
 				FD6A2E5A2A2EF65D00934C3E /* SitterFlow */,
 				EF303EBF2A17AFA20086065B /* ReusableViews */,
 				FD6A2E592A2EF62800934C3E /* OwnerFlow */,
@@ -1182,6 +1187,7 @@
 				36CF61F12AE2951C00BAACF0 /* Sitter */,
 				FDEE43DF2A386291007DE0A9 /* UserRoleViewModel.swift */,
 				36E97F162A2F42FD00030E3E /* LoginViewModel.swift */,
+				361737502B7A6B3B003D9847 /* OnBoardingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1601,6 +1607,7 @@
 				363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */,
 				FD0291732A0E256F00F88377 /* GeneralInfoSectionView.swift in Sources */,
 				BAE74E922A42E1DD0083C68E /* SitterProfileView.swift in Sources */,
+				3617374F2B7A6B1E003D9847 /* OnBoardingView.swift in Sources */,
 				BA4561812A334A8A00C6E595 /* Stars.swift in Sources */,
 				FD3303582AA9BDA40091A4BA /* WoofAppEndpoint+Path.swift in Sources */,
 				FD1FA3C32A0A682E000A3A91 /* SitterCardViewModel.swift in Sources */,
@@ -1635,6 +1642,7 @@
 				3617370F2B628019003D9847 /* Review.swift in Sources */,
 				93DDB06C2A3B30B100D7D97A /* PurpleCapsuleOfInfinityWidth.swift in Sources */,
 				FD577CC32ADE5D880045705A /* OwnerWalkingsView.swift in Sources */,
+				361737512B7A6B3B003D9847 /* OnBoardingViewModel.swift in Sources */,
 				FD5F34192B5EC2C4006EFADB /* WalkingSlotOneLineView.swift in Sources */,
 				362A4A142B55AC170078CDD5 /* AddNewWalkingView.swift in Sources */,
 				FDD538582A41D6C900331977 /* WoofAppEndpoint.swift in Sources */,

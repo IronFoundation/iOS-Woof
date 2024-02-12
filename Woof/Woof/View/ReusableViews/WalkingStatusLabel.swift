@@ -15,13 +15,11 @@ struct WalkingStatusLabel: View {
             return .orange
         case .canceledBySitter:
             return .red
-        case .expired:
-            return .gray
         }
     }
 
     var body: some View {
-        Text(status.description)
+        Text(status.rawValue)
             .font(
                 .system(
                     size: AppStyle.FontStyle.body.size,
