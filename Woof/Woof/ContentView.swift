@@ -7,11 +7,21 @@ struct ContentView: View {
     var body: some View {
         switch userRoleVM.userRole {
         case .owner:
-            OwnerMainTabView()
-                .environmentObject(userRoleVM)
+            if userRoleVM.ownerLoggedOnce {
+                OwnerMainTabView()
+                    .environmentObject(userRoleVM)
+            } else {
+                OwnerOnboardingView()
+                    .environmentObject(userRoleVM)
+            }
         case .sitter:
-            SitterMainTabView()
-                .environmentObject(userRoleVM)
+            if userRoleVM.sitterLoggedOnce {
+                SitterMainTabView()
+                    .environmentObject(userRoleVM)
+            } else {
+                SitterOnboardingView()
+                    .environmentObject(userRoleVM)
+            }
         case .none:
             LoginView()
                 .environmentObject(userRoleVM)

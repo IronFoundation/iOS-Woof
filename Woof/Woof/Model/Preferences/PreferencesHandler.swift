@@ -23,6 +23,22 @@ enum PreferencesHandler {
         return store(preferences)
     }
 
+    @discardableResult static func setOwnerLoggedOnce(_ isOwnerLoggedOnce: Bool) -> Bool {
+        var preferences = loadPreferences() ?? Preferences()
+
+        preferences.isOwnerLoggedOnce = isOwnerLoggedOnce
+
+        return store(preferences)
+    }
+
+    @discardableResult static func setSitterLoggedOnce(_ isSitterLoggedOnce: Bool) -> Bool {
+        var preferences = loadPreferences() ?? Preferences()
+
+        preferences.isSitterLoggedOnce = isSitterLoggedOnce
+
+        return store(preferences)
+    }
+
     /**
      Gets the current user role in the app.
 
@@ -30,6 +46,14 @@ enum PreferencesHandler {
      */
     static func getUserRole() -> Role {
         loadPreferences()?.selectedRole ?? .none
+    }
+
+    static func getOwnerLoggedOnce() -> Bool {
+        loadPreferences()?.isOwnerLoggedOnce ?? false
+    }
+
+    static func getSitterLoggedOnce() -> Bool {
+        loadPreferences()?.isSitterLoggedOnce ?? false
     }
 
     // MARK: - Private interface

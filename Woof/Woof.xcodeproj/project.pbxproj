@@ -44,8 +44,8 @@
 		361737252B63E0E6003D9847 /* WalkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737242B63E0E6003D9847 /* WalkingTests.swift */; };
 		361737262B63E107003D9847 /* Walking+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737142B628102003D9847 /* Walking+Dummy.swift */; };
 		361737272B63E190003D9847 /* Owner+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF16BB252A24E101007922C6 /* Owner+Dummy.swift */; };
-		3617374F2B7A6B1E003D9847 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617374E2B7A6B1E003D9847 /* OnBoardingView.swift */; };
-		361737512B7A6B3B003D9847 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737502B7A6B3B003D9847 /* OnBoardingViewModel.swift */; };
+		361737552B7B77F1003D9847 /* SitterOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737542B7B77F1003D9847 /* SitterOnboardingView.swift */; };
+		361737572B7B7803003D9847 /* OwnerOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737562B7B7803003D9847 /* OwnerOnboardingView.swift */; };
 		36199B0F2A1FB1C900725FC8 /* KeyValueStorage+TestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36199B0E2A1FB1C900725FC8 /* KeyValueStorage+TestKey.swift */; };
 		3619FD3C2ABC699200E9D56D /* AppErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619FD3B2ABC699200E9D56D /* AppErrorTests.swift */; };
 		3619FD3E2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619FD3D2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift */; };
@@ -62,6 +62,8 @@
 		368BF0EF2A16103B00F3F750 /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368BF0EB2A152FA500F3F750 /* KeyValueStorage.swift */; };
 		368F66612A308D2600C8F69D /* PreferencesHandlerGetUserRoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F66602A308D2600C8F69D /* PreferencesHandlerGetUserRoleTests.swift */; };
 		36A2DEC32B3C28C600E1D07B /* TestMockSittersData.json in Resources */ = {isa = PBXBuildFile; fileRef = 36A2DEC22B3C28C600E1D07B /* TestMockSittersData.json */; };
+		36AF66E32B7B947000BBC3CC /* OwnerOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AF66E22B7B947000BBC3CC /* OwnerOnboardingViewModel.swift */; };
+		36AF66E52B7B962900BBC3CC /* SitterOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AF66E42B7B962900BBC3CC /* SitterOnboardingViewModel.swift */; };
 		36BEA7582A1621B10020F6AE /* KeyValueStorageSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BEA7572A1621B10020F6AE /* KeyValueStorageSaveTests.swift */; };
 		36C06F5A2A2F5AA600B8EBDF /* PreferencesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06F592A2F5AA600B8EBDF /* PreferencesHandler.swift */; };
 		36C06F5C2A2F5DCB00B8EBDF /* PreferencesHandlerSetUserRoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06F5B2A2F5DCB00B8EBDF /* PreferencesHandlerSetUserRoleTests.swift */; };
@@ -259,8 +261,8 @@
 		361737202B63DFCF003D9847 /* WalkingLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingLocationTests.swift; sourceTree = "<group>"; };
 		361737222B63E043003D9847 /* WalkingRatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingRatingTests.swift; sourceTree = "<group>"; };
 		361737242B63E0E6003D9847 /* WalkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingTests.swift; sourceTree = "<group>"; };
-		3617374E2B7A6B1E003D9847 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
-		361737502B7A6B3B003D9847 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		361737542B7B77F1003D9847 /* SitterOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterOnboardingView.swift; sourceTree = "<group>"; };
+		361737562B7B7803003D9847 /* OwnerOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerOnboardingView.swift; sourceTree = "<group>"; };
 		36199B0E2A1FB1C900725FC8 /* KeyValueStorage+TestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+TestKey.swift"; sourceTree = "<group>"; };
 		3619FD3B2ABC699200E9D56D /* AppErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorTests.swift; sourceTree = "<group>"; };
 		3619FD3D2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorDescriptionTests.swift; sourceTree = "<group>"; };
@@ -275,6 +277,8 @@
 		368BF0EB2A152FA500F3F750 /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
 		368F66602A308D2600C8F69D /* PreferencesHandlerGetUserRoleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesHandlerGetUserRoleTests.swift; sourceTree = "<group>"; };
 		36A2DEC22B3C28C600E1D07B /* TestMockSittersData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestMockSittersData.json; sourceTree = "<group>"; };
+		36AF66E22B7B947000BBC3CC /* OwnerOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerOnboardingViewModel.swift; sourceTree = "<group>"; };
+		36AF66E42B7B962900BBC3CC /* SitterOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterOnboardingViewModel.swift; sourceTree = "<group>"; };
 		36BEA7572A1621B10020F6AE /* KeyValueStorageSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageSaveTests.swift; sourceTree = "<group>"; };
 		36C06F592A2F5AA600B8EBDF /* PreferencesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesHandler.swift; sourceTree = "<group>"; };
 		36C06F5B2A2F5DCB00B8EBDF /* PreferencesHandlerSetUserRoleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesHandlerSetUserRoleTests.swift; sourceTree = "<group>"; };
@@ -1158,7 +1162,8 @@
 			isa = PBXGroup;
 			children = (
 				93DDB06D2A3B31E800D7D97A /* LoginView.swift */,
-				3617374E2B7A6B1E003D9847 /* OnBoardingView.swift */,
+				361737562B7B7803003D9847 /* OwnerOnboardingView.swift */,
+				361737542B7B77F1003D9847 /* SitterOnboardingView.swift */,
 				FD6A2E5A2A2EF65D00934C3E /* SitterFlow */,
 				EF303EBF2A17AFA20086065B /* ReusableViews */,
 				FD6A2E592A2EF62800934C3E /* OwnerFlow */,
@@ -1187,7 +1192,8 @@
 				36CF61F12AE2951C00BAACF0 /* Sitter */,
 				FDEE43DF2A386291007DE0A9 /* UserRoleViewModel.swift */,
 				36E97F162A2F42FD00030E3E /* LoginViewModel.swift */,
-				361737502B7A6B3B003D9847 /* OnBoardingViewModel.swift */,
+				36AF66E22B7B947000BBC3CC /* OwnerOnboardingViewModel.swift */,
+				36AF66E42B7B962900BBC3CC /* SitterOnboardingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1607,9 +1613,9 @@
 				363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */,
 				FD0291732A0E256F00F88377 /* GeneralInfoSectionView.swift in Sources */,
 				BAE74E922A42E1DD0083C68E /* SitterProfileView.swift in Sources */,
-				3617374F2B7A6B1E003D9847 /* OnBoardingView.swift in Sources */,
 				BA4561812A334A8A00C6E595 /* Stars.swift in Sources */,
 				FD3303582AA9BDA40091A4BA /* WoofAppEndpoint+Path.swift in Sources */,
+				361737552B7B77F1003D9847 /* SitterOnboardingView.swift in Sources */,
 				FD1FA3C32A0A682E000A3A91 /* SitterCardViewModel.swift in Sources */,
 				FD577CCA2ADE610E0045705A /* SitterWalkingsView.swift in Sources */,
 				36C06F5A2A2F5AA600B8EBDF /* PreferencesHandler.swift in Sources */,
@@ -1632,6 +1638,7 @@
 				FD37A9902A0B65120001BABB /* DataTransformer.swift in Sources */,
 				9B480A5F2A330F29001A5A71 /* CopyToClipboardLabel.swift in Sources */,
 				FD57B8442B58254700DA70F1 /* DateRangeView.swift in Sources */,
+				36AF66E52B7B962900BBC3CC /* SitterOnboardingViewModel.swift in Sources */,
 				FD7F989D2A0E04650058DBEB /* SitterCardView.swift in Sources */,
 				FD5F341D2B5F6999006EFADB /* WalkingSlotsSection.swift in Sources */,
 				FD5F341F2B5F6CAC006EFADB /* ExpandableText.swift in Sources */,
@@ -1642,12 +1649,12 @@
 				3617370F2B628019003D9847 /* Review.swift in Sources */,
 				93DDB06C2A3B30B100D7D97A /* PurpleCapsuleOfInfinityWidth.swift in Sources */,
 				FD577CC32ADE5D880045705A /* OwnerWalkingsView.swift in Sources */,
-				361737512B7A6B3B003D9847 /* OnBoardingViewModel.swift in Sources */,
 				FD5F34192B5EC2C4006EFADB /* WalkingSlotOneLineView.swift in Sources */,
 				362A4A142B55AC170078CDD5 /* AddNewWalkingView.swift in Sources */,
 				FDD538582A41D6C900331977 /* WoofAppEndpoint.swift in Sources */,
 				FD2FA22B2A129CA1002B618B /* SitterListViewModel.swift in Sources */,
 				36CBB9ED2B273435005EC39A /* AppAlert.swift in Sources */,
+				36AF66E32B7B947000BBC3CC /* OwnerOnboardingViewModel.swift in Sources */,
 				93DDB06E2A3B31E800D7D97A /* LoginView.swift in Sources */,
 				FDE0CEA92A00F8370023F784 /* WoofApp.swift in Sources */,
 				FD5F34172B5EBB43006EFADB /* WalkingStatusLabel.swift in Sources */,
@@ -1669,6 +1676,7 @@
 				361737112B628036003D9847 /* Rating.swift in Sources */,
 				FD3303462A98BD980091A4BA /* WoofAppEndpoint+HTTPAPIEndpoint.swift in Sources */,
 				EF4CBAEF2A3C704300B4A223 /* Sitter+Tests.swift in Sources */,
+				361737572B7B7803003D9847 /* OwnerOnboardingView.swift in Sources */,
 				EF7B7F002A147D8300F00B4E /* TextWithIconLabelView.swift in Sources */,
 				FD14A2A72A27803600362461 /* KeyValueStorage+Name.swift in Sources */,
 				EF5A7F2F2A14504F00585616 /* DetailPetSitterViewModel.swift in Sources */,

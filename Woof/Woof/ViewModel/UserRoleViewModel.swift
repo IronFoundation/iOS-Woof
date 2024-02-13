@@ -9,9 +9,23 @@ final class UserRoleViewModel: ObservableObject {
         }
     }
 
+    @Published var ownerLoggedOnce: Bool {
+        didSet {
+            PreferencesHandler.setOwnerLoggedOnce(ownerLoggedOnce)
+        }
+    }
+
+    @Published var sitterLoggedOnce: Bool {
+        didSet {
+            PreferencesHandler.setSitterLoggedOnce(sitterLoggedOnce)
+        }
+    }
+
     /// Initializes a new instance of the `UserRoleManager`.
     init() {
         userRole = PreferencesHandler.getUserRole()
+        ownerLoggedOnce = PreferencesHandler.getOwnerLoggedOnce()
+        sitterLoggedOnce = PreferencesHandler.getSitterLoggedOnce()
     }
 
     /// Resets the current user role in the app to the default value.
@@ -27,5 +41,13 @@ final class UserRoleViewModel: ObservableObject {
     /// Sets the sitter role in the application.
     func setSitterRole() {
         userRole = .sitter
+    }
+
+    func setOwnerLoggedOnce() {
+        ownerLoggedOnce = true
+    }
+
+    func setSitterLoggedOnce() {
+        sitterLoggedOnce = true
     }
 }
