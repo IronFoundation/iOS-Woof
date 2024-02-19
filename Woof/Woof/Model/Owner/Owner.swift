@@ -19,6 +19,9 @@ struct Owner: Identifiable, Codable, Equatable {
     /// URL that contains an avatar image of the pet owner.
     var avatarURL: URL?
 
+    /// The owners city.
+    var city: String
+    
     /// The address of the pet owner.
     var address: String
 
@@ -43,6 +46,7 @@ struct Owner: Identifiable, Codable, Equatable {
         surname: String,
         phone: String,
         avatarURL: URL?,
+        city: String,
         address: String,
         rating: Double
     ) {
@@ -51,6 +55,7 @@ struct Owner: Identifiable, Codable, Equatable {
         self.surname = surname
         self.phone = phone
         self.avatarURL = avatarURL
+        self.city = city
         self.address = address
         self.rating = rating
     }
@@ -73,6 +78,7 @@ struct Owner: Identifiable, Codable, Equatable {
             surname: "",
             phone: "",
             avatarURL: nil,
+            city: "",
             address: "",
             rating: 0
         )
