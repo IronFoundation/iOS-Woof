@@ -9,7 +9,8 @@ extension Owner {
             surname: "Croft",
             phone: "80299534939",
             avatarURL: Bundle.main.url(forResource: "EmilyDoeAvatar", withExtension: "jpg"),
-            address: "My town, Happiness str. 24-67",
+            city: "Milan",
+            address: "Happiness str. 24-67",
             rating: 4.8
         )
     }
