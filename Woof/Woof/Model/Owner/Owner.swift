@@ -21,7 +21,7 @@ struct Owner: Identifiable, Codable, Equatable {
 
     /// The owners city.
     var city: String
-    
+
     /// The address of the pet owner.
     var address: String
 

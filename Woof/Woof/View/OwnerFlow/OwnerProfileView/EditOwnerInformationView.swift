@@ -11,7 +11,10 @@ struct EditOwnerInformationView: View {
     /// The phone of the owner.
     @Binding var phone: String
 
-    /// The address of the owner.
+    /// The owner's city.
+    @Binding var city: String
+
+    /// The address of the owner street and buidling
     @Binding var address: String
 
     var body: some View {
@@ -20,6 +23,7 @@ struct EditOwnerInformationView: View {
             TextField("Enter your name", text: $name)
             TextField("Enter your surname", text: $surname)
             TextField("Enter your phone", text: $phone)
+            TextField("Enter your city", text: $city)
             TextField("Enter your address", text: $address)
 
             if name.isEmpty {
@@ -42,6 +46,7 @@ struct EditOwnerInformationView_Previews: PreviewProvider {
                 name: .constant("Emily"),
                 surname: .constant("Thompson"),
                 phone: .constant("527637624567"),
+                city: .constant("My town"),
                 address: .constant("My home address")
             )
 
@@ -49,6 +54,7 @@ struct EditOwnerInformationView_Previews: PreviewProvider {
                 name: .constant(""),
                 surname: .constant(""),
                 phone: .constant(""),
+                city: .constant(""),
                 address: .constant("")
             )
         }
@@ -59,6 +65,7 @@ struct EditOwnerInformationView_Previews: PreviewProvider {
                 name: .constant("Emily"),
                 surname: .constant("Thompson"),
                 phone: .constant("527637624567"),
+                city: .constant("My twon"),
                 address: .constant("My home address")
             )
 
@@ -66,6 +73,7 @@ struct EditOwnerInformationView_Previews: PreviewProvider {
                 name: .constant(""),
                 surname: .constant(""),
                 phone: .constant(""),
+                city: .constant(""),
                 address: .constant("")
             )
         }
@@ -76,6 +84,7 @@ struct EditOwnerInformationView_Previews: PreviewProvider {
                 name: .constant("Emily"),
                 surname: .constant("Thompson"),
                 phone: .constant("527637624567"),
+                city: .constant("My town"),
                 address: .constant("My home address")
             )
 
@@ -83,6 +92,7 @@ struct EditOwnerInformationView_Previews: PreviewProvider {
                 name: .constant(""),
                 surname: .constant(""),
                 phone: .constant(""),
+                city: .constant(""),
                 address: .constant("")
             )
         }

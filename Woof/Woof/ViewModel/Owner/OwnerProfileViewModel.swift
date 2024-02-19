@@ -11,7 +11,10 @@ final class OwnerProfileViewModel: ObservableObject {
     /// The phone number of owner
     @Published var phone: String = ""
 
-    /// The home address of owner
+    /// The owner's city
+    @Published var city: String = ""
+
+    /// The address of owner street and building
     @Published var address: String = ""
 
     /// The URL of the owner's avatar image.
@@ -32,6 +35,7 @@ final class OwnerProfileViewModel: ObservableObject {
         name = currentOwner.name
         surname = currentOwner.surname
         phone = currentOwner.phone
+        city = currentOwner.city
         address = currentOwner.address
         avatarURL = currentOwner.avatarURL
     }
@@ -41,6 +45,7 @@ final class OwnerProfileViewModel: ObservableObject {
         currentOwner.name = name
         currentOwner.surname = surname
         currentOwner.phone = phone
+        currentOwner.city = city
         currentOwner.address = address
         currentOwner.avatarURL = avatarURL
 
