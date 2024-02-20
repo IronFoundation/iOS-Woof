@@ -24,4 +24,42 @@ final class PreferencesTests: XCTestCase {
 
         XCTAssertEqual(preferences.selectedRole, Role.owner)
     }
+
+    func testPreferencesReturnFalseForIsOwnerLoggedOnceByDefault() {
+        // Given
+        let preferences = Preferences()
+
+        // When & Then
+        XCTAssertFalse(preferences.isOwnerLoggedOnce)
+    }
+
+    func testPreferencesReturnExpectedValueForIsOwnerLoggedOnceWhenItChanged() {
+        // Given
+        var preferences = Preferences()
+
+        // When
+        preferences.isOwnerLoggedOnce = true
+
+        // Then
+        XCTAssertTrue(preferences.isOwnerLoggedOnce)
+    }
+
+    func testPreferencesReturnFalseForIsSitterLoggedOnceByDefault() {
+        // Given
+        let preferences = Preferences()
+
+        // When & Then
+        XCTAssertFalse(preferences.isSitterLoggedOnce)
+    }
+
+    func testPreferencesReturnExpectedValueForIsSitterLoggedOnceWhenItChanged() {
+        // Given
+        var preferences = Preferences()
+
+        // When
+        preferences.isSitterLoggedOnce = true
+
+        // Then
+        XCTAssertTrue(preferences.isSitterLoggedOnce)
+    }
 }
