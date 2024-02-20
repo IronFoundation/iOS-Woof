@@ -11,7 +11,10 @@ struct OwnerCardView: View {
     /// The phone of the pet owner.
     let phone: String
 
-    /// The address of the pet owner.
+    /// The city of the pet owner.
+    let city: String
+
+    /// The address of the pet owner, street and building.
     let address: String
 
     /// The URL of the avatar image of the pet owner.
@@ -36,6 +39,8 @@ struct OwnerCardView: View {
                 )
                 Group {
                     Label(phone, systemImage: .IconName.phone)
+                        .lineLimit(1)
+                    Label(city, systemImage: .IconName.city)
                         .lineLimit(1)
                     Label(address, systemImage: .IconName.house)
                         .lineLimit(1)
@@ -62,6 +67,7 @@ struct OwnerCardView_Previews: PreviewProvider {
             name: Owner.Dummy.laraCroft.name,
             surname: Owner.Dummy.laraCroft.surname,
             phone: Owner.Dummy.laraCroft.phone,
+            city: Owner.Dummy.laraCroft.city,
             address: Owner.Dummy.laraCroft.address,
             avatarUrl: Owner.Dummy.laraCroft.avatarURL
         )

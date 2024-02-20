@@ -23,6 +23,8 @@ extension String {
         static let phone = "phone.fill"
         /// The icon used in places where picture of a person is required.
         static let filledPerson = "person.fill"
+        /// The icon used in places where picture of a city  is required.
+        static let city = "building.2"
         /// The icon used in places where picture of a house is required.
         static let house = "house"
         /// The icon used for the image with two documents.

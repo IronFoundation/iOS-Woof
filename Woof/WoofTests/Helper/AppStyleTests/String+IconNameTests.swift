@@ -12,6 +12,7 @@ final class StringIconNameTests: XCTestCase {
         let unfilledStar = "star"
         let phone = "phone.fill"
         let filledPerson = "person.fill"
+        let city = "building.2"
         let house = "house"
         let doc = "doc.on.doc"
 
@@ -24,6 +25,7 @@ final class StringIconNameTests: XCTestCase {
         XCTAssertEqual(unfilledStar, String.IconName.unfilledStar)
         XCTAssertEqual(phone, String.IconName.phone)
         XCTAssertEqual(filledPerson, String.IconName.filledPerson)
+        XCTAssertEqual(city, String.IconName.city)
         XCTAssertEqual(house, String.IconName.house)
         XCTAssertEqual(doc, String.IconName.twoDocuments)
     }

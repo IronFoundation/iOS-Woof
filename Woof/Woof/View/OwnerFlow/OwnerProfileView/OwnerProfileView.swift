@@ -17,6 +17,7 @@ struct OwnerProfileView: View {
                             name: $viewModel.name,
                             surname: $viewModel.surname,
                             phone: $viewModel.phone,
+                            city: $viewModel.city,
                             address: $viewModel.address
                         )
 
@@ -36,6 +37,7 @@ struct OwnerProfileView: View {
                             name: viewModel.name,
                             surname: viewModel.surname,
                             phone: viewModel.phone,
+                            city: viewModel.city,
                             address: viewModel.address,
                             avatarUrl: viewModel.avatarURL
                         )
