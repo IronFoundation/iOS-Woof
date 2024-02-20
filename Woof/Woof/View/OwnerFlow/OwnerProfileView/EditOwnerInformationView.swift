@@ -65,7 +65,7 @@ struct EditOwnerInformationView_Previews: PreviewProvider {
                 name: .constant("Emily"),
                 surname: .constant("Thompson"),
                 phone: .constant("527637624567"),
-                city: .constant("My twon"),
+                city: .constant("My town"),
                 address: .constant("My home address")
             )
 

@@ -19,7 +19,7 @@ struct Owner: Identifiable, Codable, Equatable {
     /// URL that contains an avatar image of the pet owner.
     var avatarURL: URL?
 
-    /// The owners city.
+    /// The owner's city.
     var city: String
 
     /// The address of the pet owner.
