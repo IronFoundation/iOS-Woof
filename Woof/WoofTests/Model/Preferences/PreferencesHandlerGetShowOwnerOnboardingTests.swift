@@ -1,6 +1,8 @@
 import XCTest
 
-final class PreferencesHandlerGetOwnerOnboardingTests: XCTestCase {
+// swiftlint:disable type_name
+final class PreferencesHandlerGetShowOwnerOnboardingTests: XCTestCase {
+    // swiftlint:enable type_name
     private var userPreferencesStorage = KeyValueStorage.testPreferencesStorage
 
     override func setUp() {

@@ -1,6 +1,8 @@
 import XCTest
 
-final class PreferencesHandlerSetSitterOnboardingTests: XCTestCase {
+// swiftlint:disable type_name
+final class PreferencesHandlerSetShowSitterOnboardingTests: XCTestCase {
+    // swiftlint:enable type_name
     private var userPreferencesStorage = KeyValueStorage.testPreferencesStorage
 
     override func setUp() {
@@ -12,7 +14,7 @@ final class PreferencesHandlerSetSitterOnboardingTests: XCTestCase {
         _ = PreferencesHandler.set(showSitterOnboarding: true)
     }
 
-    func testOverridesThePreviouslySavedShowSitterOnboardingValue() {
+    func testOverridesThePreviouslySavedValue() {
         // Given
         PreferencesHandler.set(showSitterOnboarding: true)
 
