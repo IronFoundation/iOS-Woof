@@ -22,7 +22,7 @@ struct DetailPetSitterView: View {
             Divider()
             VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
                 ExpandableText(
-                    lineLimit: 2,
+                    lineLimit: 3,
                     text: viewModel.bio,
                     fontSize: AppStyle.FontStyle.footnote.size,
                     showMore: $showMore

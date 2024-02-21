@@ -1,25 +1,5 @@
 import SwiftUI
 
-// struct ExtendableText: View {
-//    let lineLimit: Int
-//    let text: String
-//    @Binding var showMore: Bool
-//
-//    var body: some View {
-//        VStack {
-//            Text(text)
-//                .lineLimit(showMore ? nil : lineLimit)
-//            HStack {
-//                Spacer()
-//                Button(showMore ? "Hide" : "Show more") {
-//                    showMore.toggle()
-//                }.foregroundColor(.App.purpleDark)
-//                    .font(.system(size: AppStyle.FontStyle.footnote.size))
-//            }
-//        }
-//    }
-// }
-
 struct ExpandableText: View {
     let lineLimit: Int
     let text: String
@@ -31,7 +11,7 @@ struct ExpandableText: View {
             Text(text)
                 .lineLimit(showMore ? nil : lineLimit)
 
-            if text.numberOfLines(using: lineLimit, for: fontSize) > lineLimit {
+            if text.numberOfLines(using: lineLimit, for: fontSize) >= lineLimit {
                 HStack {
                     Spacer()
                     Button(showMore ? "Hide" : "Show more") {
@@ -58,17 +38,18 @@ extension String {
     }
 }
 
+// swiftlint:disable line_length
 #Preview {
     VStack {
         ExpandableText(
             lineLimit: 3,
-            text: "Modern Generic Programming - associatedtype",
+            text: "Ich gehe gerne mit Hunden spazieren und habe Erfahrung im Training großer und gefährlicher Tiere. Ich gehe gerne mit Hunden spazieren und habe Erfahrung im Training großer und gefährlicher Tiere.",
             fontSize: 12,
             showMore: .constant(true)
         )
         ExpandableText(
             lineLimit: 3,
-            text: "Modern Generic Programming - associatedtype",
+            text: "Ich gehe gerne mit Hunden spazieren und habe Erfahrung im Training großer und gefährlicher Tiere. Ich gehe gerne mit Hunden spazieren und habe Erfahrung im Training großer und gefährlicher Tiere.",
             fontSize: 12,
             showMore: .constant(false)
         )
