@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Add `Walking` entity - [#88](https://github.com/IronFoundation/iOS-Woof/pull/88)
 - Add `City` property to the `owner` entity - [#93](https://github.com/IronFoundation/iOS-Woof/pull/93)
 
+### Changed
+
+- Change the values of UI Elements (font sizes and avatar size) - [#101](https://github.com/IronFoundation/iOS-Woof/pull/101)
+
 ### Deleted
 
 - Delete `expired` status from enum `WalkingStatus` - [#91](https://github.com/IronFoundation/iOS-Woof/pull/91)
