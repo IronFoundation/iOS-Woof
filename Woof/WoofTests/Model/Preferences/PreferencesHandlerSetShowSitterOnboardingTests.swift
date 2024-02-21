@@ -14,7 +14,7 @@ final class PreferencesHandlerSetShowSitterOnboardingTests: XCTestCase {
         _ = PreferencesHandler.set(showSitterOnboarding: true)
     }
 
-    func testOverridesThePreviouslySavedValue() {
+    func testMethodSuccesfullyOverridesThePreviouslySavedValue() {
         // Given
         PreferencesHandler.set(showSitterOnboarding: true)
 

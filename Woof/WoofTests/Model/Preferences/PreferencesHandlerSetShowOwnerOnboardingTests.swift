@@ -14,7 +14,7 @@ final class PreferencesHandlerSetShowOwnerOnboardingTests: XCTestCase {
         _ = PreferencesHandler.set(showOwnerOnboarding: true)
     }
 
-    func testOverridesThePreviouslySavedValue() {
+    func testMethodSuccesfullyOverridesThePreviouslySavedValue() {
         // Given
         PreferencesHandler.set(showOwnerOnboarding: true)
 
