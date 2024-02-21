@@ -48,6 +48,7 @@
 		368BF0EF2A16103B00F3F750 /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368BF0EB2A152FA500F3F750 /* KeyValueStorage.swift */; };
 		368F66612A308D2600C8F69D /* PreferencesHandlerGetUserRoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F66602A308D2600C8F69D /* PreferencesHandlerGetUserRoleTests.swift */; };
 		36A2DEC32B3C28C600E1D07B /* TestMockSittersData.json in Resources */ = {isa = PBXBuildFile; fileRef = 36A2DEC22B3C28C600E1D07B /* TestMockSittersData.json */; };
+		36B5465F2B86274A00F62F9A /* OwnerOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5465E2B86274A00F62F9A /* OwnerOnboardingView.swift */; };
 		36BEA7582A1621B10020F6AE /* KeyValueStorageSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BEA7572A1621B10020F6AE /* KeyValueStorageSaveTests.swift */; };
 		36C06F5A2A2F5AA600B8EBDF /* PreferencesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06F592A2F5AA600B8EBDF /* PreferencesHandler.swift */; };
 		36C06F5C2A2F5DCB00B8EBDF /* PreferencesHandlerSetUserRoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06F5B2A2F5DCB00B8EBDF /* PreferencesHandlerSetUserRoleTests.swift */; };
@@ -235,6 +236,7 @@
 		368BF0EB2A152FA500F3F750 /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
 		368F66602A308D2600C8F69D /* PreferencesHandlerGetUserRoleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesHandlerGetUserRoleTests.swift; sourceTree = "<group>"; };
 		36A2DEC22B3C28C600E1D07B /* TestMockSittersData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestMockSittersData.json; sourceTree = "<group>"; };
+		36B5465E2B86274A00F62F9A /* OwnerOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerOnboardingView.swift; sourceTree = "<group>"; };
 		36BEA7572A1621B10020F6AE /* KeyValueStorageSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageSaveTests.swift; sourceTree = "<group>"; };
 		36C06F592A2F5AA600B8EBDF /* PreferencesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesHandler.swift; sourceTree = "<group>"; };
 		36C06F5B2A2F5DCB00B8EBDF /* PreferencesHandlerSetUserRoleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesHandlerSetUserRoleTests.swift; sourceTree = "<group>"; };
@@ -843,6 +845,7 @@
 				EF5A7F312A14561000585616 /* DetailedPetSitterView */,
 				FD7F989A2A0E041A0058DBEB /* OwnerMainTabView */,
 				FD7F989B2A0E04390058DBEB /* SitterListView */,
+				36B5465E2B86274A00F62F9A /* OwnerOnboardingView.swift */,
 			);
 			path = OwnerFlow;
 			sourceTree = "<group>";
@@ -1474,6 +1477,7 @@
 				FDD143C72A03BD48000BBA77 /* OwnerMainTabView.swift in Sources */,
 				FDEE43C92A2F45B8007DE0A9 /* Preferences.swift in Sources */,
 				EF16BB262A24E101007922C6 /* Owner+Dummy.swift in Sources */,
+				36B5465F2B86274A00F62F9A /* OwnerOnboardingView.swift in Sources */,
 				FD7F989F2A0E0D2C0058DBEB /* AppStyle.swift in Sources */,
 				FDD143CB2A03C629000BBA77 /* Color+AppScheme.swift in Sources */,
 				EF95A0692A3AC66400E84ACD /* TextEditorWithPlaceholder.swift in Sources */,
