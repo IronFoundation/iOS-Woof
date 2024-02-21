@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Add `Walking` entity - [#88](https://github.com/IronFoundation/iOS-Woof/pull/88)
 - Add `City` property to the `owner` entity - [#93](https://github.com/IronFoundation/iOS-Woof/pull/93)
-- Add `showOwnerOnboarding` and `showSitterOnboarding` properties to struct`Preferences` - [#100](https://github.com/IronFoundation/iOS-Woof/pull/100)
+- Add the possibility to track if the owner/sitter was logged in at least once - [#100](https://github.com/IronFoundation/iOS-Woof/pull/100)
 
 ### Deleted
 
