@@ -174,6 +174,8 @@
 		FD907D492A4356180020CFF0 /* NetworkServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */; };
 		FD9802282A287670003DEE5C /* OwnerProfileViewModelGetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */; };
 		FD98022A2A2878C1003DEE5C /* Owner+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9802292A2878C1003DEE5C /* Owner+Test.swift */; };
+		FDA212BB2B8602710090DC4B /* ExpandableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA212BA2B8602710090DC4B /* ExpandableText.swift */; };
+		FDA212BF2B8603240090DC4B /* String+NumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA212BE2B8603240090DC4B /* String+NumberOfLines.swift */; };
 		FDCF49142A1CDB1600CD3BBB /* DetailPetSitterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A7F2E2A14504F00585616 /* DetailPetSitterViewModel.swift */; };
 		FDD143C72A03BD48000BBA77 /* OwnerMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143C62A03BD48000BBA77 /* OwnerMainTabView.swift */; };
 		FDD143CB2A03C629000BBA77 /* Color+AppScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143CA2A03C629000BBA77 /* Color+AppScheme.swift */; };
@@ -337,6 +339,8 @@
 		FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModelGetTests.swift; sourceTree = "<group>"; };
 		FD9802292A2878C1003DEE5C /* Owner+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Owner+Test.swift"; sourceTree = "<group>"; };
+		FDA212BA2B8602710090DC4B /* ExpandableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableText.swift; sourceTree = "<group>"; };
+		FDA212BE2B8603240090DC4B /* String+NumberOfLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NumberOfLines.swift"; sourceTree = "<group>"; };
 		FDCF49122A1CDA8800CD3BBB /* DetailPetSitterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailPetSitterViewModelTests.swift; path = WoofTests/ViewModel/DetailPetSitterViewModel/DetailPetSitterViewModelTests.swift; sourceTree = SOURCE_ROOT; };
 		FDD143C62A03BD48000BBA77 /* OwnerMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMainTabView.swift; sourceTree = "<group>"; };
 		FDD143CA2A03C629000BBA77 /* Color+AppScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppScheme.swift"; sourceTree = "<group>"; };
@@ -651,6 +655,7 @@
 				93B21C2D2A31EA1200610D82 /* ButtonStyle */,
 				EF7B7EFF2A147D8300F00B4E /* TextWithIconLabelView.swift */,
 				EF303EBD2A1762CF0086065B /* FiveStarRatingView.swift */,
+				FDA212BA2B8602710090DC4B /* ExpandableText.swift */,
 				FD7F98A42A0E12290058DBEB /* AvatarView.swift */,
 				9B6498A72A31E7CA00004FB3 /* CopyToClipboardLabel.swift */,
 				EF95A0682A3AC66400E84ACD /* TextEditorWithPlaceholder.swift */,
@@ -929,6 +934,22 @@
 			path = NetworkService;
 			sourceTree = "<group>";
 		};
+		FDA212BC2B8602F20090DC4B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FDA212BD2B8603000090DC4B /* String */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FDA212BD2B8603000090DC4B /* String */ = {
+			isa = PBXGroup;
+			children = (
+				FDA212BE2B8603240090DC4B /* String+NumberOfLines.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 		FDAA7BF52A0CB8E2007905CB /* DataTrasnformer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1103,6 +1124,7 @@
 		FDE0CEBD2A0269570023F784 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				FDA212BC2B8602F20090DC4B /* Extension */,
 				36CBB9EA2B273423005EC39A /* AppAlert */,
 				36D5AE662B272A3D00E9E78B /* AppButton */,
 				36FA84AD2ABAE39C00D85A6D /* AppError */,
@@ -1510,7 +1532,9 @@
 				FD14A2A52A277FA400362461 /* OwnerProfileViewModel.swift in Sources */,
 				361737082B627EC3003D9847 /* Walking.swift in Sources */,
 				363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */,
+				FDA212BB2B8602710090DC4B /* ExpandableText.swift in Sources */,
 				FD0291732A0E256F00F88377 /* GeneralInfoSectionView.swift in Sources */,
+				FDA212BF2B8603240090DC4B /* String+NumberOfLines.swift in Sources */,
 				BAE74E922A42E1DD0083C68E /* SitterProfileView.swift in Sources */,
 				BA4561812A334A8A00C6E595 /* Stars.swift in Sources */,
 				FD3303582AA9BDA40091A4BA /* WoofAppEndpoint+Path.swift in Sources */,
