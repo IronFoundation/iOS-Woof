@@ -7,7 +7,6 @@ final class WalkingStatusTests: XCTestCase {
         XCTAssertEqual(WalkingStatus.pending.rawValue, "Pending")
         XCTAssertEqual(WalkingStatus.booked.rawValue, "Booked")
         XCTAssertEqual(WalkingStatus.finished.rawValue, "Done")
-        XCTAssertEqual(WalkingStatus.canceledBySitter.rawValue, "Cancelled")
     }
 
     func testWalkingStatusCasesExistInApi() {
@@ -17,7 +16,6 @@ final class WalkingStatusTests: XCTestCase {
             .pending,
             .booked,
             .finished,
-            .canceledBySitter,
         ]
 
         // Then

@@ -27,20 +27,11 @@
 		1CE7E9C92A247CF1000A0509 /* KeyValueStorageInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7E9C82A247CF1000A0509 /* KeyValueStorageInitTests.swift */; };
 		1CE7E9CC2A24889B000A0509 /* KeyValueStorage+UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7E9CB2A24889B000A0509 /* KeyValueStorage+UnitTests.swift */; };
 		361737082B627EC3003D9847 /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737072B627EC3003D9847 /* Walking.swift */; };
-		3617370D2B627FFA003D9847 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617370C2B627FFA003D9847 /* Location.swift */; };
-		3617370F2B628019003D9847 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617370E2B628019003D9847 /* Review.swift */; };
-		361737112B628036003D9847 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737102B628036003D9847 /* Rating.swift */; };
 		361737132B628058003D9847 /* WalkingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737122B628058003D9847 /* WalkingStatus.swift */; };
 		361737152B628102003D9847 /* Walking+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737142B628102003D9847 /* Walking+Dummy.swift */; };
 		361737182B6289DF003D9847 /* WalkingStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737172B6289DF003D9847 /* WalkingStatusTests.swift */; };
 		361737192B628A14003D9847 /* WalkingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737122B628058003D9847 /* WalkingStatus.swift */; };
-		3617371A2B63DDC5003D9847 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617370E2B628019003D9847 /* Review.swift */; };
-		3617371B2B63DDC9003D9847 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617370C2B627FFA003D9847 /* Location.swift */; };
-		3617371C2B63DDCC003D9847 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737102B628036003D9847 /* Rating.swift */; };
 		3617371D2B63DDCE003D9847 /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737072B627EC3003D9847 /* Walking.swift */; };
-		3617371F2B63DDFC003D9847 /* WalkingReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617371E2B63DDFC003D9847 /* WalkingReviewTests.swift */; };
-		361737212B63DFCF003D9847 /* WalkingLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737202B63DFCF003D9847 /* WalkingLocationTests.swift */; };
-		361737232B63E043003D9847 /* WalkingRatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737222B63E043003D9847 /* WalkingRatingTests.swift */; };
 		361737252B63E0E6003D9847 /* WalkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737242B63E0E6003D9847 /* WalkingTests.swift */; };
 		361737262B63E107003D9847 /* Walking+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737142B628102003D9847 /* Walking+Dummy.swift */; };
 		361737272B63E190003D9847 /* Owner+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF16BB252A24E101007922C6 /* Owner+Dummy.swift */; };
@@ -229,15 +220,9 @@
 		1CE7E9C82A247CF1000A0509 /* KeyValueStorageInitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageInitTests.swift; sourceTree = "<group>"; };
 		1CE7E9CB2A24889B000A0509 /* KeyValueStorage+UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+UnitTests.swift"; sourceTree = "<group>"; };
 		361737072B627EC3003D9847 /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
-		3617370C2B627FFA003D9847 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		3617370E2B628019003D9847 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		361737102B628036003D9847 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		361737122B628058003D9847 /* WalkingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatus.swift; sourceTree = "<group>"; };
 		361737142B628102003D9847 /* Walking+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Walking+Dummy.swift"; sourceTree = "<group>"; };
 		361737172B6289DF003D9847 /* WalkingStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatusTests.swift; sourceTree = "<group>"; };
-		3617371E2B63DDFC003D9847 /* WalkingReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingReviewTests.swift; sourceTree = "<group>"; };
-		361737202B63DFCF003D9847 /* WalkingLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingLocationTests.swift; sourceTree = "<group>"; };
-		361737222B63E043003D9847 /* WalkingRatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingRatingTests.swift; sourceTree = "<group>"; };
 		361737242B63E0E6003D9847 /* WalkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingTests.swift; sourceTree = "<group>"; };
 		36199B0E2A1FB1C900725FC8 /* KeyValueStorage+TestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+TestKey.swift"; sourceTree = "<group>"; };
 		3619FD3B2ABC699200E9D56D /* AppErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorTests.swift; sourceTree = "<group>"; };
@@ -453,9 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				361737072B627EC3003D9847 /* Walking.swift */,
-				361737102B628036003D9847 /* Rating.swift */,
-				3617370C2B627FFA003D9847 /* Location.swift */,
-				3617370E2B628019003D9847 /* Review.swift */,
 				361737122B628058003D9847 /* WalkingStatus.swift */,
 				361737142B628102003D9847 /* Walking+Dummy.swift */,
 			);
@@ -466,9 +448,6 @@
 			isa = PBXGroup;
 			children = (
 				361737172B6289DF003D9847 /* WalkingStatusTests.swift */,
-				3617371E2B63DDFC003D9847 /* WalkingReviewTests.swift */,
-				361737202B63DFCF003D9847 /* WalkingLocationTests.swift */,
-				361737222B63E043003D9847 /* WalkingRatingTests.swift */,
 				361737242B63E0E6003D9847 /* WalkingTests.swift */,
 			);
 			path = Walking;
@@ -1384,7 +1363,6 @@
 				36DD2FD82ABB35BB00EE3F57 /* AppError.swift in Sources */,
 				FD9802282A287670003DEE5C /* OwnerProfileViewModelGetTests.swift in Sources */,
 				FD6A2E612A2F067E00934C3E /* KeyValueStorage+KeyTests.swift in Sources */,
-				3617371F2B63DDFC003D9847 /* WalkingReviewTests.swift in Sources */,
 				FD33035C2AA9DA6B0091A4BA /* WoofAppEndpoint+Path.swift in Sources */,
 				1912607C2AC08CA100F43D94 /* AllSittersResponse.swift in Sources */,
 				36FA84A92AB9C26200D85A6D /* Sitter+CodingKeys.swift in Sources */,
@@ -1404,7 +1382,6 @@
 				FD37A9942A0B6E960001BABB /* FullNameTests.swift in Sources */,
 				36FA84A72AB9C22C00D85A6D /* SitterCodingKeysTests.swift in Sources */,
 				36C89CBF2B2B192300433E0C /* AppAlert.swift in Sources */,
-				3617371A2B63DDC5003D9847 /* Review.swift in Sources */,
 				FDEE43E22A38884A007DE0A9 /* UserRoleViewModelTests.swift in Sources */,
 				FDEB1B6A2AAEF6C700428CAA /* Encodable+AsDictionaryTests.swift in Sources */,
 				FD33035B2AA9DA640091A4BA /* Encodable+asDictionary.swift in Sources */,
@@ -1428,7 +1405,6 @@
 				FDD143F72A052A11000BBA77 /* Color+AppSchemeTests.swift in Sources */,
 				36C89CC72B2B1B5B00433E0C /* AppButtonTitleDescriptionTests.swift in Sources */,
 				361737182B6289DF003D9847 /* WalkingStatusTests.swift in Sources */,
-				3617371B2B63DDC9003D9847 /* Location.swift in Sources */,
 				3619FD3E2ABC6A8100E9D56D /* AppErrorDescriptionTests.swift in Sources */,
 				EF95A0552A386A2300E84ACD /* SitterListViewModel.swift in Sources */,
 				1CE7E9CC2A24889B000A0509 /* KeyValueStorage+UnitTests.swift in Sources */,
@@ -1441,7 +1417,6 @@
 				FD14A2B72A28709400362461 /* OwnerProfileViewModelSaveTests.swift in Sources */,
 				FD2F7B332A0CE032008F6F49 /* Owner.swift in Sources */,
 				EF95A0562A386A5F00E84ACD /* SitterMainTabViewModel.swift in Sources */,
-				3617371C2B63DDCC003D9847 /* Rating.swift in Sources */,
 				36C06F5C2A2F5DCB00B8EBDF /* PreferencesHandlerSetUserRoleTests.swift in Sources */,
 				368F66612A308D2600C8F69D /* PreferencesHandlerGetUserRoleTests.swift in Sources */,
 				FD14A2B22A286BBD00362461 /* OwnerProfileViewModel.swift in Sources */,
@@ -1460,7 +1435,6 @@
 				FDEE43CF2A2F4E58007DE0A9 /* Role.swift in Sources */,
 				EF4CBAEC2A3C6DCA00B4A223 /* SitterProfileViewModel.swift in Sources */,
 				19B407072ABDD68F00054D2E /* Sitter+Decoder.swift in Sources */,
-				361737212B63DFCF003D9847 /* WalkingLocationTests.swift in Sources */,
 				FD37A9982A0B77A90001BABB /* FiveStarRatingTests.swift in Sources */,
 				FDEE43E32A388854007DE0A9 /* UserRoleViewModel.swift in Sources */,
 				FD14A2B42A286C5200362461 /* KeyValueStorage+Name.swift in Sources */,
@@ -1481,7 +1455,6 @@
 				EF4CBAF62A3C712C00B4A223 /* SitterProfileViewModelSaveTests.swift in Sources */,
 				FD2F7B342A0CE03B008F6F49 /* SitterCardViewModel.swift in Sources */,
 				199BC0A22A8B793400824CC6 /* Obfuscator.swift in Sources */,
-				361737232B63E043003D9847 /* WalkingRatingTests.swift in Sources */,
 				361737192B628A14003D9847 /* WalkingStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1535,7 +1508,6 @@
 				BAD0FC632A31D20800F59544 /* StarRating.swift in Sources */,
 				EF95A04D2A385FCF00E84ACD /* SitterMainTabViewModel.swift in Sources */,
 				362F63062A28A8B6002A659B /* OwnerProfileView.swift in Sources */,
-				3617370F2B628019003D9847 /* Review.swift in Sources */,
 				93DDB06C2A3B30B100D7D97A /* PurpleCapsuleOfInfinityWidth.swift in Sources */,
 				FD577CC32ADE5D880045705A /* OwnerWalkingsView.swift in Sources */,
 				FDD538582A41D6C900331977 /* WoofAppEndpoint.swift in Sources */,
@@ -1554,8 +1526,6 @@
 				EF4CBAEB2A3C6DCA00B4A223 /* SitterProfileViewModel.swift in Sources */,
 				FDEE43CB2A2F4602007DE0A9 /* Role.swift in Sources */,
 				FD14A2A92A27804F00362461 /* KeyValueStorage+Key.swift in Sources */,
-				3617370D2B627FFA003D9847 /* Location.swift in Sources */,
-				361737112B628036003D9847 /* Rating.swift in Sources */,
 				FD3303462A98BD980091A4BA /* WoofAppEndpoint+HTTPAPIEndpoint.swift in Sources */,
 				EF4CBAEF2A3C704300B4A223 /* Sitter+Tests.swift in Sources */,
 				EF7B7F002A147D8300F00B4E /* TextWithIconLabelView.swift in Sources */,

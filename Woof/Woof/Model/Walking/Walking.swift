@@ -22,18 +22,21 @@ struct Walking: Codable, Identifiable {
     /// The end time of the walking service.
     let end: Date
 
-    /// The geographical location of the walking service.
-    var location: Location?
+    /// The rating is given to owner by the pet sitter.
+    let ownerRating: Int?
 
-    /// The owner and sitter reviews for the walking service.
-    let reviews: Review?
+    /// The rating is given to sitter by the pet owner.
+    let sitterRating: Int?
 
-    /// The ratings given by both the pet owner and the pet sitter
-    let rating: Rating?
+    /// The review is given by the pet owner.
+    let ownerReview: String?
+
+    /// The review is given by the pet sitter.
+    let sitterReview: String?
 
     /// The owner additional notes to the sitter about any details of the walking service.
     var notes: String?
 
     /// The price for the walking service.
-    let price: Double
+    var price: Double
 }

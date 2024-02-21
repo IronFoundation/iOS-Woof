@@ -13,7 +13,4 @@ enum WalkingStatus: String, Codable, CaseIterable {
 
     /// The walking has been completed.
     case finished = "Done"
-
-    /// The walking has been canceled by the sitter.
-    case canceledBySitter = "Cancelled"
 }
