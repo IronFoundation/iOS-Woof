@@ -25,41 +25,41 @@ final class PreferencesTests: XCTestCase {
         XCTAssertEqual(preferences.selectedRole, Role.owner)
     }
 
-    func testPreferencesReturnFalseForIsOwnerLoggedOnceByDefault() {
+    func testPreferencesReturnFalseForShowOwnerOnboardingByDefault() {
         // Given
         let preferences = Preferences()
 
         // When & Then
-        XCTAssertFalse(preferences.isOwnerLoggedOnce)
+        XCTAssertTrue(preferences.showOwnerOnboarding)
     }
 
-    func testPreferencesReturnExpectedValueForIsOwnerLoggedOnceWhenItChanged() {
+    func testPreferencesReturnExpectedValueForShowOwnerOnboardingWhenItChanged() {
         // Given
         var preferences = Preferences()
 
         // When
-        preferences.isOwnerLoggedOnce = true
+        preferences.showOwnerOnboarding = true
 
         // Then
-        XCTAssertTrue(preferences.isOwnerLoggedOnce)
+        XCTAssertTrue(preferences.showOwnerOnboarding)
     }
 
-    func testPreferencesReturnFalseForIsSitterLoggedOnceByDefault() {
+    func testPreferencesReturnFalseForShowSitterOnboardingByDefault() {
         // Given
         let preferences = Preferences()
 
         // When & Then
-        XCTAssertFalse(preferences.isSitterLoggedOnce)
+        XCTAssertTrue(preferences.showSitterOnboarding)
     }
 
-    func testPreferencesReturnExpectedValueForIsSitterLoggedOnceWhenItChanged() {
+    func testPreferencesReturnExpectedValueForShowSitterOnboardingWhenItChanged() {
         // Given
         var preferences = Preferences()
 
         // When
-        preferences.isSitterLoggedOnce = true
+        preferences.showSitterOnboarding = true
 
         // Then
-        XCTAssertTrue(preferences.isSitterLoggedOnce)
+        XCTAssertTrue(preferences.showSitterOnboarding)
     }
 }

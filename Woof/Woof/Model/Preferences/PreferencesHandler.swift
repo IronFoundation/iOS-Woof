@@ -24,33 +24,33 @@ enum PreferencesHandler {
     }
 
     /**
-     Saves the information whether the owner has logged in at least once.
+     Sets a flag indicating whether the onboarding screen for the owner needs to be displayed.
 
      - Parameters:
-        - isOwnerLoggedOnce: A boolean value indicating whether the owner has logged in at least once.
+        - showOwnerOnboarding: A boolean value indicates whether it's need to demonstrate onboarding.
 
      - Returns: A boolean value indicating whether the saving operation was successful.
      */
-    @discardableResult static func setOwnerLoggedOnce(_ isOwnerLoggedOnce: Bool) -> Bool {
+    @discardableResult static func set(showOwnerOnboarding: Bool) -> Bool {
         var preferences = loadPreferences() ?? Preferences()
 
-        preferences.isOwnerLoggedOnce = isOwnerLoggedOnce
+        preferences.showOwnerOnboarding = showOwnerOnboarding
 
         return store(preferences)
     }
 
     /**
-     Saves the information whether the sitter has logged in at least once.
+     Sets a flag indicating whether the onboarding screen for the sitter needs to be displayed.
 
      - Parameters:
-        - isSitterLoggedOnce: A boolean value indicating whether the sitter has logged in at least once.
+        - showSitterOnboarding: A boolean value indicates whether it's need to demonstrate onboarding.
 
      - Returns: A boolean value indicating whether the saving operation was successful.
      */
-    @discardableResult static func setSitterLoggedOnce(_ isSitterLoggedOnce: Bool) -> Bool {
+    @discardableResult static func set(showSitterOnboarding: Bool) -> Bool {
         var preferences = loadPreferences() ?? Preferences()
 
-        preferences.isSitterLoggedOnce = isSitterLoggedOnce
+        preferences.showSitterOnboarding = showSitterOnboarding
 
         return store(preferences)
     }
@@ -65,21 +65,21 @@ enum PreferencesHandler {
     }
 
     /**
-     Gets the information whether the owner has logged in at least once.
+     Gets the current state of the owner's onboarding screen display flag.
 
-     - Returns: A boolean value indicating whether the owner has logged in at least once.
+     - Returns: A boolean value reflecting the state of the flag.
      */
-    static func getOwnerLoggedOnce() -> Bool {
-        loadPreferences()?.isOwnerLoggedOnce ?? false
+    static func getShowOwnerOnboarding() -> Bool {
+        loadPreferences()?.showOwnerOnboarding ?? true
     }
 
     /**
-     Gets the information whether the sitter has logged in at least once.
+     Gets the current state of the sitter's onboarding screen display flag.
 
-     - Returns: A boolean value indicating whether the sitter has logged in at least once.
+     - Returns: A boolean value reflecting the state of the flag.
      */
-    static func getSitterLoggedOnce() -> Bool {
-        loadPreferences()?.isSitterLoggedOnce ?? false
+    static func getShowSitterOnboarding() -> Bool {
+        loadPreferences()?.showSitterOnboarding ?? true
     }
 
     // MARK: - Private interface
