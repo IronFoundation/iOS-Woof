@@ -21,6 +21,9 @@ final class DetailSitterViewModel: ObservableObject {
     /// The city or area where sitter works.
     @Published var city: String
 
+    /// The price per hour charged by the sitter.
+    @Published var price: Double
+
     /// Initializes a new instance of the detailed sitter card view model with the provided sitter.
     ///
     /// - Parameter sitter: The sitter for which the detailed view model is created.
@@ -32,6 +35,7 @@ final class DetailSitterViewModel: ObservableObject {
         imageURL = sitter.avatarUrl
         bio = sitter.bio
         city = sitter.city
+        price = sitter.pricePerHour
     }
 
     /// Copies the text to the clipboard. The copied text is available in the
