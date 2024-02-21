@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Add `Walking` entity - [#88](https://github.com/IronFoundation/iOS-Woof/pull/88)
 - Add `City` property to the `owner` entity - [#93](https://github.com/IronFoundation/iOS-Woof/pull/93)
+- Add the capability to store and interact with properties needed for displaying onboarding screens - [#100](https://github.com/IronFoundation/iOS-Woof/pull/100)
 
 ### Deleted
 
