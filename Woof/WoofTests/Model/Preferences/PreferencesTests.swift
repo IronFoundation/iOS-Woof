@@ -24,4 +24,42 @@ final class PreferencesTests: XCTestCase {
 
         XCTAssertEqual(preferences.selectedRole, Role.owner)
     }
+
+    func testPreferencesInitializedWithExpectedDefaultValueForShowOwnerOnboarding() {
+        // Given
+        let preferences = Preferences()
+
+        // When & Then
+        XCTAssertTrue(preferences.showOwnerOnboarding)
+    }
+
+    func testPreferencesReturnExpectedValueForShowOwnerOnboardingWhenItChanged() {
+        // Given
+        var preferences = Preferences()
+
+        // When
+        preferences.showOwnerOnboarding = true
+
+        // Then
+        XCTAssertTrue(preferences.showOwnerOnboarding)
+    }
+
+    func testPreferencesInitializedWithExpectedDefaultValueForShowSitterOnboarding() {
+        // Given
+        let preferences = Preferences()
+
+        // When & Then
+        XCTAssertTrue(preferences.showSitterOnboarding)
+    }
+
+    func testPreferencesReturnExpectedValueForShowSitterOnboardingWhenItChanged() {
+        // Given
+        var preferences = Preferences()
+
+        // When
+        preferences.showSitterOnboarding = true
+
+        // Then
+        XCTAssertTrue(preferences.showSitterOnboarding)
+    }
 }
