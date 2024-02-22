@@ -1,6 +1,7 @@
 import SwiftUI
 
-struct SitterFullInformationView: View {
+/// A view presents the section of personal information about the sitter.
+struct SitterSectionInformationView: View {
     /// The full name of the person.
     let fullName: String
 
@@ -48,7 +49,7 @@ struct SitterFullInformationView: View {
 }
 
 #Preview {
-    SitterFullInformationView(
+    SitterSectionInformationView(
         fullName: "Kate Anderson",
         rating: StarRating.rated(Stars.fiveStars),
         phoneNumber: "123-456-789",

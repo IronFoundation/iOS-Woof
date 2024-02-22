@@ -9,7 +9,7 @@ struct DetailPetSitterView: View {
         ScrollView {
             HStack {
                 AvatarView(url: viewModel.imageURL)
-                SitterFullInformationView(
+                SitterSectionInformationView(
                     fullName: viewModel.fullName,
                     rating: viewModel.rating,
                     phoneNumber: viewModel.phoneNumber,

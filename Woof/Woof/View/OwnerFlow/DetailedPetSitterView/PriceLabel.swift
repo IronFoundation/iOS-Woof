@@ -1,7 +1,8 @@
 import SwiftUI
 
+/// A view displaying information about the costs per hour with specified currency.
 struct PriceLabel: View {
-    /// The price associated with the person.
+    /// The price to present.
     let price: Double
 
     var body: some View {
