@@ -125,6 +125,7 @@
 		FD14A2B72A28709400362461 /* OwnerProfileViewModelSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2B62A28709400362461 /* OwnerProfileViewModelSaveTests.swift */; };
 		FD1FA3C32A0A682E000A3A91 /* SitterCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1FA3C22A0A682E000A3A91 /* SitterCardViewModel.swift */; };
 		FD1FA3CC2A0A781E000A3A91 /* Sitter+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1FA3CB2A0A781E000A3A91 /* Sitter+Dummy.swift */; };
+		FD2B1BC92B87271300958CE1 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B1BC82B87271300958CE1 /* PriceLabel.swift */; };
 		FD2F7B2D2A0CDC44008F6F49 /* EmilyDoeAvatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD2F7B2C2A0CDC44008F6F49 /* EmilyDoeAvatar.jpg */; };
 		FD2F7B322A0CE029008F6F49 /* Sitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143CC2A03E575000BBA77 /* Sitter.swift */; };
 		FD2F7B332A0CE032008F6F49 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673D6362A04F7FD009D699D /* Owner.swift */; };
@@ -169,8 +170,8 @@
 		FD907D492A4356180020CFF0 /* NetworkServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */; };
 		FD9802282A287670003DEE5C /* OwnerProfileViewModelGetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */; };
 		FD98022A2A2878C1003DEE5C /* Owner+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9802292A2878C1003DEE5C /* Owner+Test.swift */; };
-		FDA212BB2B8602710090DC4B /* ExpandableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA212BA2B8602710090DC4B /* ExpandableText.swift */; };
 		FDA212BF2B8603240090DC4B /* String+NumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA212BE2B8603240090DC4B /* String+NumberOfLines.swift */; };
+		FDA212C32B8723300090DC4B /* SitterFullInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA212C22B8723300090DC4B /* SitterFullInformationView.swift */; };
 		FDCF49142A1CDB1600CD3BBB /* DetailPetSitterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A7F2E2A14504F00585616 /* DetailPetSitterViewModel.swift */; };
 		FDD143C72A03BD48000BBA77 /* OwnerMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143C62A03BD48000BBA77 /* OwnerMainTabView.swift */; };
 		FDD143CB2A03C629000BBA77 /* Color+AppScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD143CA2A03C629000BBA77 /* Color+AppScheme.swift */; };
@@ -297,6 +298,7 @@
 		FD14A2B62A28709400362461 /* OwnerProfileViewModelSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModelSaveTests.swift; sourceTree = "<group>"; };
 		FD1FA3C22A0A682E000A3A91 /* SitterCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterCardViewModel.swift; sourceTree = "<group>"; };
 		FD1FA3CB2A0A781E000A3A91 /* Sitter+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sitter+Dummy.swift"; sourceTree = "<group>"; };
+		FD2B1BC82B87271300958CE1 /* PriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
 		FD2F7B2C2A0CDC44008F6F49 /* EmilyDoeAvatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EmilyDoeAvatar.jpg; sourceTree = "<group>"; };
 		FD2FA2282A129C53002B618B /* SitterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterListView.swift; sourceTree = "<group>"; };
 		FD2FA22A2A129CA1002B618B /* SitterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterListViewModel.swift; sourceTree = "<group>"; };
@@ -332,8 +334,8 @@
 		FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModelGetTests.swift; sourceTree = "<group>"; };
 		FD9802292A2878C1003DEE5C /* Owner+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Owner+Test.swift"; sourceTree = "<group>"; };
-		FDA212BA2B8602710090DC4B /* ExpandableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableText.swift; sourceTree = "<group>"; };
 		FDA212BE2B8603240090DC4B /* String+NumberOfLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NumberOfLines.swift"; sourceTree = "<group>"; };
+		FDA212C22B8723300090DC4B /* SitterFullInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterFullInformationView.swift; sourceTree = "<group>"; };
 		FDCF49122A1CDA8800CD3BBB /* DetailPetSitterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailPetSitterViewModelTests.swift; path = WoofTests/ViewModel/DetailPetSitterViewModel/DetailPetSitterViewModelTests.swift; sourceTree = SOURCE_ROOT; };
 		FDD143C62A03BD48000BBA77 /* OwnerMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMainTabView.swift; sourceTree = "<group>"; };
 		FDD143CA2A03C629000BBA77 /* Color+AppScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppScheme.swift"; sourceTree = "<group>"; };
@@ -642,7 +644,6 @@
 				93B21C2D2A31EA1200610D82 /* ButtonStyle */,
 				EF7B7EFF2A147D8300F00B4E /* TextWithIconLabelView.swift */,
 				EF303EBD2A1762CF0086065B /* FiveStarRatingView.swift */,
-				FDA212BA2B8602710090DC4B /* ExpandableText.swift */,
 				FD7F98A42A0E12290058DBEB /* AvatarView.swift */,
 				9B6498A72A31E7CA00004FB3 /* CopyToClipboardLabel.swift */,
 				EF95A0682A3AC66400E84ACD /* TextEditorWithPlaceholder.swift */,
@@ -666,6 +667,8 @@
 			isa = PBXGroup;
 			children = (
 				EF5A7F322A14563800585616 /* DetailedPetSitterView.swift */,
+				FDA212C22B8723300090DC4B /* SitterFullInformationView.swift */,
+				FD2B1BC82B87271300958CE1 /* PriceLabel.swift */,
 			);
 			path = DetailedPetSitterView;
 			sourceTree = "<group>";
@@ -1505,6 +1508,7 @@
 				9308D6132A31EFE40086193D /* CapsuleWithWhiteText.swift in Sources */,
 				196037B32AD6BB09000B259B /* ContentView.swift in Sources */,
 				368BF0EC2A152FA500F3F750 /* KeyValueStorage.swift in Sources */,
+				FD2B1BC92B87271300958CE1 /* PriceLabel.swift in Sources */,
 				FDD143E22A05233B000BBA77 /* String+IconName.swift in Sources */,
 				FDEE43E02A386291007DE0A9 /* UserRoleViewModel.swift in Sources */,
 				FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */,
@@ -1518,10 +1522,10 @@
 				EF303EBE2A1762CF0086065B /* FiveStarRatingView.swift in Sources */,
 				36E97F172A2F42FD00030E3E /* LoginViewModel.swift in Sources */,
 				361737132B628058003D9847 /* WalkingStatus.swift in Sources */,
+				FDA212C32B8723300090DC4B /* SitterFullInformationView.swift in Sources */,
 				FD14A2A52A277FA400362461 /* OwnerProfileViewModel.swift in Sources */,
 				361737082B627EC3003D9847 /* Walking.swift in Sources */,
 				363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */,
-				FDA212BB2B8602710090DC4B /* ExpandableText.swift in Sources */,
 				FD0291732A0E256F00F88377 /* GeneralInfoSectionView.swift in Sources */,
 				FDA212BF2B8603240090DC4B /* String+NumberOfLines.swift in Sources */,
 				BAE74E922A42E1DD0083C68E /* SitterProfileView.swift in Sources */,

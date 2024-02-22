@@ -6,60 +6,29 @@ struct DetailPetSitterView: View {
     @ObservedObject var viewModel: DetailSitterViewModel
 
     var body: some View {
-        VStack {
-            HStack(alignment: .top) {
+        ScrollView {
+            HStack {
                 AvatarView(url: viewModel.imageURL)
-                VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.minPadding) {
-                    Text(viewModel.fullName)
-                        .bold()
-                        .font(.system(size: AppStyle.FontStyle.heading.size))
-                        .contextMenu {
-                            Button {
-                                viewModel.copyToClipboardText(viewModel.fullName)
-                            } label: {
-                                CopyToClipboardLabel()
-                            }
-                        }
-                    FiveStarRatingView(stars: viewModel.rating)
-                    Label(viewModel.phoneNumber, systemImage: .IconName.phone)
-                        .contextMenu {
-                            Button {
-                                viewModel.copyToClipboardText(viewModel.phoneNumber)
-                            } label: {
-                                CopyToClipboardLabel()
-                            }
-                        }
-                    Label(viewModel.city, systemImage: .IconName.city)
+                SitterFullInformationView(
+                    fullName: viewModel.fullName,
+                    rating: viewModel.rating,
+                    phoneNumber: viewModel.phoneNumber,
+                    city: viewModel.city
+                ) { text in
+                    viewModel.copyToClipboardText(text)
                 }
-                .font(
-                    .system(
-                        size: AppStyle.FontStyle.footnote.size
-                    )
-                )
                 Spacer()
-                VStack {
-                    Text(viewModel.price, format: .currency(code: "USD"))
-                    Text("per hour")
-                        .font(Font.system(size: AppStyle.FontStyle.footnote.size))
-                }
+                PriceLabel(price: viewModel.price)
             }
             Divider()
-            VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
-                ExpandableText(
-                    lineLimit: 3,
-                    text: viewModel.bio,
-                    fontSize: AppStyle.FontStyle.footnote.size,
-                    showMore: $showMore
-                )
+            Text(viewModel.bio)
                 .font(.system(size: AppStyle.FontStyle.footnote.size))
-            }
+            Divider()
             Spacer()
         }
         .padding()
         .background(Color.App.grayLight)
     }
-
-    @State private var showMore = false
 }
 
 struct DetailPetSitterView_Previews: PreviewProvider {

@@ -25,11 +25,7 @@ struct GeneralInfoSectionView: View {
                     .foregroundColor(.App.purpleDark)
             }
             Spacer()
-            VStack {
-                Text(price, format: .currency(code: "USD"))
-                Text("per hour")
-                    .font(Font.system(size: AppStyle.FontStyle.footnote.size))
-            }
+            PriceLabel(price: price)
         }
         .padding(.vertical, AppStyle.UIElementConstant.minPadding)
         .font(Font.system(size: AppStyle.FontStyle.heading.size))
