@@ -5,7 +5,7 @@ final class UIElementConstantTests: XCTestCase {
         let borderStroke = 12.0
         let cornerRadius = 10.0
         let minPadding = 4.0
-        let avatarSideSize = 80.0
+        let avatarSideSize = 60.0
         let spacingBetweenElements = 8.0
 
         XCTAssertEqual(borderStroke, AppStyle.UIElementConstant.borderStroke)

@@ -14,11 +14,11 @@ extension AppStyle {
         var size: CGFloat {
             switch self {
             case .heading:
-                return 22.0
+                return 20.0
             case .body:
-                return 18.0
+                return 16.0
             case .footnote:
-                return 14.0
+                return 12.0
             }
         }
     }
