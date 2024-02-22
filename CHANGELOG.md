@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Changed
 
 - Change the values of UI Elements (font sizes and avatar size) - [#101](https://github.com/IronFoundation/iOS-Woof/pull/101)
+- Update `build-app.yml` to support required node.js version 20 - [#107](https://github.com/IronFoundation/iOS-Woof/pull/107)
 
 ### Deleted
 
