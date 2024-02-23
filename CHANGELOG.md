@@ -13,6 +13,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Add the capability to store and interact with properties needed for displaying onboarding screens - [#100](https://github.com/IronFoundation/iOS-Woof/pull/100)
 - Add `OwnerOnboardingView` - [#105](https://github.com/IronFoundation/iOS-Woof/pull/105)
 
+### Changed
+
+- Change the values of UI Elements (font sizes and avatar size) - [#101](https://github.com/IronFoundation/iOS-Woof/pull/101)
+- Update `build-app.yml` to support required node.js version 20 - [#107](https://github.com/IronFoundation/iOS-Woof/pull/107)
+- Update the environment settings and documentation - [#108](https://github.com/IronFoundation/iOS-Woof/pull/108)
+
 ### Deleted
 
 - Delete `expired` status from enum `WalkingStatus` - [#91](https://github.com/IronFoundation/iOS-Woof/pull/91)
