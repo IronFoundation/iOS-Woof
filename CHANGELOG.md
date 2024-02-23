@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Change the values of UI Elements (font sizes and avatar size) - [#101](https://github.com/IronFoundation/iOS-Woof/pull/101)
 - Update `build-app.yml` to support required node.js version 20 - [#107](https://github.com/IronFoundation/iOS-Woof/pull/107)
 - Update the environment settings and documentation - [#108](https://github.com/IronFoundation/iOS-Woof/pull/108)
+- Update the `DetailedPetSitterView` to new style - [#106](https://github.com/IronFoundation/iOS-Woof/pull/106)
 
 ### Deleted
 
