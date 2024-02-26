@@ -4,9 +4,11 @@ import SwiftUI
 struct OwnerWalkingsView: View {
     var body: some View {
         NavigationView {
-            Text(walkingsStubTitle)
-                .navigationTitle(navigationTitle)
-                .navigationBarTitleDisplayMode(.inline)
+//            Text(walkingsStubTitle)
+//                .navigationTitle(navigationTitle)
+//                .navigationBarTitleDisplayMode(.inline)
+
+            OwnerOnboardingView()
         }
     }
 

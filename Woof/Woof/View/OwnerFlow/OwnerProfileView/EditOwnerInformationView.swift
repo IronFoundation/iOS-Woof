@@ -20,14 +20,14 @@ struct EditOwnerInformationView: View {
     var body: some View {
         VStack {
             Text("Edit your information")
-            TextField("Enter your name", text: $name)
+            TextField("Enter your name *", text: $name)
             TextField("Enter your surname", text: $surname)
-            TextField("Enter your phone", text: $phone)
-            TextField("Enter your city", text: $city)
-            TextField("Enter your address: street, building", text: $address)
+            TextField("Enter your phone *", text: $phone)
+            TextField("Enter your city *", text: $city)
+            TextField("Enter your address: street, building *", text: $address)
 
-            if name.isEmpty, phone.isEmpty, city.isEmpty, address.isEmpty {
-                Text("*Name, Phone, City, Address is a mandatory field")
+            if name.isEmpty || phone.isEmpty || city.isEmpty || address.isEmpty {
+                Text("Fields with * are mandatory")
             }
         }
         .padding()

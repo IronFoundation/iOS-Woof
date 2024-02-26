@@ -1,25 +1,16 @@
 import SwiftUI
 
-/// A view that onboards the owner and also collects mandatory information about them.
+/// A view to onboard the owner by filling in the mandatory information about themselves.
 struct OwnerOnboardingView: View {
-    /// The name of the owner.
-    @Binding var name: String
-
-    /// The surname of the owner.
-    @Binding var surname: String
-
-    /// The phone of the owner.
-    @Binding var phone: String
-
-    /// The owner's city.
-    @Binding var city: String
-
-    /// The address of the owner street and building
-    @Binding var address: String
+    /// View model responsible to manage data from model layer
+    @ObservedObject var viewModel = OwnerOnboardingViewModel()
 
     /// A boolean indicating whether the save button should be enabled.
     var isSaveButtonEnabled: Bool {
-        !name.isEmpty && !phone.isEmpty && !city.isEmpty && !address.isEmpty
+        viewModel.name.isEmpty ||
+            viewModel.phone.isEmpty ||
+            viewModel.city.isEmpty ||
+            viewModel.address.isEmpty
     }
 
     var body: some View {
@@ -28,32 +19,28 @@ struct OwnerOnboardingView: View {
                 .foregroundColor(Color.App.purpleDark)
 
             Text(onboardingText)
-                .lineLimit(lineLimitForOwnerOnboarding)
                 .foregroundColor(Color.App.purpleDark)
 
             EditOwnerInformationView(
-                name: $name,
-                surname: $surname,
-                phone: $phone,
-                city: $city,
-                address: $address
+                name: $viewModel.name,
+                surname: $viewModel.surname,
+                phone: $viewModel.phone,
+                city: $viewModel.city,
+                address: $viewModel.address
             )
 
             Button(proceedButtonTitle) {}
+                .buttonStyle(CapsuleWithWhiteText())
                 .padding()
-                .clipShape(Capsule())
-                .disabled(!isSaveButtonEnabled)
-                .background(isSaveButtonEnabled ? Color.App.purpleDark : Color.gray)
-                .foregroundColor(Color.App.white)
-                .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
+                .disabled(isSaveButtonEnabled)
         }
+        .padding()
     }
 
     // MARK: - Private interface
 
     private let proceedButtonTitle = "Find your pet sitter"
     private let welcomeText = "Hello!"
-    private let lineLimitForOwnerOnboarding = 4
     private let onboardingText = """
     We're almost ready to help you find a suitable pet-sitter for your beloved companion.
     Just specify a few details by entering your information:
@@ -61,13 +48,5 @@ struct OwnerOnboardingView: View {
 }
 
 #Preview {
-    VStack {
-        OwnerOnboardingView(
-            name: .constant(""),
-            surname: .constant(""),
-            phone: .constant(""),
-            city: .constant(""),
-            address: .constant("")
-        )
-    }
+    OwnerOnboardingView()
 }
