@@ -1,7 +1,7 @@
 import Foundation
 
 /// The view model for a owner profile view that is responsible for preparing and providing data for it.
-final class OwnerProfileViewModel: ObservableObject {
+class OwnerProfileViewModel: ObservableObject {
     /// The name of owner
     @Published var name: String = ""
 
