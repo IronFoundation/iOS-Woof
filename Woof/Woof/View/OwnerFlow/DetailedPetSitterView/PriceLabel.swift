@@ -10,10 +10,14 @@ struct PriceLabel: View {
             Text(price, format: .currency(code: "USD"))
                 .bold()
                 .font(.system(size: AppStyle.FontStyle.heading.size))
-            Text("per hour")
+            Text(pricePerHourText)
                 .font(Font.system(size: AppStyle.FontStyle.footnote.size))
         }.foregroundColor(.App.purpleDark)
     }
+
+    // MARK: - Private interface
+
+    private let pricePerHourText = "per hour"
 }
 
 #Preview {
