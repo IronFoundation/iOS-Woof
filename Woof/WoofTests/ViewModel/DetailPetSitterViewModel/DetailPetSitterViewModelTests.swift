@@ -34,6 +34,7 @@ final class DetailPetSitterViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.phoneNumber, sitter.phone)
         XCTAssertEqual(viewModel.bio, sitter.bio)
         XCTAssertEqual(viewModel.rating, .rated(.fourStars))
+        XCTAssertEqual(viewModel.price, sitter.pricePerHour)
         XCTAssertNil(viewModel.imageURL)
     }
 }
