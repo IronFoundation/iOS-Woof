@@ -23,8 +23,30 @@ struct DetailPetSitterView: View {
             Divider()
             Text(viewModel.bio)
                 .font(.system(size: AppStyle.FontStyle.footnote.size))
-            Divider()
-            Spacer()
+            Divider().padding(.bottom)
+
+            HStack {
+                Text("Slots on ")
+                Spacer()
+                DatePicker("",
+                           selection: $viewModel.selectedDate,
+                           in: Date.now...,
+                           displayedComponents: .date).labelsHidden()
+                    .font(.system(size: AppStyle.FontStyle.heading.size))
+                    .tint(Color.App.purpleDark)
+                Spacer()
+                Button("Search") {
+                    Task {
+                        await viewModel.fetchWalkings()
+                    }
+                }.buttonStyle(CapsuleWithWhiteText())
+
+            }.padding()
+            if viewModel.isLoading {
+                ProgressView()
+            } else {
+                WalkingSlotsView(walkings: $viewModel.walkings)
+            }
         }
         .padding()
         .background(Color.App.grayLight)
