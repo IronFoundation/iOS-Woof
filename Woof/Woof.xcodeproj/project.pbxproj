@@ -161,6 +161,7 @@
 		FD577CC72ADE60B20045705A /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC62ADE60B20045705A /* ScheduleView.swift */; };
 		FD577CCA2ADE610E0045705A /* SitterWalkingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */; };
 		FD5E92752B9064C900FD094A /* WalkingSlotCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */; };
+		FD5E92772B970D9A00FD094A /* BookingSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E92762B970D9A00FD094A /* BookingSlotView.swift */; };
 		FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */; };
 		FD6A2E612A2F067E00934C3E /* KeyValueStorage+KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */; };
 		FD6A2E632A2F072F00934C3E /* KeyValueStorage+NameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */; };
@@ -329,6 +330,7 @@
 		FD577CC62ADE60B20045705A /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingsView.swift; sourceTree = "<group>"; };
 		FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotCardView.swift; sourceTree = "<group>"; };
+		FD5E92762B970D9A00FD094A /* BookingSlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSlotView.swift; sourceTree = "<group>"; };
 		FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterMainTabView.swift; sourceTree = "<group>"; };
 		FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+KeyTests.swift"; sourceTree = "<group>"; };
 		FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+NameTests.swift"; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 			isa = PBXGroup;
 			children = (
 				EF5A7F322A14563800585616 /* DetailedPetSitterView.swift */,
+				FD5E92762B970D9A00FD094A /* BookingSlotView.swift */,
 				FD1D47432B8F39B100B3A4A4 /* WalkingSlotsView.swift */,
 				FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */,
 				FDA212C22B8723300090DC4B /* SitterSectionInformationView.swift */,
@@ -1508,6 +1511,7 @@
 				FDEE43E02A386291007DE0A9 /* UserRoleViewModel.swift in Sources */,
 				FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */,
 				FDD7906A2A4587B7007C1265 /* ObfuscatorError.swift in Sources */,
+				FD5E92772B970D9A00FD094A /* BookingSlotView.swift in Sources */,
 				FDD143C72A03BD48000BBA77 /* OwnerMainTabView.swift in Sources */,
 				FDEE43C92A2F45B8007DE0A9 /* Preferences.swift in Sources */,
 				EF16BB262A24E101007922C6 /* Owner+Dummy.swift in Sources */,
