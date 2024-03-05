@@ -20,13 +20,15 @@ struct DetailPetSitterView: View {
                 Spacer()
                 PriceLabel(price: viewModel.price)
             }
+            
             Divider()
             Text(viewModel.bio)
                 .font(.system(size: AppStyle.FontStyle.footnote.size))
-            Divider().padding(.bottom)
+            Divider()
+                .padding(.bottom)
 
             HStack {
-                Text("Slots on ")
+                Text(slotHeaderLabel)
                 Spacer()
                 DatePicker("",
                            selection: $viewModel.selectedDate,
@@ -35,12 +37,12 @@ struct DetailPetSitterView: View {
                     .font(.system(size: AppStyle.FontStyle.heading.size))
                     .tint(Color.App.purpleDark)
                 Spacer()
-                Button("Search") {
+                Button(searchButtonText) {
                     Task {
                         await viewModel.fetchWalkings()
                     }
-                }.buttonStyle(CapsuleWithWhiteText())
-
+                }
+                .buttonStyle(CapsuleWithWhiteText())
             }.padding()
             if viewModel.isLoading {
                 ProgressView()
@@ -51,6 +53,9 @@ struct DetailPetSitterView: View {
         .padding()
         .background(Color.App.grayLight)
     }
+
+    private let slotHeaderLabel = "Available slots"
+    private let searchButtonText = "Search"
 }
 
 struct DetailPetSitterView_Previews: PreviewProvider {

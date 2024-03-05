@@ -5,7 +5,7 @@ struct WalkingSlotsView: View {
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
+            LazyVGrid(columns: columns, spacing: AppStyle.UIElementConstant.wideSpacingSize) {
                 ForEach(walkings) { walking in
                     NavigationLink {
                         Text(walking.sitter.name)
@@ -20,7 +20,7 @@ struct WalkingSlotsView: View {
             }
         }
     }
-    
+
     private let columns = [
         GridItem(.adaptive(minimum: 150)),
     ]

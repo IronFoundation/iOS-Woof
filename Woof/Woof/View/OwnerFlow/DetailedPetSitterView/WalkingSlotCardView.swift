@@ -11,22 +11,24 @@ struct WalkingSlotCardView: View {
                 Text(startDate, style: .time)
                 Text("-")
                 Text(endDate, style: .time)
-            }.font(.system(size: AppStyle.FontStyle.body.size, weight: .semibold))
+            }
             Divider()
             Text(startDate, style: .date)
                 .italic()
-                .font(Font.system(size: AppStyle.FontStyle.footnote.size))
             Divider()
             VStack {
                 Text(price, format: .currency(code: "USD"))
                     .bold()
-                    .font(Font.system(size: AppStyle.FontStyle.body.size))
                     .foregroundColor(Color.App.purpleDark)
             }
         }
         .padding()
         .background(Color.App.white)
-        .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
+        .clipShape(
+            RoundedRectangle(
+                cornerRadius: AppStyle.UIElementConstant.cornerRadius
+            )
+        ).font(Font.system(size: AppStyle.FontStyle.footnote.size))
     }
 }
 
