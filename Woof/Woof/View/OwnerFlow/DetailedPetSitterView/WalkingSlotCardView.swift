@@ -1,8 +1,14 @@
 import SwiftUI
 
+/// The view presents an information about available walking slot.
 struct WalkingSlotCardView: View {
+    /// The price of walking.
     let price: Double
+    
+    /// The start date and time of walking.
     let startDate: Date
+    
+    /// The end date and time of walking.
     let endDate: Date
 
     var body: some View {

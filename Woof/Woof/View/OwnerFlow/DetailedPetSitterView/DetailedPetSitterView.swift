@@ -20,7 +20,7 @@ struct DetailPetSitterView: View {
                 Spacer()
                 PriceLabel(price: viewModel.price)
             }
-            
+
             Divider()
             Text(viewModel.bio)
                 .font(.system(size: AppStyle.FontStyle.footnote.size))
