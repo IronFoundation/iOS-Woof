@@ -4,10 +4,10 @@ import SwiftUI
 struct WalkingSlotCardView: View {
     /// The price of walking.
     let price: Double
-    
+
     /// The start date and time of walking.
     let startDate: Date
-    
+
     /// The end date and time of walking.
     let endDate: Date
 
@@ -34,7 +34,11 @@ struct WalkingSlotCardView: View {
             RoundedRectangle(
                 cornerRadius: AppStyle.UIElementConstant.cornerRadius
             )
-        ).font(Font.system(size: AppStyle.FontStyle.footnote.size))
+        ).font(
+            Font.system(
+                size: AppStyle.FontStyle.footnote.size
+            )
+        )
     }
 }
 

@@ -676,11 +676,8 @@
 			isa = PBXGroup;
 			children = (
 				EF5A7F322A14563800585616 /* DetailedPetSitterView.swift */,
-				FD5E92762B970D9A00FD094A /* BookingSlotView.swift */,
-				FD1D47432B8F39B100B3A4A4 /* WalkingSlotsView.swift */,
-				FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */,
-				FDA212C22B8723300090DC4B /* SitterSectionInformationView.swift */,
-				FD2B1BC82B87271300958CE1 /* PriceLabel.swift */,
+				FD5E92782B982E6C00FD094A /* WalkingSectionView */,
+				FD5E92792B982E8300FD094A /* SitterSectionInfo */,
 			);
 			path = DetailedPetSitterView;
 			sourceTree = "<group>";
@@ -863,13 +860,40 @@
 			path = SitterWalkingsView;
 			sourceTree = "<group>";
 		};
+		FD5E92782B982E6C00FD094A /* WalkingSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				FD1D47432B8F39B100B3A4A4 /* WalkingSlotsView.swift */,
+				FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */,
+			);
+			path = WalkingSectionView;
+			sourceTree = "<group>";
+		};
+		FD5E92792B982E8300FD094A /* SitterSectionInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FDA212C22B8723300090DC4B /* SitterSectionInformationView.swift */,
+				FD2B1BC82B87271300958CE1 /* PriceLabel.swift */,
+			);
+			path = SitterSectionInfo;
+			sourceTree = "<group>";
+		};
+		FD5E927A2B982EA500FD094A /* BookingSlotView */ = {
+			isa = PBXGroup;
+			children = (
+				FD5E92762B970D9A00FD094A /* BookingSlotView.swift */,
+			);
+			path = BookingSlotView;
+			sourceTree = "<group>";
+		};
 		FD6A2E592A2EF62800934C3E /* OwnerFlow */ = {
 			isa = PBXGroup;
 			children = (
+				FD7F989A2A0E041A0058DBEB /* OwnerMainTabView */,
+				FD5E927A2B982EA500FD094A /* BookingSlotView */,
+				EF5A7F312A14561000585616 /* DetailedPetSitterView */,
 				FD577CC42ADE5D980045705A /* OwnerWallkingsView */,
 				FDDDA6862A25C3CD00839091 /* OwnerProfileView */,
-				EF5A7F312A14561000585616 /* DetailedPetSitterView */,
-				FD7F989A2A0E041A0058DBEB /* OwnerMainTabView */,
 				FD7F989B2A0E04390058DBEB /* SitterListView */,
 				36B5465E2B86274A00F62F9A /* OwnerOnboardingView.swift */,
 			);

@@ -54,6 +54,8 @@ struct DetailPetSitterView: View {
         .background(Color.App.grayLight)
     }
 
+    // MARK: - Private interface
+
     private let slotHeaderLabel = "Available slots"
     private let searchButtonText = "Search"
 }

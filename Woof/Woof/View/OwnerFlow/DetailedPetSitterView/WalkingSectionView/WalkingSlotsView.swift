@@ -7,10 +7,13 @@ struct WalkingSlotsView: View {
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: AppStyle.UIElementConstant.wideSpacingSize) {
+            LazyVGrid(
+                columns: columns,
+                spacing: AppStyle.UIElementConstant.wideSpacingSize
+            ) {
                 ForEach(walkings) { walking in
                     NavigationLink {
-                        BookingSlotView(walking: walking)
+                        BookingSlotView()
                     } label: {
                         WalkingSlotCardView(
                             price: walking.price,
@@ -22,6 +25,8 @@ struct WalkingSlotsView: View {
             }
         }
     }
+
+    // MARK: - Private interface
 
     private let columns = [
         GridItem(.adaptive(minimum: 150)),
