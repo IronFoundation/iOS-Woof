@@ -24,6 +24,15 @@ final class DetailSitterViewModel: ObservableObject {
     /// The price per hour charged by the sitter.
     @Published var price: Double
 
+    /// Indicates if loading data is in progress.
+    @Published var isLoading = false
+
+    /// The list of available walking slots
+    @Published var walkings = [Walking]()
+
+    /// The date to display available walking slots
+    @Published var selectedDate = Date()
+
     /// Initializes a new instance of the detailed sitter card view model with the provided sitter.
     ///
     /// - Parameter sitter: The sitter for which the detailed view model is created.
@@ -44,6 +53,15 @@ final class DetailSitterViewModel: ObservableObject {
     /// - Parameter text: The text to be copied to the clipboard.
     func copyToClipboardText(_ text: String) {
         UIPasteboard.general.string = text
+    }
+
+    /// Fetches data about available walking slots from the remote server.
+    @MainActor func fetchWalkings() async {
+        isLoading = true
+        // Temporary simulation of loading process: load dummy data after 1 sec delay.
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        walkings = Walking.Dummy.bulkDummyWalkings
+        isLoading = false
     }
 
     private var sitter: Sitter

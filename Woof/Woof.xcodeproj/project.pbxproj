@@ -125,6 +125,7 @@
 		FD14A2B42A286C5200362461 /* KeyValueStorage+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A62A27803600362461 /* KeyValueStorage+Name.swift */; };
 		FD14A2B52A286C5C00362461 /* KeyValueStorage+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A82A27804F00362461 /* KeyValueStorage+Key.swift */; };
 		FD14A2B72A28709400362461 /* OwnerProfileViewModelSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2B62A28709400362461 /* OwnerProfileViewModelSaveTests.swift */; };
+		FD1D47442B8F39B100B3A4A4 /* WalkingSlotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1D47432B8F39B100B3A4A4 /* WalkingSlotsView.swift */; };
 		FD1FA3C32A0A682E000A3A91 /* SitterCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1FA3C22A0A682E000A3A91 /* SitterCardViewModel.swift */; };
 		FD1FA3CC2A0A781E000A3A91 /* Sitter+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1FA3CB2A0A781E000A3A91 /* Sitter+Dummy.swift */; };
 		FD2B1BC92B87271300958CE1 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B1BC82B87271300958CE1 /* PriceLabel.swift */; };
@@ -159,6 +160,8 @@
 		FD577CC32ADE5D880045705A /* OwnerWalkingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC22ADE5D880045705A /* OwnerWalkingsView.swift */; };
 		FD577CC72ADE60B20045705A /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC62ADE60B20045705A /* ScheduleView.swift */; };
 		FD577CCA2ADE610E0045705A /* SitterWalkingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */; };
+		FD5E92752B9064C900FD094A /* WalkingSlotCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */; };
+		FD5E92772B970D9A00FD094A /* BookingSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E92762B970D9A00FD094A /* BookingSlotView.swift */; };
 		FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */; };
 		FD6A2E612A2F067E00934C3E /* KeyValueStorage+KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */; };
 		FD6A2E632A2F072F00934C3E /* KeyValueStorage+NameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */; };
@@ -299,6 +302,7 @@
 		FD14A2A82A27804F00362461 /* KeyValueStorage+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+Key.swift"; sourceTree = "<group>"; };
 		FD14A2B02A286BB800362461 /* OwnerProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModelTests.swift; sourceTree = "<group>"; };
 		FD14A2B62A28709400362461 /* OwnerProfileViewModelSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModelSaveTests.swift; sourceTree = "<group>"; };
+		FD1D47432B8F39B100B3A4A4 /* WalkingSlotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotsView.swift; sourceTree = "<group>"; };
 		FD1FA3C22A0A682E000A3A91 /* SitterCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterCardViewModel.swift; sourceTree = "<group>"; };
 		FD1FA3CB2A0A781E000A3A91 /* Sitter+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sitter+Dummy.swift"; sourceTree = "<group>"; };
 		FD2B1BC82B87271300958CE1 /* PriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
@@ -325,6 +329,8 @@
 		FD577CC22ADE5D880045705A /* OwnerWalkingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingsView.swift; sourceTree = "<group>"; };
 		FD577CC62ADE60B20045705A /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingsView.swift; sourceTree = "<group>"; };
+		FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotCardView.swift; sourceTree = "<group>"; };
+		FD5E92762B970D9A00FD094A /* BookingSlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSlotView.swift; sourceTree = "<group>"; };
 		FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterMainTabView.swift; sourceTree = "<group>"; };
 		FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+KeyTests.swift"; sourceTree = "<group>"; };
 		FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+NameTests.swift"; sourceTree = "<group>"; };
@@ -670,8 +676,8 @@
 			isa = PBXGroup;
 			children = (
 				EF5A7F322A14563800585616 /* DetailedPetSitterView.swift */,
-				FDA212C22B8723300090DC4B /* SitterSectionInformationView.swift */,
-				FD2B1BC82B87271300958CE1 /* PriceLabel.swift */,
+				FD5E92782B982E6C00FD094A /* WalkingSectionView */,
+				FD5E92792B982E8300FD094A /* SitterSectionInfo */,
 			);
 			path = DetailedPetSitterView;
 			sourceTree = "<group>";
@@ -854,13 +860,40 @@
 			path = SitterWalkingsView;
 			sourceTree = "<group>";
 		};
+		FD5E92782B982E6C00FD094A /* WalkingSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				FD1D47432B8F39B100B3A4A4 /* WalkingSlotsView.swift */,
+				FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */,
+			);
+			path = WalkingSectionView;
+			sourceTree = "<group>";
+		};
+		FD5E92792B982E8300FD094A /* SitterSectionInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FDA212C22B8723300090DC4B /* SitterSectionInformationView.swift */,
+				FD2B1BC82B87271300958CE1 /* PriceLabel.swift */,
+			);
+			path = SitterSectionInfo;
+			sourceTree = "<group>";
+		};
+		FD5E927A2B982EA500FD094A /* BookingSlotView */ = {
+			isa = PBXGroup;
+			children = (
+				FD5E92762B970D9A00FD094A /* BookingSlotView.swift */,
+			);
+			path = BookingSlotView;
+			sourceTree = "<group>";
+		};
 		FD6A2E592A2EF62800934C3E /* OwnerFlow */ = {
 			isa = PBXGroup;
 			children = (
+				FD7F989A2A0E041A0058DBEB /* OwnerMainTabView */,
+				FD5E927A2B982EA500FD094A /* BookingSlotView */,
+				EF5A7F312A14561000585616 /* DetailedPetSitterView */,
 				FD577CC42ADE5D980045705A /* OwnerWallkingsView */,
 				FDDDA6862A25C3CD00839091 /* OwnerProfileView */,
-				EF5A7F312A14561000585616 /* DetailedPetSitterView */,
-				FD7F989A2A0E041A0058DBEB /* OwnerMainTabView */,
 				FD7F989B2A0E04390058DBEB /* SitterListView */,
 				36B5465E2B86274A00F62F9A /* OwnerOnboardingView.swift */,
 			);
@@ -1492,6 +1525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF5A7F332A14563800585616 /* DetailedPetSitterView.swift in Sources */,
+				FD1D47442B8F39B100B3A4A4 /* WalkingSlotsView.swift in Sources */,
 				9308D6132A31EFE40086193D /* CapsuleWithWhiteText.swift in Sources */,
 				196037B32AD6BB09000B259B /* ContentView.swift in Sources */,
 				36D954962B88DDCE00656476 /* OwnerOnboardingViewModel.swift in Sources */,
@@ -1501,6 +1535,7 @@
 				FDEE43E02A386291007DE0A9 /* UserRoleViewModel.swift in Sources */,
 				FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */,
 				FDD7906A2A4587B7007C1265 /* ObfuscatorError.swift in Sources */,
+				FD5E92772B970D9A00FD094A /* BookingSlotView.swift in Sources */,
 				FDD143C72A03BD48000BBA77 /* OwnerMainTabView.swift in Sources */,
 				FDEE43C92A2F45B8007DE0A9 /* Preferences.swift in Sources */,
 				EF16BB262A24E101007922C6 /* Owner+Dummy.swift in Sources */,
@@ -1526,6 +1561,7 @@
 				FD3303482A98BE730091A4BA /* APIEnvironment.swift in Sources */,
 				FD7F98A12A0E0E280058DBEB /* AppStyle+FontStyle.swift in Sources */,
 				361737152B628102003D9847 /* Walking+Dummy.swift in Sources */,
+				FD5E92752B9064C900FD094A /* WalkingSlotCardView.swift in Sources */,
 				FD2FA2292A129C53002B618B /* SitterListView.swift in Sources */,
 				3673D6372A04F7FD009D699D /* Owner.swift in Sources */,
 				1912607B2AC08C9300F43D94 /* AllSittersResponse.swift in Sources */,
