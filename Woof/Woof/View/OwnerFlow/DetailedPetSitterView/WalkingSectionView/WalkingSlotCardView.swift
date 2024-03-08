@@ -25,27 +25,26 @@ struct WalkingSlotCardView: View {
             VStack {
                 Text(price, format: .currency(code: "USD"))
                     .bold()
-                    .foregroundColor(Color.App.purpleDark)
             }
         }
         .padding()
+        .foregroundColor(.App.purpleDark)
         .background(Color.App.white)
         .clipShape(
             RoundedRectangle(
                 cornerRadius: AppStyle.UIElementConstant.cornerRadius
-            )
-        ).font(
-            .system(
-                size: AppStyle.FontStyle.footnote.size
             )
         )
     }
 }
 
 #Preview {
-    WalkingSlotCardView(
-        price: 12.25,
-        startDate: Date.now,
-        endDate: Date.now + 1200
-    )
+    ZStack {
+        Color.gray
+        WalkingSlotCardView(
+            price: 12.25,
+            startDate: Date.now,
+            endDate: Date.now + 1200
+        )
+    }
 }

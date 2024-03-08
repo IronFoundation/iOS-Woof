@@ -19,6 +19,10 @@ struct WalkingSlotsView: View {
                             price: walking.price,
                             startDate: walking.start,
                             endDate: walking.end
+                        ).font(
+                            .system(
+                                size: AppStyle.FontStyle.footnote.size
+                            )
                         )
                     }
                 }
