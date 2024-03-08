@@ -35,7 +35,7 @@ struct WalkingSlotCardView: View {
                 cornerRadius: AppStyle.UIElementConstant.cornerRadius
             )
         ).font(
-            Font.system(
+            .system(
                 size: AppStyle.FontStyle.footnote.size
             )
         )

@@ -23,7 +23,11 @@ struct DetailPetSitterView: View {
 
             Divider()
             Text(viewModel.bio)
-                .font(.system(size: AppStyle.FontStyle.footnote.size))
+                .font(
+                    .system(
+                        size: AppStyle.FontStyle.footnote.size
+                    )
+                )
             Divider()
                 .padding(.bottom)
 
@@ -33,8 +37,13 @@ struct DetailPetSitterView: View {
                 DatePicker("",
                            selection: $viewModel.selectedDate,
                            in: Date.now...,
-                           displayedComponents: .date).labelsHidden()
-                    .font(.system(size: AppStyle.FontStyle.heading.size))
+                           displayedComponents: .date)
+                    .labelsHidden()
+                    .font(
+                        .system(
+                            size: AppStyle.FontStyle.heading.size
+                        )
+                    )
                     .tint(Color.App.purpleDark)
                 Spacer()
                 Button(searchButtonText) {
@@ -43,7 +52,9 @@ struct DetailPetSitterView: View {
                     }
                 }
                 .buttonStyle(CapsuleWithWhiteText())
-            }.padding()
+            }
+            .padding()
+
             if viewModel.isLoading {
                 ProgressView()
             } else {

@@ -56,14 +56,12 @@ final class DetailSitterViewModel: ObservableObject {
     }
 
     /// Fetches data about available walking slots from the remote server.
-    func fetchWalkings() async {
+    @MainActor func fetchWalkings() async {
+        isLoading = true
         // Temporary simulation of loading process: load dummy data after 1 sec delay.
-        Task { @MainActor in
-            isLoading = true
-            try await Task.sleep(nanoseconds: 1_000_000_000)
-            walkings = Walking.Dummy.bulkDummyWalkings
-            isLoading = false
-        }
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        walkings = Walking.Dummy.bulkDummyWalkings
+        isLoading = false
     }
 
     private var sitter: Sitter
