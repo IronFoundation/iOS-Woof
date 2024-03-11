@@ -22,6 +22,6 @@ final class PreferencesHandlerSetShouldShowOnboardingTests: XCTestCase {
 
         // Then
         XCTAssertTrue(result)
-        XCTAssertEqual(PreferencesHandler.getShowOnboarding(), false)
+        XCTAssertEqual(PreferencesHandler.getShouldShowOnboarding(), false)
     }
 }

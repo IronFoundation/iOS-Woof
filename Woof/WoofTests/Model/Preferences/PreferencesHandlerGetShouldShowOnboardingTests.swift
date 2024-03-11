@@ -8,4 +8,24 @@ final class PreferencesHandlerGetShouldShowOnboardingTests: XCTestCase {
         super.setUp()
         userPreferencesStorage.deleteData(for: KeyValueStorage.Key.userPreferences)
     }
+
+    func testMethodExistsInAPI() {
+        _ = PreferencesHandler.getShouldShowOnboarding()
+    }
+
+    func testReturnsInitialValueForEmptyStorage() {
+        // Given // When
+        let loadedValue = PreferencesHandler.getShouldShowOnboarding()
+
+        // Then
+        XCTAssertTrue(loadedValue)
+    }
+
+    func testReturnsChangedState() {
+        // Given // When
+        PreferencesHandler.setShouldShowOnboarding(false)
+
+        // Then
+        XCTAssertEqual(PreferencesHandler.getShouldShowOnboarding(), false)
+    }
 }
