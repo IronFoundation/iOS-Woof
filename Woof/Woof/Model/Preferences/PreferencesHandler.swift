@@ -52,8 +52,7 @@ enum PreferencesHandler {
      - Returns: A boolean value reflecting the state of the flag.
      */
     static func getShouldShowOnboarding() -> Bool {
-        guard let preferences = loadPreferences() else { return true }
-        return preferences.shouldShowOnboarding
+        loadPreferences()?.shouldShowOnboarding ?? true
     }
 
     // MARK: - Private interface
