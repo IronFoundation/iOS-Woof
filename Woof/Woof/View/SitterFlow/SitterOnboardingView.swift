@@ -45,9 +45,7 @@ struct SitterOnboardingView: View {
             AppAlert.error,
             isPresented: $viewModel.isErrorOccurred,
             actions: {
-                Button(AppButtonTitle.cancel) {
-                    viewModel.cancelEditing()
-                }
+                Button(AppButtonTitle.cancel) {}
                 Button(AppButtonTitle.tryAgain) {
                     Task {
                         await viewModel.save()
