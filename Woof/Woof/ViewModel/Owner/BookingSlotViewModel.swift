@@ -2,6 +2,7 @@ import Foundation
 
 /// Responsible for preparing and processing data for the `BookingSlotView`.
 final class BookingSlotViewModel: ObservableObject {
+    /// The notes about any details of the walking like meeting place, pet behavior, etc.
     @Published var notes: String = ""
 
     /// The full name of the sitter.
