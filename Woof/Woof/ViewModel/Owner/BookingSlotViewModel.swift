@@ -6,39 +6,45 @@ final class BookingSlotViewModel: ObservableObject {
     @Published var notes: String = ""
 
     /// The full name of the sitter.
-    let fullName: String
+    var fullName: String {
+        DataTransformer.fullName(name: walking.sitter.name, surname: walking.sitter.surname)
+    }
 
     /// A 5-Star rating of the pet sitter.
-    let rating: StarRating
+    var rating: StarRating {
+        DataTransformer.fiveStarRating(for: walking.sitter.rating)
+    }
 
     /// The phone number of the sitter.
-    let phoneNumber: String
+    var phoneNumber: String {
+        walking.sitter.phone
+    }
 
     /// The city or area where sitter works.
-    let city: String
+    var city: String {
+        walking.sitter.city
+    }
 
     /// The price for walking.
-    let price: Double
+    var price: Double {
+        walking.price
+    }
 
     /// The start date and time of walking.
-    let startDate: Date
+    var startDate: Date {
+        walking.start
+    }
 
     /// The end date and time of walking.
-    let endDate: Date
+    var endDate: Date {
+        walking.end
+    }
 
     /// Initializes a new instance of view model with the provided walking slot.
     ///
     /// - Parameter walking: The walking slot for which the view model is created.
     init(walking: Walking) {
         self.walking = walking
-
-        fullName = DataTransformer.fullName(name: walking.sitter.name, surname: walking.sitter.surname)
-        rating = DataTransformer.fiveStarRating(for: walking.sitter.rating)
-        phoneNumber = walking.sitter.phone
-        city = walking.sitter.city
-        price = walking.price
-        startDate = walking.start
-        endDate = walking.end
     }
 
     /// Updates walking slot to reserve the it.
