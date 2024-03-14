@@ -65,7 +65,8 @@ struct SitterOnboardingView: View {
 
     // MARK: - Private interface
 
-    @StateObject private var viewModel = SitterProfileViewModel()
+    typealias SitterOnboardingViewModel = SitterProfileViewModel
+    @StateObject private var viewModel = SitterOnboardingViewModel()
 
     private let welcomeText = "Hello👋🏻!"
     private let mandatoryPlaceholderText = "Fields with * are mandatory"
