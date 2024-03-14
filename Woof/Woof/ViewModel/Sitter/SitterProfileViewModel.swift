@@ -3,7 +3,7 @@ import NetworkService
 
 /// The view model for a pet sitter profile view is responsible for receiving and processing user actions
 /// to change model data and passes back the updated model data.
-final class SitterProfileViewModel: ObservableObject {
+class SitterProfileViewModel: ObservableObject {
     // MARK: - Internal interface
 
     /// The name of the pet sitter.
