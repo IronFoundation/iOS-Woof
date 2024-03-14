@@ -3,20 +3,14 @@ import SwiftUI
 /// A view to onboard the sitter by filling in the mandatory information about themselves.
 struct SitterOnboardingView: View {
     /// View model responsible to manage data from model layer
-    @ObservedObject var viewModel = SitterOnboardingViewModel()
-
-    /// A boolean indicating whether the save button should be enabled.
-    var isSaveButtonEnabled: Bool {
-        viewModel.name.isEmpty ||
-            viewModel.phone.isEmpty ||
-            viewModel.city.isEmpty ||
-            viewModel.pricePerHour.isEmpty
-    }
+    @StateObject var viewModel = SitterProfileViewModel()
 
     var body: some View {
         VStack {
             Text(welcomeText)
                 .foregroundColor(Color.App.purpleDark)
+                .font(.title)
+                .padding(.bottom, AppStyle.UIElementConstant.minPadding)
 
             Text(onboardingText)
                 .foregroundColor(Color.App.purpleDark)
@@ -30,21 +24,33 @@ struct SitterOnboardingView: View {
                 pricePerHour: $viewModel.pricePerHour
             )
 
-            Button(proceedButtonTitle) {}
-                .buttonStyle(CapsuleWithWhiteText())
-                .padding()
-                .disabled(isSaveButtonEnabled)
+            if viewModel.mandatoryFieldsAreEmpty {
+                Text(mandatoryPlaceholderText)
+                    .foregroundColor(Color.App.purpleDark)
+                    .padding()
+                    .font(.system(.footnote))
+            }
+
+            Button(proceedButtonTitle) {
+                Task {
+                    await viewModel.save()
+                }
+            }
+            .buttonStyle(CapsuleWithWhiteText())
+            .padding()
+            .disabled(viewModel.mandatoryFieldsAreEmpty)
         }
         .padding()
     }
 
     // MARK: - Private interface
 
-    private let welcomeText = "Hello!"
-    private let proceedButtonTitle = "Start earn money!"
+    private let welcomeText = "Hello👋🏻!"
+    private let mandatoryPlaceholderText = "Fields with * are mandatory"
+    private let proceedButtonTitle = "Start earning money!"
     private let onboardingText = """
     We're excited to have you on board as a pet sitter!
-    Your dedication and care will make a world of difference to pets in need. Let's begin by entering your information:
+    Let's begin by entering your information:
     """
 }
 

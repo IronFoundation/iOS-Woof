@@ -42,7 +42,7 @@ class SitterProfileViewModel: ObservableObject {
 
     /// Indicates if the mandatory fields are empty.
     var mandatoryFieldsAreEmpty: Bool {
-        name.isEmpty || phone.isEmpty || city.isEmpty
+        name.isEmpty || phone.isEmpty || city.isEmpty || pricePerHour.isEmpty
     }
 
     /// Detailed error information for the user.

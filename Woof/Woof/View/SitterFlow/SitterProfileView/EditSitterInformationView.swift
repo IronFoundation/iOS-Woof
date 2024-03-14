@@ -46,9 +46,6 @@ struct EditSitterInformationView: View {
                 .keyboardType(.decimalPad)
             TextEditorWithPlaceholder(text: $bio, placeholderText: bioInformationPlaceholderText)
                 .cornerRadius(AppStyle.UIElementConstant.cornerRadius)
-            if name.isEmpty || phone.isEmpty || city.isEmpty || pricePerHour.isEmpty {
-                Text(mandatoryText)
-            }
         }
         .padding()
         .foregroundColor(.App.purpleDark)
