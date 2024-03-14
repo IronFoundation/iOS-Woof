@@ -27,31 +27,13 @@ enum PreferencesHandler {
      Sets a flag indicating whether the onboarding screen for the owner needs to be displayed.
 
      - Parameters:
-        - showOwnerOnboarding: A boolean value indicates whether it's need to demonstrate onboarding.
+        - shouldShowOnboarding: A boolean value indicates whether it's need to demonstrate onboarding.
 
      - Returns: A boolean value indicating whether the saving operation was successful.
      */
-    @discardableResult static func set(showOwnerOnboarding: Bool) -> Bool {
+    @discardableResult static func setShouldShowOnboarding(_ shouldShowOnboarding: Bool) -> Bool {
         var preferences = loadPreferences() ?? Preferences()
-
-        preferences.showOwnerOnboarding = showOwnerOnboarding
-
-        return store(preferences)
-    }
-
-    /**
-     Sets a flag indicating whether the onboarding screen for the sitter needs to be displayed.
-
-     - Parameters:
-        - showSitterOnboarding: A boolean value indicates whether it's need to demonstrate onboarding.
-
-     - Returns: A boolean value indicating whether the saving operation was successful.
-     */
-    @discardableResult static func set(showSitterOnboarding: Bool) -> Bool {
-        var preferences = loadPreferences() ?? Preferences()
-
-        preferences.showSitterOnboarding = showSitterOnboarding
-
+        preferences.shouldShowOnboarding = shouldShowOnboarding
         return store(preferences)
     }
 
@@ -65,21 +47,12 @@ enum PreferencesHandler {
     }
 
     /**
-     Gets the current state of the owner's onboarding screen display flag.
+     Gets the current state of the onboarding screen display flag.
 
      - Returns: A boolean value reflecting the state of the flag.
      */
-    static func getShowOwnerOnboarding() -> Bool {
-        loadPreferences()?.showOwnerOnboarding ?? true
-    }
-
-    /**
-     Gets the current state of the sitter's onboarding screen display flag.
-
-     - Returns: A boolean value reflecting the state of the flag.
-     */
-    static func getShowSitterOnboarding() -> Bool {
-        loadPreferences()?.showSitterOnboarding ?? true
+    static func getShouldShowOnboarding() -> Bool {
+        loadPreferences()?.shouldShowOnboarding ?? true
     }
 
     // MARK: - Private interface
