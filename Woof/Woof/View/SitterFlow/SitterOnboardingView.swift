@@ -36,14 +36,11 @@ struct SitterOnboardingView: View {
         }
         .foregroundColor(Color.App.purpleDark)
         .padding()
-        .overlay(
-            Group {
-                if viewModel.isSavingData {
-                    Color.white.opacity(AppStyle.UIElementConstant.opacityLevelForProgressViewBackground)
-                    CustomProgressView()
-                }
+        .overlay {
+            if viewModel.isSavingData {
+                CustomProgressView()
             }
-        )
+        }
         .alert(
             AppAlert.error,
             isPresented: $viewModel.isErrorOccurred,
