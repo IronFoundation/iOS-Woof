@@ -33,17 +33,21 @@ struct BookingSlotView: View {
                 .foregroundColor(.App.grayDark)
             TextEditor(text: $viewModel.notes)
                 .focused($isNotesFocused)
-            Button(bookButtonText) {}
-                .buttonStyle(PurpleCapsuleOfInfinityWidth())
+            Button(bookButtonText) {
+                Task {
+                    await viewModel.bookWalking()
+                }
+            }
+            .buttonStyle(PurpleCapsuleOfInfinityWidth())
         }
         .padding()
-        .onAppear(perform: {
-            isNotesFocused.toggle()
-        })
         .background(Color.App.grayLight)
         .tint(Color.App.purpleDark)
         .navigationTitle(header)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear(perform: {
+            isNotesFocused.toggle()
+        })
     }
 
     // MARK: - Private interface
@@ -57,5 +61,9 @@ struct BookingSlotView: View {
 }
 
 #Preview {
-    BookingSlotView(viewModel: BookingSlotViewModel(walking: Walking.Dummy.dummyWalking))
+    BookingSlotView(
+        viewModel: BookingSlotViewModel(
+            walking: Walking.Dummy.dummyWalking
+        )
+    )
 }

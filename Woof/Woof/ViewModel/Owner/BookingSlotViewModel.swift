@@ -25,6 +25,9 @@ final class BookingSlotViewModel: ObservableObject {
     /// The end date and time of walking.
     let endDate: Date
 
+    /// Initializes a new instance of view model with the provided walking slot.
+    ///
+    /// - Parameter walking: The walking slot for which the view model is created.
     init(walking: Walking) {
         self.walking = walking
 
@@ -37,6 +40,7 @@ final class BookingSlotViewModel: ObservableObject {
         endDate = walking.end
     }
 
+    /// Updates walking slot to reserve the it.
     @MainActor func bookWalking() async {}
 
     // MARK: - Private interface
