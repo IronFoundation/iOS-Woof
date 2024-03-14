@@ -41,6 +41,32 @@ struct SitterOnboardingView: View {
             .disabled(viewModel.mandatoryFieldsAreEmpty)
         }
         .padding()
+        .overlay(
+            Group {
+                if viewModel.isSavingData {
+                    Color.white.opacity(AppStyle.UIElementConstant.opacityLevelForProgressViewBackground)
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                }
+            }
+        )
+        .alert(
+            AppAlert.error,
+            isPresented: $viewModel.isErrorOccurred,
+            actions: {
+                Button(AppButtonTitle.cancel) {
+                    viewModel.cancelEditing()
+                }
+                Button(AppButtonTitle.tryAgain) {
+                    Task {
+                        await viewModel.save()
+                    }
+                }
+            },
+            message: {
+                Text(viewModel.errorMessage)
+            }
+        )
     }
 
     // MARK: - Private interface
