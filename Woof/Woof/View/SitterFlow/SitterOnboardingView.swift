@@ -2,18 +2,13 @@ import SwiftUI
 
 /// A view to onboard the sitter by filling in the mandatory information about themselves.
 struct SitterOnboardingView: View {
-    /// View model responsible to manage data from model layer
-    @StateObject var viewModel = SitterProfileViewModel()
-
     var body: some View {
         VStack {
             Text(welcomeText)
-                .foregroundColor(Color.App.purpleDark)
                 .font(.title)
                 .padding(.bottom, AppStyle.UIElementConstant.minPadding)
 
             Text(onboardingText)
-                .foregroundColor(Color.App.purpleDark)
 
             EditSitterInformationView(
                 name: $viewModel.name,
@@ -26,7 +21,6 @@ struct SitterOnboardingView: View {
 
             if viewModel.mandatoryFieldsAreEmpty {
                 Text(mandatoryPlaceholderText)
-                    .foregroundColor(Color.App.purpleDark)
                     .padding()
                     .font(.system(.footnote))
             }
@@ -40,13 +34,13 @@ struct SitterOnboardingView: View {
             .padding()
             .disabled(viewModel.mandatoryFieldsAreEmpty)
         }
+        .foregroundColor(Color.App.purpleDark)
         .padding()
         .overlay(
             Group {
                 if viewModel.isSavingData {
                     Color.white.opacity(AppStyle.UIElementConstant.opacityLevelForProgressViewBackground)
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
+                    CustomProgressView()
                 }
             }
         )
@@ -70,6 +64,8 @@ struct SitterOnboardingView: View {
     }
 
     // MARK: - Private interface
+
+    @StateObject private var viewModel = SitterProfileViewModel()
 
     private let welcomeText = "Hello👋🏻!"
     private let mandatoryPlaceholderText = "Fields with * are mandatory"

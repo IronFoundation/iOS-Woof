@@ -26,6 +26,7 @@
 		19B407072ABDD68F00054D2E /* Sitter+Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192210F82ABDA1B800B9026D /* Sitter+Decoder.swift */; };
 		1CE7E9C92A247CF1000A0509 /* KeyValueStorageInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7E9C82A247CF1000A0509 /* KeyValueStorageInitTests.swift */; };
 		1CE7E9CC2A24889B000A0509 /* KeyValueStorage+UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7E9CB2A24889B000A0509 /* KeyValueStorage+UnitTests.swift */; };
+		360FE1342BA3174600A1BB84 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360FE1332BA3174600A1BB84 /* CustomProgressView.swift */; };
 		361737082B627EC3003D9847 /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737072B627EC3003D9847 /* Walking.swift */; };
 		361737132B628058003D9847 /* WalkingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737122B628058003D9847 /* WalkingStatus.swift */; };
 		361737152B628102003D9847 /* Walking+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737142B628102003D9847 /* Walking+Dummy.swift */; };
@@ -231,6 +232,7 @@
 		19B163DC2ABB1A6300D4C155 /* ProductionMockSittersData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductionMockSittersData.json; sourceTree = "<group>"; };
 		1CE7E9C82A247CF1000A0509 /* KeyValueStorageInitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageInitTests.swift; sourceTree = "<group>"; };
 		1CE7E9CB2A24889B000A0509 /* KeyValueStorage+UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+UnitTests.swift"; sourceTree = "<group>"; };
+		360FE1332BA3174600A1BB84 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		361737072B627EC3003D9847 /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		361737122B628058003D9847 /* WalkingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatus.swift; sourceTree = "<group>"; };
 		361737142B628102003D9847 /* Walking+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Walking+Dummy.swift"; sourceTree = "<group>"; };
@@ -658,6 +660,7 @@
 				FD7F98A42A0E12290058DBEB /* AvatarView.swift */,
 				9B6498A72A31E7CA00004FB3 /* CopyToClipboardLabel.swift */,
 				EF95A0682A3AC66400E84ACD /* TextEditorWithPlaceholder.swift */,
+				360FE1332BA3174600A1BB84 /* CustomProgressView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -1582,6 +1585,7 @@
 				93DDB06C2A3B30B100D7D97A /* PurpleCapsuleOfInfinityWidth.swift in Sources */,
 				FD577CC32ADE5D880045705A /* OwnerWalkingsView.swift in Sources */,
 				FDD538582A41D6C900331977 /* WoofAppEndpoint.swift in Sources */,
+				360FE1342BA3174600A1BB84 /* CustomProgressView.swift in Sources */,
 				FD2FA22B2A129CA1002B618B /* SitterListViewModel.swift in Sources */,
 				36CBB9ED2B273435005EC39A /* AppAlert.swift in Sources */,
 				93DDB06E2A3B31E800D7D97A /* LoginView.swift in Sources */,
