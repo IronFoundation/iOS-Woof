@@ -6,7 +6,6 @@ struct CustomProgressView: View {
         ZStack {
             Color.white.opacity(AppStyle.UIElementConstant.opacityLevelForProgressViewBackground)
             ProgressView()
-                .progressViewStyle(CircularProgressViewStyle())
         }
     }
 }
