@@ -6,31 +6,32 @@ struct OwnerWalkingsView: View {
     var finishedWalkings = Walking.Dummy.bulkDummyWalkings
 
     var body: some View {
-        List {
-            Section(futureWalkingSectionTitle) {
-                ForEach(futureWalkings) { walking in
-                    NavigationLink {
-                        OwnerDetailedWalkingView(walking: walking)
-                    } label: {
-                        OwnerWalkingCardView(walking: walking)
-                    }
-                }
-            }
-            Section(finishedWalkingSectionTitle) {
-                ForEach(finishedWalkings) { walking in
-                    NavigationLink {
-                        OwnerDetailedWalkingView(walking: walking)
-                    } label: {
-                        OwnerWalkingCardView(walking: walking)
-                    }
-                }
-            }
+        NavigationView {
+            ScrollView {
+                WalkingsSectionView(
+                    expandContent: $showAllFutureWalking,
+                    walkings: futureWalkings,
+                    headerTitle: futureWalkingSectionTitle
+                )
+
+                WalkingsSectionView(
+                    expandContent: $showAllFinishedWalking,
+                    walkings: finishedWalkings,
+                    headerTitle: finishedWalkingSectionTitle
+                )
+
+                Spacer()
+            }.padding()
+                .listStyle(.plain)
+                .navigationTitle(navigationTitle)
+                .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle(navigationTitle)
-        .navigationBarTitleDisplayMode(.inline)
     }
 
     // MARK: - Private interface
+
+    @State private var showAllFutureWalking = true
+    @State private var showAllFinishedWalking = false
 
     private let futureWalkingSectionTitle = "Future walkings"
     private let finishedWalkingSectionTitle = "Finished walkings"
