@@ -13,11 +13,7 @@ struct WalkingSlotsView: View {
             ) {
                 ForEach(walkings) { walking in
                     NavigationLink {
-                        BookingSlotView(
-                            viewModel: BookingSlotViewModel(
-                                walking: walking
-                            )
-                        )
+                        BookingSlotView(walking: walking)
                     } label: {
                         WalkingSlotCardView(
                             price: walking.price,

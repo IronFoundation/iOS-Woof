@@ -2,8 +2,16 @@ import SwiftUI
 
 /// A view presents the information related to booking process.
 struct BookingSlotView: View {
-    /// The view model responsible for providing data to the view.
-    @ObservedObject var viewModel: BookingSlotViewModel
+    /// Available walking slot for booking
+    let walking: Walking
+
+    /// Initializes a new instance of view with the provided walking.
+    ///
+    /// - Parameter walking: the provided walking slot.
+    init(walking: Walking) {
+        self.walking = walking
+        _viewModel = StateObject(wrappedValue: BookingSlotViewModel(walking: walking))
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.wideSpacingSize) {
@@ -52,6 +60,7 @@ struct BookingSlotView: View {
 
     // MARK: - Private interface
 
+    @StateObject private var viewModel: BookingSlotViewModel
     @FocusState private var isNotesFocused: Bool
 
     private let notesHeaderText = "Enter useful notes about your dog or place:"
@@ -62,8 +71,6 @@ struct BookingSlotView: View {
 
 #Preview {
     BookingSlotView(
-        viewModel: BookingSlotViewModel(
-            walking: Walking.Dummy.dummyWalking
-        )
+        walking: Walking.Dummy.dummyWalking
     )
 }
