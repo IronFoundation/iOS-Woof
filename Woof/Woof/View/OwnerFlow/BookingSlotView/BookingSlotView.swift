@@ -2,11 +2,11 @@ import SwiftUI
 
 /// A view presents the information related to booking process.
 struct BookingSlotView: View {
-    /// Initializes a new instance of view with the provided walking.
+    /// Initializes the `BookingSlotView` with the given view model.
     ///
-    /// - Parameter walking: the provided walking slot.
-    init(walking: Walking) {
-        _viewModel = StateObject(wrappedValue: BookingSlotViewModel(walking: walking))
+    /// - Parameter viewModel: The view model for this booking slot.
+    init(viewModel: BookingSlotViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
@@ -67,6 +67,6 @@ struct BookingSlotView: View {
 
 #Preview {
     BookingSlotView(
-        walking: Walking.Dummy.dummyWalking
+        viewModel: BookingSlotViewModel(walking: Walking.Dummy.dummyWalking)
     )
 }
