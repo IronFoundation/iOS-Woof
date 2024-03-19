@@ -665,7 +665,6 @@
 			isa = PBXGroup;
 			children = (
 				FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */,
-				FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */,
 				93B21C2D2A31EA1200610D82 /* ButtonStyle */,
 				EF7B7EFF2A147D8300F00B4E /* TextWithIconLabelView.swift */,
 				EF303EBD2A1762CF0086065B /* FiveStarRatingView.swift */,
@@ -857,6 +856,7 @@
 			isa = PBXGroup;
 			children = (
 				FD577CC22ADE5D880045705A /* OwnerWalkingsView.swift */,
+				FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */,
 				FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */,
 				FD897CEE2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift */,
 			);

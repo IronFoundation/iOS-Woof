@@ -5,18 +5,31 @@ struct OwnerWalkingCardView: View {
 
     var body: some View {
         HStack {
-            VStack {
-                Text(walking.start, style: .date)
-                    .italic()
+            VStack(spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
                 HStack {
                     Text(walking.start, style: .time)
                     Text("-")
                     Text(walking.end, style: .time)
                 }
-            }
+                .font(
+                    .system(
+                        size: AppStyle.FontStyle.body.size,
+                        weight: .bold
+                    )
+                )
+                Text(walking.start, style: .date)
+                    .italic()
+                    .font(
+                        .system(
+                            size: AppStyle.FontStyle.footnote.size,
+                            weight: .bold
+                        )
+                    )
+            }.foregroundColor(.App.grayDark)
+
             Spacer()
             VStack(spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
-                Text(fullName)
+                Text(walking.sitter.name)
                     .bold()
 
                 WalkingStatusLabel(status: walking.status)
@@ -25,10 +38,6 @@ struct OwnerWalkingCardView: View {
         }.padding()
             .background(Color.App.grayLight)
             .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
-    }
-
-    private var fullName: String {
-        DataTransformer.fullName(name: walking.sitter.name, surname: walking.sitter.surname)
     }
 }
 

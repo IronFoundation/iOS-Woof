@@ -29,7 +29,7 @@ struct OwnerWalkingsView: View {
 
     @State private var showAllFutureWalking = true
     @State private var showAllFinishedWalking = false
-    @State private var viewModel = OwnerWalkingsViewModel()
+    @StateObject private var viewModel = OwnerWalkingsViewModel()
 
     private let futureWalkingSectionTitle = "Future walkings"
     private let finishedWalkingSectionTitle = "Finished walkings"

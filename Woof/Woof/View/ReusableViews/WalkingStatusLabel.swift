@@ -6,6 +6,7 @@ struct WalkingStatusLabel: View {
     var body: some View {
         Text(status.rawValue)
             .bold()
+            .font(.system(size: AppStyle.FontStyle.footnote.size))
             .padding(.horizontal)
             .foregroundColor(.App.white)
             .background(content: {
