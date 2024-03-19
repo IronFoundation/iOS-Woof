@@ -18,10 +18,11 @@ struct OwnerWalkingsView: View {
                 )
 
                 Spacer()
-            }.padding()
-                .listStyle(.plain)
-                .navigationTitle(navigationTitle)
-                .navigationBarTitleDisplayMode(.inline)
+            }
+            .padding()
+            .listStyle(.plain)
+            .navigationTitle(navigationTitle)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 

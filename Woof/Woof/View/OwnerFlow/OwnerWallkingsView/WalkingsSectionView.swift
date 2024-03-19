@@ -1,8 +1,14 @@
 import SwiftUI
 
+/// Represents a section of walkings, with an expandable list of walkings.
 struct WalkingsSectionView: View {
+    /// Control the expansion state of the walking list.
     @Binding var expandContent: Bool
+
+    /// Walkings that are displayed within this section.
     let walkings: [Walking]
+
+    /// The title for the section header.
     let headerTitle: String
 
     var body: some View {

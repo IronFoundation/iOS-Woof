@@ -1,6 +1,8 @@
 import SwiftUI
 
+/// A view representing a card displaying details of a walking.
 struct OwnerWalkingCardView: View {
+    /// Contains the information about the walking.
     let walking: Walking
 
     var body: some View {
@@ -25,7 +27,8 @@ struct OwnerWalkingCardView: View {
                             weight: .bold
                         )
                     )
-            }.foregroundColor(.App.grayDark)
+            }
+            .foregroundColor(.App.grayDark)
 
             Spacer()
             VStack(spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
@@ -37,7 +40,11 @@ struct OwnerWalkingCardView: View {
 
         }.padding()
             .background(Color.App.grayLight)
-            .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
+            .clipShape(
+                RoundedRectangle(
+                    cornerRadius: AppStyle.UIElementConstant.cornerRadius
+                )
+            )
     }
 }
 
