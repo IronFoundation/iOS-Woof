@@ -173,7 +173,6 @@
 		FD7F98A52A0E12290058DBEB /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F98A42A0E12290058DBEB /* AvatarView.swift */; };
 		FD8182302A20C3C300AE1016 /* KeyValueStorage+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD81822F2A20C3C300AE1016 /* KeyValueStorage+TestData.swift */; };
 		FD897CED2BA43153007BABB1 /* OwnerWalkingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */; };
-		FD897CEF2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CEE2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift */; };
 		FD897CF12BA4501F007BABB1 /* WalkingStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */; };
 		FD897CF32BA463F7007BABB1 /* WalkingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */; };
 		FD897CF52BA96031007BABB1 /* OwnerWalkingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */; };
@@ -348,7 +347,6 @@
 		FD7F98A42A0E12290058DBEB /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		FD81822F2A20C3C300AE1016 /* KeyValueStorage+TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+TestData.swift"; sourceTree = "<group>"; };
 		FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingCardView.swift; sourceTree = "<group>"; };
-		FD897CEE2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerDetailedWalkingView.swift; sourceTree = "<group>"; };
 		FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatusLabel.swift; sourceTree = "<group>"; };
 		FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingsSectionView.swift; sourceTree = "<group>"; };
 		FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingsViewModel.swift; sourceTree = "<group>"; };
@@ -858,7 +856,6 @@
 				FD577CC22ADE5D880045705A /* OwnerWalkingsView.swift */,
 				FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */,
 				FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */,
-				FD897CEE2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift */,
 			);
 			path = OwnerWallkingsView;
 			sourceTree = "<group>";
@@ -1571,7 +1568,6 @@
 				FD897CF52BA96031007BABB1 /* OwnerWalkingsViewModel.swift in Sources */,
 				BAE74E922A42E1DD0083C68E /* SitterProfileView.swift in Sources */,
 				BA4561812A334A8A00C6E595 /* Stars.swift in Sources */,
-				FD897CEF2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift in Sources */,
 				FD3303582AA9BDA40091A4BA /* WoofAppEndpoint+Path.swift in Sources */,
 				FD1FA3C32A0A682E000A3A91 /* SitterCardViewModel.swift in Sources */,
 				FD577CCA2ADE610E0045705A /* SitterWalkingsView.swift in Sources */,
