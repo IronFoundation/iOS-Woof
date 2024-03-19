@@ -2,21 +2,18 @@ import SwiftUI
 
 /// A view displaying information about the pet walkings.
 struct OwnerWalkingsView: View {
-    var futureWalkings = Walking.Dummy.bulkDummyWalkings
-    var finishedWalkings = Walking.Dummy.bulkDummyWalkings
-
     var body: some View {
         NavigationView {
             ScrollView {
                 WalkingsSectionView(
                     expandContent: $showAllFutureWalking,
-                    walkings: futureWalkings,
+                    walkings: viewModel.futureWalkings,
                     headerTitle: futureWalkingSectionTitle
                 )
 
                 WalkingsSectionView(
                     expandContent: $showAllFinishedWalking,
-                    walkings: finishedWalkings,
+                    walkings: viewModel.finishedWalkings,
                     headerTitle: finishedWalkingSectionTitle
                 )
 
@@ -32,6 +29,7 @@ struct OwnerWalkingsView: View {
 
     @State private var showAllFutureWalking = true
     @State private var showAllFinishedWalking = false
+    @State private var viewModel = OwnerWalkingsViewModel()
 
     private let futureWalkingSectionTitle = "Future walkings"
     private let finishedWalkingSectionTitle = "Finished walkings"

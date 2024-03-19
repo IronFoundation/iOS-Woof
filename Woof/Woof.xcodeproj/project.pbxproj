@@ -176,6 +176,7 @@
 		FD897CEF2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CEE2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift */; };
 		FD897CF12BA4501F007BABB1 /* WalkingStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */; };
 		FD897CF32BA463F7007BABB1 /* WalkingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */; };
+		FD897CF52BA96031007BABB1 /* OwnerWalkingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */; };
 		FD907D432A42CF300020CFF0 /* SimpleNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = FD907D422A42CF300020CFF0 /* SimpleNetworkService */; };
 		FD907D492A4356180020CFF0 /* NetworkServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */; };
 		FD9802282A287670003DEE5C /* OwnerProfileViewModelGetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */; };
@@ -350,6 +351,7 @@
 		FD897CEE2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerDetailedWalkingView.swift; sourceTree = "<group>"; };
 		FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatusLabel.swift; sourceTree = "<group>"; };
 		FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingsSectionView.swift; sourceTree = "<group>"; };
+		FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingsViewModel.swift; sourceTree = "<group>"; };
 		FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModelGetTests.swift; sourceTree = "<group>"; };
 		FD9802292A2878C1003DEE5C /* Owner+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Owner+Test.swift"; sourceTree = "<group>"; };
@@ -579,6 +581,7 @@
 				FD5E927B2B9AD35900FD094A /* BookingSlotViewModel.swift */,
 				EF95A0492A385FA600E84ACD /* OwnerMainTabViewModel.swift */,
 				FD14A2A42A277FA400362461 /* OwnerProfileViewModel.swift */,
+				FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */,
 				EF5A7F2E2A14504F00585616 /* DetailPetSitterViewModel.swift */,
 				FD2FA22A2A129CA1002B618B /* SitterListViewModel.swift */,
 				36D954952B88DDCE00656476 /* OwnerOnboardingViewModel.swift */,
@@ -1565,6 +1568,7 @@
 				361737082B627EC3003D9847 /* Walking.swift in Sources */,
 				363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */,
 				FD0291732A0E256F00F88377 /* GeneralInfoSectionView.swift in Sources */,
+				FD897CF52BA96031007BABB1 /* OwnerWalkingsViewModel.swift in Sources */,
 				BAE74E922A42E1DD0083C68E /* SitterProfileView.swift in Sources */,
 				BA4561812A334A8A00C6E595 /* Stars.swift in Sources */,
 				FD897CEF2BA431B0007BABB1 /* OwnerDetailedWalkingView.swift in Sources */,
