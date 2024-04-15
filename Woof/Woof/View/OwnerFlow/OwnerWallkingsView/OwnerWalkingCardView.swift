@@ -37,14 +37,12 @@ struct OwnerWalkingCardView: View {
 
                 WalkingStatusLabel(status: walking.status)
             }
-
-        }.padding()
-            .background(Color.App.grayLight)
-            .clipShape(
-                RoundedRectangle(
-                    cornerRadius: AppStyle.UIElementConstant.cornerRadius
-                )
-            )
+        }
+        .padding()
+        .background(Color.App.grayLight)
+        .clipShape(
+            RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius)
+        )
     }
 }
 

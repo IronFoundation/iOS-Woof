@@ -6,19 +6,19 @@ struct OwnerWalkingsView: View {
         NavigationView {
             ScrollView {
                 WalkingsSectionView(
-                    expandContent: $showAllFutureWalking,
+                    expandContent: $showAllFutureWalkings,
                     walkings: viewModel.futureWalkings,
                     headerTitle: futureWalkingSectionTitle
                 )
 
                 WalkingsSectionView(
-                    expandContent: $showCurrentWalking,
+                    expandContent: $showCurrentWalkings,
                     walkings: viewModel.currentWalkings,
                     headerTitle: currentWalkingSectionTitle
                 )
 
                 WalkingsSectionView(
-                    expandContent: $showAllFinishedWalking,
+                    expandContent: $showAllFinishedWalkings,
                     walkings: viewModel.finishedWalkings,
                     headerTitle: finishedWalkingSectionTitle
                 )
@@ -44,9 +44,10 @@ struct OwnerWalkingsView: View {
 
     // MARK: - Private interface
 
-    @State private var showAllFutureWalking = true
-    @State private var showCurrentWalking = true
-    @State private var showAllFinishedWalking = false
+    @State private var showAllFutureWalkings = true
+    @State private var showCurrentWalkings = true
+    @State private var showAllFinishedWalkings = false
+
     @StateObject private var viewModel = OwnerWalkingsViewModel()
 
     private let futureWalkingSectionTitle = "Future walkings"
