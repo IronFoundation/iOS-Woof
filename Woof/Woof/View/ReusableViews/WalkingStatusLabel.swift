@@ -12,19 +12,23 @@ struct WalkingStatusLabel: View {
             .font(.system(size: AppStyle.FontStyle.footnote.size))
             .padding(.horizontal)
             .foregroundColor(.App.white)
-            .background(content: {
-                switch status {
-                case .available:
-                    Color.green
-                case .pending:
-                    Color.orange
-                case .booked:
-                    Color.cyan
-                case .finished:
-                    Color.purple
-                }
-            })
+            .background(color)
             .clipShape(Capsule())
+    }
+
+    // MARK: - Private interface
+
+    private var color: Color {
+        switch status {
+        case .available:
+            Color.green
+        case .pending:
+            Color.orange
+        case .booked:
+            Color.cyan
+        case .finished:
+            Color.purple
+        }
     }
 }
 
