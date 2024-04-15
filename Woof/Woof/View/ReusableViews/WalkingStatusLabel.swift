@@ -1,6 +1,9 @@
 import SwiftUI
 
+/// Presents the capsule label with the status.
+/// Capsule color depends on the status value.
 struct WalkingStatusLabel: View {
+    /// Walking status to be shown.
     let status: WalkingStatus
 
     var body: some View {

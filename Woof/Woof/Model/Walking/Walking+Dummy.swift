@@ -77,6 +77,20 @@ extension Walking {
                 notes: "Sample notes",
                 price: 25.0
             ),
+            Walking(
+                id: UUID(),
+                owner: Owner.Dummy.laraCroft,
+                sitter: Sitter.Dummy.emilyDoe,
+                status: .booked,
+                start: Date() - 10,
+                end: Date() + 1190,
+                ownerRating: 1,
+                sitterRating: 0,
+                ownerReview: "",
+                sitterReview: "",
+                notes: "Sample notes",
+                price: 25.0
+            ),
         ]
     }
 }
