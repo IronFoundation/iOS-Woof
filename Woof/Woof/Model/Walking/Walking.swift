@@ -3,7 +3,7 @@ import Foundation
 /**
  Pet walking service provided by a pet sitter for pet owners.
  */
-struct Walking: Codable, Identifiable {
+struct Walking: Codable, Identifiable, Equatable {
     /// The unique identifier for the walking instance.
     let id: UUID
 
