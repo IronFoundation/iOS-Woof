@@ -36,9 +36,29 @@ final class OwnerWalkingsViewModel: ObservableObject {
 
     private var walkings: [Walking] = [] {
         didSet {
-            futureWalkings = walkings.filter { $0.start >= Date.now }
-            currentWalkings = walkings.filter { $0.start <= Date.now && $0.end > Date.now }
-            finishedWalkings = walkings.filter { $0.end <= Date.now }
+            var future = [Walking]()
+            var current = [Walking]()
+            var finished = [Walking]()
+            
+            for walking in walkings {
+                if walking.start >= .now {
+                    future.append(walking)
+                } else if walking.start <= .now && walking.end > .now {
+                    current.append(walking)
+                } else {
+                    finished.append(walking)
+                }
+            }
+            
+            if future != futureWalkings {
+                futureWalkings = future
+            }
+            if current != currentWalkings {
+                currentWalkings = current
+            }
+            if finished != finishedWalkings {
+                finishedWalkings = finished
+            }
         }
     }
 }
