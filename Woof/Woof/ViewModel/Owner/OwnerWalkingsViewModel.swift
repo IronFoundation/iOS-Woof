@@ -21,7 +21,16 @@ final class OwnerWalkingsViewModel: ObservableObject {
     @MainActor func getWalkings() async {
         isWalkingsLoading = true
         try? await Task.sleep(nanoseconds: 1_000_000_000)
-        walkings = Walking.Dummy.bulkDummyWalkings
+        var newWalkings: [Walking]
+        if walkings.isEmpty {
+            newWalkings = Walking.Dummy.bulkDummyWalkings
+        } else {
+            let newWalking = Walking.Dummy.dummyWalking
+            newWalkings = walkings
+            newWalkings.append(newWalking)
+        }
+        walkings = newWalkings
+
         isWalkingsLoading = false
     }
 
