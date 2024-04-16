@@ -4,20 +4,22 @@ extension Walking {
     /// Provides dummy data for `Walking` model.
     enum Dummy {
         /// One instance of walking with the dummy data.
-        static let dummyWalking = Walking(
-            id: UUID(),
-            owner: Owner.Dummy.laraCroft,
-            sitter: Sitter.Dummy.emilyDoe,
-            status: .available,
-            start: Date(),
-            end: Date() + 2400,
-            ownerRating: 4,
-            sitterRating: 5,
-            ownerReview: "",
-            sitterReview: "",
-            notes: "Sample notes",
-            price: 28.0
-        )
+        static var dummyWalking: Walking {
+            Walking(
+                id: UUID(),
+                owner: Owner.Dummy.laraCroft,
+                sitter: Sitter.Dummy.emilyDoe,
+                status: .available,
+                start: Date(),
+                end: Date() + 2400,
+                ownerRating: 4,
+                sitterRating: 5,
+                ownerReview: "",
+                sitterReview: "",
+                notes: "Sample notes",
+                price: 28.0
+            )
+        }
 
         /// The array of walking instances with the dummy data.
         static let bulkDummyWalkings = [
