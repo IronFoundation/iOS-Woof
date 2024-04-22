@@ -3,7 +3,7 @@ import SwiftUI
 /// Represents a section of walkings, with an expandable list of walkings.
 struct WalkingsSectionView: View {
     /// Control the expansion state of the walking list.
-    @Binding var expandContent: Bool
+    @Binding var isExpanded: Bool
 
     /// Walkings that are displayed within this section.
     let walkings: [Walking]
@@ -13,7 +13,7 @@ struct WalkingsSectionView: View {
 
     var body: some View {
         DisclosureGroup(
-            isExpanded: $expandContent,
+            isExpanded: $isExpanded,
             content: {
                 ForEach(walkings) { walking in
                     NavigationLink {
@@ -34,7 +34,7 @@ struct WalkingsSectionView: View {
 
 #Preview {
     WalkingsSectionView(
-        expandContent: .constant(true),
+        isExpanded: .constant(true),
         walkings: Walking.Dummy.bulkDummyWalkings,
         headerTitle: "Some walkings"
     )
