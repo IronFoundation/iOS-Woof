@@ -7,6 +7,11 @@ struct ScheduleView: View {
             Text(scheduleTitle)
                 .navigationTitle(navigationTitle)
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    NavigationLink("Add") {
+                        CreateNewWalkingView()
+                    }
+                }
         }
     }
 
