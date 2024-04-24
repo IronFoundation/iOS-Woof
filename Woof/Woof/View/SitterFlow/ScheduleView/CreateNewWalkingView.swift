@@ -8,7 +8,7 @@ struct CreateNewWalkingView: View {
 
         LazyVGrid(columns: Array(repeating: GridItem(), count: 7), spacing: 10) {
             ForEach(viewModel.monthDates(), id: \.self) { date in
-                DayCell(date: date, isSelected: viewModel.selectedDates.contains(date)) {
+                WalkingCalendarDayCell(date: date, isSelected: viewModel.selectedDates.contains(date)) {
                     viewModel.toggleDateSelection(date)
                 }
             }
@@ -40,22 +40,6 @@ struct CreateNewWalkingView: View {
     private let title = "Choose dates:"
     private let dayPickerText = "Start Time:"
     private let createButtonText = "Create walking"
-
-    struct DayCell: View {
-        let date: Date
-        let isSelected: Bool
-        let onTap: () -> Void
-
-        var body: some View {
-            Text("\(Calendar.current.component(.day, from: date))")
-                .frame(width: 40, height: 40)
-                .background(isSelected ? Color.App.purpleLight : Color.clear)
-                .clipShape(Circle())
-                .onTapGesture {
-                    onTap()
-                }
-        }
-    }
 }
 
 #Preview {
