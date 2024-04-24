@@ -1,10 +1,16 @@
 import Foundation
 
 final class CreateNewWalkingViewModel: ObservableObject {
-    @Published var selectedDates: Set<Date> = []
+    @Published var selectedDates: Set<Date> = [] {
+        didSet {
+            isCreateButtonDisabled = selectedDates.isEmpty
+        }
+    }
+
     @Published var startTime = Date()
     @Published var durationInMinutes = 30
     @Published var price: Double = 0
+    @Published var isCreateButtonDisabled: Bool = true
 
     func toggleDateSelection(_ date: Date) {
         if selectedDates.contains(date) {

@@ -25,9 +25,9 @@ struct CreateNewWalkingView: View {
         .padding()
 
         Button("Create walking") {}
+            .disabled(viewModel.isCreateButtonDisabled)
             .buttonStyle(PurpleCapsuleOfInfinityWidth())
             .padding()
-            .disabled(isCreateButtonDisabled)
 
         Spacer()
     }
@@ -35,7 +35,6 @@ struct CreateNewWalkingView: View {
     // MARK: - Private interface
 
     @StateObject private var viewModel = CreateNewWalkingViewModel()
-    private var isCreateButtonDisabled: Bool { viewModel.selectedDates.isEmpty }
 
     struct DayCell: View {
         let date: Date

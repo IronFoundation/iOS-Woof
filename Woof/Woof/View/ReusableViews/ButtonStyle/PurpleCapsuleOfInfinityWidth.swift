@@ -18,8 +18,9 @@ struct PurpleCapsuleOfInfinityWidth: ButtonStyle {
             .padding()
             .frame(maxWidth: .infinity)
             .foregroundColor(Color.App.white)
-            .background(Color.App.purpleDark)
+            .background(configuration.isPressed ? Color.App.grayDark : Color.App.purpleDark)
             .clipShape(Capsule())
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }
 }
 
