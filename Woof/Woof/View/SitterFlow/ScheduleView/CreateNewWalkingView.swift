@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CreateNewWalkingView: View {
     var body: some View {
-        Text("Choose dates:")
+        Text(title)
             .font(.headline)
             .padding(.top)
 
@@ -16,7 +16,7 @@ struct CreateNewWalkingView: View {
         .padding()
 
         VStack {
-            DatePicker("Start Time", selection: $viewModel.startTime, displayedComponents: .hourAndMinute)
+            DatePicker(dayPickerText, selection: $viewModel.startTime, displayedComponents: .hourAndMinute)
 
             Stepper(value: $viewModel.durationInMinutes, in: 30...120, step: 30) {
                 Text("Walking duration: \(viewModel.durationInMinutes) min")
@@ -24,10 +24,12 @@ struct CreateNewWalkingView: View {
         }
         .padding()
 
-        Button("Create walking") {}
-            .disabled(viewModel.isCreateButtonDisabled)
-            .buttonStyle(PurpleCapsuleOfInfinityWidth())
-            .padding()
+        Button(createButtonText) {
+            viewModel.createWalkingObjects()
+        }
+        .disabled(viewModel.isCreateButtonDisabled)
+        .buttonStyle(PurpleCapsuleOfInfinityWidth())
+        .padding()
 
         Spacer()
     }
@@ -35,6 +37,9 @@ struct CreateNewWalkingView: View {
     // MARK: - Private interface
 
     @StateObject private var viewModel = CreateNewWalkingViewModel()
+    private let title = "Choose dates:"
+    private let dayPickerText = "Start Time:"
+    private let createButtonText = "Create walking"
 
     struct DayCell: View {
         let date: Date
