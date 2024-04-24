@@ -20,8 +20,9 @@ final class CreateNewWalkingViewModel: ObservableObject {
         }
     }
 
-    func createWalkingObjects(sitter: Sitter) -> [Walking] {
+    func createWalkingObjects() -> [Walking] {
         var walkingObjects: [Walking] = []
+        guard let sitter = loadSitterFromStorage() else { return walkingObjects }
 
         for date in selectedDates {
             let calendar = Calendar.current
@@ -63,5 +64,12 @@ final class CreateNewWalkingViewModel: ObservableObject {
         }
 
         return (0..<range.count).compactMap { calendar.date(byAdding: .day, value: $0, to: startOfMonth) }
+    }
+
+    private func loadSitterFromStorage() -> Sitter? {
+        guard let data = KeyValueStorage(KeyValueStorage.Name.currentSitter)
+            .loadData(for: KeyValueStorage.Key.currentSitter) else { return nil }
+
+        return try? JSONDecoder().decode(Sitter.self, from: data)
     }
 }
