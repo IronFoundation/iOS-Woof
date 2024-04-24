@@ -2,9 +2,12 @@ import SwiftUI
 
 struct CreateNewWalkingView: View {
     var body: some View {
-        Text(title)
+        Text(currentMonth)
             .font(.headline)
             .padding(.top)
+
+        Text(title)
+            .font(.headline)
 
         LazyVGrid(columns: Array(repeating: GridItem(), count: 7), spacing: 10) {
             ForEach(viewModel.monthDates(), id: \.self) { date in
@@ -40,6 +43,11 @@ struct CreateNewWalkingView: View {
     private let title = "Choose dates:"
     private let dayPickerText = "Start Time:"
     private let createButtonText = "Create walking"
+    private var currentMonth: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM yyyy"
+        return formatter.string(from: Date())
+    }
 }
 
 #Preview {
