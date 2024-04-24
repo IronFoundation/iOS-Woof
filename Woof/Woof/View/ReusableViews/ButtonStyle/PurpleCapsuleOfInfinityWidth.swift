@@ -18,10 +18,22 @@ struct PurpleCapsuleOfInfinityWidth: ButtonStyle {
             .padding()
             .frame(maxWidth: .infinity)
             .foregroundColor(Color.App.white)
-            .background(configuration.isPressed ? Color.App.grayDark : Color.App.purpleDark)
+            .background(
+                Group {
+                    if configuration.isPressed {
+                        Color.App.grayDark
+                    } else {
+                        isEnabled ? Color.App.purpleDark : Color.App.grayDark
+                    }
+                }
+            )
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }
+
+    // MARK: - Private interface
+
+    @Environment(\.isEnabled) private var isEnabled
 }
 
 struct PurpleCapsuleOfInfinityWidth_Previews: PreviewProvider {
