@@ -14,9 +14,6 @@ final class CreateNewWalkingViewModel: ObservableObject {
     /// Duration of the walking in minutes for the schedule.
     @Published var durationInMinutes = 30
 
-    /// Price per walking session in the schedule.
-    @Published var price: Double = 0
-
     /// Boolean indicating whether the create button is disabled.
     @Published var isCreateButtonDisabled: Bool = true
 
