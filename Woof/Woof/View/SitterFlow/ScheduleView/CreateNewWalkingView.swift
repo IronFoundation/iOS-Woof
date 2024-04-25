@@ -1,5 +1,7 @@
 import SwiftUI
 
+/// A view for creating a new walking schedule,
+/// allowing the sitter to select one or multiple days of the week, time, and duration for the walk.
 struct CreateNewWalkingView: View {
     var body: some View {
         Text(currentMonth)
