@@ -10,7 +10,7 @@ struct CreateNewWalkingView: View {
             .font(.headline)
 
         LazyVGrid(columns: Array(repeating: GridItem(), count: 7), spacing: 10) {
-            ForEach(viewModel.monthDates(), id: \.self) { date in
+            ForEach(viewModel.getCurrentMonthDates(), id: \.self) { date in
                 WalkingCalendarDayCell(date: date, isSelected: viewModel.selectedDates.contains(date)) {
                     viewModel.toggleDateSelection(date)
                 }
@@ -27,12 +27,10 @@ struct CreateNewWalkingView: View {
         }
         .padding()
 
-        Button(createButtonText) {
-            viewModel.createWalkingObjects()
-        }
-        .disabled(viewModel.isCreateButtonDisabled)
-        .buttonStyle(PurpleCapsuleOfInfinityWidth())
-        .padding()
+        Button(createButtonText) {}
+            .disabled(viewModel.isCreateButtonDisabled)
+            .buttonStyle(PurpleCapsuleOfInfinityWidth())
+            .padding()
 
         Spacer()
     }

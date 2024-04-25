@@ -12,14 +12,6 @@ final class CreateNewWalkingViewModel: ObservableObject {
     @Published var price: Double = 0
     @Published var isCreateButtonDisabled: Bool = true
 
-    func toggleDateSelection(_ date: Date) {
-        if selectedDates.contains(date) {
-            selectedDates.remove(date)
-        } else {
-            selectedDates.insert(date)
-        }
-    }
-
     func createWalkingObjects() -> [Walking] {
         var walkingObjects: [Walking] = []
         guard let sitter = loadSitterFromStorage() else { return walkingObjects }
@@ -47,14 +39,22 @@ final class CreateNewWalkingViewModel: ObservableObject {
                                   ownerReview: nil,
                                   sitterReview: nil,
                                   notes: nil,
-                                  price: price)
+                                  price: walkingPrice)
             walkingObjects.append(walking)
         }
 
         return walkingObjects
     }
 
-    func monthDates() -> [Date] {
+    func toggleDateSelection(_ date: Date) {
+        if selectedDates.contains(date) {
+            selectedDates.remove(date)
+        } else {
+            selectedDates.insert(date)
+        }
+    }
+
+    func getCurrentMonthDates() -> [Date] {
         let calendar = Calendar.current
         let currentDate = Date()
 
@@ -71,5 +71,10 @@ final class CreateNewWalkingViewModel: ObservableObject {
             .loadData(for: KeyValueStorage.Key.currentSitter) else { return nil }
 
         return try? JSONDecoder().decode(Sitter.self, from: data)
+    }
+
+    private var walkingPrice: Double {
+        guard let sitter = loadSitterFromStorage() else { return 0 }
+        return sitter.pricePerHour * Double(durationInMinutes) / 60.0
     }
 }
