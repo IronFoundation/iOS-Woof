@@ -31,7 +31,7 @@ struct CreateNewWalkingView: View {
         }
         .padding()
 
-        Button(createButtonText) {}
+        Button(createButtonText) { viewModel.resetSelectedDates() }
             .disabled(viewModel.isCreateButtonDisabled)
             .buttonStyle(PurpleCapsuleOfInfinityWidth())
             .padding()

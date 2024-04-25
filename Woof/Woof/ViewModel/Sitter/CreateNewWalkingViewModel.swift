@@ -12,13 +12,20 @@ final class CreateNewWalkingViewModel: ObservableObject {
     @Published var startTime = Date()
 
     /// Duration of the walking in minutes for the schedule.
-    @Published var durationInMinutes = 30
+    @Published var durationInMinutes: Int
 
     /// Boolean indicating whether the create button is disabled.
     @Published var isCreateButtonDisabled: Bool = true
 
-    var minWalkingDuration: Int = 30
-    var maxWalkingDuration: Int = 120
+    /// The minimum duration of a walking session in minutes.
+    var minWalkingDuration = 30
+
+    /// The maximum duration of a walking session in minutes.
+    var maxWalkingDuration = 120
+
+    init() {
+        durationInMinutes = minWalkingDuration
+    }
 
     /// Creates walking objects based on the selected dates, start time, and duration,
     /// considering the sitter's availability and scheduling preferences.
@@ -61,6 +68,11 @@ final class CreateNewWalkingViewModel: ObservableObject {
             }
         }
         return walkingObjects
+    }
+
+    /// Resets the selection of dates for potential walking schedules.
+    func resetSelectedDates() {
+        selectedDates = []
     }
 
     /// Toggles the selection state of a date in the schedule calendar.
