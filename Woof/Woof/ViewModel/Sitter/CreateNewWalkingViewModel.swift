@@ -17,13 +17,18 @@ final class CreateNewWalkingViewModel: ObservableObject {
     /// Boolean indicating whether the create button is disabled.
     @Published var isCreateButtonDisabled: Bool = true
 
+    var minWalkingDuration: Int = 30
+    var maxWalkingDuration: Int = 120
+
     /// Creates walking objects based on the selected dates, start time, and duration,
     /// considering the sitter's availability and scheduling preferences.
-    /// The walking objects are constructed with unique IDs and relevant details such as start and end times, status, and pricing.
+    /// The walking objects are constructed with unique IDs and
+    /// relevant details such as start and end times, status, and pricing.
     /// - Note: Ensure that the sitter data is loaded from storage before calling this method.
-    func createWalkingObjects() {
+    /// - Returns: An array of `Walking` objects.
+    func createWalkingObjects() -> [Walking] {
         var walkingObjects: [Walking] = []
-        guard let sitter = loadSitterFromStorage() else { return }
+        guard let sitter = loadSitterFromStorage() else { return walkingObjects }
 
         for date in selectedDates {
             let calendar = Calendar.current
@@ -37,20 +42,25 @@ final class CreateNewWalkingViewModel: ObservableObject {
 
             let endTime = calendar.date(byAdding: .minute, value: durationInMinutes, to: startDate) ?? startDate
 
-            let walking = Walking(id: UUID(),
-                                  owner: nil,
-                                  sitter: sitter,
-                                  status: .available,
-                                  start: startDate,
-                                  end: endTime,
-                                  ownerRating: nil,
-                                  sitterRating: nil,
-                                  ownerReview: nil,
-                                  sitterReview: nil,
-                                  notes: nil,
-                                  price: walkingPrice)
-            walkingObjects.append(walking)
+            let validDurationRange = minWalkingDuration...maxWalkingDuration
+
+            if validDurationRange.contains(durationInMinutes) {
+                let walking = Walking(id: UUID(),
+                                      owner: nil,
+                                      sitter: sitter,
+                                      status: .available,
+                                      start: startDate,
+                                      end: endTime,
+                                      ownerRating: nil,
+                                      sitterRating: nil,
+                                      ownerReview: nil,
+                                      sitterReview: nil,
+                                      notes: nil,
+                                      price: walkingPrice)
+                walkingObjects.append(walking)
+            }
         }
+        return walkingObjects
     }
 
     /// Toggles the selection state of a date in the schedule calendar.
@@ -63,7 +73,8 @@ final class CreateNewWalkingViewModel: ObservableObject {
         }
     }
 
-    /// Retrieves the dates for the current month based on the current system date for use in displaying the schedule calendar.
+    /// Retrieves the dates for the current month based on the current system date
+    /// for use in displaying the schedule calendar.
     /// - Returns: An array of `Date` objects representing the dates in the current month.
     func getCurrentMonthDates() -> [Date] {
         let calendar = Calendar.current
@@ -87,5 +98,13 @@ final class CreateNewWalkingViewModel: ObservableObject {
     private var walkingPrice: Double {
         guard let sitter = loadSitterFromStorage() else { return 0 }
         return sitter.pricePerHour * Double(durationInMinutes) / 60.0
+    }
+
+    private func setMinWalkingDuration(duration: Int) {
+        minWalkingDuration = duration
+    }
+
+    private func setMaxWalkingDuration(duration: Int) {
+        maxWalkingDuration = duration
     }
 }

@@ -11,7 +11,7 @@ struct CreateNewWalkingView: View {
         Text(title)
             .font(.headline)
 
-        LazyVGrid(columns: Array(repeating: GridItem(), count: 7), spacing: 10) {
+        LazyVGrid(columns: Array(repeating: GridItem(), count: calendarColumnsCount), spacing: calendarGridSpacing) {
             ForEach(viewModel.getCurrentMonthDates(), id: \.self) { date in
                 WalkingCalendarDayCell(date: date, isSelected: viewModel.selectedDates.contains(date)) {
                     viewModel.toggleDateSelection(date)
@@ -23,7 +23,9 @@ struct CreateNewWalkingView: View {
         VStack {
             DatePicker(dayPickerText, selection: $viewModel.startTime, displayedComponents: .hourAndMinute)
 
-            Stepper(value: $viewModel.durationInMinutes, in: 30...120, step: 30) {
+            Stepper(value: $viewModel.durationInMinutes,
+                    in: viewModel.minWalkingDuration...viewModel.maxWalkingDuration,
+                    step: walkDurationChangeStep) {
                 Text("Walking duration: \(viewModel.durationInMinutes) min")
             }
         }
@@ -48,6 +50,10 @@ struct CreateNewWalkingView: View {
         formatter.dateFormat = "MMMM yyyy"
         return formatter.string(from: Date())
     }
+
+    private let walkDurationChangeStep = 30
+    private let calendarColumnsCount = 7
+    private let calendarGridSpacing: CGFloat = 10
 }
 
 #Preview {
