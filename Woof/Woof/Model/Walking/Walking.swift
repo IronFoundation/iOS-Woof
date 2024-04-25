@@ -1,9 +1,11 @@
 import Foundation
 
+// Conformation to `Equatable` protocol allows to redraw the walking views only when they changed.
+// Reference info from article https://www.donnywals.com/understanding-how-and-when-swiftui-decides-to-redraw-views/
 /**
  Pet walking service provided by a pet sitter for pet owners.
  */
-struct Walking: Codable, Identifiable {
+struct Walking: Codable, Identifiable, Equatable {
     /// The unique identifier for the walking instance.
     let id: UUID
 

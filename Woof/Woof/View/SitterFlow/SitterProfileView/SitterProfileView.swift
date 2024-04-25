@@ -66,15 +66,11 @@ struct SitterProfileView: View {
             }
             .padding(.horizontal)
             .buttonStyle(CapsuleWithWhiteText())
-            .overlay(
-                Group {
-                    if viewModel.isSavingData {
-                        Color.white.opacity(AppStyle.UIElementConstant.opacityLevelForProgressViewBackground)
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                    }
+            .overlay {
+                if viewModel.isSavingData {
+                    CustomProgressView()
                 }
-            )
+            }
             .alert(
                 AppAlert.error,
                 isPresented: $viewModel.isErrorOccurred,

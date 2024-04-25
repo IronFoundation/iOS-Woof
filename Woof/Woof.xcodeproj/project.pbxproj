@@ -26,6 +26,7 @@
 		19B407072ABDD68F00054D2E /* Sitter+Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192210F82ABDA1B800B9026D /* Sitter+Decoder.swift */; };
 		1CE7E9C92A247CF1000A0509 /* KeyValueStorageInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7E9C82A247CF1000A0509 /* KeyValueStorageInitTests.swift */; };
 		1CE7E9CC2A24889B000A0509 /* KeyValueStorage+UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7E9CB2A24889B000A0509 /* KeyValueStorage+UnitTests.swift */; };
+		360FE1342BA3174600A1BB84 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360FE1332BA3174600A1BB84 /* CustomProgressView.swift */; };
 		36067A122BD7E6910012FDCD /* CreateNewWalkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36067A112BD7E6910012FDCD /* CreateNewWalkingView.swift */; };
 		361737082B627EC3003D9847 /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737072B627EC3003D9847 /* Walking.swift */; };
 		361737132B628058003D9847 /* WalkingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361737122B628058003D9847 /* WalkingStatus.swift */; };
@@ -43,6 +44,7 @@
 		362F63062A28A8B6002A659B /* OwnerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362F63052A28A8B6002A659B /* OwnerProfileView.swift */; };
 		363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363528D52AB9ADF6009A21CF /* Sitter+CodingKeys.swift */; };
 		3638A46C2AD42FB8005A20F0 /* KeyValueStorageClearStoredSitterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638A46B2AD42FB8005A20F0 /* KeyValueStorageClearStoredSitterData.swift */; };
+		364CFEC02B8CD668004A2225 /* SitterOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CFEBF2B8CD668004A2225 /* SitterOnboardingView.swift */; };
 		365D3F2A2A38891D00EC9B30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E97F162A2F42FD00030E3E /* LoginViewModel.swift */; };
 		3673D6372A04F7FD009D699D /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673D6362A04F7FD009D699D /* Owner.swift */; };
 		367CB4AD2BD923EB001633CE /* WalkingCalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367CB4AC2BD923EB001633CE /* WalkingCalendarDayCell.swift */; };
@@ -165,6 +167,7 @@
 		FD577CCA2ADE610E0045705A /* SitterWalkingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */; };
 		FD5E92752B9064C900FD094A /* WalkingSlotCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */; };
 		FD5E92772B970D9A00FD094A /* BookingSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E92762B970D9A00FD094A /* BookingSlotView.swift */; };
+		FD5E927C2B9AD35900FD094A /* BookingSlotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E927B2B9AD35900FD094A /* BookingSlotViewModel.swift */; };
 		FD6A2E5D2A2EF69500934C3E /* SitterMainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */; };
 		FD6A2E612A2F067E00934C3E /* KeyValueStorage+KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */; };
 		FD6A2E632A2F072F00934C3E /* KeyValueStorage+NameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */; };
@@ -174,6 +177,10 @@
 		FD7F98A32A0E10510058DBEB /* AppStyle+UIElementConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F98A22A0E10510058DBEB /* AppStyle+UIElementConstant.swift */; };
 		FD7F98A52A0E12290058DBEB /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F98A42A0E12290058DBEB /* AvatarView.swift */; };
 		FD8182302A20C3C300AE1016 /* KeyValueStorage+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD81822F2A20C3C300AE1016 /* KeyValueStorage+TestData.swift */; };
+		FD897CED2BA43153007BABB1 /* OwnerWalkingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */; };
+		FD897CF12BA4501F007BABB1 /* WalkingStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */; };
+		FD897CF32BA463F7007BABB1 /* WalkingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */; };
+		FD897CF52BA96031007BABB1 /* OwnerWalkingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */; };
 		FD907D432A42CF300020CFF0 /* SimpleNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = FD907D422A42CF300020CFF0 /* SimpleNetworkService */; };
 		FD907D492A4356180020CFF0 /* NetworkServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */; };
 		FD9802282A287670003DEE5C /* OwnerProfileViewModelGetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */; };
@@ -233,6 +240,7 @@
 		19B163DC2ABB1A6300D4C155 /* ProductionMockSittersData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductionMockSittersData.json; sourceTree = "<group>"; };
 		1CE7E9C82A247CF1000A0509 /* KeyValueStorageInitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageInitTests.swift; sourceTree = "<group>"; };
 		1CE7E9CB2A24889B000A0509 /* KeyValueStorage+UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+UnitTests.swift"; sourceTree = "<group>"; };
+		360FE1332BA3174600A1BB84 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		36067A112BD7E6910012FDCD /* CreateNewWalkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewWalkingView.swift; sourceTree = "<group>"; };
 		361737072B627EC3003D9847 /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		361737122B628058003D9847 /* WalkingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatus.swift; sourceTree = "<group>"; };
@@ -246,6 +254,7 @@
 		362F63052A28A8B6002A659B /* OwnerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileView.swift; sourceTree = "<group>"; };
 		363528D52AB9ADF6009A21CF /* Sitter+CodingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sitter+CodingKeys.swift"; sourceTree = "<group>"; };
 		3638A46B2AD42FB8005A20F0 /* KeyValueStorageClearStoredSitterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageClearStoredSitterData.swift; sourceTree = "<group>"; };
+		364CFEBF2B8CD668004A2225 /* SitterOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterOnboardingView.swift; sourceTree = "<group>"; };
 		3673D6362A04F7FD009D699D /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		367CB4AC2BD923EB001633CE /* WalkingCalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingCalendarDayCell.swift; sourceTree = "<group>"; };
 		367CB4AF2BDA3EC8001633CE /* CreateNewWalkingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewWalkingViewModelTests.swift; sourceTree = "<group>"; };
@@ -336,6 +345,7 @@
 		FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingsView.swift; sourceTree = "<group>"; };
 		FD5E92742B9064C900FD094A /* WalkingSlotCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSlotCardView.swift; sourceTree = "<group>"; };
 		FD5E92762B970D9A00FD094A /* BookingSlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSlotView.swift; sourceTree = "<group>"; };
+		FD5E927B2B9AD35900FD094A /* BookingSlotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSlotViewModel.swift; sourceTree = "<group>"; };
 		FD6A2E5C2A2EF69500934C3E /* SitterMainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterMainTabView.swift; sourceTree = "<group>"; };
 		FD6A2E602A2F067E00934C3E /* KeyValueStorage+KeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+KeyTests.swift"; sourceTree = "<group>"; };
 		FD6A2E622A2F072F00934C3E /* KeyValueStorage+NameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+NameTests.swift"; sourceTree = "<group>"; };
@@ -345,6 +355,10 @@
 		FD7F98A22A0E10510058DBEB /* AppStyle+UIElementConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStyle+UIElementConstant.swift"; sourceTree = "<group>"; };
 		FD7F98A42A0E12290058DBEB /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		FD81822F2A20C3C300AE1016 /* KeyValueStorage+TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+TestData.swift"; sourceTree = "<group>"; };
+		FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingCardView.swift; sourceTree = "<group>"; };
+		FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatusLabel.swift; sourceTree = "<group>"; };
+		FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingsSectionView.swift; sourceTree = "<group>"; };
+		FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingsViewModel.swift; sourceTree = "<group>"; };
 		FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModelGetTests.swift; sourceTree = "<group>"; };
 		FD9802292A2878C1003DEE5C /* Owner+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Owner+Test.swift"; sourceTree = "<group>"; };
@@ -572,8 +586,10 @@
 		36CF61F22AE2953A00BAACF0 /* Owner */ = {
 			isa = PBXGroup;
 			children = (
+				FD5E927B2B9AD35900FD094A /* BookingSlotViewModel.swift */,
 				EF95A0492A385FA600E84ACD /* OwnerMainTabViewModel.swift */,
 				FD14A2A42A277FA400362461 /* OwnerProfileViewModel.swift */,
+				FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */,
 				EF5A7F2E2A14504F00585616 /* DetailPetSitterViewModel.swift */,
 				FD2FA22A2A129CA1002B618B /* SitterListViewModel.swift */,
 				36D954952B88DDCE00656476 /* OwnerOnboardingViewModel.swift */,
@@ -656,12 +672,14 @@
 		EF303EBF2A17AFA20086065B /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */,
 				93B21C2D2A31EA1200610D82 /* ButtonStyle */,
 				EF7B7EFF2A147D8300F00B4E /* TextWithIconLabelView.swift */,
 				EF303EBD2A1762CF0086065B /* FiveStarRatingView.swift */,
 				FD7F98A42A0E12290058DBEB /* AvatarView.swift */,
 				9B6498A72A31E7CA00004FB3 /* CopyToClipboardLabel.swift */,
 				EF95A0682A3AC66400E84ACD /* TextEditorWithPlaceholder.swift */,
+				360FE1332BA3174600A1BB84 /* CustomProgressView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -846,6 +864,8 @@
 			isa = PBXGroup;
 			children = (
 				FD577CC22ADE5D880045705A /* OwnerWalkingsView.swift */,
+				FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */,
+				FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */,
 			);
 			path = OwnerWallkingsView;
 			sourceTree = "<group>";
@@ -915,6 +935,7 @@
 				FD577CC52ADE608F0045705A /* ScheduleView */,
 				BA4561832A39969000C6E595 /* SitterProfileView */,
 				FD6A2E5B2A2EF67A00934C3E /* SitterMainTabView */,
+				364CFEBF2B8CD668004A2225 /* SitterOnboardingView.swift */,
 			);
 			path = SitterFlow;
 			sourceTree = "<group>";
@@ -1556,9 +1577,11 @@
 				367CB4AD2BD923EB001633CE /* WalkingCalendarDayCell.swift in Sources */,
 				FDA212C32B8723300090DC4B /* SitterSectionInformationView.swift in Sources */,
 				FD14A2A52A277FA400362461 /* OwnerProfileViewModel.swift in Sources */,
+				FD897CF32BA463F7007BABB1 /* WalkingsSectionView.swift in Sources */,
 				361737082B627EC3003D9847 /* Walking.swift in Sources */,
 				363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */,
 				FD0291732A0E256F00F88377 /* GeneralInfoSectionView.swift in Sources */,
+				FD897CF52BA96031007BABB1 /* OwnerWalkingsViewModel.swift in Sources */,
 				BAE74E922A42E1DD0083C68E /* SitterProfileView.swift in Sources */,
 				BA4561812A334A8A00C6E595 /* Stars.swift in Sources */,
 				FD3303582AA9BDA40091A4BA /* WoofAppEndpoint+Path.swift in Sources */,
@@ -1588,7 +1611,9 @@
 				36F737F82BD7E92B008DBEF0 /* CreateNewWalkingViewModel.swift in Sources */,
 				93DDB06C2A3B30B100D7D97A /* PurpleCapsuleOfInfinityWidth.swift in Sources */,
 				FD577CC32ADE5D880045705A /* OwnerWalkingsView.swift in Sources */,
+				FD5E927C2B9AD35900FD094A /* BookingSlotViewModel.swift in Sources */,
 				FDD538582A41D6C900331977 /* WoofAppEndpoint.swift in Sources */,
+				360FE1342BA3174600A1BB84 /* CustomProgressView.swift in Sources */,
 				FD2FA22B2A129CA1002B618B /* SitterListViewModel.swift in Sources */,
 				36CBB9ED2B273435005EC39A /* AppAlert.swift in Sources */,
 				93DDB06E2A3B31E800D7D97A /* LoginView.swift in Sources */,
@@ -1602,14 +1627,17 @@
 				FD33035A2AA9D5DD0091A4BA /* Encodable+asDictionary.swift in Sources */,
 				EF4CBAFA2A3C94F000B4A223 /* Sitter.swift in Sources */,
 				EF4CBAEB2A3C6DCA00B4A223 /* SitterProfileViewModel.swift in Sources */,
+				FD897CF12BA4501F007BABB1 /* WalkingStatusLabel.swift in Sources */,
 				FDEE43CB2A2F4602007DE0A9 /* Role.swift in Sources */,
 				FD14A2A92A27804F00362461 /* KeyValueStorage+Key.swift in Sources */,
 				FD3303462A98BD980091A4BA /* WoofAppEndpoint+HTTPAPIEndpoint.swift in Sources */,
 				EF4CBAEF2A3C704300B4A223 /* Sitter+Tests.swift in Sources */,
 				EF7B7F002A147D8300F00B4E /* TextWithIconLabelView.swift in Sources */,
 				FD14A2A72A27803600362461 /* KeyValueStorage+Name.swift in Sources */,
+				FD897CED2BA43153007BABB1 /* OwnerWalkingCardView.swift in Sources */,
 				EF5A7F2F2A14504F00585616 /* DetailPetSitterViewModel.swift in Sources */,
 				FD0291752A0E273500F88377 /* BioSectionView.swift in Sources */,
+				364CFEC02B8CD668004A2225 /* SitterOnboardingView.swift in Sources */,
 				FDD790642A45732D007C1265 /* Obfuscator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
