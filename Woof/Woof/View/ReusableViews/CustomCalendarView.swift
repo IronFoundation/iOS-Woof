@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct CustomCalendarView: View {
+    /// Set of selected dates.
     let selectedDates: Set<Date>
+    /// Closure called when a date is selected.
     let onSelectDate: (Date) -> Void
 
     var body: some View {
@@ -30,9 +32,10 @@ struct CustomCalendarView: View {
             LazyVGrid(columns: Array(repeating: GridItem(), count: calendarColumnsCount),
                       spacing: calendarGridSpacing) {
                 ForEach(getCurrentMonthDates(for: selectedMonth), id: \.self) { date in
-                    CustomCalendarDayCell(date: date, isSelected: selectedDates.contains(date)) {
-                        onSelectDate(date)
-                    }
+                    CustomCalendarDayCell(date: date, isSelected: selectedDates.contains(date))
+                        .onTapGesture {
+                            onSelectDate(date)
+                        }
                 }
             }
             .padding()

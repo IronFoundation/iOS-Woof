@@ -1,18 +1,16 @@
 import SwiftUI
 
 struct CustomCalendarDayCell: View {
+    /// Date represented by the cell.
     let date: Date
+    /// Indicates whether the date is selected.
     let isSelected: Bool
-    let onTap: () -> Void
 
     var body: some View {
         Text("\(Calendar.current.component(.day, from: date))")
             .frame(width: cellSize, height: cellSize)
             .background(isSelected ? Color.App.purpleLight : Color.clear)
             .clipShape(Circle())
-            .onTapGesture {
-                onTap()
-            }
     }
 
     // MARK: - Private interface
@@ -22,7 +20,7 @@ struct CustomCalendarDayCell: View {
 
 #Preview {
     HStack {
-        CustomCalendarDayCell(date: Date(), isSelected: true, onTap: {})
-        CustomCalendarDayCell(date: Date(), isSelected: false, onTap: {})
+        CustomCalendarDayCell(date: Date(), isSelected: true)
+        CustomCalendarDayCell(date: Date(), isSelected: false)
     }
 }
