@@ -1,9 +1,12 @@
 import SwiftUI
 
+/// A view for displaying a custom calendar.
 struct CustomCalendarView: View {
     /// Set of selected dates.
+    /// Access this property to retrieve the currently selected dates.
     let selectedDates: Set<Date>
     /// Closure called when a date is selected.
+    /// Pass a closure to this property to handle date selection events.
     let onSelectDate: (Date) -> Void
 
     var body: some View {
