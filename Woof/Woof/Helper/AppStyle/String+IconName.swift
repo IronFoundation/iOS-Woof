@@ -29,5 +29,9 @@ extension String {
         static let house = "house"
         /// The icon used for the image with two documents.
         static let twoDocuments = "doc.on.doc"
+        /// The icon used for the image of right chevron.
+        static let chevronRight = "chevron.right"
+        /// The icon used for the image of left chevron.
+        static let chevronLeft = "chevron.left"
     }
 }
