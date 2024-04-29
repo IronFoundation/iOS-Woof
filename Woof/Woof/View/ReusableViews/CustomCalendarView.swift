@@ -5,36 +5,38 @@ struct CustomCalendarView: View {
     let onSelectDate: (Date) -> Void
 
     var body: some View {
-        HStack {
-            Button {
-                let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: selectedMonth) ?? Date()
-                if !isCurrentMonth(selectedMonth) {
-                    selectedMonth = previousMonth
+        VStack {
+            HStack {
+                Button {
+                    let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: selectedMonth) ?? Date()
+                    if !isCurrentMonth(selectedMonth) {
+                        selectedMonth = previousMonth
+                    }
+                } label: {
+                    Image(systemName: .IconName.chevronLeft)
                 }
-            } label: {
-                Image(systemName: .IconName.chevronLeft)
-            }
-            .opacity(isCurrentMonth(selectedMonth) ? 0 : 1)
+                .opacity(isCurrentMonth(selectedMonth) ? 0 : 1)
 
-            Text(currentMonth)
+                Text(currentMonth)
 
-            Button {
-                selectedMonth = Calendar.current.date(byAdding: .month, value: 1, to: selectedMonth) ?? Date()
-            } label: {
-                Image(systemName: .IconName.chevronRight)
-            }
-        }
-        .font(.title)
-        .padding(.top)
-
-        LazyVGrid(columns: Array(repeating: GridItem(), count: calendarColumnsCount), spacing: calendarGridSpacing) {
-            ForEach(getCurrentMonthDates(for: selectedMonth), id: \.self) { date in
-                CustomCalendarDayCell(date: date, isSelected: selectedDates.contains(date)) {
-                    onSelectDate(date)
+                Button {
+                    selectedMonth = Calendar.current.date(byAdding: .month, value: 1, to: selectedMonth) ?? Date()
+                } label: {
+                    Image(systemName: .IconName.chevronRight)
                 }
             }
+            .font(.title)
+
+            LazyVGrid(columns: Array(repeating: GridItem(), count: calendarColumnsCount),
+                      spacing: calendarGridSpacing) {
+                ForEach(getCurrentMonthDates(for: selectedMonth), id: \.self) { date in
+                    CustomCalendarDayCell(date: date, isSelected: selectedDates.contains(date)) {
+                        onSelectDate(date)
+                    }
+                }
+            }
+            .padding()
         }
-        .padding()
     }
 
     // MARK: - Private interface
