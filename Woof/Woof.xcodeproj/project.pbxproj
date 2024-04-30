@@ -15,6 +15,7 @@
 		1934CC362AB9BC1E001D5CB4 /* DummyServerResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1934CC352AB9BC1E001D5CB4 /* DummyServerResponseData.swift */; };
 		195041602AC0902E00575F45 /* AllSittersResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950415F2AC0902E00575F45 /* AllSittersResponseTests.swift */; };
 		196037B32AD6BB09000B259B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196037B22AD6BB09000B259B /* ContentView.swift */; };
+		196FCE062BE0E8AB0075E9F9 /* Binding+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196FCE052BE0E8AB0075E9F9 /* Binding+Init.swift */; };
 		199BC09E2A8B73B900824CC6 /* ObfuscatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199BC09D2A8B73B900824CC6 /* ObfuscatorTests.swift */; };
 		199BC0A12A8B748F00824CC6 /* Obfuscator+bytesByObfuscating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199BC0A02A8B748F00824CC6 /* Obfuscator+bytesByObfuscating.swift */; };
 		199BC0A22A8B793400824CC6 /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD790632A45732D007C1265 /* Obfuscator.swift */; };
@@ -228,6 +229,7 @@
 		1934CC352AB9BC1E001D5CB4 /* DummyServerResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyServerResponseData.swift; sourceTree = "<group>"; };
 		1950415F2AC0902E00575F45 /* AllSittersResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSittersResponseTests.swift; sourceTree = "<group>"; };
 		196037B22AD6BB09000B259B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		196FCE052BE0E8AB0075E9F9 /* Binding+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Init.swift"; sourceTree = "<group>"; };
 		199BC09D2A8B73B900824CC6 /* ObfuscatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObfuscatorTests.swift; sourceTree = "<group>"; };
 		199BC0A02A8B748F00824CC6 /* Obfuscator+bytesByObfuscating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Obfuscator+bytesByObfuscating.swift"; sourceTree = "<group>"; };
 		199BC0A92A8CC3E400824CC6 /* ObfuscatorErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObfuscatorErrorTests.swift; sourceTree = "<group>"; };
@@ -430,6 +432,14 @@
 				1950415F2AC0902E00575F45 /* AllSittersResponseTests.swift */,
 			);
 			path = DataModelTests;
+			sourceTree = "<group>";
+		};
+		196FCE072BE0E8AF0075E9F9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				196FCE052BE0E8AB0075E9F9 /* Binding+Init.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		199BC09F2A8B73C400824CC6 /* ObfuscatorTests */ = {
@@ -1159,6 +1169,7 @@
 				FDD790622A457316007C1265 /* Obfuscator */,
 				FD0291702A0E16D000F88377 /* AppStyle */,
 				FDAA7BF52A0CB8E2007905CB /* DataTrasnformer */,
+				196FCE072BE0E8AF0075E9F9 /* Extension */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1552,6 +1563,7 @@
 				FDD143C72A03BD48000BBA77 /* OwnerMainTabView.swift in Sources */,
 				FDEE43C92A2F45B8007DE0A9 /* Preferences.swift in Sources */,
 				EF16BB262A24E101007922C6 /* Owner+Dummy.swift in Sources */,
+				196FCE062BE0E8AB0075E9F9 /* Binding+Init.swift in Sources */,
 				36B5465F2B86274A00F62F9A /* OwnerOnboardingView.swift in Sources */,
 				FD7F989F2A0E0D2C0058DBEB /* AppStyle.swift in Sources */,
 				FDD143CB2A03C629000BBA77 /* Color+AppScheme.swift in Sources */,
