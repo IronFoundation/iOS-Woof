@@ -117,6 +117,8 @@
 		FD02917A2A0E2C5000F88377 /* AppStyle+FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F98A02A0E0E280058DBEB /* AppStyle+FontStyle.swift */; };
 		FD02917B2A0E2C5300F88377 /* AppStyle+UIElementConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F98A22A0E10510058DBEB /* AppStyle+UIElementConstant.swift */; };
 		FD02917C2A0E2CBC00F88377 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F989E2A0E0D2C0058DBEB /* AppStyle.swift */; };
+		FD1070652BE103C500231274 /* SitterWalkingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1070642BE103C500231274 /* SitterWalkingsSectionView.swift */; };
+		FD1070672BE103D700231274 /* SitterWalkingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1070662BE103D700231274 /* SitterWalkingCardView.swift */; };
 		FD14A2A52A277FA400362461 /* OwnerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A42A277FA400362461 /* OwnerProfileViewModel.swift */; };
 		FD14A2A72A27803600362461 /* KeyValueStorage+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A62A27803600362461 /* KeyValueStorage+Name.swift */; };
 		FD14A2A92A27804F00362461 /* KeyValueStorage+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A82A27804F00362461 /* KeyValueStorage+Key.swift */; };
@@ -174,7 +176,7 @@
 		FD8182302A20C3C300AE1016 /* KeyValueStorage+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD81822F2A20C3C300AE1016 /* KeyValueStorage+TestData.swift */; };
 		FD897CED2BA43153007BABB1 /* OwnerWalkingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */; };
 		FD897CF12BA4501F007BABB1 /* WalkingStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */; };
-		FD897CF32BA463F7007BABB1 /* WalkingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */; };
+		FD897CF32BA463F7007BABB1 /* OwnerWalkingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF22BA463F7007BABB1 /* OwnerWalkingsSectionView.swift */; };
 		FD897CF52BA96031007BABB1 /* OwnerWalkingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */; };
 		FD907D432A42CF300020CFF0 /* SimpleNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = FD907D422A42CF300020CFF0 /* SimpleNetworkService */; };
 		FD907D492A4356180020CFF0 /* NetworkServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */; };
@@ -302,6 +304,8 @@
 		FD0291742A0E273500F88377 /* BioSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioSectionView.swift; sourceTree = "<group>"; };
 		FD0291762A0E2B0700F88377 /* AppStyle+FontStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStyle+FontStyleTests.swift"; sourceTree = "<group>"; };
 		FD0291782A0E2B2300F88377 /* AppStyle+UIElementConstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStyle+UIElementConstantTests.swift"; sourceTree = "<group>"; };
+		FD1070642BE103C500231274 /* SitterWalkingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingsSectionView.swift; sourceTree = "<group>"; };
+		FD1070662BE103D700231274 /* SitterWalkingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingCardView.swift; sourceTree = "<group>"; };
 		FD14A2A42A277FA400362461 /* OwnerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModel.swift; sourceTree = "<group>"; };
 		FD14A2A62A27803600362461 /* KeyValueStorage+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+Name.swift"; sourceTree = "<group>"; };
 		FD14A2A82A27804F00362461 /* KeyValueStorage+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+Key.swift"; sourceTree = "<group>"; };
@@ -348,7 +352,7 @@
 		FD81822F2A20C3C300AE1016 /* KeyValueStorage+TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+TestData.swift"; sourceTree = "<group>"; };
 		FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingCardView.swift; sourceTree = "<group>"; };
 		FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatusLabel.swift; sourceTree = "<group>"; };
-		FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingsSectionView.swift; sourceTree = "<group>"; };
+		FD897CF22BA463F7007BABB1 /* OwnerWalkingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingsSectionView.swift; sourceTree = "<group>"; };
 		FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingsViewModel.swift; sourceTree = "<group>"; };
 		FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModelGetTests.swift; sourceTree = "<group>"; };
@@ -854,7 +858,7 @@
 			isa = PBXGroup;
 			children = (
 				FD577CC22ADE5D880045705A /* OwnerWalkingsView.swift */,
-				FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */,
+				FD897CF22BA463F7007BABB1 /* OwnerWalkingsSectionView.swift */,
 				FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */,
 			);
 			path = OwnerWallkingsView;
@@ -872,6 +876,8 @@
 			isa = PBXGroup;
 			children = (
 				FD577CC92ADE610E0045705A /* SitterWalkingsView.swift */,
+				FD1070642BE103C500231274 /* SitterWalkingsSectionView.swift */,
+				FD1070662BE103D700231274 /* SitterWalkingCardView.swift */,
 			);
 			path = SitterWalkingsView;
 			sourceTree = "<group>";
@@ -1561,7 +1567,7 @@
 				361737132B628058003D9847 /* WalkingStatus.swift in Sources */,
 				FDA212C32B8723300090DC4B /* SitterSectionInformationView.swift in Sources */,
 				FD14A2A52A277FA400362461 /* OwnerProfileViewModel.swift in Sources */,
-				FD897CF32BA463F7007BABB1 /* WalkingsSectionView.swift in Sources */,
+				FD897CF32BA463F7007BABB1 /* OwnerWalkingsSectionView.swift in Sources */,
 				361737082B627EC3003D9847 /* Walking.swift in Sources */,
 				363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */,
 				FD0291732A0E256F00F88377 /* GeneralInfoSectionView.swift in Sources */,
@@ -1600,6 +1606,7 @@
 				36CBB9ED2B273435005EC39A /* AppAlert.swift in Sources */,
 				93DDB06E2A3B31E800D7D97A /* LoginView.swift in Sources */,
 				FDE0CEA92A00F8370023F784 /* WoofApp.swift in Sources */,
+				FD1070672BE103D700231274 /* SitterWalkingCardView.swift in Sources */,
 				EF95A04A2A385FA600E84ACD /* OwnerMainTabViewModel.swift in Sources */,
 				BA4561872A3996BF00C6E595 /* SitterInfoCardView.swift in Sources */,
 				FD7F98A52A0E12290058DBEB /* AvatarView.swift in Sources */,
@@ -1613,6 +1620,7 @@
 				FDEE43CB2A2F4602007DE0A9 /* Role.swift in Sources */,
 				FD14A2A92A27804F00362461 /* KeyValueStorage+Key.swift in Sources */,
 				FD3303462A98BD980091A4BA /* WoofAppEndpoint+HTTPAPIEndpoint.swift in Sources */,
+				FD1070652BE103C500231274 /* SitterWalkingsSectionView.swift in Sources */,
 				EF4CBAEF2A3C704300B4A223 /* Sitter+Tests.swift in Sources */,
 				EF7B7F002A147D8300F00B4E /* TextWithIconLabelView.swift in Sources */,
 				FD14A2A72A27803600362461 /* KeyValueStorage+Name.swift in Sources */,
