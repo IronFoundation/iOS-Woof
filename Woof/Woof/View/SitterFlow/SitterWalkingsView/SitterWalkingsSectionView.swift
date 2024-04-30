@@ -19,7 +19,14 @@ struct SitterWalkingsSectionView: View {
                     NavigationLink {
                         Text(walking.id.uuidString)
                     } label: {
-                        SitterWalkingCardView(walking: walking)
+                        SitterWalkingCardView(
+                            start: walking.start,
+                            end: walking.end,
+                            name: walking.owner?.name ?? "",
+                            city: walking.owner?.city ?? "",
+                            address: walking.owner?.address ?? "",
+                            status: walking.status
+                        )
                     }
                 }
             },

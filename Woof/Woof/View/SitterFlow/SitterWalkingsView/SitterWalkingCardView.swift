@@ -2,17 +2,22 @@ import SwiftUI
 
 /// A view representing a card displaying details of a walking.
 struct SitterWalkingCardView: View {
-    /// Contains the information about the walking.
-    let walking: Walking
+    
+    let start: Date
+    let end: Date
+    let name: String
+    let city: String
+    let address: String
+    let status: WalkingStatus
 
     var body: some View {
         VStack {
             HStack {
-                VStack(spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
+                VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
                     HStack {
-                        Text(walking.start, style: .time)
+                        Text(start, style: .time)
                         Text("-")
-                        Text(walking.end, style: .time)
+                        Text(end, style: .time)
                     }
                     .font(
                         .system(
@@ -20,7 +25,7 @@ struct SitterWalkingCardView: View {
                             weight: .bold
                         )
                     )
-                    Text(walking.start, style: .date)
+                    Text(start, style: .date)
                         .italic()
                         .font(
                             .system(
@@ -28,7 +33,7 @@ struct SitterWalkingCardView: View {
                                 weight: .bold
                             )
                         )
-                    WalkingStatusLabel(status: walking.status)
+                    WalkingStatusLabel(status: status)
                 }
                 .foregroundColor(.App.grayDark)
 
@@ -37,11 +42,11 @@ struct SitterWalkingCardView: View {
                     alignment: .trailing,
                     spacing: AppStyle.UIElementConstant.spacingBetweenElements
                 ) {
-                    Text(ownerName)
+                    Text(name)
                         .bold()
                     Group {
-                        Text(ownerCity)
-                        Text(ownerAddress)
+                        Text(city)
+                        Text(address)
                     }
                     .font(.system(size: AppStyle.FontStyle.footnote.size))
                 }
@@ -53,22 +58,15 @@ struct SitterWalkingCardView: View {
             RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius)
         )
     }
-
-    // MARK: - Private interface
-
-    private var ownerName: String {
-        walking.owner?.name ?? "not available"
-    }
-
-    private var ownerCity: String {
-        walking.owner?.city ?? ""
-    }
-
-    private var ownerAddress: String {
-        walking.owner?.address ?? ""
-    }
 }
 
 #Preview {
-    SitterWalkingCardView(walking: Walking.Dummy.dummyWalking)
+    SitterWalkingCardView(
+        start: .now - 1200,
+        end: .now,
+        name: "Angela",
+        city: "hometown",
+        address: "my street, 25",
+        status: .available
+    )
 }
