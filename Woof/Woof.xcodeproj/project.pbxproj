@@ -119,6 +119,7 @@
 		FD02917C2A0E2CBC00F88377 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F989E2A0E0D2C0058DBEB /* AppStyle.swift */; };
 		FD1070652BE103C500231274 /* SitterWalkingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1070642BE103C500231274 /* SitterWalkingsSectionView.swift */; };
 		FD1070672BE103D700231274 /* SitterWalkingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1070662BE103D700231274 /* SitterWalkingCardView.swift */; };
+		FD1070692BE109AD00231274 /* SitterWalkingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1070682BE109AD00231274 /* SitterWalkingsViewModel.swift */; };
 		FD14A2A52A277FA400362461 /* OwnerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A42A277FA400362461 /* OwnerProfileViewModel.swift */; };
 		FD14A2A72A27803600362461 /* KeyValueStorage+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A62A27803600362461 /* KeyValueStorage+Name.swift */; };
 		FD14A2A92A27804F00362461 /* KeyValueStorage+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A82A27804F00362461 /* KeyValueStorage+Key.swift */; };
@@ -306,6 +307,7 @@
 		FD0291782A0E2B2300F88377 /* AppStyle+UIElementConstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStyle+UIElementConstantTests.swift"; sourceTree = "<group>"; };
 		FD1070642BE103C500231274 /* SitterWalkingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingsSectionView.swift; sourceTree = "<group>"; };
 		FD1070662BE103D700231274 /* SitterWalkingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingCardView.swift; sourceTree = "<group>"; };
+		FD1070682BE109AD00231274 /* SitterWalkingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterWalkingsViewModel.swift; sourceTree = "<group>"; };
 		FD14A2A42A277FA400362461 /* OwnerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModel.swift; sourceTree = "<group>"; };
 		FD14A2A62A27803600362461 /* KeyValueStorage+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+Name.swift"; sourceTree = "<group>"; };
 		FD14A2A82A27804F00362461 /* KeyValueStorage+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+Key.swift"; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				EF4CBAEA2A3C6DCA00B4A223 /* SitterProfileViewModel.swift */,
+				FD1070682BE109AD00231274 /* SitterWalkingsViewModel.swift */,
 				EF95A04C2A385FCF00E84ACD /* SitterMainTabViewModel.swift */,
 				FD1FA3C22A0A682E000A3A91 /* SitterCardViewModel.swift */,
 			);
@@ -1615,6 +1618,7 @@
 				FD577CC72ADE60B20045705A /* ScheduleView.swift in Sources */,
 				FD33035A2AA9D5DD0091A4BA /* Encodable+asDictionary.swift in Sources */,
 				EF4CBAFA2A3C94F000B4A223 /* Sitter.swift in Sources */,
+				FD1070692BE109AD00231274 /* SitterWalkingsViewModel.swift in Sources */,
 				EF4CBAEB2A3C6DCA00B4A223 /* SitterProfileViewModel.swift in Sources */,
 				FD897CF12BA4501F007BABB1 /* WalkingStatusLabel.swift in Sources */,
 				FDEE43CB2A2F4602007DE0A9 /* Role.swift in Sources */,
