@@ -2,9 +2,7 @@ import SwiftUI
 
 /// A view to onboard the owner by filling in the mandatory information about themselves.
 struct OwnerOnboardingView: View {
-    /// View model responsible to manage data from model layer
-    @ObservedObject var viewModel = OwnerOnboardingViewModel()
-
+    typealias OwnerOnboardingViewModel = OwnerProfileViewModel
     /// A boolean indicating whether the save button should be enabled.
     var isSaveButtonEnabled: Bool {
         viewModel.name.isEmpty ||
@@ -39,6 +37,8 @@ struct OwnerOnboardingView: View {
 
     // MARK: - Private interface
 
+    /// View model responsible to manage data from model layer
+    @StateObject private var viewModel = OwnerOnboardingViewModel()
     private let proceedButtonTitle = "Find your pet sitter"
     private let welcomeText = "Hello!"
     private let onboardingText = """
