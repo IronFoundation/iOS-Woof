@@ -20,6 +20,12 @@ struct OwnerOnboardingView: View {
                 address: $viewModel.address
             )
 
+            if viewModel.mandatoryFieldsAreEmpty {
+                Text(mandatoryPlaceholderText)
+                    .padding()
+                    .font(.system(.footnote))
+            }
+
             Button(proceedButtonTitle) {}
                 .buttonStyle(CapsuleWithWhiteText())
                 .padding()
@@ -33,11 +39,12 @@ struct OwnerOnboardingView: View {
     /// View model responsible to manage data from model layer
     @StateObject private var viewModel = OwnerOnboardingViewModel()
     private let proceedButtonTitle = "Find your pet sitter"
-    private let welcomeText = "Hello!"
+    private let welcomeText = "Hello👋🏻!"
     private let onboardingText = """
     We're almost ready to help you find a suitable pet-sitter for your beloved companion.
     Just specify a few details by entering your information:
     """
+    private let mandatoryPlaceholderText = "Fields with * are mandatory"
 }
 
 #Preview {
