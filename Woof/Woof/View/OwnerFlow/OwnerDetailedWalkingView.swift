@@ -8,29 +8,33 @@ struct OwnerDetailedWalkingView: View {
     var body: some View {
         VStack(spacing: AppStyle.UIElementConstant.wideSpacingSize) {
             HStack {
-                HStack {
-                    AvatarView(url: viewModel.imageURL)
-                    VStack(alignment: .leading) {
-                        Text(viewModel.fullName)
-                            .bold()
-                            .font(.system(size: AppStyle.FontStyle.heading.size))
-                        Label(viewModel.phoneNumber, systemImage: .IconName.phone)
-                    }
+                AvatarView(url: viewModel.imageURL)
+
+                VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
+                    Text(viewModel.fullName)
+                        .bold()
+                        .font(.system(size: AppStyle.FontStyle.heading.size))
+                    FiveStarRatingView(stars: viewModel.rating)
+                        .font(.system(size: AppStyle.FontStyle.footnote.size))
+                    Label(viewModel.phoneNumber, systemImage: .IconName.phone)
                 }
+
                 Spacer()
-                VStack {
+
+                VStack(spacing: AppStyle.UIElementConstant.spacingBetweenElements) {
                     WalkingStatusLabel(status: viewModel.status)
                     Text(
                         viewModel.price,
                         format: .currency(code: "USD")
                     )
                     .bold()
-                }.padding()
+                    .font(.system(size: AppStyle.FontStyle.heading.size))
+                }
             }
             Text(header)
                 .bold()
+                .italic()
                 .font(.system(size: AppStyle.FontStyle.heading.size))
-                .foregroundColor(.App.purpleDark)
             VStack(alignment: .leading, spacing: AppStyle.UIElementConstant.minPadding) {
                 HStack {
                     Label(timeLabel, systemImage: .IconName.clock)
@@ -49,9 +53,14 @@ struct OwnerDetailedWalkingView: View {
                 Label(notesLabel, systemImage: .IconName.notes)
                 Text(viewModel.notes)
                     .bold()
-            }
+            }.padding()
+            .background(Color.App.grayLight)
+                .clipShape(
+                    RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius)
+                )
             Spacer()
         }.padding()
+        
     }
 
     // MARK: - Private interface
