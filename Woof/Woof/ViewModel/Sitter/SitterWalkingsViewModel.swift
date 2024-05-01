@@ -31,7 +31,7 @@ final class SitterWalkingsViewModel: ObservableObject {
             currentWalkings = []
             finishedWalkings = []
 
-            for walking in walkings {
+            for walking in walkings where walking.status != .available {
                 if walking.start >= .now {
                     futureWalkings.append(walking)
                 } else if walking.start <= .now && walking.end > .now {
