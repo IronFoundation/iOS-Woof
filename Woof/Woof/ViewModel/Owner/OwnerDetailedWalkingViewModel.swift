@@ -1,5 +1,6 @@
 import Foundation
 
+/// Responsible for preparing and processing data for the `OwnerDetailedWalkingView`.
 final class OwnerDetailedWalkingViewModel: ObservableObject {
     /// The full name of the sitter.
     var fullName: String {
@@ -60,6 +61,9 @@ final class OwnerDetailedWalkingViewModel: ObservableObject {
         walking.notes ?? "The information was not provided."
     }
 
+    // Initializes a new instance of view model with the provided walking information.
+    ///
+    /// - Parameter walking: The walking to be prepared to present.
     init(walking: Walking) {
         self.walking = walking
     }
