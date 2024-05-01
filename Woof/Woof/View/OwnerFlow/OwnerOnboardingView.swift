@@ -3,13 +3,6 @@ import SwiftUI
 /// A view to onboard the owner by filling in the mandatory information about themselves.
 struct OwnerOnboardingView: View {
     typealias OwnerOnboardingViewModel = OwnerProfileViewModel
-    /// A boolean indicating whether the save button should be enabled.
-    var isSaveButtonEnabled: Bool {
-        viewModel.name.isEmpty ||
-            viewModel.phone.isEmpty ||
-            viewModel.city.isEmpty ||
-            viewModel.address.isEmpty
-    }
 
     var body: some View {
         VStack {
@@ -30,7 +23,7 @@ struct OwnerOnboardingView: View {
             Button(proceedButtonTitle) {}
                 .buttonStyle(CapsuleWithWhiteText())
                 .padding()
-                .disabled(isSaveButtonEnabled)
+                .disabled(viewModel.mandatoryFieldsAreEmpty)
         }
         .padding()
     }

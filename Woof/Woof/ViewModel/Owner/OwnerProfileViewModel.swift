@@ -26,6 +26,11 @@ class OwnerProfileViewModel: ObservableObject {
     /// Indicates whether the logout confirmation was obtained.
     @Published var isLogoutConfirmed = false
 
+    /// Indicates if the mandatory fields are empty.
+    var mandatoryFieldsAreEmpty: Bool {
+        name.isEmpty || phone.isEmpty || city.isEmpty || address.isEmpty
+    }
+
     /**
      Initializes an instance of the `OwnerProfileViewModel` class.
      */
