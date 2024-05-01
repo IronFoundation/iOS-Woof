@@ -17,7 +17,7 @@ struct OwnerWalkingsSectionView: View {
             content: {
                 ForEach(walkings) { walking in
                     NavigationLink {
-                        OwnerDetailedWalkingView(walking: walking)
+                        OwnerDetailedWalkingView(viewModel: OwnerDetailedWalkingViewModel(walking: walking))
                     } label: {
                         OwnerWalkingCardView(walking: walking)
                     }
