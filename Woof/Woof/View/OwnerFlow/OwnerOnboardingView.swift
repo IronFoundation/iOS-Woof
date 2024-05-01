@@ -31,6 +31,17 @@ struct OwnerOnboardingView: View {
                 .padding()
                 .disabled(viewModel.mandatoryFieldsAreEmpty)
         }
+        .alert(
+            AppAlert.error,
+            isPresented: .init(value: $viewModel.errorMessage),
+            actions: {
+                Button(AppButtonTitle.cancel) {}
+                Button(AppButtonTitle.tryAgain) {}
+            },
+            message: {
+                Text(viewModel.errorMessage ?? "")
+            }
+        )
         .padding()
     }
 
