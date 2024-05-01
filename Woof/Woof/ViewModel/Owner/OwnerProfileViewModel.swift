@@ -38,26 +38,20 @@ class OwnerProfileViewModel: ObservableObject {
      Initializes an instance of the `OwnerProfileViewModel` class.
      */
     init() {
-        currentOwner = getCurrentOwner()
-
-        name = currentOwner.name
-        surname = currentOwner.surname
-        phone = currentOwner.phone
-        city = currentOwner.city
-        address = currentOwner.address
-        avatarURL = currentOwner.avatarURL
+        setUpFields()
     }
 
     /// Requests model layer to save modified data.
     func save() {
-        currentOwner.name = name
-        currentOwner.surname = surname
-        currentOwner.phone = phone
-        currentOwner.city = city
-        currentOwner.address = address
-        currentOwner.avatarURL = avatarURL
+        var newOwner = currentOwner ?? .init()
+        newOwner.name = name
+        newOwner.surname = surname
+        newOwner.phone = phone
+        newOwner.city = city
+        newOwner.address = address
+        newOwner.avatarURL = avatarURL
 
-        guard let data = try? JSONEncoder().encode(currentOwner) else { return }
+        guard let data = try? JSONEncoder().encode(newOwner) else { return }
 
         KeyValueStorage(KeyValueStorage.Name.currentOwner)
             .save(data, for: KeyValueStorage.Key.currentOwner)
@@ -66,16 +60,16 @@ class OwnerProfileViewModel: ObservableObject {
     /**
      Returns the owner information that will be displayed in view.
 
-        - Returns: The owner instance from model layer or new instance of `Owner`,
+     - Returns: The owner instance from model layer or new instance of `Owner`,
      if loading from model layer is failed.
      */
-    func getCurrentOwner() -> Owner {
-        loadOwnerFromStorage() ?? Owner()
+    func getCurrentOwner() -> Owner? {
+        loadOwnerFromStorage()
     }
 
     // MARK: - Private interface
 
-    private lazy var currentOwner: Owner = getCurrentOwner()
+    private lazy var currentOwner: Owner? = getCurrentOwner()
 
     private func loadOwnerFromStorage() -> Owner? {
         guard let data = KeyValueStorage(KeyValueStorage.Name.currentOwner)
@@ -87,5 +81,14 @@ class OwnerProfileViewModel: ObservableObject {
         }
 
         return owner
+    }
+
+    private func setUpFields() {
+        name = currentOwner?.name ?? ""
+        surname = currentOwner?.surname ?? ""
+        phone = currentOwner?.phone ?? ""
+        city = currentOwner?.city ?? ""
+        address = currentOwner?.address ?? ""
+        avatarURL = currentOwner?.avatarURL
     }
 }
