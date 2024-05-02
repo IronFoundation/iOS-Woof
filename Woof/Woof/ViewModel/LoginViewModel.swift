@@ -4,8 +4,20 @@ import Foundation
 final class LoginViewModel: ObservableObject {
     // MARK: - Internal interface
 
+    /// Indicates whether to show owner onboarding flow.
+    @Published var shouldShowOwnerOnboarding = false
+    /// Indicates whether to show sitter onboarding flow.
+    @Published var shouldShowSitterOnboarding = false
+
+    /// Performs actions triggered by the owner role choice.
+    func ownerFlowDidSelected() {
+        shouldShowOwnerOnboarding = !isCurrentOwnerExists
     }
 
+    /// Performs actions triggered by the sitter role choice.
+    func sitterFlowDidSelected() {
+        shouldShowSitterOnboarding = !isCurrentSitterExists
+    }
 
     // MARK: - Private interface
 
