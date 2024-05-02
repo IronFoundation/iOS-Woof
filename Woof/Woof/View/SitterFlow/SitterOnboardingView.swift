@@ -28,6 +28,9 @@ struct SitterOnboardingView: View {
             Button(proceedButtonTitle) {
                 Task {
                     await viewModel.save()
+                    if !viewModel.isErrorOccurred {
+                        userRoleViewModel.setSitterRole()
+                    }
                 }
             }
             .buttonStyle(CapsuleWithWhiteText())
@@ -49,6 +52,9 @@ struct SitterOnboardingView: View {
                 Button(AppButtonTitle.tryAgain) {
                     Task {
                         await viewModel.save()
+                        if !viewModel.isErrorOccurred {
+                            userRoleViewModel.setSitterRole()
+                        }
                     }
                 }
             },
@@ -62,6 +68,7 @@ struct SitterOnboardingView: View {
 
     typealias SitterOnboardingViewModel = SitterProfileViewModel
     @StateObject private var viewModel = SitterOnboardingViewModel()
+    @EnvironmentObject var userRoleViewModel: UserRoleViewModel
 
     private let welcomeText = "Hello👋🏻!"
     private let mandatoryPlaceholderText = "Fields with * are mandatory"
