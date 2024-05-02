@@ -5,19 +5,19 @@ struct OwnerWalkingsView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                OwnerWalkingsSectionView(
+                WalkingsSectionView(
                     isExpanded: $showAllFutureWalkings,
                     walkings: viewModel.futureWalkings,
                     headerTitle: futureWalkingSectionTitle
                 )
 
-                OwnerWalkingsSectionView(
+                WalkingsSectionView(
                     isExpanded: $showCurrentWalkings,
                     walkings: viewModel.currentWalkings,
                     headerTitle: currentWalkingSectionTitle
                 )
 
-                OwnerWalkingsSectionView(
+                WalkingsSectionView(
                     isExpanded: $showAllFinishedWalkings,
                     walkings: viewModel.finishedWalkings,
                     headerTitle: finishedWalkingSectionTitle

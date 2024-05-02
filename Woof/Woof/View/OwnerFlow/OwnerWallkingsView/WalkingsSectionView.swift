@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Represents a section of walkings, with an expandable list of walkings.
-struct OwnerWalkingsSectionView: View {
+struct WalkingsSectionView: View {
     /// Control the expansion state of the walking list.
     @Binding var isExpanded: Bool
 
@@ -33,7 +33,7 @@ struct OwnerWalkingsSectionView: View {
 }
 
 #Preview {
-    OwnerWalkingsSectionView(
+    WalkingsSectionView(
         isExpanded: .constant(true),
         walkings: Walking.Dummy.bulkDummyWalkings,
         headerTitle: "Some walkings"

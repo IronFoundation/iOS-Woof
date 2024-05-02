@@ -177,7 +177,7 @@
 		FD8182302A20C3C300AE1016 /* KeyValueStorage+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD81822F2A20C3C300AE1016 /* KeyValueStorage+TestData.swift */; };
 		FD897CED2BA43153007BABB1 /* OwnerWalkingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */; };
 		FD897CF12BA4501F007BABB1 /* WalkingStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */; };
-		FD897CF32BA463F7007BABB1 /* OwnerWalkingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF22BA463F7007BABB1 /* OwnerWalkingsSectionView.swift */; };
+		FD897CF32BA463F7007BABB1 /* WalkingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */; };
 		FD897CF52BA96031007BABB1 /* OwnerWalkingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */; };
 		FD907D432A42CF300020CFF0 /* SimpleNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = FD907D422A42CF300020CFF0 /* SimpleNetworkService */; };
 		FD907D492A4356180020CFF0 /* NetworkServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */; };
@@ -354,7 +354,7 @@
 		FD81822F2A20C3C300AE1016 /* KeyValueStorage+TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+TestData.swift"; sourceTree = "<group>"; };
 		FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingCardView.swift; sourceTree = "<group>"; };
 		FD897CF02BA4501F007BABB1 /* WalkingStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStatusLabel.swift; sourceTree = "<group>"; };
-		FD897CF22BA463F7007BABB1 /* OwnerWalkingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingsSectionView.swift; sourceTree = "<group>"; };
+		FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingsSectionView.swift; sourceTree = "<group>"; };
 		FD897CF42BA96031007BABB1 /* OwnerWalkingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerWalkingsViewModel.swift; sourceTree = "<group>"; };
 		FD907D482A4356180020CFF0 /* NetworkServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		FD9802272A287670003DEE5C /* OwnerProfileViewModelGetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModelGetTests.swift; sourceTree = "<group>"; };
@@ -861,7 +861,7 @@
 			isa = PBXGroup;
 			children = (
 				FD577CC22ADE5D880045705A /* OwnerWalkingsView.swift */,
-				FD897CF22BA463F7007BABB1 /* OwnerWalkingsSectionView.swift */,
+				FD897CF22BA463F7007BABB1 /* WalkingsSectionView.swift */,
 				FD897CEC2BA43153007BABB1 /* OwnerWalkingCardView.swift */,
 			);
 			path = OwnerWallkingsView;
@@ -1570,7 +1570,7 @@
 				361737132B628058003D9847 /* WalkingStatus.swift in Sources */,
 				FDA212C32B8723300090DC4B /* SitterSectionInformationView.swift in Sources */,
 				FD14A2A52A277FA400362461 /* OwnerProfileViewModel.swift in Sources */,
-				FD897CF32BA463F7007BABB1 /* OwnerWalkingsSectionView.swift in Sources */,
+				FD897CF32BA463F7007BABB1 /* WalkingsSectionView.swift in Sources */,
 				361737082B627EC3003D9847 /* Walking.swift in Sources */,
 				363528D62AB9ADF6009A21CF /* Sitter+CodingKeys.swift in Sources */,
 				FD0291732A0E256F00F88377 /* GeneralInfoSectionView.swift in Sources */,
