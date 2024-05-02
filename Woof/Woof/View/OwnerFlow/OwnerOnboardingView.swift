@@ -26,10 +26,15 @@ struct OwnerOnboardingView: View {
                     .font(.system(.footnote))
             }
 
-            Button(proceedButtonTitle) {}
-                .buttonStyle(CapsuleWithWhiteText())
-                .padding()
-                .disabled(viewModel.mandatoryFieldsAreEmpty)
+            Button(proceedButtonTitle) {
+                viewModel.save()
+                if viewModel.errorMessage == nil {
+                    userRoleViewModel.setOwnerRole()
+                }
+            }
+            .buttonStyle(CapsuleWithWhiteText())
+            .padding()
+            .disabled(viewModel.mandatoryFieldsAreEmpty)
         }
         .alert(
             AppAlert.error,
@@ -47,6 +52,7 @@ struct OwnerOnboardingView: View {
 
     // MARK: - Private interface
 
+    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
     /// View model responsible to manage data from model layer
     @StateObject private var viewModel = OwnerOnboardingViewModel()
     private let proceedButtonTitle = "Find your pet sitter"
