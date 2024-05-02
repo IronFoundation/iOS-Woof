@@ -1,6 +1,6 @@
 import Foundation
 
-/// The view model for a owner walkings view that is responsible for preparing and providing data for it.
+/// The view model for a sitter walkings view that is responsible for preparing and providing data for it.
 final class SitterWalkingsViewModel: ObservableObject {
     /// The list of the future walkings to present
     @Published var futureWalkings: [Walking] = []
@@ -11,6 +11,7 @@ final class SitterWalkingsViewModel: ObservableObject {
     /// Indicates if loading data is in progress.
     @Published var isWalkingsLoading = false
 
+    /// Initializes an instance of the `SitterWalkingsViewModel` class.
     init() {
         Task {
             await getWalkings()
@@ -24,6 +25,8 @@ final class SitterWalkingsViewModel: ObservableObject {
         walkings = Walking.Dummy.bulkDummyWalkings
         isWalkingsLoading = false
     }
+
+    // MARK: - Private interface
 
     private var walkings: [Walking] = [] {
         didSet {

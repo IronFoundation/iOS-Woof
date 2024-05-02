@@ -23,14 +23,17 @@ struct SitterWalkingCardView: View {
                             weight: .bold
                         )
                     )
-                    Text(walking.start, style: .date)
-                        .italic()
-                        .font(
-                            .system(
-                                size: AppStyle.FontStyle.footnote.size,
-                                weight: .bold
-                            )
+                    Text(
+                        walking.start,
+                        style: .date
+                    )
+                    .italic()
+                    .font(
+                        .system(
+                            size: AppStyle.FontStyle.footnote.size,
+                            weight: .bold
                         )
+                    )
                     WalkingStatusLabel(status: walking.status)
                 }
                 .foregroundColor(.App.grayDark)
@@ -48,7 +51,9 @@ struct SitterWalkingCardView: View {
                         Text(walking.owner?.address ?? "")
                     }
                     .font(
-                        .system(size: AppStyle.FontStyle.footnote.size)
+                        .system(
+                            size: AppStyle.FontStyle.footnote.size
+                        )
                     )
                 }
             }
@@ -56,7 +61,9 @@ struct SitterWalkingCardView: View {
         .padding()
         .background(Color.App.grayLight)
         .clipShape(
-            RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius)
+            RoundedRectangle(
+                cornerRadius: AppStyle.UIElementConstant.cornerRadius
+            )
         )
     }
 }
