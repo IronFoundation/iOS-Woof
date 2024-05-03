@@ -20,12 +20,6 @@ struct OwnerOnboardingView: View {
                 address: $viewModel.address
             )
 
-            if viewModel.mandatoryFieldsAreEmpty {
-                Text(mandatoryPlaceholderText)
-                    .padding()
-                    .font(.system(.footnote))
-            }
-
             Button(proceedButtonTitle) {
                 viewModel.save()
                 if viewModel.errorMessage == nil {
