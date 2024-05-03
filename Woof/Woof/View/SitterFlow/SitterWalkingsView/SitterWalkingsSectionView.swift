@@ -19,7 +19,11 @@ struct SitterWalkingsSectionView: View {
                     NavigationLink {
                         Text(walking.id.uuidString)
                     } label: {
-                        SitterWalkingCardView(walking: walking)
+                        SitterWalkingCardView(
+                            viewModel: SitterWalkingCardViewModel(
+                                walking: walking
+                            )
+                        )
                     }
                 }
             },

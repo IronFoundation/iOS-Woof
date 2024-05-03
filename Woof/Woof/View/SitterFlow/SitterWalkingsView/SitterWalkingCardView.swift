@@ -2,8 +2,8 @@ import SwiftUI
 
 /// A view representing a card displaying details of a walking.
 struct SitterWalkingCardView: View {
-    /// The walking information to display
-    let walking: Walking
+    /// The view model responsible for data preparation.
+    let viewModel: SitterWalkingCardViewModel
 
     var body: some View {
         VStack {
@@ -12,29 +12,22 @@ struct SitterWalkingCardView: View {
                     alignment: .leading,
                     spacing: AppStyle.UIElementConstant.spacingBetweenElements
                 ) {
-                    HStack {
-                        Text(walking.start, style: .time)
-                        Text("-")
-                        Text(walking.end, style: .time)
-                    }
-                    .font(
-                        .system(
-                            size: AppStyle.FontStyle.body.size,
-                            weight: .bold
+                    Text(viewModel.time)
+                        .font(
+                            .system(
+                                size: AppStyle.FontStyle.body.size,
+                                weight: .bold
+                            )
                         )
-                    )
-                    Text(
-                        walking.start,
-                        style: .date
-                    )
-                    .italic()
-                    .font(
-                        .system(
-                            size: AppStyle.FontStyle.footnote.size,
-                            weight: .bold
+                    Text(viewModel.date)
+                        .italic()
+                        .font(
+                            .system(
+                                size: AppStyle.FontStyle.footnote.size,
+                                weight: .bold
+                            )
                         )
-                    )
-                    WalkingStatusLabel(status: walking.status)
+                    WalkingStatusLabel(status: viewModel.status)
                 }
                 .foregroundColor(.App.grayDark)
 
@@ -44,11 +37,11 @@ struct SitterWalkingCardView: View {
                     alignment: .trailing,
                     spacing: AppStyle.UIElementConstant.spacingBetweenElements
                 ) {
-                    Text(walking.owner?.name ?? "")
+                    Text(viewModel.fullName)
                         .bold()
                     Group {
-                        Text(walking.owner?.city ?? "")
-                        Text(walking.owner?.address ?? "")
+                        Text(viewModel.city)
+                        Text(viewModel.address)
                     }
                     .font(
                         .system(
@@ -56,7 +49,7 @@ struct SitterWalkingCardView: View {
                         )
                     )
                 }
-            }
+            }.foregroundColor(.App.purpleDark)
         }
         .padding()
         .background(Color.App.grayLight)
@@ -69,5 +62,9 @@ struct SitterWalkingCardView: View {
 }
 
 #Preview {
-    SitterWalkingCardView(walking: Walking.Dummy.dummyWalking)
+    SitterWalkingCardView(
+        viewModel: SitterWalkingCardViewModel(
+            walking: Walking.Dummy.dummyWalking
+        )
+    )
 }
