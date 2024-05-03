@@ -53,8 +53,12 @@ class OwnerProfileViewModel: ObservableObject {
 
         guard let data = try? JSONEncoder().encode(newOwner) else { return }
 
-        KeyValueStorage(KeyValueStorage.Name.currentOwner)
-            .save(data, for: KeyValueStorage.Key.currentOwner)
+        if let data = try? JSONEncoder().encode(currentOwner),
+           KeyValueStorage(KeyValueStorage.Name.currentOwner)
+            .save(data, for: KeyValueStorage.Key.currentOwner) {
+        } else {
+            errorMessage = AppError.saveLocallyFailed.errorDescription
+        }
     }
 
     /**
