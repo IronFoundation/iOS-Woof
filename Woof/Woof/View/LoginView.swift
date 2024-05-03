@@ -21,16 +21,11 @@ struct LoginView: View {
                     }
                 }
             }
-            .background {
-                NavigationLink(
-                    destination: OwnerOnboardingView(),
-                    isActive: $viewModel.shouldShowOwnerOnboarding
-                ) { EmptyView() }
-
-                NavigationLink(
-                    destination: SitterOnboardingView(),
-                    isActive: $viewModel.shouldShowSitterOnboarding
-                ) { EmptyView() }
+            .sheet(isPresented: $viewModel.shouldShowOwnerOnboarding) {
+                OwnerOnboardingView()
+            }
+            .sheet(isPresented: $viewModel.shouldShowSitterOnboarding) {
+                SitterOnboardingView()
             }
             .buttonStyle(PurpleCapsuleOfInfinityWidth())
             .padding()
