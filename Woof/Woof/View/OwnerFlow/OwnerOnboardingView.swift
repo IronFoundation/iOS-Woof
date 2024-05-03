@@ -35,7 +35,9 @@ struct OwnerOnboardingView: View {
             isPresented: .init(value: $viewModel.errorMessage),
             actions: {
                 Button(AppButtonTitle.cancel) {}
-                Button(AppButtonTitle.tryAgain) {}
+                Button(AppButtonTitle.tryAgain) {
+                    viewModel.save()
+                }
             },
             message: {
                 Text(viewModel.errorMessage ?? "")
