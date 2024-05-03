@@ -8,14 +8,14 @@ struct LoginView: View {
         NavigationView {
             VStack {
                 Button(ownerButtonText) {
-                    viewModel.ownerFlowDidSelected()
+                    viewModel.owneRoleDidSelected()
                     if !viewModel.shouldShowOwnerOnboarding {
                         userRoleViewModel.setOwnerRole()
                     }
                 }
 
                 Button(sitterButtonText) {
-                    viewModel.sitterFlowDidSelected()
+                    viewModel.sitterRoleDidSelected()
                     if !viewModel.shouldShowSitterOnboarding {
                         userRoleViewModel.setSitterRole()
                     }

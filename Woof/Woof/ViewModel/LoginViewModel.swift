@@ -10,12 +10,12 @@ final class LoginViewModel: ObservableObject {
     @Published var shouldShowSitterOnboarding = false
 
     /// Performs actions triggered by the owner role choice.
-    func ownerFlowDidSelected() {
+    func owneRoleDidSelected() {
         shouldShowOwnerOnboarding = !isCurrentOwnerExists
     }
 
     /// Performs actions triggered by the sitter role choice.
-    func sitterFlowDidSelected() {
+    func sitterRoleDidSelected() {
         shouldShowSitterOnboarding = !isCurrentSitterExists
     }
 
