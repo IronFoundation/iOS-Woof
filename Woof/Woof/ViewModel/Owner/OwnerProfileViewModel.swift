@@ -51,7 +51,7 @@ class OwnerProfileViewModel: ObservableObject {
         newOwner.address = address
         newOwner.avatarURL = avatarURL
 
-        if let data = try? JSONEncoder().encode(currentOwner),
+        if let data = try? JSONEncoder().encode(newOwner),
            KeyValueStorage(KeyValueStorage.Name.currentOwner)
            .save(data, for: KeyValueStorage.Key.currentOwner) {
         } else {
