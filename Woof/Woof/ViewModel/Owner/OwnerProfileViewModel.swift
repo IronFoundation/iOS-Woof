@@ -62,8 +62,7 @@ class OwnerProfileViewModel: ObservableObject {
     /**
      Returns the owner information that will be displayed in view.
 
-     - Returns: The owner instance from model layer or new instance of `Owner`,
-     if loading from model layer is failed.
+     - Returns: The owner instance from model layer; `nil` if there is no saved owner.
      */
     func getCurrentOwner() -> Owner? {
         loadOwnerFromStorage()
