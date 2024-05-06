@@ -48,7 +48,6 @@ struct OwnerOnboardingView: View {
 
     typealias OwnerOnboardingViewModel = OwnerProfileViewModel
     @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
-    /// View model responsible to manage data from model layer
     @StateObject private var viewModel = OwnerOnboardingViewModel()
     private let proceedButtonTitle = "Find your pet sitter"
     private let welcomeText = "Hello👋🏻!"
