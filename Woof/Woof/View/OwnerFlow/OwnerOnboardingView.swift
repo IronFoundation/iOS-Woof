@@ -55,7 +55,6 @@ struct OwnerOnboardingView: View {
     We're almost ready to help you find a suitable pet-sitter for your beloved companion.
     Just specify a few details by entering your information:
     """
-    private let mandatoryPlaceholderText = "Fields with * are mandatory"
 }
 
 #Preview {
