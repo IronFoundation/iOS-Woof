@@ -52,37 +52,31 @@ struct OwnerDetailedWalkingView: View {
                     alignment: .leading,
                     spacing: AppStyle.UIElementConstant.minPadding
                 ) {
-                    HStack {
-                        Label(
-                            timeLabel,
-                            systemImage: .IconName.clock
-                        )
-                        Text(viewModel.time)
-                            .bold()
-                    }
-                    Divider()
-                    HStack {
-                        Label(
-                            dateLabel,
-                            systemImage: .IconName.calendar
-                        )
-                        Text(viewModel.date)
-                            .bold()
-                    }
-                    Divider()
-                    Label(
-                        addressLabel,
-                        systemImage: .IconName.house
+                    InformationCellView(
+                        label: timeLabel,
+                        text: viewModel.time,
+                        imageName: .IconName.clock
                     )
-                    Text(viewModel.address)
-                        .bold()
-                    Divider()
-                    Label(
-                        notesLabel,
-                        systemImage: .IconName.notes
+
+                    InformationCellView(
+                        label: dateLabel,
+                        text: viewModel.date,
+                        imageName: .IconName.calendar
                     )
-                    Text(viewModel.notes)
-                        .bold()
+
+                    InformationCellView(
+                        label: addressLabel,
+                        text: viewModel.address,
+                        imageName: .IconName.house,
+                        showedInOneLine: false
+                    )
+
+                    InformationCellView(
+                        label: notesLabel,
+                        text: viewModel.notes,
+                        imageName: .IconName.notes,
+                        showedInOneLine: false
+                    )
                 }
             }
             .padding()

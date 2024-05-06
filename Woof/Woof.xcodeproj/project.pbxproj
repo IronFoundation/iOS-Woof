@@ -117,6 +117,7 @@
 		FD02917A2A0E2C5000F88377 /* AppStyle+FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F98A02A0E0E280058DBEB /* AppStyle+FontStyle.swift */; };
 		FD02917B2A0E2C5300F88377 /* AppStyle+UIElementConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F98A22A0E10510058DBEB /* AppStyle+UIElementConstant.swift */; };
 		FD02917C2A0E2CBC00F88377 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F989E2A0E0D2C0058DBEB /* AppStyle.swift */; };
+		FD109BF02BE8C3570011E258 /* InformationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD109BEF2BE8C3570011E258 /* InformationCellView.swift */; };
 		FD14A2A52A277FA400362461 /* OwnerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A42A277FA400362461 /* OwnerProfileViewModel.swift */; };
 		FD14A2A72A27803600362461 /* KeyValueStorage+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A62A27803600362461 /* KeyValueStorage+Name.swift */; };
 		FD14A2A92A27804F00362461 /* KeyValueStorage+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD14A2A82A27804F00362461 /* KeyValueStorage+Key.swift */; };
@@ -304,6 +305,7 @@
 		FD0291742A0E273500F88377 /* BioSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioSectionView.swift; sourceTree = "<group>"; };
 		FD0291762A0E2B0700F88377 /* AppStyle+FontStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStyle+FontStyleTests.swift"; sourceTree = "<group>"; };
 		FD0291782A0E2B2300F88377 /* AppStyle+UIElementConstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStyle+UIElementConstantTests.swift"; sourceTree = "<group>"; };
+		FD109BEF2BE8C3570011E258 /* InformationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCellView.swift; sourceTree = "<group>"; };
 		FD14A2A42A277FA400362461 /* OwnerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewModel.swift; sourceTree = "<group>"; };
 		FD14A2A62A27803600362461 /* KeyValueStorage+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+Name.swift"; sourceTree = "<group>"; };
 		FD14A2A82A27804F00362461 /* KeyValueStorage+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyValueStorage+Key.swift"; sourceTree = "<group>"; };
@@ -724,6 +726,15 @@
 			path = AppStyleTests;
 			sourceTree = "<group>";
 		};
+		FD109BEE2BE8C30F0011E258 /* OwnerDetailedWalkingView */ = {
+			isa = PBXGroup;
+			children = (
+				FDAA10312BE20FC100B94A67 /* OwnerDetailedWalkingView.swift */,
+				FD109BEF2BE8C3570011E258 /* InformationCellView.swift */,
+			);
+			path = OwnerDetailedWalkingView;
+			sourceTree = "<group>";
+		};
 		FD14A2AA2A28685000362461 /* Owner */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,7 +928,7 @@
 				FDDDA6862A25C3CD00839091 /* OwnerProfileView */,
 				FD7F989B2A0E04390058DBEB /* SitterListView */,
 				36B5465E2B86274A00F62F9A /* OwnerOnboardingView.swift */,
-				FDAA10312BE20FC100B94A67 /* OwnerDetailedWalkingView.swift */,
+				FD109BEE2BE8C30F0011E258 /* OwnerDetailedWalkingView */,
 			);
 			path = OwnerFlow;
 			sourceTree = "<group>";
@@ -1588,6 +1599,7 @@
 				3673D6372A04F7FD009D699D /* Owner.swift in Sources */,
 				1912607B2AC08C9300F43D94 /* AllSittersResponse.swift in Sources */,
 				FD7F98A32A0E10510058DBEB /* AppStyle+UIElementConstant.swift in Sources */,
+				FD109BF02BE8C3570011E258 /* InformationCellView.swift in Sources */,
 				FDDDA6882A25C3FE00839091 /* EditOwnerInformationView.swift in Sources */,
 				36D5AE682B272A5400E9E78B /* AppButtonTitle.swift in Sources */,
 				EF16BB1E2A24D5FA007922C6 /* OwnerCardView.swift in Sources */,
