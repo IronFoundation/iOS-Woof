@@ -8,7 +8,7 @@ struct LoginView: View {
         NavigationView {
             VStack {
                 Button(ownerButtonText) {
-                    viewModel.owneRoleDidSelected()
+                    viewModel.ownerRoleDidSelected()
                     if !viewModel.shouldShowOwnerOnboarding {
                         userRoleViewModel.setOwnerRole()
                     }
