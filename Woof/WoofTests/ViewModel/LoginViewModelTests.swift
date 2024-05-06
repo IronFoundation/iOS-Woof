@@ -17,78 +17,61 @@ final class LoginViewModelTests: XCTestCase {
         _ = viewModel
     }
 
-    func testLoginViewModelIsInitializedWithExpectedValues() {
-        XCTAssertFalse(viewModel.isOwnerRoleSelected)
-        XCTAssertFalse(viewModel.isSitterRoleSelected)
-    }
-
-    func testWhenIsOwnerRoleSelectedSetToTrueTheNewOwnerIsCreatedIfTheCurrentOwnerDoesNotExist() {
-        // Given
-        let currentOwner = KeyValueStorage(KeyValueStorage.Name.currentOwner)
-            .loadData(for: KeyValueStorage.Key.currentOwner)
-
-        // When
-        viewModel.isOwnerRoleSelected = true
-
-        let newOwner = KeyValueStorage(KeyValueStorage.Name.currentOwner)
-            .loadData(for: KeyValueStorage.Key.currentOwner)
+    func testOwnerFlowDidSelected_givenNoSavedOwner_whenIsCalled_thenShouldShowOwnerOnboardingIsTrue() {
+        // Given // When
+        viewModel.ownerFlowDidSelected()
 
         // Then
-        XCTAssertNil(currentOwner)
-        XCTAssertNotNil(newOwner)
+        XCTAssertTrue(viewModel.shouldShowOwnerOnboarding)
     }
 
-    func testWhenIsOwnerRoleSelectedSetToTrueNoNewOwnerIsCreatedIfTheCurrentOwnerAlreadyExist() {
-        // Given
-        viewModel.isOwnerRoleSelected = true
-
-        let currentOwner = KeyValueStorage(KeyValueStorage.Name.currentOwner)
-            .loadData(for: KeyValueStorage.Key.currentOwner)
-
-        // When
-        let newViewModel = LoginViewModel()
-
-        newViewModel.isOwnerRoleSelected = true
-
-        let newOwner = KeyValueStorage(KeyValueStorage.Name.currentOwner)
-            .loadData(for: KeyValueStorage.Key.currentOwner)
+    func testSitterFlowDidSelected_givenNoSavedSitter_whenIsCalled_thenShouldShowSitterOnboardingIsTrue() {
+        // Given // When
+        viewModel.sitterFlowDidSelected()
 
         // Then
-        XCTAssertEqual(currentOwner, newOwner)
+        XCTAssertTrue(viewModel.shouldShowSitterOnboarding)
     }
 
-    func testWhenIsSitterRoleSelectedSetToTrueTheNewSitterIsNotCreatedIfTheCurrentSitterDoesNotExist() {
+    func testOwnerFlowDidSelected_givenSavedOwnerExists_whenIsCalled_thenShouldShowOwnerOnboardingIsFalse() {
         // Given
-        let currentSitter = KeyValueStorage(KeyValueStorage.Name.currentSitter)
-            .loadData(for: KeyValueStorage.Key.currentSitter)
+        saveNewOwner()
 
         // When
-        viewModel.isSitterRoleSelected = true
-
-        let newSitter = KeyValueStorage(KeyValueStorage.Name.currentSitter)
-            .loadData(for: KeyValueStorage.Key.currentSitter)
+        viewModel.ownerFlowDidSelected()
 
         // Then
-        XCTAssertNil(currentSitter)
-        XCTAssertNil(newSitter)
+        XCTAssertFalse(viewModel.shouldShowOwnerOnboarding)
     }
 
-    func testWhenIsSitterRoleSelectedSetToTrueNoNewSitterIsCreatedIfTheCurrentSitterAlreadyExist() {
+    func testSitterFlowDidSelected_givenSavedSitterExists_whenIsCalled_thenShouldShowSitterOnboardingIsFalse() {
         // Given
-        viewModel.isSitterRoleSelected = true
-
-        let currentSitter = KeyValueStorage(KeyValueStorage.Name.currentSitter)
-            .loadData(for: KeyValueStorage.Key.currentSitter)
+        saveNewSitter()
 
         // When
-        let newViewModel = LoginViewModel()
-
-        newViewModel.isSitterRoleSelected = true
-
-        let newSitter = KeyValueStorage(KeyValueStorage.Name.currentSitter)
-            .loadData(for: KeyValueStorage.Key.currentSitter)
+        viewModel.sitterFlowDidSelected()
 
         // Then
-        XCTAssertEqual(currentSitter, newSitter)
+        XCTAssertFalse(viewModel.shouldShowSitterOnboarding)
+    }
+
+    // MARK: - Private Interface
+
+    private func saveNewOwner() {
+        let newOwner = Owner()
+
+        guard let data = try? JSONEncoder().encode(newOwner) else { return }
+
+        KeyValueStorage(KeyValueStorage.Name.currentOwner)
+            .save(data, for: KeyValueStorage.Key.currentOwner)
+    }
+
+    private func saveNewSitter() {
+        let newSitter = Sitter()
+
+        guard let data = try? JSONEncoder().encode(newSitter) else { return }
+
+        KeyValueStorage(KeyValueStorage.Name.currentSitter)
+            .save(data, for: KeyValueStorage.Key.currentSitter)
     }
 }

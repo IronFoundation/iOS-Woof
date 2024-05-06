@@ -11,10 +11,7 @@ final class OwnerProfileViewModelGetTests: XCTestCase {
 
         let owner = OwnerProfileViewModel().getCurrentOwner()
 
-        XCTAssertEqual(owner.name, Owner().name)
-        XCTAssertEqual(owner.surname, Owner().surname)
-        XCTAssertEqual(owner.phone, Owner().phone)
-        XCTAssertEqual(owner.address, Owner().address)
+        XCTAssertNil(owner)
     }
 
     func testLoadMethodReturnsExpectedValuesWhenModifiedOwnerPropertiesWasSaved() {
@@ -34,9 +31,9 @@ final class OwnerProfileViewModelGetTests: XCTestCase {
 
         let loadedOwner = viewModel.getCurrentOwner()
 
-        XCTAssertEqual(loadedOwner.name, newName)
-        XCTAssertEqual(loadedOwner.surname, newSurname)
-        XCTAssertEqual(loadedOwner.phone, newPhone)
-        XCTAssertEqual(loadedOwner.address, newAddress)
+        XCTAssertEqual(loadedOwner?.name, newName)
+        XCTAssertEqual(loadedOwner?.surname, newSurname)
+        XCTAssertEqual(loadedOwner?.phone, newPhone)
+        XCTAssertEqual(loadedOwner?.address, newAddress)
     }
 }
