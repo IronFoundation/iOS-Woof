@@ -4,25 +4,20 @@ import Foundation
 final class LoginViewModel: ObservableObject {
     // MARK: - Internal interface
 
-    /// Indicates whether the owner role is selected.
-    ///
-    /// Returns `true` if the owner role is selected, otherwise `false`.
-    ///
-    /// The property publishes updates when the value is changed.
-    var isOwnerRoleSelected = false {
-        didSet {
-            if !isCurrentOwnerExists {
-                saveNewOwner()
-            }
-        }
+    /// Indicates whether to show owner onboarding flow.
+    @Published var shouldShowOwnerOnboarding = false
+    /// Indicates whether to show sitter onboarding flow.
+    @Published var shouldShowSitterOnboarding = false
+
+    /// Performs actions triggered by the owner role choice.
+    func ownerRoleDidSelected() {
+        shouldShowOwnerOnboarding = !isCurrentOwnerExists
     }
 
-    /// Indicates whether the sitter role is selected.
-    ///
-    /// Returns `true` if the sitter role is selected, otherwise `false`.
-    ///
-    /// The property publishes updates when the value is changed.
-    var isSitterRoleSelected = false
+    /// Performs actions triggered by the sitter role choice.
+    func sitterRoleDidSelected() {
+        shouldShowSitterOnboarding = !isCurrentSitterExists
+    }
 
     // MARK: - Private interface
 
@@ -48,23 +43,5 @@ final class LoginViewModel: ObservableObject {
         }
 
         return true
-    }
-
-    private func saveNewOwner() {
-        let newOwner = Owner()
-
-        guard let data = try? JSONEncoder().encode(newOwner) else { return }
-
-        KeyValueStorage(KeyValueStorage.Name.currentOwner)
-            .save(data, for: KeyValueStorage.Key.currentOwner)
-    }
-
-    private func saveNewSitter() {
-        let newSitter = Sitter()
-
-        guard let data = try? JSONEncoder().encode(newSitter) else { return }
-
-        KeyValueStorage(KeyValueStorage.Name.currentSitter)
-            .save(data, for: KeyValueStorage.Key.currentSitter)
     }
 }
