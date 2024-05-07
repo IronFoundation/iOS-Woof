@@ -1,7 +1,7 @@
 import Foundation
 
 /// Responsible for preparing and processing data for the `OwnerDetailedWalkingView`.
-final class OwnerDetailedWalkingViewModel: ObservableObject {
+final class OwnerDetailedWalkingViewModel {
     /// The full name of the sitter.
     var fullName: String {
         DataTransformer.fullName(
@@ -58,7 +58,7 @@ final class OwnerDetailedWalkingViewModel: ObservableObject {
 
     /// The notes made by the owner.
     var notes: String {
-        walking.notes ?? "The information was not provided."
+        walking.notes ?? ""
     }
 
     // Initializes a new instance of view model with the provided walking information.
@@ -70,5 +70,5 @@ final class OwnerDetailedWalkingViewModel: ObservableObject {
 
     // MARK: - Private interface
 
-    private var walking: Walking
+    private let walking: Walking
 }

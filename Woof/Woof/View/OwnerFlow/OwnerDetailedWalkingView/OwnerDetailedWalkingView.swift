@@ -3,7 +3,7 @@ import SwiftUI
 /// A view displaying the detailed information about walking for owners.
 struct OwnerDetailedWalkingView: View {
     /// View model responsible to manage data from model layer
-    @ObservedObject var viewModel: OwnerDetailedWalkingViewModel
+    let viewModel: OwnerDetailedWalkingViewModel
 
     var body: some View {
         VStack {
@@ -98,7 +98,6 @@ struct OwnerDetailedWalkingView: View {
 
     // MARK: - Private interface
 
-    private let header = "Walking details"
     private let timeLabel = "Time:"
     private let dateLabel = "Date:"
     private let addressLabel = "Detailed address:"
