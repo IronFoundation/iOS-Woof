@@ -2,14 +2,24 @@ import SwiftUI
 
 /// Represents a section of walkings, with an expandable list of walkings.
 struct SitterWalkingsSectionView: View {
-    /// Control the expansion state of the walking list.
-    @Binding var isExpanded: Bool
+    /**
+     Initialize the new instance of `SitterWalkingsSectionView`.
 
-    /// Walkings that are displayed within this section.
-    let walkings: [Walking]
+     - Parameters:
+     - isExpanded: control the expansion state of the walking list.
+     - walkings: the walking to be displayed within this section.
+     - headerTitle: the title for the section header.
+     */
 
-    /// The title for the section header.
-    let headerTitle: String
+    init(
+        isExpanded: Bool,
+        walkings: [Walking],
+        headerTitle: String
+    ) {
+        self.isExpanded = isExpanded
+        self.walkings = walkings
+        self.headerTitle = headerTitle
+    }
 
     var body: some View {
         DisclosureGroup(
@@ -35,11 +45,17 @@ struct SitterWalkingsSectionView: View {
             }
         )
     }
+
+    // MARK: - Private interface
+
+    @State private var isExpanded: Bool
+    private let walkings: [Walking]
+    private let headerTitle: String
 }
 
 #Preview {
     SitterWalkingsSectionView(
-        isExpanded: .constant(true),
+        isExpanded: true,
         walkings: Walking.Dummy.bulkDummyWalkings,
         headerTitle: "My Walkings"
     )
