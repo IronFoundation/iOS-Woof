@@ -8,12 +8,24 @@ struct LoginView: View {
         NavigationView {
             VStack {
                 Button(ownerButtonText) {
-                    userRoleViewModel.setOwnerRole()
+                    viewModel.ownerRoleDidSelected()
+                    if !viewModel.shouldShowOwnerOnboarding {
+                        userRoleViewModel.setOwnerRole()
+                    }
                 }
 
                 Button(sitterButtonText) {
-                    userRoleViewModel.setSitterRole()
+                    viewModel.sitterRoleDidSelected()
+                    if !viewModel.shouldShowSitterOnboarding {
+                        userRoleViewModel.setSitterRole()
+                    }
                 }
+            }
+            .sheet(isPresented: $viewModel.shouldShowOwnerOnboarding) {
+                OwnerOnboardingView()
+            }
+            .sheet(isPresented: $viewModel.shouldShowSitterOnboarding) {
+                SitterOnboardingView()
             }
             .buttonStyle(PurpleCapsuleOfInfinityWidth())
             .padding()
@@ -24,7 +36,7 @@ struct LoginView: View {
 
     @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
 
-    @ObservedObject private var viewModel = LoginViewModel()
+    @StateObject private var viewModel = LoginViewModel()
 
     private let ownerButtonText = "I am a pet owner"
     private let sitterButtonText = "I am a pet sitter"
@@ -33,5 +45,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(UserRoleViewModel())
     }
 }

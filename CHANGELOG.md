@@ -16,6 +16,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Add  section with available slots to `DetailedPetSitterView` - [#109](https://github.com/IronFoundation/iOS-Woof/pull/109)
 - Add  `BookingSlotView` for owner flow - [#112](https://github.com/IronFoundation/iOS-Woof/pull/112)
 - Add  `WalkingsView` for owner flow - [#115](https://github.com/IronFoundation/iOS-Woof/pull/115)
+- Add onboarding flows for new users. - [#125](https://github.com/IronFoundation/iOS-Woof/pull/125)
+- Add  `WalkingsView` for sitter flow - [#124](https://github.com/IronFoundation/iOS-Woof/pull/124)
 - Add  `OwnerDetailedWalkingView` for owner flow - [#123](https://github.com/IronFoundation/iOS-Woof/pull/123)
 
 ### Changed

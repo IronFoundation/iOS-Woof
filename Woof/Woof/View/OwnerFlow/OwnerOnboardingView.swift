@@ -2,17 +2,6 @@ import SwiftUI
 
 /// A view to onboard the owner by filling in the mandatory information about themselves.
 struct OwnerOnboardingView: View {
-    /// View model responsible to manage data from model layer
-    @ObservedObject var viewModel = OwnerOnboardingViewModel()
-
-    /// A boolean indicating whether the save button should be enabled.
-    var isSaveButtonEnabled: Bool {
-        viewModel.name.isEmpty ||
-            viewModel.phone.isEmpty ||
-            viewModel.city.isEmpty ||
-            viewModel.address.isEmpty
-    }
-
     var body: some View {
         VStack {
             Text(welcomeText)
@@ -29,18 +18,39 @@ struct OwnerOnboardingView: View {
                 address: $viewModel.address
             )
 
-            Button(proceedButtonTitle) {}
-                .buttonStyle(CapsuleWithWhiteText())
-                .padding()
-                .disabled(isSaveButtonEnabled)
+            Button(proceedButtonTitle) {
+                viewModel.save()
+                if viewModel.errorMessage == nil {
+                    userRoleViewModel.setOwnerRole()
+                }
+            }
+            .buttonStyle(CapsuleWithWhiteText())
+            .padding()
+            .disabled(viewModel.mandatoryFieldsAreEmpty)
         }
+        .alert(
+            AppAlert.error,
+            isPresented: .init(value: $viewModel.errorMessage),
+            actions: {
+                Button(AppButtonTitle.cancel) {}
+                Button(AppButtonTitle.tryAgain) {
+                    viewModel.save()
+                }
+            },
+            message: {
+                Text(viewModel.errorMessage ?? "")
+            }
+        )
         .padding()
     }
 
     // MARK: - Private interface
 
+    typealias OwnerOnboardingViewModel = OwnerProfileViewModel
+    @EnvironmentObject private var userRoleViewModel: UserRoleViewModel
+    @StateObject private var viewModel = OwnerOnboardingViewModel()
     private let proceedButtonTitle = "Find your pet sitter"
-    private let welcomeText = "Hello!"
+    private let welcomeText = "Hello👋🏻!"
     private let onboardingText = """
     We're almost ready to help you find a suitable pet-sitter for your beloved companion.
     Just specify a few details by entering your information:
