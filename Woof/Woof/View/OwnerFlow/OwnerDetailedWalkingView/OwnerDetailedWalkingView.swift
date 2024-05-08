@@ -2,8 +2,12 @@ import SwiftUI
 
 /// A view displaying the detailed information about walking for owners.
 struct OwnerDetailedWalkingView: View {
-    /// View model responsible to manage data from model layer
-    let viewModel: OwnerDetailedWalkingViewModel
+    /// Initialize `OwnerDetailedWalkingView` with the provided view model.
+    ///
+    /// - Parameter viewModel: the view model that provides and manages data for the view.
+    init(viewModel: OwnerDetailedWalkingViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         VStack {
@@ -53,26 +57,26 @@ struct OwnerDetailedWalkingView: View {
                     spacing: AppStyle.UIElementConstant.minPadding
                 ) {
                     InformationCellView(
-                        label: timeLabel,
+                        labelTitle: timeLabelText,
                         text: viewModel.time,
                         imageName: .IconName.clock
                     )
 
                     InformationCellView(
-                        label: dateLabel,
+                        labelTitle: dateLabelText,
                         text: viewModel.date,
                         imageName: .IconName.calendar
                     )
 
                     InformationCellView(
-                        label: addressLabel,
+                        labelTitle: addressLabelText,
                         text: viewModel.address,
                         imageName: .IconName.house,
                         showedInOneLine: false
                     )
 
                     InformationCellView(
-                        label: notesLabel,
+                        labelTitle: notesLabelText,
                         text: viewModel.notes,
                         imageName: .IconName.notes,
                         showedInOneLine: false
@@ -98,10 +102,12 @@ struct OwnerDetailedWalkingView: View {
 
     // MARK: - Private interface
 
-    private let timeLabel = "Time:"
-    private let dateLabel = "Date:"
-    private let addressLabel = "Detailed address:"
-    private let notesLabel = "Notes:"
+    private let viewModel: OwnerDetailedWalkingViewModel
+
+    private let timeLabelText = "Time:"
+    private let dateLabelText = "Date:"
+    private let addressLabelText = "Detailed address:"
+    private let notesLabelText = "Notes:"
 }
 
 #Preview {

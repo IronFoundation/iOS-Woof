@@ -6,13 +6,18 @@ struct InformationCellView: View {
     /** Initializes an information cell view with provided parameters.
 
      - Parameters:
-     - label: The label text for the information.
+     - labelTitle: The label text for the information.
      - text: The text to display in the cell.
      - imageName: The name of the system image to display.
      - showedInOneLine: Indicates whether the information should be presented in one line or not, by default is `true`.
       */
-    init(label: String, text: String, imageName: String, showedInOneLine: Bool = true) {
-        self.label = label
+    init(
+        labelTitle: String,
+        text: String,
+        imageName: String,
+        showedInOneLine: Bool = true
+    ) {
+        self.labelTitle = labelTitle
         self.text = text
         self.imageName = imageName
         self.showedInOneLine = showedInOneLine
@@ -26,7 +31,7 @@ struct InformationCellView: View {
             if showedInOneLine {
                 HStack {
                     Label(
-                        label,
+                        labelTitle,
                         systemImage: imageName
                     )
                     Text(text)
@@ -34,7 +39,7 @@ struct InformationCellView: View {
                 }
             } else {
                 Label(
-                    label,
+                    labelTitle,
                     systemImage: imageName
                 )
                 Text(text)
@@ -47,22 +52,22 @@ struct InformationCellView: View {
 
     // MARK: - Private interface
 
-    let label: String
-    let text: String
-    let imageName: String
-    let showedInOneLine: Bool
+    private let labelTitle: String
+    private let text: String
+    private let imageName: String
+    private let showedInOneLine: Bool
 }
 
 #Preview {
     VStack {
         InformationCellView(
-            label: "Address:",
+            labelTitle: "Address:",
             text: "City, Some str. 23-27",
             imageName: .IconName.house,
             showedInOneLine: true
         )
         InformationCellView(
-            label: "Address:",
+            labelTitle: "Address:",
             text: "City, Some str. 23-27",
             imageName: .IconName.house,
             showedInOneLine: false
