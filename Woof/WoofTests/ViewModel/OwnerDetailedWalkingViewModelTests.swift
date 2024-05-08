@@ -1,7 +1,7 @@
 import XCTest
 
 final class OwnerDetailedWalkingViewModelTests: XCTestCase {
-    func testInitializedWithExpectedProperties() {
+    func testInitializedWithExpectedProperties() throws {
         // Given
         let walking = Walking.Dummy.dummyWalking
 
@@ -13,10 +13,9 @@ final class OwnerDetailedWalkingViewModelTests: XCTestCase {
         let rating = DataTransformer.fiveStarRating(for: walking.sitter.rating)
         let phoneNumber = walking.sitter.phone
         let imageURL = walking.sitter.avatarUrl
-        let address = {
-            guard let city = walking.owner?.city, let address = walking.owner?.address else {
-                return "missing address"
-            }
+        let address = try {
+            let city = try XCTUnwrap(walking.owner?.city)
+            let address = try XCTUnwrap(walking.owner?.address)
             return "\(city), \(address)"
         }()
         let price = walking.price
@@ -27,7 +26,7 @@ final class OwnerDetailedWalkingViewModelTests: XCTestCase {
         }()
         let date = walking.start.formatted(date: .abbreviated, time: .omitted)
         let status = walking.status
-        let notes = walking.notes ?? "unexpected value"
+        let notes = walking.notes
 
         // When
         let viewModel = OwnerDetailedWalkingViewModel(walking: walking)
