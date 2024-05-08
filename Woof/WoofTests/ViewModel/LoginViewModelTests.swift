@@ -19,7 +19,7 @@ final class LoginViewModelTests: XCTestCase {
 
     func testOwnerFlowDidSelected_givenNoSavedOwner_whenIsCalled_thenShouldShowOwnerOnboardingIsTrue() {
         // Given // When
-        viewModel.ownerFlowDidSelected()
+        viewModel.ownerRoleDidSelected()
 
         // Then
         XCTAssertTrue(viewModel.shouldShowOwnerOnboarding)
@@ -27,7 +27,7 @@ final class LoginViewModelTests: XCTestCase {
 
     func testSitterFlowDidSelected_givenNoSavedSitter_whenIsCalled_thenShouldShowSitterOnboardingIsTrue() {
         // Given // When
-        viewModel.sitterFlowDidSelected()
+        viewModel.sitterRoleDidSelected()
 
         // Then
         XCTAssertTrue(viewModel.shouldShowSitterOnboarding)
@@ -38,7 +38,7 @@ final class LoginViewModelTests: XCTestCase {
         saveNewOwner()
 
         // When
-        viewModel.ownerFlowDidSelected()
+        viewModel.ownerRoleDidSelected()
 
         // Then
         XCTAssertFalse(viewModel.shouldShowOwnerOnboarding)
@@ -49,7 +49,7 @@ final class LoginViewModelTests: XCTestCase {
         saveNewSitter()
 
         // When
-        viewModel.sitterFlowDidSelected()
+        viewModel.sitterRoleDidSelected()
 
         // Then
         XCTAssertFalse(viewModel.shouldShowSitterOnboarding)
