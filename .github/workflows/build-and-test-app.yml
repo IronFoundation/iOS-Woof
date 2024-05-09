@@ -7,7 +7,7 @@ on:
     - cron: "15 4,5 * * *"
 
 jobs:
-  build-woof-target:
+  build-and-test-woof-app:
     runs-on: macos-13
     steps:
       - name: Checkout repository
@@ -30,6 +30,12 @@ jobs:
       - name: Run tests
         run: ./scripts/run-unit-tests.sh
 
+  run-linter-and-formater:
+    runs-on: macos-13
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
       - name: Run formater
         run: |
          swiftformat --lint . \
