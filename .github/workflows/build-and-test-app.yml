@@ -39,6 +39,13 @@ jobs:
       - name: Run formater
         continue-on-error: true
         run: |
+         brew uninstall swiftformat
+         git clone https://github.com/nicklockwood/SwiftFormat
+         cd SwiftFormat
+         git checkout 0.52.8
+         swift build -c release
+         export PATH="'$(pwd)'/.build/release/:$PATH"
+
          swiftformat --lint . \
          --config .swiftformat \
          --quiet
