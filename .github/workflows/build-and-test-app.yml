@@ -14,6 +14,11 @@ jobs:
          path: ~/.swiftpm
          key: ${{ runner.os }}-swift-${{ hashFiles('**/Package.resolved') }}
 
+      - name: Install xcpretty
+        run: |
+         gem install xcpretty
+         echo 'export PATH="$(gem environment gemdir)/bin:$PATH"' >> ~/.bash_profile
+
       - name: Build iOS Simulator
         run: ./scripts/build-ios-simulator.sh
 
