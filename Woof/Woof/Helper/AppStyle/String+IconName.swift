@@ -29,5 +29,11 @@ extension String {
         static let house = "house"
         /// The icon used for the image with two documents.
         static let twoDocuments = "doc.on.doc"
+        /// The icon used for the notes image.
+        static let notes = "note.text"
+        /// The icon used where picture of a calendar is required.
+        static let calendar = "calendar"
+        /// The icon used where picture of a clock is required.
+        static let clock = "clock"
     }
 }
