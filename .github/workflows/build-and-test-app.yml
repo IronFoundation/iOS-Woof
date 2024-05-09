@@ -19,3 +19,15 @@ jobs:
 
       - name: Run tests
         run: ./scripts/run-unit-tests.sh
+
+      - name: Run formater
+        run: |
+         swiftformat --lint . \
+         --config .swiftformat \
+         --quiet
+
+      - name: Run linter
+        run: |
+         swiftlint --config .swiftlint.yml \
+         --strict \
+         --quiet
