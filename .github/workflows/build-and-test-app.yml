@@ -7,6 +7,20 @@ on:
     - cron: "15 4,5 * * *"
 
 jobs:
+  SwiftLint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
+      - name: GitHub Action for SwiftLint with --strict
+        uses: norio-nomura/action-swiftlint@3.2.1
+        with:
+          args: --strict
+      - name: GitHub Action for SwiftLint (Only files changed in the PR)
+        uses: norio-nomura/action-swiftlint@3.2.1
+        env:
+          DIFF_BASE: ${{ github.base_ref }}
   build-woof-target:
     runs-on: macos-14
     steps:
@@ -35,9 +49,9 @@ jobs:
          swiftformat --lint . \
          --config .swiftformat \
          --quiet
-
-      - name: Run linter
-        run: |
-         swiftlint --config .swiftlint.yml \
-         --strict \
-         --quiet
+#
+#      - name: Run linter
+#        run: |
+#         swiftlint --config .swiftlint.yml \
+#         --strict \
+#         --quiet
