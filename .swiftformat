@@ -2,14 +2,90 @@
 --funcattributes same-line
 --ranges no-space
 
-# rules enabled
---enable wrapEnumCases
+--disable all
 
-# rules disabled
---disable andOperator
---disable redundantPattern
---disable redundantLet
---disable wrapMultilineStatementBraces
+--enable \
+   anyObjectProtocol, \
+   applicationMain, \
+   assertionFailures, \
+   blankLinesAroundMark, \
+   blankLinesAtEndOfScope, \
+   blankLinesAtStartOfScope, \
+   blankLinesBetweenScopes, \
+   braces, \
+   conditionalAssignment, \
+   consecutiveBlankLines, \
+   consecutiveSpaces, \
+   duplicateImports, \
+   elseOnSameLine, \
+   emptyBraces, \
+   enumNamespaces, \
+   extensionAccessControl, \
+   fileHeader, \
+   genericExtensions, \
+   headerFileName, \
+   hoistAwait, \
+   hoistPatternLet, \
+   hoistTry, \
+   indent, \
+   initCoderUnavailable, \
+   leadingDelimiters, \
+   linebreakAtEndOfFile, \
+   linebreaks, \
+   modifierOrder, \
+   numberFormatting, \
+   opaqueGenericParameters, \
+   preferKeyPath, \
+   redundantBackticks, \
+   redundantBreak, \
+   redundantClosure, \
+   redundantExtensionACL, \
+   redundantFileprivate, \
+   redundantGet, \
+   redundantInit, \
+   redundantInternal, \
+   redundantLetError, \
+   redundantNilInit, \
+   redundantObjc, \
+   redundantOptionalBinding, \
+   redundantParens, \
+   redundantRawValues, \
+   redundantReturn, \
+   redundantSelf, \
+   redundantStaticSelf, \
+   redundantType, \
+   redundantVoidReturnType, \
+   semicolons, \
+   sortDeclarations, \
+   sortImports, \
+   sortTypealiases, \
+   spaceAroundBraces, \
+   spaceAroundBrackets, \
+   spaceAroundComments, \
+   spaceAroundGenerics, \
+   spaceAroundOperators, \
+   spaceAroundParens, \
+   spaceInsideBraces, \
+   spaceInsideBrackets, \
+   spaceInsideComments, \
+   spaceInsideGenerics, \
+   spaceInsideParens, \
+   strongOutlets, \
+   strongifiedSelf, \
+   todos, \
+   trailingClosures, \
+   trailingCommas, \
+   trailingSpace, \
+   typeSugar, \
+   unusedArguments, \
+   void, \
+   wrap, \
+   wrapArguments, \
+   wrapAttributes, \
+   wrapEnumCases, \
+   wrapSingleLineComments, \
+   yodaConditions
+
 
 # min swift format version
 --minversion 0.51.7
