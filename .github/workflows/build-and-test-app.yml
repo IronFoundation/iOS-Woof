@@ -1,6 +1,11 @@
 name: build-and-test
 run-name: build app from the ${{ github.head_ref }} branch
-on: pull_request
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 4,5 * * *"
+
 jobs:
   build-woof-target:
     runs-on: macos-14
