@@ -13,6 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup environment
+        run: ./scripts/set-up-environment.sh
+
       - name: Cache Swift dependencies
         uses: actions/cache@v4
         with:
