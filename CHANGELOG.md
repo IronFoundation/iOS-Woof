@@ -26,6 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Update `build-app.yml` to support required node.js version 20 - [#107](https://github.com/IronFoundation/iOS-Woof/pull/107)
 - Update the environment settings and documentation - [#108](https://github.com/IronFoundation/iOS-Woof/pull/108)
 - Update the `DetailedPetSitterView` to new style - [#106](https://github.com/IronFoundation/iOS-Woof/pull/106)
+- Update GitHub actions: update the workflow to run the tests and linters - [#126](https://github.com/IronFoundation/iOS-Woof/pull/126)
 
 ### Deleted
 
