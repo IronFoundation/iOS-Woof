@@ -15,6 +15,9 @@ final class StringIconNameTests: XCTestCase {
         let city = "building.2"
         let house = "house"
         let doc = "doc.on.doc"
+        let notes = "note.text"
+        let calendar = "calendar"
+        let clock = "clock"
 
         XCTAssertEqual(findSitterTabIconName, String.IconName.findSitterTab)
         XCTAssertEqual(walkingsTabIconName, String.IconName.walkingsTab)
@@ -28,5 +31,8 @@ final class StringIconNameTests: XCTestCase {
         XCTAssertEqual(city, String.IconName.city)
         XCTAssertEqual(house, String.IconName.house)
         XCTAssertEqual(doc, String.IconName.twoDocuments)
+        XCTAssertEqual(notes, String.IconName.notes)
+        XCTAssertEqual(calendar, String.IconName.calendar)
+        XCTAssertEqual(clock, String.IconName.clock)
     }
 }
