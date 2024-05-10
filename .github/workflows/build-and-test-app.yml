@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-test-woof-app:
-    runs-on: macos-13
+    runs-on: macos-14-large
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,7 +34,7 @@ jobs:
         run: ./scripts/run-unit-tests.sh
 
   run-linter-and-formater:
-    runs-on: macos-13
+    runs-on: macos-14-large
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
