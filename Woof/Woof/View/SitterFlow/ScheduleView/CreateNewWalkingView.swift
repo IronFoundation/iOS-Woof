@@ -16,7 +16,7 @@ struct CreateNewWalkingView: View {
 
                 DatePicker("",
                            selection: $viewModel.startTime,
-                           displayedComponents: [
+                           in: Date()..., displayedComponents: [
                                .date,
                                .hourAndMinute,
                            ])
