@@ -55,7 +55,7 @@ struct CreateNewWalkingView: View {
             }
 
             Button(createWalkingButton) {
-                switch viewModel.createWalkings() {
+                switch viewModel.createWalkingsForRepeatInterval() {
                 case let .success(walkings):
                     print(walkings)
                 case let .failure(error):

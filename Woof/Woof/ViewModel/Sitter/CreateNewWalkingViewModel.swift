@@ -5,7 +5,35 @@ final class CreateNewWalkingViewModel: ObservableObject {
     @Published var durationInMinutes = 30
     @Published var repeatInterval = RepeatInterval.never
 
-    func createWalkings() -> Result<[Walking], Error> {
+    private var sitter: Sitter?
+
+    func createWalking(start: Date) -> Walking? {
+        guard let sitter, let endTime = calculateEndTime(for: start) else {
+            return nil
+        }
+        let price = sitter.pricePerHour * (Double(durationInMinutes) / 60.0)
+        return Walking(
+            id: UUID(),
+            owner: nil,
+            sitter: sitter,
+            status: .available,
+            start: start,
+            end: endTime,
+            ownerRating: nil,
+            sitterRating: nil,
+            ownerReview: nil,
+            sitterReview: nil,
+            notes: nil,
+            price: price
+        )
+    }
+
+    func createWalkingsForRepeatInterval() -> Result<[Walking], Error> {
+        guard let loadedSitter = loadSitterFromStorage() else {
+            return .failure(WalkingCreationError.sitterLoadFailed)
+        }
+        sitter = loadedSitter
+
         var walkings: [Walking] = []
         let calendar = Calendar.current
         let currentDate = Date()
@@ -13,27 +41,9 @@ final class CreateNewWalkingViewModel: ObservableObject {
         var startTime = startTime
 
         repeat {
-            guard let endTime = calculateEndTime(for: startTime) else {
+            guard let walking = createWalking(start: startTime) else {
                 return .failure(WalkingCreationError.endTimeCalculationFailed)
             }
-            guard let sitter = loadSitterFromStorage() else {
-                return .failure(WalkingCreationError.sitterLoadFailed)
-            }
-
-            let walking = Walking(
-                id: UUID(),
-                owner: nil,
-                sitter: sitter,
-                status: .available,
-                start: startTime,
-                end: endTime,
-                ownerRating: nil,
-                sitterRating: nil,
-                ownerReview: nil,
-                sitterReview: nil,
-                notes: nil,
-                price: 0.0
-            )
             walkings.append(walking)
 
             switch repeatInterval {
