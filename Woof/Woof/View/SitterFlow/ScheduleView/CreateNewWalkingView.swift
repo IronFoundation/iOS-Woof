@@ -1,24 +1,28 @@
 import SwiftUI
 
 struct CreateNewWalkingView: View {
-    @State private var startTime = Date()
-    @State private var durationInMinutes = 30
-    @State private var repeatInterval = RepeatInterval.never
+    @StateObject private var viewModel = CreateNewWalkingViewModel()
+    private let createWalkingTitle = "Create new walking for"
+    private let startDateAndTimeForWalkingLabel = "Start Time:"
+    private let durationLabel = "Duration:"
+    private let repeatsLabel = "Repeats:"
+    private let repeatsIntervalLabel = "Repeat Interval"
+    private let createWalkingButton = "Create Walking"
 
     var body: some View {
         VStack(spacing: 30) {
             VStack {
-                Text("Create new walking for")
+                Text(createWalkingTitle)
                     .font(.headline)
             }
 
             HStack {
-                Text("Start Time:")
+                Text(startDateAndTimeForWalkingLabel)
 
                 Spacer()
 
                 DatePicker("",
-                           selection: $startTime,
+                           selection: $viewModel.startTime,
                            displayedComponents: [
                                .date,
                                .hourAndMinute,
@@ -27,28 +31,30 @@ struct CreateNewWalkingView: View {
             }
 
             HStack {
-                Text("Duration:")
+                Text(durationLabel)
 
                 Spacer()
 
-                Stepper(value: $durationInMinutes, in: 30...120, step: 30) {
-                    Text("\(durationInMinutes) min")
+                Stepper(value: $viewModel.durationInMinutes, in: 30...120, step: 30) {
+                    Text("\(viewModel.durationInMinutes) min")
                 }
             }
 
             HStack {
-                Text("Repeats:")
+                Text(repeatsLabel)
 
                 Spacer()
 
-                Picker("Repeat Interval", selection: $repeatInterval) {
+                Picker(repeatsIntervalLabel, selection: $viewModel.repeatInterval) {
                     ForEach(RepeatInterval.allCases, id: \.self) { interval in
                         Text(interval.rawValue)
                     }
                 }
             }
 
-            Button("Create Walking") {}
+            Button(createWalkingButton) {
+                _ = viewModel.createWalkings()
+            }
 
             Spacer()
         }
