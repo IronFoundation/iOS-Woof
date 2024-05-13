@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// A view providing tools for selecting date, time, and recurrence options for creating walkings in a sitter's schedule.
 struct CreateNewWalkingView: View {
     var body: some View {
         VStack(spacing: 30) {

@@ -1,10 +1,20 @@
 import Foundation
 
+/// The view model responsible for the logic of creating a schedule for a sitter's walkings.
 final class CreateNewWalkingViewModel: ObservableObject {
+    /// The start time of the walking.
     @Published var startTime = Date()
+
+    /// The duration of the walking in minutes.
     @Published var durationInMinutes = 30
+
+    /// The repeat interval for creating multiple walkings.
     @Published var repeatInterval = WalkingRepeatInterval.never
 
+    /// Returns a descriptive error message for a given error.
+    ///
+    /// - Parameter error: The error for which to generate the message.
+    /// - Returns: A string containing the error message.
     func showErrorMessage(for error: Error) -> String {
         switch error {
         case WalkingCreationError.sitterLoadFailed:
@@ -16,6 +26,9 @@ final class CreateNewWalkingViewModel: ObservableObject {
         }
     }
 
+    /// Creates a series of walkings based on the repeat interval.
+    ///
+    /// - Returns: A result containing an array of walkings or an error if creation fails.
     func createWalkingsForRepeatInterval() -> Result<[Walking], Error> {
         var walkings: [Walking] = []
         let calendar = Calendar.current

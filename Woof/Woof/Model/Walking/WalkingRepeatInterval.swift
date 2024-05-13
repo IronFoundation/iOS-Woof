@@ -1,5 +1,6 @@
 import Foundation
 
+/// Possible time repeat intervals for recurring walkings.
 enum WalkingRepeatInterval: String, CaseIterable {
     case never = "Never"
     case daily = "Daily"
@@ -7,6 +8,7 @@ enum WalkingRepeatInterval: String, CaseIterable {
     case biweekly = "Every Two Weeks"
     case monthly = "Monthly"
 
+    /// Returns the calendar component corresponding to the repeat interval.
     var dateComponent: Calendar.Component {
         switch self {
         case .daily:
@@ -20,6 +22,7 @@ enum WalkingRepeatInterval: String, CaseIterable {
         }
     }
 
+    /// Returns the value associated with the repeat interval.
     var value: Int {
         switch self {
         case .daily:
