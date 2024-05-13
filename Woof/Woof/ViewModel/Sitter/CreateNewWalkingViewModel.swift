@@ -86,12 +86,12 @@ final class CreateNewWalkingViewModel: ObservableObject {
     }
 
     private func calculateNewStartDate(for start: Date) -> Date? {
-        guard let calendar = Calendar.current.date(
+        guard let calendarDate = Calendar.current.date(
             byAdding: repeatInterval.dateComponent, value: repeatInterval.value, to: start
         ) else {
             return nil
         }
-        return calendar
+        return calendarDate
     }
 
     private func walkingPrice(for sitter: Sitter) -> Double {
