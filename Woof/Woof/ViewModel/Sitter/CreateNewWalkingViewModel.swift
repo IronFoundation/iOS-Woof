@@ -3,16 +3,58 @@ import Foundation
 final class CreateNewWalkingViewModel: ObservableObject {
     @Published var startTime = Date()
     @Published var durationInMinutes = 30
-    @Published var repeatInterval = RepeatInterval.never
+    @Published var repeatInterval = WalkingRepeatInterval.never
 
-    private var sitter: Sitter?
-
-    func createWalking(start: Date) -> Walking? {
-        guard let sitter, let endTime = calculateEndTime(for: start) else {
-            return nil
+    func showErrorMessage(for error: Error) -> String {
+        switch error {
+        case WalkingCreationError.sitterLoadFailed:
+            return "Failed to load sitter."
+        case WalkingCreationError.dateCalculationFailed:
+            return "Failed to calculate time."
+        default:
+            return "Unknown error occurred."
         }
-        let price = sitter.pricePerHour * (Double(durationInMinutes) / 60.0)
-        return Walking(
+    }
+
+    func createWalkingsForRepeatInterval() -> Result<[Walking], Error> {
+        var walkings: [Walking] = []
+        let calendar = Calendar.current
+        let currentDate = Date()
+
+        guard let endDatePeriodDate = calendar.date(byAdding: .day, value: 365, to: currentDate) else {
+            return .failure(WalkingCreationError.dateCalculationFailed)
+        }
+
+        repeat {
+            switch createWalking(for: startTime) {
+            case let .success(walking):
+                walkings.append(walking)
+            case let .failure(error):
+                return .failure(error)
+            }
+
+            guard let newStartDate = calculateNewStartDate(for: startTime) else {
+                return .failure(WalkingCreationError.dateCalculationFailed)
+            }
+            startTime = newStartDate
+
+        } while repeatInterval != .never && startTime <= endDatePeriodDate
+
+        return .success(walkings)
+    }
+
+    // MARK: - Private interface
+
+    private func createWalking(for start: Date) -> Result<Walking, Error> {
+        guard let endTime = calculateEndTime(for: start) else {
+            return .failure(WalkingCreationError.dateCalculationFailed)
+        }
+
+        guard let sitter = loadSitter() else {
+            return .failure(WalkingCreationError.sitterLoadFailed)
+        }
+
+        let walking = Walking(
             id: UUID(),
             owner: nil,
             sitter: sitter,
@@ -24,57 +66,26 @@ final class CreateNewWalkingViewModel: ObservableObject {
             ownerReview: nil,
             sitterReview: nil,
             notes: nil,
-            price: price
+            price: walkingPrice(for: sitter)
         )
+
+        return .success(walking)
     }
 
-    func createWalkingsForRepeatInterval() -> Result<[Walking], Error> {
-        guard let loadedSitter = loadSitterFromStorage() else {
-            return .failure(WalkingCreationError.sitterLoadFailed)
+    private func calculateNewStartDate(for start: Date) -> Date? {
+        guard let calendar = Calendar.current.date(
+            byAdding: repeatInterval.dateComponent, value: repeatInterval.value, to: start
+        ) else {
+            return nil
         }
-        sitter = loadedSitter
-
-        var walkings: [Walking] = []
-        let calendar = Calendar.current
-        let currentDate = Date()
-        let endDatePeriodDate = calendar.date(byAdding: .day, value: 365, to: currentDate) ?? Date()
-        var startTime = startTime
-
-        repeat {
-            guard let walking = createWalking(start: startTime) else {
-                return .failure(WalkingCreationError.endTimeCalculationFailed)
-            }
-            walkings.append(walking)
-
-            switch repeatInterval {
-            case .daily:
-                startTime = calendar.date(byAdding: .day, value: 1, to: startTime)!
-            case .weekly:
-                startTime = calendar.date(byAdding: .weekOfYear, value: 1, to: startTime)!
-            case .biweekly:
-                startTime = calendar.date(byAdding: .weekOfYear, value: 2, to: startTime)!
-            case .monthly:
-                startTime = calendar.date(byAdding: .month, value: 1, to: startTime)!
-            default:
-                break
-            }
-        } while repeatInterval != .never && startTime < endDatePeriodDate
-
-        return .success(walkings)
+        return calendar
     }
 
-    func errorMessage(for error: Error) -> String {
-        switch error {
-        case WalkingCreationError.sitterLoadFailed:
-            return "Failed to load sitter."
-        case WalkingCreationError.endTimeCalculationFailed:
-            return "Failed to calculate end time."
-        default:
-            return "Unknown error occurred."
-        }
+    private func walkingPrice(for sitter: Sitter) -> Double {
+        sitter.pricePerHour * Double(durationInMinutes) / 60.0
     }
 
-    private func loadSitterFromStorage() -> Sitter? {
+    private func loadSitter() -> Sitter? {
         guard let data = KeyValueStorage(KeyValueStorage.Name.currentSitter)
             .loadData(for: KeyValueStorage.Key.currentSitter) else { return nil }
 
@@ -85,9 +96,8 @@ final class CreateNewWalkingViewModel: ObservableObject {
         Calendar.current.date(byAdding: .minute, value: durationInMinutes, to: startTime)
     }
 
-    enum WalkingCreationError: Error {
+    private enum WalkingCreationError: Error {
         case sitterLoadFailed
-        case endTimeCalculationFailed
         case dateCalculationFailed
     }
 }
