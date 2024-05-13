@@ -57,13 +57,13 @@ jobs:
       - name: Run tests
         run: ./scripts/run-unit-tests.sh
 
-  run-linter-and-formater:
+  run-linter-and-formatter:
     runs-on: macos-13
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         
-      - name: Run formater
+      - name: Run formatter
         continue-on-error: true
         run: |
          swiftformat --lint . \
