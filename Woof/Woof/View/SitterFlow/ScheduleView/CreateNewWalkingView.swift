@@ -2,6 +2,8 @@ import SwiftUI
 
 struct CreateNewWalkingView: View {
     @StateObject private var viewModel = CreateNewWalkingViewModel()
+    @State private var showingErrorAlert = false
+    @State private var errorAlertMessage = ""
     private let createWalkingTitle = "Create new walking for"
     private let startDateAndTimeForWalkingLabel = "Start Time:"
     private let durationLabel = "Duration:"
@@ -53,7 +55,16 @@ struct CreateNewWalkingView: View {
             }
 
             Button(createWalkingButton) {
-                _ = viewModel.createWalkings()
+                switch viewModel.createWalkings() {
+                case let .success(walkings):
+                    print(walkings)
+                case let .failure(error):
+                    errorAlertMessage = viewModel.errorMessage(for: error)
+                    showingErrorAlert = true
+                }
+            }
+            .alert(isPresented: $showingErrorAlert) {
+                Alert(title: Text("Error"), message: Text(errorAlertMessage), dismissButton: .default(Text("OK")))
             }
 
             Spacer()

@@ -5,20 +5,25 @@ final class CreateNewWalkingViewModel: ObservableObject {
     @Published var durationInMinutes = 30
     @Published var repeatInterval = RepeatInterval.never
 
-    func createWalkings() -> [Walking] {
+    func createWalkings() -> Result<[Walking], Error> {
         var walkings: [Walking] = []
         let calendar = Calendar.current
         let currentDate = Date()
-        let endDatePeriodDate = calendar.date(byAdding: .day, value: 365, to: currentDate)!
+        let endDatePeriodDate = calendar.date(byAdding: .day, value: 365, to: currentDate) ?? Date()
         var startTime = startTime
 
         repeat {
-            var endTime = calculateEndTime(for: startTime)!
-            print("\n Start Time: \(startTime), End Time: \(endTime)")
+            guard let endTime = calculateEndTime(for: startTime) else {
+                return .failure(WalkingCreationError.endTimeCalculationFailed)
+            }
+            guard let sitter = loadSitterFromStorage() else {
+                return .failure(WalkingCreationError.sitterLoadFailed)
+            }
+
             let walking = Walking(
                 id: UUID(),
                 owner: nil,
-                sitter: loadSitterFromStorage()!,
+                sitter: sitter,
                 status: .available,
                 start: startTime,
                 end: endTime,
@@ -45,7 +50,18 @@ final class CreateNewWalkingViewModel: ObservableObject {
             }
         } while repeatInterval != .never && startTime < endDatePeriodDate
 
-        return walkings
+        return .success(walkings)
+    }
+
+    func errorMessage(for error: Error) -> String {
+        switch error {
+        case WalkingCreationError.sitterLoadFailed:
+            return "Failed to load sitter."
+        case WalkingCreationError.endTimeCalculationFailed:
+            return "Failed to calculate end time."
+        default:
+            return "Unknown error occurred."
+        }
     }
 
     private func loadSitterFromStorage() -> Sitter? {
@@ -57,5 +73,11 @@ final class CreateNewWalkingViewModel: ObservableObject {
 
     private func calculateEndTime(for startTime: Date) -> Date? {
         Calendar.current.date(byAdding: .minute, value: durationInMinutes, to: startTime)
+    }
+
+    enum WalkingCreationError: Error {
+        case sitterLoadFailed
+        case endTimeCalculationFailed
+        case dateCalculationFailed
     }
 }
