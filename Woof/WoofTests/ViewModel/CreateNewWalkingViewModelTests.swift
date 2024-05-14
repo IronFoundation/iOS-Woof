@@ -16,7 +16,57 @@ final class CreateNewWalkingViewModelTests: XCTestCase {
         }
     }
 
-    func testCreatingWalkingForOneDateReturnsOneWalkingObject() {
+    func testCreatedWalkingStatusMatchExpectedStatus() {
+        // Given
+        let startTime = Date()
+        let durationInMinutes = 30
+        let repeatInterval = WalkingRepeatInterval.never
+        let viewModel = setupViewModel(startTime: startTime,
+                                       durationInMinutes: durationInMinutes,
+                                       repeatInterval: repeatInterval)
+
+        // When
+        let walkingObjectsResult = viewModel.createWalkingsForRepeatInterval()
+
+        // Then
+        switch walkingObjectsResult {
+        case let .success(walkingObjects):
+            XCTAssertEqual(walkingObjects[0].status, WalkingStatus.available)
+        case let .failure(error):
+            XCTFail("Unexpected error: \(error)")
+        }
+    }
+
+    func testCreatedWalkingEndTimeMatchExpectedEndTime() {
+        // Given
+        let calendar = Calendar.current
+        let startDateComponents = DateComponents(year: 2024, month: 10, day: 12, hour: 12)
+        let endDateComponents = DateComponents(year: 2024, month: 10, day: 12, hour: 13)
+        guard let startTime = calendar.date(from: startDateComponents) else {
+            fatalError("Failed to create date")
+        }
+        guard let expectedEndTime = calendar.date(from: endDateComponents) else {
+            fatalError("Failed to create date")
+        }
+        let durationInMinutes = 60
+        let repeatInterval = WalkingRepeatInterval.never
+        let viewModel = setupViewModel(startTime: startTime,
+                                       durationInMinutes: durationInMinutes,
+                                       repeatInterval: repeatInterval)
+
+        // When
+        let walkingObjectsResult = viewModel.createWalkingsForRepeatInterval()
+
+        // Then
+        switch walkingObjectsResult {
+        case let .success(walkingObjects):
+            XCTAssertEqual(walkingObjects[0].end, expectedEndTime)
+        case let .failure(error):
+            XCTFail("Unexpected error: \(error)")
+        }
+    }
+
+    func testCreatedWalkingForOneDateReturnsOneWalkingObject() {
         // Given
         let startTime = Date()
         let durationInMinutes = 30
@@ -37,7 +87,7 @@ final class CreateNewWalkingViewModelTests: XCTestCase {
         }
     }
 
-    func testCreatingWalkingForWeeklyIntervalReturnsExpectedNumberOfWalkingObjects() {
+    func testCreatedWalkingForWeeklyIntervalReturnsExpectedNumberOfWalkingObjects() {
         // Given
         let startTime = Date()
         let durationInMinutes = 30
@@ -60,7 +110,7 @@ final class CreateNewWalkingViewModelTests: XCTestCase {
         }
     }
 
-    func testCreatingWalkingForBiWeeklyIntervalReturnsExpectedNumberOfWalkingObjects() {
+    func testCreatedWalkingForBiWeeklyIntervalReturnsExpectedNumberOfWalkingObjects() {
         // Given
         let startTime = Date()
         let durationInMinutes = 30
@@ -102,7 +152,7 @@ final class CreateNewWalkingViewModelTests: XCTestCase {
         }
     }
 
-    func testCreatingWalkingForDailyIntervalReturnsExpectedNumberOfWalkingObjects() {
+    func testCreatedWalkingForDailyIntervalReturnsExpectedNumberOfWalkingObjects() {
         // Given
         let startTime = Date()
         let durationInMinutes = 30
