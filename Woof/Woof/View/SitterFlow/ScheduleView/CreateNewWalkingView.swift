@@ -55,6 +55,7 @@ struct CreateNewWalkingView: View {
                     showingErrorAlert = true
                 }
             }
+            .buttonStyle(PurpleCapsuleOfInfinityWidth())
             .alert(isPresented: $showingErrorAlert) {
                 Alert(title: Text(alertTitle),
                       message: Text(errorAlertMessage),

@@ -9,7 +9,7 @@ struct ScheduleView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink("add") {
+                        NavigationLink(navigationLinkTitle) {
                             CreateNewWalkingView()
                         }
                     }
@@ -21,6 +21,7 @@ struct ScheduleView: View {
 
     private let scheduleTitle = "Walking schedule"
     private let navigationTitle = "My Schedule"
+    private let navigationLinkTitle = "add walking"
 }
 
 struct ScheduleView_Previews: PreviewProvider {
