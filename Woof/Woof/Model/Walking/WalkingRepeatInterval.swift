@@ -34,7 +34,7 @@ enum WalkingRepeatInterval: String, CaseIterable {
         case .monthly:
             return 1
         default:
-            return 1
+            return 0
         }
     }
 }
