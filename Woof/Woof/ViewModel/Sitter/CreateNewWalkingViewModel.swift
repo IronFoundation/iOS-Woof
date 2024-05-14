@@ -3,13 +3,7 @@ import Foundation
 /// The view model responsible for the logic of creating a schedule for a sitter's walkings.
 final class CreateNewWalkingViewModel: ObservableObject {
     /// The start time of the walking.
-    @Published var startTime = Date() {
-        didSet {
-            if startTime < Date() {
-                startTime = Date()
-            }
-        }
-    }
+    @Published var startTime = Date()
 
     /// The duration of the walking in minutes.
     @Published var durationInMinutes = 30
