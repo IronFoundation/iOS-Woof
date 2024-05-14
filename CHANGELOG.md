@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Add onboarding flows for new users. - [#125](https://github.com/IronFoundation/iOS-Woof/pull/125)
 - Add  `WalkingsView` for sitter flow - [#124](https://github.com/IronFoundation/iOS-Woof/pull/124)
 - Add  `OwnerDetailedWalkingView` for owner flow - [#123](https://github.com/IronFoundation/iOS-Woof/pull/123)
+- Add  `CreateNewWalkingView` for sitter flow - [#128](https://github.com/IronFoundation/iOS-Woof/pull/128)
 
 ### Changed
 - Refactor `PreferencesHandler` and `Preferences` types' methods to interact with properties needed for displaying onboarding screens - [#110](https://github.com/IronFoundation/iOS-Woof/pull/110)
